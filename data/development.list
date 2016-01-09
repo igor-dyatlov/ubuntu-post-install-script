@@ -1,0 +1,14 @@
+autotools-dev
+bzr
+cmake
+git
+gnome-builder
+gtk-3-examples
+gtk-doc-tools
+libgtk-3-dev
+nodejs
+npm
+ruby
+php5-cli
+valac
+x11-apps
