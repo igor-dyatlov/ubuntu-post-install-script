@@ -71,14 +71,14 @@ function main {
         --title "Ubuntu Post-Install Script" \
         --menu "\nWhat would you like to do?" \
         --cancel-button "Quit" \
-        $LINES $COLUMNS $(( $LINES - 13 )) \
+        $LINES $COLUMNS $(( $LINES - 11 )) \
         update      'Perform system update' \
         favourites  'Install favourite applications' \
         utilities   'Install favourite system utilities' \
         development 'Install favourite development tools' \
         codecs      'Install Ubuntu Restricted Extras' \
         thirdparty  'Install third-party applications' \
-        kernel      'Update system kernel'
+        kernel      'Update system kernel' \
         configure   'Configure system' \
         cleanup     'Cleanup the system' \
         3>&1 1>&2 2>&3)

@@ -1,8 +1,8 @@
 #!/bin/bash
 
-# Perform system upgrade
-function update {
-if (whiptail --title "Kernel Update" --yesno "Proceed with kernel update?" 10 60) then
+# Kernel system upgrade
+function kernel {
+if (whiptail --title "Update system kernel" --yesno "Proceed with kernel update?" 10 60) then
     # Update repository information
     show_info 'Download and install...'
     show_warning 'Requires root privileges'
