@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# Kernel system upgrade
+function kernel {
+if (whiptail --title "Update system kernel" --yesno "Proceed with kernel update?" 10 60) then
+    # Update repository information
+    show_info 'Download and install...'
+    show_warning 'Requires root privileges'
+    cd /tmp; wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.3.3-wily/linux-headers-4.3.3-040303-generic_4.3.3-040303.201512150130_amd64.deb http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.3.3-wily/linux-headers-4.3.3-040303_4.3.3-040303.201512150130_all.deb http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.3.3-wily/linux-image-4.3.3-040303-generic_4.3.3-040303.201512150130_amd64.deb; sudo dpkg -i *.deb
+    # Grub-Update
+    show_info 'Grub configuration update...'
+    sudo update-grub
+    # Reboot
+    show_info 'Перезагрузка...'
+    sudo reboot
+    # Done
+    show_success 'Выполненно.'
+    whiptail --title "Finished" --msgbox "Kernel update complete." 8 78
+    main
+else
+    clear && main
+fi
+}

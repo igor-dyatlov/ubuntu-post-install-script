@@ -1,0 +1,48 @@
+#!/bin/bash
+
+dir="$(dirname "$0")"
+
+source $dir/functions/third-party/dropbox
+source $dir/functions/third-party/gnome
+source $dir/functions/third-party/google-chrome
+source $dir/functions/third-party/minecraft
+source $dir/functions/third-party/oracle-java
+source $dir/functions/third-party/owncloud
+source $dir/functions/third-party/rvm
+source $dir/functions/third-party/slack
+source $dir/functions/third-party/spotify
+source $dir/functions/third-party/steam
+source $dir/functions/third-party/sublime-text
+
+# Install Third-Party Applications
+function thirdparty {
+    eval `resize`
+    THIRDPARTY=$(whiptail \
+        --notags \
+        --title "Third-Party Installation" \
+        --menu "\nWhat third-party software would you like to install?" \
+        --ok-button "Install" \
+        --cancel-button "Go Back" \
+        $LINES $COLUMNS $(( $LINES - 12 )) \
+        'dropbox'           'Dropbox' \
+        'gnome'             'Latest GNOME desktop' \
+        'google-chrome'     'Google Chrome' \
+        'minecraft'         'Minecraft' \
+        'oracle-java'       'Oracle Java 8' \
+        'owncloud'          'ownCloud client' \
+        'rvm'               'Ruby Version Manager (RVM)' \
+        'slack'             'Slack' \
+        'spotify'           'Spotify' \
+        'steam'             'Steam' \
+        'sublime-text'      'Sublime Text 3' \
+        'vocal'             'Vocal podcast app' \
+        3>&1 1>&2 2>&3)
+     
+    exitstatus=$?
+    if [ $exitstatus = 0 ]; then
+        clear && $THIRDPARTY
+    else
+        clear && main
+    fi
+}
+
