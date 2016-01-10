@@ -69,17 +69,17 @@ function main {
     MAIN=$(whiptail \
         --notags \
         --title "Ubuntu Post-Install Script" \
-        --menu "\nWhat would you like to do?" \
-        --cancel-button "Quit" \
+        --menu "\nЧто вы хотите выполнить?" \
+        --cancel-button "Выход" \
         $LINES $COLUMNS $(( $LINES - 11 )) \
-        update      'Perform system update' \
-        favourites  'Install favourite applications' \
-        utilities   'Install favourite system utilities' \
-        development 'Install favourite development tools' \
+        update      'Выполните обновление системы' \
+        favourites  'Установите любимые приложения' \
+        utilities   'Установите любимые системные утилиты' \
+        development 'Установите любимые инструменты развития' \
         codecs      'Install Ubuntu Restricted Extras' \
         thirdparty  'Install third-party applications' \
         kernel      'Обновление ядра' \
-        configure   'Configure system' \
+        configure   'Настройка системы' \
         cleanup     'Очистка системы' \
         3>&1 1>&2 2>&3)
      
@@ -93,7 +93,7 @@ function main {
 
 # Quit
 function quit {
-    if (whiptail --title "Quit" --yesno "Are you sure you want quit?" 10 60) then
+    if (whiptail --title "Выход" --yesno "Вы уверены, что хотите выйти?" 10 60) then
         exit 99
     else
         clear && main
