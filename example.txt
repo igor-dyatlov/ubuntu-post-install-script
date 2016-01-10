@@ -15,12 +15,6 @@ sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /et
 sudo apt-get update
 sudo apt-get install google-chrome-stable
 
-######  Установка Google Play Music Manager  ######
-sudo sh -c 'echo "deb http://dl.google.com/linux/musicmanager/deb/ stable main" >> /etc/apt/sources.list.d/google-musicmanager.list'
-wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-sudo apt-get update
-sudo apt-get install google-musicmanager-beta
-
 ######  Установка Java  ######
 cd /tmp; wget http://download.oracle.com/otn-pub/java/jdk/8u65-b17/jdk-8u65-linux-x64.tar.gz; sudo tar xzvf /tmp/jdk-8u65-linux-x64.tar.gz; 
 sudo mv jdk1.8.0_65/ /usr/lib/jvm/
@@ -39,12 +33,6 @@ sudo apt-get install ia32-libs
 sudo apt-get install lib32ncurses5-dev 
 sudo apt-get install lib32stdc++6
 
-######  Установка Virtual Box  ######
-sudo sh -c 'echo "deb http://download.virtualbox.org/virtualbox/debian wily contrib" >> /etc/apt/sources.list.d/virtualbox.list'
-wget -q https://www.virtualbox.org/download/oracle_vbox.asc -O- | sudo apt-key add -
-sudo apt-get update 
-sudo apt-get install virtualbox-5.0
-
 ######  Установка Ubuntu Tweak  ######
 cd /tmp; wget https://launchpad.net/ubuntu-tweak/0.8.x/0.8.7/+download/ubuntu-tweak_0.8.7-1~trusty2_all.deb; sudo dpkg -i *.deb; sudo apt-get install -f
 
@@ -59,23 +47,6 @@ wget http://repo.steampowered.com/steam/signature.gpg && sudo apt-key add signat
 sudo sh -c 'echo "deb http://repo.steampowered.com/steam/ precise steam" >> /etc/apt/sources.list.d/steam.list'
 sudo apt-get update
 sudo apt-get install steam
-
-
-
-
-sudo add-apt-repository ppa:otto-kesselgulasch/misc 
-sudo apt-get update 
-sudo apt-get install filezilla
- 
-
-
-sudo add-apt-repository ppa:format-junkie-team/release 
-sudo apt-get update
-sudo apt-get install formatjunkie
-
-
-
-
 1
 XKBOPTIONS="grp:alt_shift_toggle,grp_led:scroll"
 setxkbmap -layout 'us,ru' -option 'grp:alt_shift_toggle,grp_led:scroll'

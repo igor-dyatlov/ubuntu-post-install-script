@@ -1,22 +1,22 @@
 #!/bin/bash
 
-# Google Musicmanager
-function google-musicmanager {
+# Virtual Box
+function virtualbox {
 	# Add repository
-	show_info 'Adding Google Musicmanager repository to software sources...'
+	show_info 'Adding Virtual Box repository to software sources...'
 	show_warning 'Requires root privileges'
-	sudo sh -c "echo 'deb http://dl.google.com/linux/musicmanager/deb/ stable main /' >> /etc/apt/sources.list.d/google-musicmanager.list"
+	sudo sh -c "echo 'deb http://download.virtualbox.org/virtualbox/debian wily contrib /' >> /etc/apt/sources.list.d/virtualbox.list"
 	show_success 'Done.'
 	show_question 'Adding repository key...'
-	curl -O https://dl-ssl.google.com/linux/linux_signing_key.pub
+	curl -O https://www.virtualbox.org/download/oracle_vbox.asc
 	sudo apt-key add - < Release.key 
 	show_success 'Done.'
 	# Update repository information
 	show_info 'Updating repository information...'
 	sudo apt-get update
 	# Install
-	show_info 'Installing Google Musicmanager...'
-	sudo apt-get install google-musicmanager-beta
+	show_info 'Installing Virtual Box...'
+	sudo apt-get install virtualbox-5.0
     # Done
     show_success 'Done.'
     whiptail --title "Finished" --msgbox "Installation complete." 8 78
