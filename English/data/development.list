@@ -8,6 +8,7 @@ gtk-doc-tools
 libgtk-3-dev
 nodejs
 npm
+scite
 ruby
 php5-cli
 valac

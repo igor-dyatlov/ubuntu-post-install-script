@@ -15,27 +15,6 @@ sudo apt-get update
 sudo apt-get install qbittorrent
 
 
-
-sudo apt-get install gdebi
-sudo apt-get install clipgrab
-
-
-openshot
-pitivi
-lightworks
-
-
-
-
-######  Установка Plank  ######
-sudo apt-add-repository ppa:ricotz/docky
-sudo apt-get update
-sudo apt-get install plank
-
- sudo add-apt-repository ppa:docky-core/stable
-  sudo apt-get update
-  sudo apt-get install docky
-  
 ######  Установка Mypaint  ######
 sudo add-apt-repository ppa:achadwick/mypaint-testing
 sudo apt-get update
@@ -46,15 +25,11 @@ sudo add-apt-repository ppa:notepadqq-team/notepadqq
 sudo apt-get update
 sudo apt-get install notepadqq
 
-sudo apt-get install scite
 
 ######  Установка Sigil  ######
 sudo add-apt-repository ppa:rgibert/ebook 
 sudo apt-get update
 sudo apt-get install sigil
-
-######  Установка Nano  ######
-sudo apt-get install nano
 
 ######  Установка Steadyflow  ######
 sudo add-apt-repository ppa:sikon/steadyflow 
@@ -74,8 +49,7 @@ sudo add-apt-repository ppa:nilarimogard/webupd8
 sudo apt-get update
 sudo apt-get install textadept
 
-######  Установка clamtk  ######
-sudo apt-get install clamtk
+
 
 
 

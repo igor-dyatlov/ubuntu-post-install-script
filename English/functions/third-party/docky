@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# GNOME
+function gnome {
+    # Add repository
+    show_info 'Adding GNOME3 PPA to software sources...'
+    show_warning 'Requires root privileges'
+    sudo add-apt-repository ppa:docky-core/stable
+	# Update repository information
+	show_info 'Updating repository information...'
+	sudo apt-get update
+	# Install
+    echo 'Installing GNOME Desktop...'
+    show_warning 'Requires root privileges'
+    sudo apt-get install docky
+    # Done
+    show_success 'Done.'
+    whiptail --title "Finished" --msgbox "Installation complete." 8 78
+	thirdparty
+}
