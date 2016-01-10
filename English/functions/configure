@@ -22,6 +22,7 @@ function preferences {
     show_info 'Setting GNOME app preferences...'
     gsettings set org.gnome.desktop.interface clock-format 12h
     gsettings set org.gnome.desktop.interface clock-show-date true
+    gsettings set org.gnome.gedit.preferences.encodings auto-detected "['UTF-8', 'WINDOWS-1251', 'CURRENT', 'ISO-8859-15', 'UTF-16']"
     gsettings set org.gnome.nautilus.preferences sort-directories-first true
     gsettings set org.gnome.rhythmbox.rhythmdb monitor-library true
     gsettings set org.gnome.rhythmbox.sources browser-views 'artists-albums'

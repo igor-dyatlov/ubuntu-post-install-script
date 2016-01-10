@@ -95,16 +95,9 @@ wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-ke
 sudo apt-get update
 sudo apt-get install google-musicmanager-beta
 
-######  Установка Telegram  ######
-cd /tmp; wget https://updates.tdesktop.com/tlinux/tsetup.0.9.10.tar.xz; tar xzvf /Telegram; wget https://tlgrm.ru/files/locales/tdesktop/Russian.strings /tmp/Telegram
-sudo mv Telegram /opt/telegram
-sudo ln -sf /opt/telegram /usr/bin/telegram
 
-######  Установка Enpass  ######
-sudo echo "deb http://repo.sinew.in/ stable main" > \ /etc/apt/sources.list.d/enpass.list
-sudo wget -O - http://repo.sinew.in/keys/enpass-linux.key | apt-key add -
-sudo apt-get update
-sudo apt-get install enpass
+
+
   
 ######  Установка Java  ######
 cd /tmp; wget http://download.oracle.com/otn-pub/java/jdk/8u65-b17/jdk-8u65-linux-x64.tar.gz; sudo tar xzvf /tmp/jdk-8u65-linux-x64.tar.gz; 
@@ -124,11 +117,7 @@ sudo apt-get install ia32-libs
 sudo apt-get install lib32ncurses5-dev 
 sudo apt-get install lib32stdc++6
 
-######  Установка Android Studio  ######
-sudo add-apt-repository ppa:ubuntu-desktop/ubuntu-make
-sudo apt-get update
-sudo apt-get install ubuntu-make
-umake android
+
 
 ######  Установка Virtual Box  ######
 sudo sh -c 'echo "deb http://download.virtualbox.org/virtualbox/debian wily contrib" >> /etc/apt/sources.list.d/virtualbox.list'
@@ -187,8 +176,7 @@ sudo add-apt-repository ppa:otto-kesselgulasch/gimp
 sudo apt-get update
 sudo apt-get install gimp
 
-######  Установка Inkscape  ######
-sudo apt-get install Inkscape
+
 
 
 
@@ -219,8 +207,6 @@ sudo apt-get purge telepathy-*
 
 
 
-######  Исправление кодировки utf-8  ######
-gsettings set org.gnome.gedit.preferences.encodings auto-detected "['UTF-8', 'WINDOWS-1251', 'CURRENT', 'ISO-8859-15', 'UTF-16']"
 
 ######  Исправление переключения языка  ######
 sudo mv /usr/lib/x86_64-linux-gnu/indicator-keyboard-service /usr/lib/x86_64-linux-gnu/indicator-keyboard-service.backup && sudo kill `pgrep indicator-keyboard-service`
@@ -250,9 +236,6 @@ setxkbmap -layout 'us,ru' -option 'grp:alt_shift_toggle,grp_led:scroll'
 gsettings set org.gnome.settings-daemon.plugins.keyboard active false
 setxkbmap -option "grp:caps_toggle,grp_led:scroll,compose:ralt"
 
-######  Очистка системы  ######
-sudo apt-get autoremove
-sudo apt-get autoclean
 
 
 
