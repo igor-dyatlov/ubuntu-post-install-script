@@ -1,61 +1,13 @@
-
-
-######  Установка  GParted  ######
-wget -q -O - http://archive.getdeb.net/getdeb-archive.key | sudo apt-key add -
-sudo sh -c 'echo "deb http://archive.getdeb.net/ubuntu wily-getdeb apps" >> /etc/apt/sources.list.d/getdeb.list'
-sudo apt-get update
-sudo apt-get install gparted
-
-
-
 sudo apt-get install bleachbit
 
 sudo add-apt-repository ppa:qbittorrent-team/qbittorrent-stable 
 sudo apt-get update
 sudo apt-get install qbittorrent
 
-
-######  Установка Mypaint  ######
-sudo add-apt-repository ppa:achadwick/mypaint-testing
-sudo apt-get update
-sudo apt-get install mypaint mypaint-data-extras
-sudo apt-get install mypaint
-
-sudo add-apt-repository ppa:notepadqq-team/notepadqq
-sudo apt-get update
-sudo apt-get install notepadqq
-
-
-######  Установка Sigil  ######
-sudo add-apt-repository ppa:rgibert/ebook 
-sudo apt-get update
-sudo apt-get install sigil
-
-######  Установка Steadyflow  ######
-sudo add-apt-repository ppa:sikon/steadyflow 
-sudo apt-get update
-sudo apt-get install steadyflow
-
-
-
-sudo add-apt-repository ppa:fontforge/fontforge
-sudo apt-get update
-sudo apt-get install fontforge
-
- 
-
 ######  Установка textadept  ######
 sudo add-apt-repository ppa:nilarimogard/webupd8
 sudo apt-get update
 sudo apt-get install textadept
-
-
-
-
-
-
-
-
 
 ######  Установка Chrome  ######
 wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
@@ -69,10 +21,6 @@ wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-ke
 sudo apt-get update
 sudo apt-get install google-musicmanager-beta
 
-
-
-
-  
 ######  Установка Java  ######
 cd /tmp; wget http://download.oracle.com/otn-pub/java/jdk/8u65-b17/jdk-8u65-linux-x64.tar.gz; sudo tar xzvf /tmp/jdk-8u65-linux-x64.tar.gz; 
 sudo mv jdk1.8.0_65/ /usr/lib/jvm/
@@ -91,8 +39,6 @@ sudo apt-get install ia32-libs
 sudo apt-get install lib32ncurses5-dev 
 sudo apt-get install lib32stdc++6
 
-
-
 ######  Установка Virtual Box  ######
 sudo sh -c 'echo "deb http://download.virtualbox.org/virtualbox/debian wily contrib" >> /etc/apt/sources.list.d/virtualbox.list'
 wget -q https://www.virtualbox.org/download/oracle_vbox.asc -O- | sudo apt-key add -
@@ -105,8 +51,6 @@ cd /tmp; wget https://launchpad.net/ubuntu-tweak/0.8.x/0.8.7/+download/ubuntu-tw
 sudo add-apt-repository ppa:tualatrix/ppa
 sudo apt-get update
 sudo apt-get install ubuntu-tweak
-
-
 
 ######  Установка Steam  ######
 wget https://steamcdn-a.akamaihd.net/client/installer/steam.deb; sudo dpkg -i *.deb
@@ -163,7 +107,6 @@ sudo apt-get install simplescreenrecorder-lib:i386
 
 
 
-
 sudo apt-get install soundconverter
 
 sudo add-apt-repository ppa:format-junkie-team/release 
@@ -175,41 +118,6 @@ sudo apt-get install arista
 sudo apt-get install winff
 
 
-
-######  Удаление чата telepathy и интеграции аккаунтов  ######
-sudo apt-get purge telepathy-*
-
-
-
-
-######  Исправление переключения языка  ######
-sudo mv /usr/lib/x86_64-linux-gnu/indicator-keyboard-service /usr/lib/x86_64-linux-gnu/indicator-keyboard-service.backup && sudo kill `pgrep indicator-keyboard-service`
-
-sudo dpkg-reconfigure keyboard-configuration
-apt-get purge ibus
-
-dconf write /org/gnome/desktop/input-sources/sources «[('xkb', 'us'), ('xkb', 'ru')]»
-dconf write /org/gnome/desktop/input-sources/xkb-options «['grp:caps_toggle', 'compose:ralt','grp_led:scroll']»
-dconf write /org/gnome/desktop/input-sources/xkb-options/per-window true
-
-
-
-
-ibus-setup
-sudo gedit /etc/default/keyboard
-
-
-XKBOPTIONS=«grp:lctrl_lshift_toggle,terminate:ctrl_alt_bksp»
-
-
-setxkbmap "us,ru,ua" ",winkeys,winkeys" "grp:menu_toggle,grp_led:scroll,terminate:ctrl_alt_bksp,compose:ralt"
-
-
+1
+XKBOPTIONS="grp:alt_shift_toggle,grp_led:scroll"
 setxkbmap -layout 'us,ru' -option 'grp:alt_shift_toggle,grp_led:scroll'
-
-gsettings set org.gnome.settings-daemon.plugins.keyboard active false
-setxkbmap -option "grp:caps_toggle,grp_led:scroll,compose:ralt"
-
-
-
-

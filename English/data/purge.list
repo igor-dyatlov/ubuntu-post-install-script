@@ -16,3 +16,4 @@ deja-dup
 empathy
 empathy-common
 nautilus-sendto-empathy
+telepathy-*
