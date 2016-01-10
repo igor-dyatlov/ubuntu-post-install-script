@@ -9,4 +9,4 @@ Thanks to
 
 Run from source folder:
 
-    ./ubuntu-post-install-script.sh
+    ./start.sh
