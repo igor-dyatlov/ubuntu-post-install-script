@@ -14,5 +14,6 @@ valac
 x11-apps
 geany
 vim
+nano
 sudo apt-get install android-tools-adb android-tools-fastboot
 sudo apt-get install android-tools-fsutils
