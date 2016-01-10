@@ -1,8 +1,4 @@
-######  Обновление ядра  ######
-cd /tmp; wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.3.3-wily/linux-headers-4.3.3-040303-generic_4.3.3-040303.201512150130_amd64.deb http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.3.3-wily/linux-headers-4.3.3-040303_4.3.3-040303.201512150130_all.deb http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.3.3-wily/linux-image-4.3.3-040303-generic_4.3.3-040303.201512150130_amd64.deb; sudo dpkg -i *.deb
-sudo update-grub
-sudo reboot
-uname -r
+
 
 ######  Установка  GParted  ######
 wget -q -O - http://archive.getdeb.net/getdeb-archive.key | sudo apt-key add -
@@ -10,10 +6,7 @@ sudo sh -c 'echo "deb http://archive.getdeb.net/ubuntu wily-getdeb apps" >> /etc
 sudo apt-get update
 sudo apt-get install gparted
 
-######  Установка  Screenfetch  ######
-sudo apt-get install screenfetch
 
-e4defrag
 
 sudo apt-get install bleachbit
 
@@ -21,8 +14,7 @@ sudo add-apt-repository ppa:qbittorrent-team/qbittorrent-stable
 sudo apt-get update
 sudo apt-get install qbittorrent
 
-######  Установка  Synaptic  ######
-sudo apt-get install synaptic
+
 
 sudo apt-get install gdebi
 sudo apt-get install clipgrab
@@ -31,9 +23,9 @@ sudo apt-get install clipgrab
 openshot
 pitivi
 lightworks
-sudo apt-get install ppa-purge
 
-sudo apt-get install gnome-clocks
+
+
 
 ######  Установка Plank  ######
 sudo apt-add-repository ppa:ricotz/docky
@@ -69,14 +61,13 @@ sudo add-apt-repository ppa:sikon/steadyflow
 sudo apt-get update
 sudo apt-get install steadyflow
 
-######  Установка vim  ######
-sudo apt-get install vim
+
 
 sudo add-apt-repository ppa:fontforge/fontforge
 sudo apt-get update
 sudo apt-get install fontforge
 
- audacity
+ 
 
 ######  Установка textadept  ######
 sudo add-apt-repository ppa:nilarimogard/webupd8
@@ -86,15 +77,11 @@ sudo apt-get install textadept
 ######  Установка clamtk  ######
 sudo apt-get install clamtk
 
-######  Установка Geany  ######
-sudo apt-get install geany
 
-######  Установка  Compiz  ######
-sudo apt-get install compizconfig-settings-manager
 
-######  Установка ADB Fastboot  ######
-sudo apt-get install android-tools-adb android-tools-fastboot
-sudo apt-get install android-tools-fsutils
+
+
+
 
 ######  Установка Chrome  ######
 wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
@@ -156,14 +143,7 @@ sudo add-apt-repository ppa:tualatrix/ppa
 sudo apt-get update
 sudo apt-get install ubuntu-tweak
 
-######  Установка Comix  ######
-sudo apt-get install comix
 
-######  Установка Tomboy  ######
-sudo apt-get install tomboy
-
-######  Установка Skype  ######
-sudo apt-get install skype
 
 ######  Установка Steam  ######
 wget https://steamcdn-a.akamaihd.net/client/installer/steam.deb; sudo dpkg -i *.deb
@@ -192,14 +172,7 @@ sudo add-apt-repository ppa:danielrichter2007/grub-customizer
 sudo apt-get update
 sudo apt-get install grub-customizer
 
-######  Установка Builder  ######
-sudo apt-get install gnome-builder
 
-######  Установка grub-customizer  ######
-sudo apt-get install gnome-calendar
-
-######  Установка grub-customizer  ######
-sudo apt-get install gnome-games
 
 ######  Установка Glade  ######
 sudo apt-get install glade
@@ -217,8 +190,7 @@ sudo apt-get install gimp
 ######  Установка Inkscape  ######
 sudo apt-get install Inkscape
 
-######  Установка Kazam  ######
-sudo apt-get install kazam
+
 
 ######  Установка Simplescreenrecorder  ######
 sudo add-apt-repository ppa:maarten-baert/simplescreenrecorder
@@ -226,11 +198,9 @@ sudo apt-get update
 sudo apt-get install simplescreenrecorder
 sudo apt-get install simplescreenrecorder-lib:i386
 
-######  Установка Vlc  ######
-sudo apt-get install vlc
 
-######  Установка EasyTag  ###### 
-sudo apt-get install easytag
+
+
 
 sudo apt-get install soundconverter
 
@@ -243,32 +213,11 @@ sudo apt-get install arista
 sudo apt-get install winff
 
 
-######  Удаление Firefox  ######
-sudo apt-get purge firefox
-
-######  Удаление Evolution  ######
-sudo apt-get purge  evolution
-
-######  Удаление Landscape ######
-sudo apt-get purge landscape-client landscape-common
-
-######  Удаление Zeitgeist Datahub  ######
-sudo apt-get purge zeitgeist zeitgeist-core zeitgeist-datahub
-
-######  Удаление Orca Screen Reader. ######
-sudo apt-get purge gnome-orca
-
-######  Удаление индикатора Amazon  ######
-sudo apt-get purge unity-webapps-common
 
 ######  Удаление чата telepathy и интеграции аккаунтов  ######
 sudo apt-get purge telepathy-*
 
-######  Удаление программы резервного копирования  ######
-sudo apt-get purge deja-dup
 
-######  Удаление Empathy  ######
-sudo apt-get purge empathy empathy-common nautilus-sendto-empathy
 
 ######  Исправление кодировки utf-8  ######
 gsettings set org.gnome.gedit.preferences.encodings auto-detected "['UTF-8', 'WINDOWS-1251', 'CURRENT', 'ISO-8859-15', 'UTF-16']"
@@ -305,13 +254,5 @@ setxkbmap -option "grp:caps_toggle,grp_led:scroll,compose:ralt"
 sudo apt-get autoremove
 sudo apt-get autoclean
 
-######  Обновление Gnome 3  ######
-sudo apt-add-repository ppa:ricotz/testing
-sudo apt-add-repository ppa:gnome3-team/gnome3-staging
-sudo apt-get update
-sudo apt-get install gnome-shell
-sudo apt-get dist-upgrade
 
-######  Обновление системы  ######
-sudo apt-get update && sudo apt-get upgrade
-sudo apt-get dist-upgrade
+
