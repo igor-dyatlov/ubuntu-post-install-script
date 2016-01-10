@@ -1,9 +1,9 @@
 #!/bin/bash
 
-# ownCloud
-function owncloud {
+# Enpass
+function enpass {
 	# Add repository
-	show_info 'Adding ownCloud repository to software sources...'
+	show_info 'Adding Enpass repository to software sources...'
 	show_warning 'Requires root privileges'
 	sudo sh -c "echo 'deb http://repo.sinew.in/ stable main /' >> /etc/apt/sources.list.d/enpass.list"
 	show_success 'Done.'
@@ -15,7 +15,7 @@ function owncloud {
 	show_info 'Updating repository information...'
 	sudo apt-get update
 	# Install
-	show_info 'Installing ownCloud client...'
+	show_info 'Installing Enpass...'
 	sudo apt-get install enpass
     # Done
     show_success 'Done.'

@@ -3,14 +3,14 @@
 # Inkscape
 function inkscape {
 	# Add repository
-	show_info 'Adding Inkscape Stable PPA to software sources...'
+	show_info 'Adding Inkscape PPA to software sources...'
 	show_warning 'Requires root privileges'
 	sudo add-apt-repository ppa:inkscape.dev/stable
 	# Update repository information
 	show_info 'Updating repository information...'
 	sudo apt-get update
 	# Install
-	show_info 'Installing Inkscape Stable...'
+	show_info 'Installing Inkscape...'
 	sudo apt-get install --only-upgrade -y inkscape
     # Done
     show_success 'Done.'

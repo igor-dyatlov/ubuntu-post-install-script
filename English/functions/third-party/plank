@@ -1,16 +1,16 @@
 #!/bin/bash
 
-# GNOME
-function gnome {
+# Plank
+function plank {
     # Add repository
-    show_info 'Adding GNOME3 PPA to software sources...'
+    show_info 'Adding Plank to software sources...'
     show_warning 'Requires root privileges'
     sudo apt-add-repository ppa:ricotz/docky
 	# Update repository information
 	show_info 'Updating repository information...'
 	sudo apt-get update
 	# Install
-    echo 'Installing GNOME Desktop...'
+    echo 'Installing Plank...'
     show_warning 'Requires root privileges'
     sudo apt-get install plank
     # Done

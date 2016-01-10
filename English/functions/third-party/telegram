@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Google Chrome
+# Telegram
 function telegram {
 eval `resize` 
 exitstatus=$?
@@ -10,13 +10,13 @@ if [ $exitstatus = 0 ]; then
     do
        
         VERSION=$(whiptail \
-        --title "Google Chrome" --radiolist \
+        --title "Telegram" --radiolist \
         "Which version of Chrome would you like to install?" \
         --ok-button "Install" \
         --cancel-button "Go Back" \
         $LINES $COLUMNS $(( $LINES - 12 )) \
         "stable"    "Stable builds" ON \
-        "dev"       "Beta builds" OFF \
+        "dev"       "Dev builds" OFF \
         3>&1 1>&2 2>&3) 
          
         # Change to lower case and remove spaces.
@@ -44,7 +44,7 @@ if [ $exitstatus = 0 ]; then
                 
                 
                 # Install package(s)
-                echo 'Installing Google Chrome...'
+                echo 'Installing Telegram...'
                 show_warning 'Requires root privileges'
 sudo mv Telegram /opt/telegram
 sudo ln -sf /opt/telegram /usr/bin/telegram
@@ -57,7 +57,7 @@ sudo ln -sf /opt/telegram /usr/bin/telegram
                 thirdparty
             ;;
             dev) 
-                show_info 'Downloading Google Chrome (beta)...'
+                show_info 'Downloading Telegram (beta)...'
                 # Download Debian file that matches system architecture
                 case `uname -i` in
                     i386|i486|i586|i686)

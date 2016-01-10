@@ -1,16 +1,16 @@
 #!/bin/bash
 
-# GNOME
-function gnome {
+# Sigil
+function sigil {
     # Add repository
-    show_info 'Adding GNOME3 PPA to software sources...'
+    show_info 'Adding Sigil to software sources...'
     show_warning 'Requires root privileges'
     sudo add-apt-repository ppa:rgibert/ebook 
 	# Update repository information
 	show_info 'Updating repository information...'
 	sudo apt-get update
 	# Install
-    echo 'Installing GNOME Desktop...'
+    echo 'Installing Sigil...'
     show_warning 'Requires root privileges'
     sudo apt-get install sigil
     # Done

@@ -1,18 +1,18 @@
 #!/bin/bash
 
-# Docky
-function docky {
+# Gimp
+function gimp {
     # Add repository
-    show_info 'Adding Docky PPA to software sources...'
+    show_info 'Adding Gimp to software sources...'
     show_warning 'Requires root privileges'
-    sudo add-apt-repository ppa:docky-core/stable
+    sudo add-apt-repository ppa:otto-kesselgulasch/gimp
 	# Update repository information
 	show_info 'Updating repository information...'
 	sudo apt-get update
 	# Install
-    echo 'Installing Docky...'
+    echo 'Installing Gimp...'
     show_warning 'Requires root privileges'
-    sudo apt-get install docky
+    sudo apt-get install gimp
     # Done
     show_success 'Done.'
     whiptail --title "Finished" --msgbox "Installation complete." 8 78

@@ -6,6 +6,17 @@ libav-tools
 mediainfo
 openjdk-7-jdk
 openssh-server
+rar
+unrar
+unace
+zip
+unzip
+sharutils
+uudeview 
+mpack 
+arj 
+cabextract 
+file-roller
 p7zip-full
 ppa-purge
 rsync
@@ -20,6 +31,8 @@ clipgrab
 openshot
 pitivi
 lightworks
+soundconverter
+arista
 virtualbox
 zsync
 screenfetch

@@ -60,62 +60,20 @@ sudo sh -c 'echo "deb http://repo.steampowered.com/steam/ precise steam" >> /etc
 sudo apt-get update
 sudo apt-get install steam
 
-######  Установка TeamViewer  ######
-wget http://download.teamviewer.com/download/teamviewer_i386.deb; sudo dpkg -i *.deb
-sudo apt-get -f install
-sudo apt-get install libjpeg62
 
-######  Установка кодеков  ######
-sudo apt-get install ubuntu-restricted-extras
-sudo apt install libavcodec-extra
-
-######  Установка архиваторов  ######
-sudo apt-get install rar
-sudo apt-get install rar unrar p7zip-full
-sudo apt-get install p7zip-rar p7zip-full unace unrar zip unzip sharutils rar uudeview mpack arj cabextract file-roller
-
-######  Установка grub-customizer  ######
-sudo add-apt-repository ppa:danielrichter2007/grub-customizer
-sudo apt-get update
-sudo apt-get install grub-customizer
-
-
-
-######  Установка Glade  ######
-sudo apt-get install glade
 
 
 sudo add-apt-repository ppa:otto-kesselgulasch/misc 
 sudo apt-get update 
 sudo apt-get install filezilla
  
-######  Установка Gimp  ######
-sudo add-apt-repository ppa:otto-kesselgulasch/gimp
-sudo apt-get update
-sudo apt-get install gimp
 
-
-
-
-
-######  Установка Simplescreenrecorder  ######
-sudo add-apt-repository ppa:maarten-baert/simplescreenrecorder
-sudo apt-get update
-sudo apt-get install simplescreenrecorder
-sudo apt-get install simplescreenrecorder-lib:i386
-
-
-
-
-sudo apt-get install soundconverter
 
 sudo add-apt-repository ppa:format-junkie-team/release 
 sudo apt-get update
 sudo apt-get install formatjunkie
 
-sudo apt-get install arista
 
-sudo apt-get install winff
 
 
 1
