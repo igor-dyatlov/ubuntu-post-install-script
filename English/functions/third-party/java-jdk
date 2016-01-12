@@ -5,13 +5,32 @@ function oracle-java {
 	# Add repository
 	show_info 'Adding WebUpd8 Oracle Java PPA to software sources...'
 	show_warning 'Requires root privileges'
-	sudo add-apt-repository ppa:webupd8team/java
+	
+	
+	wget http://download.oracle.com/otn-pub/java/jdk/8u65-b17/jdk-8u65-linux-x64.tar.gz; sudo tar xzvf /tmp/jdk-8u65-linux-x64.tar.gz; 
+sudo mv jdk1.8.0_65/ /usr/lib/jvm/
+sudo update-alternatives --install /usr/bin/java java /usr/lib/jvm/jdk1.8.0_65/bin/java 1
+sudo update-alternatives --install /usr/bin/javac javac /usr/lib/jvm/jdk1.8.0_65/bin/javac 1
+sudo update-alternatives --install /usr/bin/javaws javaws /usr/lib/jvm/jdk1.8.0_65/bin/javaws 1
+sudo update-alternatives --config java
+sudo update-alternatives --config javac
+sudo update-alternatives --config javaws
+---
+java -version
+sudo apt-get install lib32ncurses5 
+ia32-lib
+--
+sudo apt-get install ia32-libs
+sudo apt-get install lib32ncurses5-dev 
+sudo apt-get install lib32stdc++6
+	
+	
 	# Update repository information
 	show_info 'Updating repository information...'
-	sudo apt-get update
+	
 	# Install
 	show_info 'Installing Oracle Java 8...'
-	sudo apt-get install -y oracle-java8-installer
+	
     # Done
     show_success 'Done.'
     whiptail --title "Finished" --msgbox "Installation complete." 8 78

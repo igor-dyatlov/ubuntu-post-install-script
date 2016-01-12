@@ -5,6 +5,7 @@ autotools-dev
 bzr
 cmake
 geany
+gconf-editor
 git
 glade
 gnome-builder
@@ -17,6 +18,7 @@ npm
 php5-cli
 ruby
 scite
+squid
 valac
 vim
 winff

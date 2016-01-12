@@ -1,11 +1,5 @@
 #!/bin/bash
 
-wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
-sudo apt-get update
-sudo apt-get install google-chrome-stable
-
-
 # Google Chrome
 function google-chrome {
 eval `resize` 
@@ -33,7 +27,7 @@ if [ $exitstatus = 0 ]; then
                 # Download Debian file that matches system architecture
                 case `uname -i` in
                     i386|i486|i586|i686)
-                        curl -O https://dl.google.com/linux/direct/google-chrome-stable_current_i386.deb
+                        curl -O https://launchpad.net/ubuntu-tweak/0.8.x/0.8.7/+download/ubuntu-tweak_0.8.7-1~trusty2_all.deb
                         ;;
                     x86_64)
                         curl -O https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb

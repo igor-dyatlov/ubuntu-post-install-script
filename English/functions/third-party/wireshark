@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# wine
+function wine {
+    # Add repository
+    show_info 'Adding wine to software sources...'
+    show_warning 'Requires root privileges'
+    sudo add-apt-repository ppa:dreibh/ppa
+	# Update repository information
+	show_info 'Updating repository information...'
+	sudo apt-get update
+	# Install
+    echo 'Installing wine...'
+    show_warning 'Requires root privileges'
+  sudo apt-get install wireshark
+    
+    sudo dpkg --add-architecture i386
+    
+    # Done
+    show_success 'Done.'
+    whiptail --title "Finished" --msgbox "Installation complete." 8 78
+	thirdparty
+}

@@ -65,6 +65,22 @@ function clean-cache {
     cleanup
 }
 
+function crash {
+	sudo rm /var/crash/*	
+}
+
+function trash {
+    sudo rm -rf .local/share/Trash/*	
+}
+
+function thumbnails {
+    rm -f ~/.cache/thumbnails/*
+}
+
+function temp {
+	sudo rm /tmp/*	
+}
+
 # Cleanup System
 function cleanup {
     eval `resize` 
