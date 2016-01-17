@@ -5,8 +5,12 @@ This project provides a set of shell scripts to be run after a fresh install of 
 Thanks to 
 [Sam Hewitt] (https://github.com/snwh)  
 
-## Usage:
+## Usage
 
-Run from source folder:
+Run in the console:
+
+    git clone https://github.com/igor-dyatlov/ubuntu-post-install-script.git
+
+Run from source($lang) folder:
 
     ./start.sh
