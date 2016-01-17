@@ -5,10 +5,13 @@ cabextract
 clipgrab
 compizconfig-settings-manager
 dconf-tools
+e2fslibs
+e2fsprogs
 e4defrag
 file-roller
 gdebi
 gnome-disk-utility
+gufw
 icedtea-plugin
 icontool
 kazam

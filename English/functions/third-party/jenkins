@@ -1,0 +1,27 @@
+#!/bin/bash
+
+
+wget -q -O - http://pkg.jenkins-ci.org/debian/jenkins-ci.org.key | sudo apt-key add -
+Then add the following entry in your /etc/apt/sources.list:
+deb http://pkg.jenkins-ci.org/debian binary/
+sudo apt-get update
+sudo apt-get install jenkins
+
+# Gimp
+function gimp {
+    # Add repository
+    show_info 'Adding Gimp to software sources...'
+    show_warning 'Requires root privileges'
+    sudo add-apt-repository ppa:otto-kesselgulasch/gimp
+	# Update repository information
+	show_info 'Updating repository information...'
+	sudo apt-get update
+	# Install
+    echo 'Installing Gimp...'
+    show_warning 'Requires root privileges'
+    sudo apt-get install gimp
+    # Done
+    show_success 'Done.'
+    whiptail --title "Finished" --msgbox "Installation complete." 8 78
+	thirdparty
+}
