@@ -1,0 +1,29 @@
+#!/bin/bash
+
+# WPS Office
+function wps {
+	show_info 'Downloading WPS Office...'
+	# Download Debian file that matches system architecture
+	case `uname -i` in
+	    i386|i486|i586|i686)
+	        curl -O http://kdl.cc.ksosoft.com/wps-community/download/a20/wps-office_10.1.0.5460~a20p1_i386.deb
+	        ;;
+	    x86_64)
+	        curl -O http://kdl.cc.ksosoft.com/wps-community/download/a20/wps-office_10.1.0.5460~a20p1_amd64.deb
+	        ;;
+	    *)
+	        show_error "No packages available to download that matches your system." && thirdparty
+	        ;; 
+	esac
+	# Install package(s)
+	show_info 'Installing WPS Office...'
+	show_warning 'Requires root privileges'
+	sudo dpkg -i wps-office*.deb
+	sudo apt-get install -fy
+	# Cleanup and finish
+	rm wps-office*.deb
+    # Done
+    show_success 'Done.'
+    whiptail --title "Finished" --msgbox "Installation complete." 8 78
+	thirdparty
+}
