@@ -11,6 +11,6 @@ Run in the console:
 
     git clone https://github.com/igor-dyatlov/ubuntu-post-install-script.git
 
-Run from source($lang) folder:
+Run from source folder($lang):
 
     ./start.sh
