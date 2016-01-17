@@ -15,4 +15,4 @@ Run from source folder($lang):
 
     ./start.sh
 
-Note: The included [preferences](functions/configure) and [lists of packages](data) are those of the original author, you will have to change them to suit yourself.
+Note: The included [preferences](English/functions/configure) and [lists of packages](English/data) are those of the original author, you will have to change them to suit yourself.
