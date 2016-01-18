@@ -41,3 +41,11 @@ unzip
 uudeview
 zip
 zsync
+
+nano
+openssh-server
+openvpn
+easy-rsa
+symlinks
+wget
+dconf-editor

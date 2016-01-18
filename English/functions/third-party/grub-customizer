@@ -1,18 +1,18 @@
 #!/bin/bash
 
-# GNOME
-function gnome {
+# GRUB customizer
+function grub-customizer {
     # Add repository
-    show_info 'Adding GNOME3 PPA to software sources...'
+    show_info 'Adding GRUB customizer to software sources...'
     show_warning 'Requires root privileges'
-    sudo add-apt-repository ppa:danielrichter2007/grub-customizer
+    sudo add-apt-repository -y ppa:danielrichter2007/grub-customizer
 	# Update repository information
 	show_info 'Updating repository information...'
 	sudo apt-get update
 	# Install
-    echo 'Installing GNOME Desktop...'
+    echo 'Installing GRUB customizer Desktop...'
     show_warning 'Requires root privileges'
-    sudo apt-get install grub-customizer
+    sudo apt-get install -y grub-customizer
     # Done
     show_success 'Done.'
     whiptail --title "Finished" --msgbox "Installation complete." 8 78

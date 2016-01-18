@@ -1,18 +1,18 @@
 #!/bin/bash
 
-# GNOME
-function gnome {
+# Steadyflow
+function steadyflow {
     # Add repository
-    show_info 'Adding GNOME3 PPA to software sources...'
+    show_info 'Adding Steadyflow to software sources...'
     show_warning 'Requires root privileges'
-    sudo add-apt-repository ppa:sikon/steadyflow
+    sudo add-apt-repository -y ppa:sikon/steadyflow
 	# Update repository information
 	show_info 'Updating repository information...'
 	sudo apt-get update
 	# Install
-    echo 'Installing GNOME Desktop...'
+    echo 'Installing Steadyflow...'
     show_warning 'Requires root privileges'
-    sudo apt-get install steadyflow
+    sudo apt-get install -y steadyflow
     # Done
     show_success 'Done.'
     whiptail --title "Finished" --msgbox "Installation complete." 8 78

@@ -16,7 +16,7 @@ function enpass {
 	sudo apt-get update
 	# Install
 	show_info 'Installing Enpass...'
-	sudo apt-get install enpass
+	sudo apt-get install -y enpass
     # Done
     show_success 'Done.'
     whiptail --title "Finished" --msgbox "Installation complete." 8 78

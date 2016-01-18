@@ -9,14 +9,8 @@ function oracle-java {
 	
 	wget http://download.oracle.com/otn-pub/java/jdk/8u65-b17/jdk-8u65-linux-x64.tar.gz; sudo tar xzvf /tmp/jdk-8u65-linux-x64.tar.gz; 
 sudo mv jdk1.8.0_65/ /usr/lib/jvm/
-sudo update-alternatives --install /usr/bin/java java /usr/lib/jvm/jdk1.8.0_65/bin/java 1
-sudo update-alternatives --install /usr/bin/javac javac /usr/lib/jvm/jdk1.8.0_65/bin/javac 1
-sudo update-alternatives --install /usr/bin/javaws javaws /usr/lib/jvm/jdk1.8.0_65/bin/javaws 1
-sudo update-alternatives --config java
-sudo update-alternatives --config javac
-sudo update-alternatives --config javaws
----
-java -version
+
+
 sudo apt-get install lib32ncurses5 
 ia32-lib
 --
@@ -30,6 +24,16 @@ sudo apt-get install lib32stdc++6
 	
 	# Install
 	show_info 'Installing Oracle Java 8...'
+	
+	
+	# Settin 
+	sudo update-alternatives --install /usr/bin/java java /usr/lib/jvm/jdk1.8.0_65/bin/java 1
+    sudo update-alternatives --install /usr/bin/javac javac /usr/lib/jvm/jdk1.8.0_65/bin/javac 1
+    sudo update-alternatives --install /usr/bin/javaws javaws /usr/lib/jvm/jdk1.8.0_65/bin/javaws 1
+    sudo update-alternatives --config java
+    sudo update-alternatives --config javac
+    sudo update-alternatives --config javaws
+	
 	
     # Done
     show_success 'Done.'

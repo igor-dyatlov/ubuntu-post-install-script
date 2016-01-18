@@ -16,7 +16,7 @@ function virtualbox {
 	sudo apt-get update
 	# Install
 	show_info 'Installing Virtual Box...'
-	sudo apt-get install virtualbox-5.0
+	sudo apt-get install -y virtualbox-5.0
     # Done
     show_success 'Done.'
     whiptail --title "Finished" --msgbox "Installation complete." 8 78

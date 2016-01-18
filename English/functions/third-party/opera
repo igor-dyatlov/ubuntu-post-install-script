@@ -1,8 +1,8 @@
 #!/bin/bash
 
-# Brackets
-function brackets {
-	show_info 'Downloading Brackets...'
+# Opera
+function opera {
+	show_info 'Downloading Opera...'
 	# Download Debian file that matches system architecture
 	case `uname -i` in
 	    i386|i486|i586|i686)
@@ -16,12 +16,12 @@ function brackets {
 	        ;; 
 	esac
 	# Install package(s)
-	show_info 'Installing Brackets...'
+	show_info 'Installing Opera...'
 	show_warning 'Requires root privileges'
-	sudo dpkg -i Brackets*.deb
+	sudo dpkg -i opera*.deb
 	sudo apt-get install -fy
 	# Cleanup and finish
-	rm steam*.deb
+	rm opera*.deb
     # Done
     show_success 'Done.'
     whiptail --title "Finished" --msgbox "Installation complete." 8 78

@@ -16,7 +16,7 @@ function google-musicmanager {
 	sudo apt-get update
 	# Install
 	show_info 'Installing Google Musicmanager...'
-	sudo apt-get install google-musicmanager-beta
+	sudo apt-get install -y google-musicmanager-beta
     # Done
     show_success 'Done.'
     whiptail --title "Finished" --msgbox "Installation complete." 8 78

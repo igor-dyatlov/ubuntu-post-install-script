@@ -1,20 +1,19 @@
 #!/bin/bash
 
-# GNOME
-function mixxx {
+# Keepassx
+function keepassx {
     # Add repository
-    show_info 'Adding GNOME3 PPA to software sources...'
+    show_info 'Adding Keepassx to software sources...'
     show_warning 'Requires root privileges'
-sudo add-apt-repository ppa:yubico/stable
-sudo add-apt-repository ppa:hda-me/keepassx2-yubico
+    sudo add-apt-repository ppa:yubico/stable
+    sudo add-apt-repository ppa:hda-me/keepassx2-yubico
 	# Update repository information
 	show_info 'Updating repository information...'
 	sudo apt-get update
 	# Install
-    echo 'Installing GNOME Desktop...'
+    echo 'Installing Keepassx...'
     show_warning 'Requires root privileges'
-sudo apt-get install yubikey-personalization-gui keepassx
-    
+    sudo apt-get install yubikey-personalization-gui keepassx 
     # Done
     show_success 'Done.'
     whiptail --title "Finished" --msgbox "Installation complete." 8 78

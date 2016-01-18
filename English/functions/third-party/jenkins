@@ -7,19 +7,19 @@ deb http://pkg.jenkins-ci.org/debian binary/
 sudo apt-get update
 sudo apt-get install jenkins
 
-# Gimp
-function gimp {
+# Jenkins
+function jenkins {
     # Add repository
-    show_info 'Adding Gimp to software sources...'
+    show_info 'Adding Jenkins to software sources...'
     show_warning 'Requires root privileges'
     sudo add-apt-repository ppa:otto-kesselgulasch/gimp
 	# Update repository information
 	show_info 'Updating repository information...'
 	sudo apt-get update
 	# Install
-    echo 'Installing Gimp...'
+    echo 'Installing Jenkins...'
     show_warning 'Requires root privileges'
-    sudo apt-get install gimp
+    sudo apt-get install -y jenkins
     # Done
     show_success 'Done.'
     whiptail --title "Finished" --msgbox "Installation complete." 8 78

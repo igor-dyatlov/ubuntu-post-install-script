@@ -1,17 +1,13 @@
 #!/bin/bash
 
-# Inkscape
-function inkscape {
-	# Add repository
-	show_info 'Adding Inkscape PPA to software sources...'
-	show_warning 'Requires root privileges'
-	
+# LAMP
+function lamp {
 	# Update repository information
 	show_info 'Updating repository information...'
 	sudo apt-get update
 	# Install
-	show_info 'Installing Inkscape...'
-	sudo apt-get install apache2 php5 mysql-server php5-mysql phpmyadmin
+	show_info 'Installing LAMP...'
+	sudo apt-get install -y apache2 php5 mysql-server php5-mysql phpmyadmin
     # Done
     show_success 'Done.'
     whiptail --title "Finished" --msgbox "Installation complete." 8 78

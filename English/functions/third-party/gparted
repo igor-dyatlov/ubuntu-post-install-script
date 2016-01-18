@@ -16,7 +16,7 @@ function gparted {
 	sudo apt-get update
 	# Install
 	show_info 'Installing Gparted...'
-sudo apt-get install gparted
+    sudo apt-get install -y gparted
     # Done
     show_success 'Done.'
     whiptail --title "Finished" --msgbox "Installation complete." 8 78

@@ -2,60 +2,60 @@
 
 dir="$(dirname "$0")"
 
+source $dir/functions/third-party/bleachbit
+source $dir/functions/third-party/brackets
+source $dir/functions/third-party/darktable
+source $dir/functions/third-party/docky
 source $dir/functions/third-party/dropbox
+source $dir/functions/third-party/enpass
+source $dir/functions/third-party/filezilla
+source $dir/functions/third-party/firefox
+source $dir/functions/third-party/fontforge
+source $dir/functions/third-party/formatjunkie
+source $dir/functions/third-party/gimp
 source $dir/functions/third-party/gnome
 source $dir/functions/third-party/google-chrome
+source $dir/functions/third-party/gparted
+source $dir/functions/third-party/grub-customizer
+source $dir/functions/third-party/hudson
+source $dir/functions/third-party/inkscape
+source $dir/functions/third-party/java-jdk
+source $dir/functions/third-party/jenkins
+source $dir/functions/third-party/keepassx
+source $dir/functions/third-party/krita
+source $dir/functions/third-party/lamp
 source $dir/functions/third-party/minecraft
+source $dir/functions/third-party/mixxx
+source $dir/functions/third-party/musicmanager
+source $dir/functions/third-party/mypaint
+source $dir/functions/third-party/notepadqq
+source $dir/functions/third-party/obs-studio
+source $dir/functions/third-party/opera
 source $dir/functions/third-party/oracle-java
 source $dir/functions/third-party/owncloud
+source $dir/functions/third-party/peazip
+source $dir/functions/third-party/plank
+source $dir/functions/third-party/qbittorrent
 source $dir/functions/third-party/rvm
+source $dir/functions/third-party/sigil
+source $dir/functions/third-party/simplescreenrecorder
 source $dir/functions/third-party/slack
 source $dir/functions/third-party/spotify
+source $dir/functions/third-party/steadyflow
 source $dir/functions/third-party/steam
 source $dir/functions/third-party/sublime-text
-source $dir/functions/third-party/
-source $dir/functions/third-party/
-source $dir/functions/third-party/
-source $dir/functions/third-party/
-source $dir/functions/third-party/
-source $dir/functions/third-party/
-source $dir/functions/third-party/
-source $dir/functions/third-party/
-source $dir/functions/third-party/
-source $dir/functions/third-party/
-source $dir/functions/third-party/
-source $dir/functions/third-party/
-source $dir/functions/third-party/
-source $dir/functions/third-party/
-source $dir/functions/third-party/
-source $dir/functions/third-party/
-source $dir/functions/third-party/
-source $dir/functions/third-party/
-source $dir/functions/third-party/
-source $dir/functions/third-party/
-source $dir/functions/third-party/
-source $dir/functions/third-party/
-source $dir/functions/third-party/
-source $dir/functions/third-party/
-source $dir/functions/third-party/
-
-
-bleachbit      grub-customizer  obs-studio            sublime-text
-brackets       hudson           oracle-java           teamviewer
-darktable      inkscape         owncloud              telegram
-docky          java-jdk         peazip                textadept
-dropbox        jenkins          plank                 tor
-enpass         keepassx         qbittorrent           ubuntu-tweak
-filezilla      krita            rvm                   uget
-fontforge      lamp             sigil                 umake
-formatjunkie   minecraft        simplescreenrecorder  virtualbox
-gimp           mixxx            slack                 vocal
-gnome          musicmanager     spotify               wine
-google-chrome  mypaint          steadyflow            wireshark
-gparted        notepadqq        steam
-
-
-
+source $dir/functions/third-party/teamviewer
+source $dir/functions/third-party/telegram
+source $dir/functions/third-party/textadept
+source $dir/functions/third-party/tor
+source $dir/functions/third-party/ubuntu-tweak
+source $dir/functions/third-party/uget
+source $dir/functions/third-party/umake
+source $dir/functions/third-party/virtualbox
+source $dir/functions/third-party/vocal
+source $dir/functions/third-party/wine
+source $dir/functions/third-party/wireshark
+source $dir/functions/third-party/wps
 
 # Install Third-Party Applications
 function thirdparty {

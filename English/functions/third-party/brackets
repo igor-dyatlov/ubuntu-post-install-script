@@ -21,7 +21,7 @@ function brackets {
 	sudo dpkg -i Brackets*.deb
 	sudo apt-get install -fy
 	# Cleanup and finish
-	rm steam*.deb
+	rm Brackets*.deb
     # Done
     show_success 'Done.'
     whiptail --title "Finished" --msgbox "Installation complete." 8 78
