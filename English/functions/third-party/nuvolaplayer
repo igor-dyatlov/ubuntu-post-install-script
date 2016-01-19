@@ -1,0 +1,49 @@
+#!/bin/bash
+
+# Nuvola player
+function nuvolaplayer {
+    # Add repository
+    case `lsb_release -c` in
+	    Wily)   
+	         show_info 'Adding Nuvola player repository to software sources...'
+	         show_warning 'Requires root privileges'
+	         sudo sh -c "echo 'deb https://tiliado.eu/nuvolaplayer/repository/deb/ wily stable /' >> /etc/apt/sources.list.d/tiliado-nuvolaplayer.list"
+	         show_success 'Done.'
+	         show_question 'Adding repository key...'
+             sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 40554B8FA5FE6F6A
+	         show_success 'Done.'          
+	        ;;
+	    Vivid)            
+	         show_info 'Adding Nuvola player repository to software sources...'
+	         show_warning 'Requires root privileges'
+	         sudo sh -c "echo 'deb https://tiliado.eu/nuvolaplayer/repository/deb/ vivid stable /' >> /etc/apt/sources.list.d/tiliado-nuvolaplayer.list"
+	         show_success 'Done.'
+	         show_question 'Adding repository key...'
+             sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 40554B8FA5FE6F6A
+	         show_success 'Done.'
+	        ;;
+	    Trusty)            
+        	   show_info 'Adding Nuvola player repository to software sources...'
+	           show_warning 'Requires root privileges'
+	           sudo sh -c "echo 'deb https://tiliado.eu/nuvolaplayer/repository/deb/ trusty stable /' >> /etc/apt/sources.list.d/tiliado-nuvolaplayer.list"
+	           show_success 'Done.'
+	           show_question 'Adding repository key...'
+	           sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 40554B8FA5FE6F6A
+        	   show_success 'Done.'
+	        ;;    
+	    *)
+	        show_error "No packages available to download that matches your system." && thirdparty
+	        ;; 
+	esac
+	# Update repository information
+	show_info 'Updating repository information...'
+	sudo apt-get update
+	# Install
+    echo 'Installing Nuvola player...'
+    show_warning 'Requires root privileges'
+    sudo apt-get install -y nuvolaplayer3
+    # Done
+    show_success 'Done.'
+    whiptail --title "Finished" --msgbox "Installation complete." 8 78
+	thirdparty
+}
