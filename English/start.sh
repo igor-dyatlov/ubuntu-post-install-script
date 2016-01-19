@@ -35,8 +35,6 @@ dir="$(dirname "$0")"
 . $dir/functions/configure
 . $dir/functions/development
 . $dir/functions/favourites
-. $dir/functions/kernel
-. $dir/functions/themeparty
 . $dir/functions/thirdparty
 . $dir/functions/update
 . $dir/functions/utilities
@@ -79,8 +77,6 @@ function main {
         development 'Install favourite development tools' \
         codecs      'Install Ubuntu Restricted Extras' \
         thirdparty  'Install third-party applications' \
-        themeparty  'Install theme-party applications' \
-        kernel      'Update system kernel' \
         configure   'Configure system' \
         cleanup     'Cleanup the system' \
         3>&1 1>&2 2>&3)

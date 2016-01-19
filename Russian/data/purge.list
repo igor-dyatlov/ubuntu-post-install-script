@@ -2,7 +2,15 @@ deja-dup
 empathy
 empathy-common
 evolution
+evolution-common
+evolution-data-server
+evolution-data-server-common
+evolution-data-server-online-accounts
+evolution-plugins
 firefox
+firefox-locale-en
+firefox-locale-ru
+flashplugin-installer
 gnome-orca
 landscape-client
 landscape-client-ui-install

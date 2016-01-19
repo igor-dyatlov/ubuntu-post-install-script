@@ -13,7 +13,7 @@ function unused {
         show_info 'Removing pre-installed applications...'
         show_warning 'Requires root privileges'
         # Feel free to change the contents of 'utilities.list' in the data folder to whatever suits your preference.
-        sudo apt-get purge -y $(cat $PURGED)
+        sudo apt-get remove -y $(cat $PURGED)
         # Done
         show_success 'Done.'
         whiptail --title "Finished" --msgbox "Installation complete." 8 78
@@ -65,20 +65,14 @@ function clean-cache {
     cleanup
 }
 
+# Remove old log crash
 function crash {
-	sudo rm /var/crash/*	
-}
-
-function trash {
-    sudo rm -rf .local/share/Trash/*	
-}
-
-function thumbnails {
-    rm -f ~/.cache/thumbnails/*
-}
-
-function temp {
-	sudo rm /tmp/*	
+	show_info 'Cleaning old log crash...'
+    show_warning 'Requires root privileges'
+	sudo rm /var/crash/*
+	show_success 'Done.'
+    whiptail --title "Finished" --msgbox "Package cache has been cleaned." 8 78
+    cleanup	
 }
 
 # Cleanup System
@@ -94,6 +88,7 @@ function cleanup {
         leftovers   'Remove leftover configuration files' \
         orphaned    'Remove orphaned packages' \
         unused      'Remove unused pre-installed packages' \
+        crash       'Remove old log crash' \
         kernels     'Remove old kernel(s)' \
         3>&1 1>&2 2>&3)
      

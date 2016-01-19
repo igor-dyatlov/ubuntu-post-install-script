@@ -2,8 +2,10 @@ android-tools-adb
 android-tools-fastboot
 android-tools-fsutils
 autotools-dev
+bluefish
 bzr
 cmake
+gconf-editor
 geany
 git
 glade
@@ -17,6 +19,7 @@ npm
 php5-cli
 ruby
 scite
+squid
 valac
 vim
 winff

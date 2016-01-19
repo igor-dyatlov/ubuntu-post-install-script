@@ -2,10 +2,11 @@ android-tools-adb
 android-tools-fastboot
 android-tools-fsutils
 autotools-dev
+bluefish
 bzr
 cmake
-geany
 gconf-editor
+geany
 git
 glade
 gnome-builder
@@ -23,4 +24,3 @@ valac
 vim
 winff
 x11-apps
-bluefish

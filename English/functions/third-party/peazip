@@ -1,8 +1,8 @@
 #!/bin/bash
 
-# Brackets
-function brackets {
-	show_info 'Downloading Brackets...'
+# Peazip
+function peazip {
+	show_info 'Downloading Peazip...'
 	# Download Debian file that matches system architecture
 	case `uname -i` in
 	    i386|i486|i586|i686)
@@ -16,7 +16,7 @@ function brackets {
 	        ;; 
 	esac
 	# Install package(s)
-	show_info 'Installing Brackets...'
+	show_info 'Installing Peazip...'
 	show_warning 'Requires root privileges'
 	sudo dpkg -i peazip*.deb
 	sudo apt-get install -fy
