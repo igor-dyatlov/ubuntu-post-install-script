@@ -2,7 +2,7 @@
 
 # Dependency Check
 function check {
-    show_info "Checking dependencies..."
+    show_info "Проверка зависимостей..."
     PKGCHECK=$(dpkg-query -W --showformat='${Status}\n' whiptail|grep "install ok installed")
     if [ "" == "$PKGCHECK" ]; then
         show_info "This script makes use of 'whiptail' and it is not present on your system."
@@ -11,22 +11,22 @@ function check {
         case $REPLY in
         # Positive action
         [Yy]* ) 
-            show_warning 'Requires root privileges'
+            show_warning 'Требует привилегий суперпользователя'
             sudo apt-get --force-yes --yes install whiptail
-            show_success 'Done. Proceeding.'
+            show_success 'Готово. Proceeding.'
             main
             ;;
         # Negative action
         [Nn]* )
-            show_info "Exiting.."
+            show_info "Выход.."
             clear && exit 99
             ;;
         # Error
         * )
-            clear && show_error '\aSorry, try again.' && dependencies
+            clear && show_error '\aИзвините, попробуйте еще раз.' && dependencies
             ;;
         esac
     else
-        show_info "All clear."
+        show_info "Все чисто."
     fi
 }

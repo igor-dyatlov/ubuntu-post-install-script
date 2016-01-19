@@ -4,12 +4,12 @@
 function codecs {
 if (whiptail --title "Multimedia Codecs" --yesno "Install Ubuntu Restricted Extras for multimedia playback?" 10 60) then
     # Install Ubuntu Restricted Extras
-    show_info 'Installing...'
-    show_warning 'Requires root privileges'
-    sudo apt-get install -y ubuntu-restricted-extras
+    show_info 'Установка...'
+    show_warning 'Требует привилегий суперпользователя'
+    sudo apt-get install -y ubuntu-restricted-extras libavcodec-extra
     # Done
-    show_success 'Done.'
-    whiptail --title "Finished" --msgbox "Installation complete." 8 78
+    show_success 'Готово.'
+    whiptail --title "Завершено" --msgbox "Установка завершена." 8 78
     main
 else
     clear && main

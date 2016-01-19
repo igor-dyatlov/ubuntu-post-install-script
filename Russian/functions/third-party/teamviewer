@@ -1,0 +1,44 @@
+#!/bin/bash
+
+# TeamViewer
+function teamviewer {
+	show_info 'Downloading TeamViewer...'
+	# Download Debian file that matches system architecture
+	case `uname -i` in
+	    i386|i486|i586|i686)
+	        curl -O http://download.teamviewer.com/download/teamviewer_i386.deb
+	        ;;
+	    x86_64)
+	        curl -O http://download.teamviewer.com/download/teamviewer_amd64.deb
+	        ;;
+	    *)
+	        show_error "No packages available to download that matches your system." && thirdparty
+	        ;;
+	esac
+	# Install package(s)
+	show_info 'Installing TeamViewer...'
+	show_warning 'Requires root privileges'
+	sudo dpkg -i teamviewer*.deb	
+	sudo apt-get install -fy
+    # Install dependencies
+    show_info 'Downloading dependent 32-bit libraries...'
+	show_warning 'Requires root privileges'
+    # Download Debian file that matches system architecture
+	case `uname -i` in
+	    x86_64)
+	           dpkg --add-architecture i386
+	        ;;
+	    *)
+	        show_error "No packages available to download that matches your system." && thirdparty
+	        ;; 
+	esac
+	# Install dependencies
+	show_info 'Installing TeamViewer dependencies...'
+	show_warning 'Requires root privileges'
+	sudo apt-get install -y libjpeg62
+	# Cleanup and finish
+	rm teamviewer*.deb
+	show_success 'Done.'
+    whiptail --title "Finished" --msgbox "Installation complete." 8 78
+	thirdparty
+}

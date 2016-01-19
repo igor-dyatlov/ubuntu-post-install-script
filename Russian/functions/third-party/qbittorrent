@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# Qbittorrent
+function qbittorrent {
+    # Add repository
+    show_info 'Adding Qbittorrent to software sources...'
+    show_warning 'Requires root privileges'
+    sudo add-apt-repository -y ppa:qbittorrent-team/qbittorrent-stable
+	# Update repository information
+	show_info 'Updating repository information...'
+	sudo apt-get update
+	# Install
+    echo 'Installing Qbittorrent...'
+    show_warning 'Requires root privileges'
+    sudo apt-get install -y qbittorrent
+    # Done
+    show_success 'Done.'
+    whiptail --title "Finished" --msgbox "Installation complete." 8 78
+	thirdparty
+}

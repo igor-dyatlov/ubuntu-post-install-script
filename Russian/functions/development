@@ -12,12 +12,12 @@ function development {
         $LINES $COLUMNS $(( $LINES - 12 )) \
         --scrolltext) then
         show_info 'Installing...'
-        show_warning 'Requires root privileges'
+        show_warning 'Требует привилегий суперпользователя'
         # Feel free to change the contents of 'development.list' in the data folder to whatever suits your preference.
         sudo apt-get install -y $(cat $DEVTOOLS)
         # Done
-        show_success 'Done.'
-        whiptail --title "Finished" --msgbox "Installation complete." 8 78
+        show_success 'Готово.'
+        whiptail --title "Завершено" --msgbox "Установка завершена." 8 78
         main
     else
         clear && main

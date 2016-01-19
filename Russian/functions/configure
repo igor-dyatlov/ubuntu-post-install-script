@@ -22,35 +22,42 @@ function preferences {
     show_info 'Setting GNOME app preferences...'
     gsettings set org.gnome.desktop.interface clock-format 12h
     gsettings set org.gnome.desktop.interface clock-show-date true
+    gsettings set org.gnome.gedit.preferences.encodings auto-detected "['UTF-8', 'WINDOWS-1251', 'CURRENT', 'ISO-8859-15', 'UTF-16']"
     gsettings set org.gnome.nautilus.preferences sort-directories-first true
     gsettings set org.gnome.rhythmbox.rhythmdb monitor-library true
     gsettings set org.gnome.rhythmbox.sources browser-views 'artists-albums'
     # Done
-    show_success 'Done.'
-    whiptail --title "Finished" --msgbox "Settings changed successfully." 8 78
+    show_success 'Готово.'
+    whiptail --title "Завершено" --msgbox "Settings changed successfully." 8 78
     configure
 }
 
 # Show start-up applications
 function startup {
     show_info 'Changing display of startup applications...'
-    show_warning 'Requires root privileges'
+    show_warning 'Требует привилегий суперпользователя'
     sudo sed -i "s/NoDisplay=true/NoDisplay=false/g" /etc/xdg/autostart/*.desktop
     # Done
-    show_success 'Done.'
-    whiptail --title "Finished" --msgbox "Settings changed successfully." 8 78
+    show_success 'Готово.'
+    whiptail --title "Завершено" --msgbox "Settings changed successfully." 8 78
     configure
 }
 
 # Disable Apport
 function apport {
     show_info 'Disabling apport crash dialogs...'
-    show_warning 'Requires root privileges'
+    show_warning 'Требует привилегий суперпользователя'
     sudo sed -i "s/enabled=1/enabled=0/g" /etc/default/apport
     # Done
-    show_success 'Done.'
-    whiptail --title "Finished" --msgbox "Settings changed successfully." 8 78
+    show_success 'Готово.'
+    whiptail --title "Завершено" --msgbox "Settings changed successfully." 8 78
     configure
+}
+
+# HotFix Keyboard
+function keyboard {
+    XKBOPTIONS="grp:alt_shift_toggle,grp_led:scroll"
+    setxkbmap -layout 'us,ru' -option 'grp:alt_shift_toggle,grp_led:scroll'
 }
 
 # Configure System
@@ -65,6 +72,7 @@ function configure {
         preferences 'Set preferred application-specific settings' \
         startup     'Show all startup applications' \
         apport      'Disable system crash dialogs' \
+        keyboard     'HotFix keyboard' \
         3>&1 1>&2 2>&3)
      
     exitstatus=$?

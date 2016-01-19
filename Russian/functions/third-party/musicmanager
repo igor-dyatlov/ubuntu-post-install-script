@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# Google Musicmanager
+function google-musicmanager {
+	# Add repository
+	show_info 'Adding Google Musicmanager repository to software sources...'
+	show_warning 'Requires root privileges'
+	sudo sh -c "echo 'deb http://dl.google.com/linux/musicmanager/deb/ stable main /' >> /etc/apt/sources.list.d/google-musicmanager.list"
+	show_success 'Done.'
+	show_question 'Adding repository key...'
+	curl -O https://dl-ssl.google.com/linux/linux_signing_key.pub
+	sudo apt-key add - < Release.key 
+	show_success 'Done.'
+	# Update repository information
+	show_info 'Updating repository information...'
+	sudo apt-get update
+	# Install
+	show_info 'Installing Google Musicmanager...'
+	sudo apt-get install -y google-musicmanager-beta
+    # Done
+    show_success 'Done.'
+    whiptail --title "Finished" --msgbox "Installation complete." 8 78
+	thirdparty
+}

@@ -6,17 +6,17 @@ PURGED="$dir/data/purge.list"
 
 function unused {
     if (eval `resize` && whiptail \
-        --title "Remove Pre-installed Applications" \
+        --title "Удалить предустановленные приложения" \
         --yesno "Current list of pre-installed applications to remove: \n\n$(cat $PURGED) \n\nAre you sure you want proceed?" \
         $LINES $COLUMNS $(( $LINES - 12 )) \
         --scrolltext ) then
-        show_info 'Removing pre-installed applications...'
-        show_warning 'Requires root privileges'
+        show_info 'Удаление предустановленных приложений...'
+        show_warning 'Требует привилегий суперпользователя'
         # Feel free to change the contents of 'utilities.list' in the data folder to whatever suits your preference.
-        sudo apt-get purge -y $(cat $PURGED)
+        sudo apt-get remove -y $(cat $PURGED)
         # Done
-        show_success 'Done.'
-        whiptail --title "Finished" --msgbox "Installation complete." 8 78
+        show_success 'Готово.'
+        whiptail --title "Завершено" --msgbox "Установка завершена." 8 78
         main
     else
         clear && main
@@ -42,8 +42,8 @@ function orphaned {
     show_info 'Removing orphaned packages...'
     show_warning 'Requires root privileges'
     sudo apt-get autoremove -y
-    show_success 'Done.'
-    whiptail --title "Finished" --msgbox "Orphaned packages have been successfully removed." 8 78
+    show_success 'Готово.'
+    whiptail --title "Завершено" --msgbox "Orphaned packages have been successfully removed." 8 78
     cleanup
 }
 
@@ -51,8 +51,8 @@ function leftovers {
     show_info 'Removing leftover configuration files...'
     show_warning 'Requires root privileges'
     sudo dpkg --purge $(COLUMNS=200 dpkg -l | grep '^rc' | tr -s ' ' | cut -d ' ' -f 2)
-    show_success 'Done.'
-    whiptail --title "Finished" --msgbox "Leftover configuration files have been removed." 8 78
+    show_success 'Готово.'
+    whiptail --title "Завершено" --msgbox "Leftover configuration files have been removed." 8 78
     cleanup
 }
 
@@ -60,9 +60,19 @@ function clean-cache {
     show_info 'Cleaning package cache...'
     show_warning 'Requires root privileges'
     sudo apt-get clean
-    show_success 'Done.'
-    whiptail --title "Finished" --msgbox "Package cache has been cleaned." 8 78
+    show_success 'Готово.'
+    whiptail --title "Завершено" --msgbox "Package cache has been cleaned." 8 78
     cleanup
+}
+
+# Remove old log crash
+function crash {
+	show_info 'Cleaning old log crash...'
+    show_warning 'Requires root privileges'
+	sudo rm /var/crash/*
+	show_success 'Готово.'
+    whiptail --title "Завершено" --msgbox "Package cache has been cleaned." 8 78
+    cleanup	
 }
 
 # Cleanup System
@@ -78,6 +88,7 @@ function cleanup {
         leftovers   'Remove leftover configuration files' \
         orphaned    'Remove orphaned packages' \
         unused      'Remove unused pre-installed packages' \
+        crash       'Remove old log crash' \
         kernels     'Remove old kernel(s)' \
         3>&1 1>&2 2>&3)
      

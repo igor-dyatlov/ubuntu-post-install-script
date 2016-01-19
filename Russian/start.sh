@@ -69,17 +69,17 @@ function main {
     MAIN=$(whiptail \
         --notags \
         --title "Ubuntu Post-Install Script" \
-        --menu "\nЧто вы хотите выполнить?" \
-        --cancel-button "Выход" \
-        $LINES $COLUMNS $(( $LINES - 11 )) \
-        update      'Выполните обновление системы' \
-        favourites  'Установите любимые приложения' \
-        utilities   'Установите любимые системные утилиты' \
-        development 'Установите любимые инструменты развития' \
-        codecs      'Install Ubuntu Restricted Extras' \
-        thirdparty  'Install third-party applications' \
-        kernel      'Обновление ядра' \
+        --menu "\nЧем бы Вы хотели заняться?" \
+        --cancel-button "Выйти" \
+        $LINES $COLUMNS $(( $LINES - 12 )) \
+        update      'Выполнить обновление системы' \
+        favourites  'Установить любимые приложения' \
+        utilities   'Установить любимые системные утилиты' \
+        development 'Установить любимые инструменты разработки' \
+        codecs      'Установить мультимедийные кодеки' \
+        thirdparty  'Установить сторонние приложения' \
         configure   'Настройка системы' \
+        kernel      'Обновить ядро системы' \
         cleanup     'Очистка системы' \
         3>&1 1>&2 2>&3)
      

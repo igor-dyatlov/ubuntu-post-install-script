@@ -11,13 +11,13 @@ function utilities {
         "Current list of favourite system utilities: \n\n$(cat $UTILS) \n\nProceed with installation?" \
         $LINES $COLUMNS $(( $LINES - 12 )) \
         --scrolltext ) then
-        show_info 'Installing...'
-        show_warning 'Requires root privileges'
+        show_info 'Установка...'
+        show_warning 'Требует привилегий суперпользователя'
         # Feel free to change the contents of 'utilities.list' in the data folder to whatever suits your preference.
         sudo apt-get install -y --no-install-recommends $(cat $UTILS)
         # Done
         show_success 'Готово.'
-        whiptail --title "Finished" --msgbox "Installation complete." 8 78
+        whiptail --title "Завершено" --msgbox "Установка завершена." 8 78
         main
     else
         clear && main

@@ -2,17 +2,17 @@
 
 # Perform system upgrade
 function update {
-if (whiptail --title "Обновление системы" --yesno "Proceed with system update?" 10 60) then
+if (whiptail --title "Выполнить обновление системы" --yesno "Proceed with system update?" 10 60) then
     # Update repository information
-    show_info 'Обновление информации репозитория...'
+    show_info 'Updating repository information...'
     show_warning 'Требует привилегий суперпользователя'
-    sudo apt-get update
+    sudo apt-get update && sudo apt-get upgrade -y
     # Dist-Upgrade
-    show_info 'Performing system update...'
+    show_info 'Выполнение обновления системы...'
     sudo apt-get dist-upgrade -y
     # Done
     show_success 'Готово.'
-    whiptail --title "Finished" --msgbox "System update complete." 8 78
+    whiptail --title "Завершено" --msgbox "Обновление системы выполненно." 8 78
     main
 else
     clear && main

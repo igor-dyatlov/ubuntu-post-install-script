@@ -21,8 +21,8 @@ function thirdparty {
         --notags \
         --title "Third-Party Installation" \
         --menu "\nWhat third-party software would you like to install?" \
-        --ok-button "Install" \
-        --cancel-button "Go Back" \
+        --ok-button "Установить" \
+        --cancel-button "Назад" \
         $LINES $COLUMNS $(( $LINES - 12 )) \
         'dropbox'           'Dropbox' \
         'gnome'             'Latest GNOME desktop' \

@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# Shotcut
+function shotcut {
+    # Add repository
+    show_info 'Adding Shotcut to software sources...'
+    show_warning 'Requires root privileges'
+    sudo add-apt-repository -y ppa:haraldhv/shotcut
+	# Update repository information
+	show_info 'Updating repository information...'
+	sudo apt-get update
+	# Install
+    echo 'Installing Shotcut...'
+    show_warning 'Requires root privileges'
+    sudo apt-get install -y shotcut
+    # Done
+    show_success 'Done.'
+    whiptail --title "Finished" --msgbox "Installation complete." 8 78
+	thirdparty
+}

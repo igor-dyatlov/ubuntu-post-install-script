@@ -2,7 +2,7 @@
 
 # Dropbox
 function dropbox {
-	show_info 'Downloading Dropbox...'
+	show_info 'Downloading Dropbox (2015.10.28)...'
 	# Download Debian file that matches system architecture
 	case `uname -i` in
 	    i386|i486|i586|i686)

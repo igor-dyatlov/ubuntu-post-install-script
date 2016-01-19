@@ -1,0 +1,38 @@
+#!/bin/bash
+
+# BleachBit
+function bleachbit {
+    # Add repository
+    case `lsb_release -c` in
+	    Wily)   
+       show_info 'Downloading BleachBit...'
+	   curl -O http://bleachbit.sourceforge.net/download/file/t?file=bleachbit_1.10_all_ubuntu1510.deb
+	        ;;
+	    Vivid)            
+       show_info 'Downloading BleachBit...'
+	   curl -O http://bleachbit.sourceforge.net/download/file/t?file=bleachbit_1.10_all_ubuntu1504.deb
+	        ;;
+	    Trusty)            
+       show_info 'Downloading BleachBit...'
+	   curl -O http://bleachbit.sourceforge.net/download/file/t?file=bleachbit_1.10_all_ubuntu1404.deb
+	        ;;   
+	    Utopic)            
+       show_info 'Downloading BleachBit...'
+	   curl -O http://bleachbit.sourceforge.net/download/file/t?file=bleachbit_1.10_all_ubuntu1410.deb
+	        ;; 
+	    *)
+	        show_error "No packages available to download that matches your system." && thirdparty
+	        ;; 
+	esac
+	# Install package(s)
+	show_info 'Installing BleachBit...'
+	show_warning 'Requires root privileges'
+	sudo dpkg -i bleachbit*.deb
+	sudo apt-get install -fy
+	# Cleanup and finish
+	rm bleachbit*.deb
+    # Done
+    show_success 'Done.'
+    whiptail --title "Finished" --msgbox "Installation complete." 8 78
+	thirdparty
+}
