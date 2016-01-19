@@ -1,18 +1,18 @@
 #!/bin/bash
 
-# OBS studio
-function obs-studio {
+# Lubuntu-Box
+function lubuntubox {
     # Add repository
-    show_info 'Adding OBS studio to software sources...'
+    show_info 'Adding Lubuntu-Box to software sources...'
     show_warning 'Requires root privileges'
-    sudo add-apt-repository -y ppa:obsproject/obs-studio
+    sudo add-apt-repository -y ppa:noobslab/icons
 	# Update repository information
 	show_info 'Updating repository information...'
 	sudo apt-get update
 	# Install
-    echo 'Installing OBS studio...'
+    echo 'Installing Lubuntu-Box...'
     show_warning 'Requires root privileges'
-    sudo apt-get install -y obs-studio   
+    sudo apt-get install -y lubuntubox
     # Done
     show_success 'Done.'
     whiptail --title "Finished" --msgbox "Installation complete." 8 78

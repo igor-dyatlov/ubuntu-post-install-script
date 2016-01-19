@@ -2,63 +2,13 @@
 
 dir="$(dirname "$0")"
 
-source $dir/functions/third-party/dropbox
-source $dir/functions/third-party/gnome
-source $dir/functions/third-party/google-chrome
-source $dir/functions/third-party/minecraft
-source $dir/functions/third-party/oracle-java
-source $dir/functions/third-party/owncloud
-source $dir/functions/third-party/rvm
-source $dir/functions/third-party/slack
-source $dir/functions/third-party/spotify
-source $dir/functions/third-party/steam
-source $dir/functions/third-party/sublime-text
-source $dir/functions/third-party/
-source $dir/functions/third-party/
-source $dir/functions/third-party/
-source $dir/functions/third-party/
-source $dir/functions/third-party/
-source $dir/functions/third-party/
-source $dir/functions/third-party/
-source $dir/functions/third-party/
-source $dir/functions/third-party/
-source $dir/functions/third-party/
-source $dir/functions/third-party/
-source $dir/functions/third-party/
-source $dir/functions/third-party/
-source $dir/functions/third-party/
-source $dir/functions/third-party/
-source $dir/functions/third-party/
-source $dir/functions/third-party/
-source $dir/functions/third-party/
-source $dir/functions/third-party/
-source $dir/functions/third-party/
-source $dir/functions/third-party/
-source $dir/functions/third-party/
-source $dir/functions/third-party/
-source $dir/functions/third-party/
-source $dir/functions/third-party/
-
-
-bleachbit      grub-customizer  obs-studio            sublime-text
-brackets       hudson           oracle-java           teamviewer
-darktable      inkscape         owncloud              telegram
-docky          java-jdk         peazip                textadept
-dropbox        jenkins          plank                 tor
-enpass         keepassx         qbittorrent           ubuntu-tweak
-filezilla      krita            rvm                   uget
-fontforge      lamp             sigil                 umake
-formatjunkie   minecraft        simplescreenrecorder  virtualbox
-gimp           mixxx            slack                 vocal
-gnome          musicmanager     spotify               wine
-google-chrome  mypaint          steadyflow            wireshark
-gparted        notepadqq        steam
+#source $dir/functions/theme-party/
 
 
 
 
 # Install Third-Party Applications
-function thirdparty {
+function themeparty {
     eval `resize`
     THIRDPARTY=$(whiptail \
         --notags \

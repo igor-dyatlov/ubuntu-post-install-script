@@ -18,15 +18,20 @@ function brackets {
 	# Install package(s)
 	show_info 'Installing Brackets...'
 	show_warning 'Requires root privileges'
-	sudo dpkg -i Brackets*.deb
+	sudo dpkg -i peazip*.deb
 	sudo apt-get install -fy
-	
-	
-	sudo apt-get install libatk1.0-0:i386 libc6:i386 libcairo2:i386 libgdk-pixbuf2.0-0:i386 libglib2.0-0:i386 libgtk2.0-0:i386 libpango1.0-0:i386 libx11-6:i386 libcanberra-gtk-module:i386
-	
-	
+	show_info 'Downloading dependent 32-bit libraries...'
+	# Download Debian file that matches system architecture
+	case `uname -i` in
+	    x86_64)
+	        sudo apt-get install -y libatk1.0-0:i386 libc6:i386 libcairo2:i386 libgdk-pixbuf2.0-0:i386 libglib2.0-0:i386 libgtk2.0-0:i386 libpango1.0-0:i386 libx11-6:i386 libcanberra-gtk-module:i386
+	        ;;
+	    *)
+	        show_error "No packages available to download that matches your system." && thirdparty
+	        ;; 
+	esac
 	# Cleanup and finish
-	rm steam*.deb
+	rm peazip*.deb
     # Done
     show_success 'Done.'
     whiptail --title "Finished" --msgbox "Installation complete." 8 78

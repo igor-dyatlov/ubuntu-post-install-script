@@ -36,6 +36,7 @@ dir="$(dirname "$0")"
 . $dir/functions/development
 . $dir/functions/favourites
 . $dir/functions/kernel
+. $dir/functions/themeparty
 . $dir/functions/thirdparty
 . $dir/functions/update
 . $dir/functions/utilities
@@ -71,13 +72,14 @@ function main {
         --title "Ubuntu Post-Install Script" \
         --menu "\nWhat would you like to do?" \
         --cancel-button "Quit" \
-        $LINES $COLUMNS $(( $LINES - 11 )) \
+        $LINES $COLUMNS $(( $LINES - 12 )) \
         update      'Perform system update' \
         favourites  'Install favourite applications' \
         utilities   'Install favourite system utilities' \
         development 'Install favourite development tools' \
         codecs      'Install Ubuntu Restricted Extras' \
         thirdparty  'Install third-party applications' \
+        themeparty  'Install theme-party applications' \
         kernel      'Update system kernel' \
         configure   'Configure system' \
         cleanup     'Cleanup the system' \

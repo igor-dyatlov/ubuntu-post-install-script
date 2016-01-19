@@ -7,7 +7,7 @@ function lamp {
 	sudo apt-get update
 	# Install
 	show_info 'Installing LAMP...'
-	sudo apt-get install -y apache2 php5 mysql-server php5-mysql phpmyadmin
+	sudo apt-get install -y apache2 php5 mysql-server mysql-client php5-mysql phpmyadmin libapache2-mod-php5
     # Done
     show_success 'Done.'
     whiptail --title "Finished" --msgbox "Installation complete." 8 78

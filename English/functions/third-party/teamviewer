@@ -1,42 +1,43 @@
 #!/bin/bash
 
-# Sublime Text 3
-function sublime-text-3 {
-	show_info 'Downloading Sublime Text 3 (build 3083)...'
+# TeamViewer
+function teamviewer {
+	show_info 'Downloading TeamViewer...'
 	# Download Debian file that matches system architecture
 	case `uname -i` in
 	    i386|i486|i586|i686)
-	        curl -O http://c758482.r82.cf2.rackcdn.com/sublime-text_build-3083_i386.deb
+	        curl -O http://download.teamviewer.com/download/teamviewer_i386.deb
 	        ;;
 	    x86_64)
-	        curl -O http://c758482.r82.cf2.rackcdn.com/sublime-text_build-3083_amd64.deb
+	        curl -O http://download.teamviewer.com/download/teamviewer_amd64.deb
 	        ;;
 	    *)
 	        show_error "No packages available to download that matches your system." && thirdparty
 	        ;;
 	esac
 	# Install package(s)
-	show_info 'Installing Sublime Text 3 (build 3083)...'
+	show_info 'Installing TeamViewer...'
 	show_warning 'Requires root privileges'
-	sudo dpkg -i sublime-text_build-3083*.deb
-	
-	wget http://download.teamviewer.com/download/teamviewer_i386.deb; sudo dpkg -i *.deb
-sudo apt-get -f install
-sudo apt-get install libjpeg62
-	
+	sudo dpkg -i teamviewer*.deb	
 	sudo apt-get install -fy
-	
-		# Install dependencies
-	show_info 'Installing Steam dependencies...'
+    # Install dependencies
+    show_info 'Downloading dependent 32-bit libraries...'
 	show_warning 'Requires root privileges'
-	sudo apt-get install -y libgl1-mesa-glx libgl1-mesa-dev libgl1-mesa-dri:i386 libgl1-mesa-glx:i386 libc6:i386
-	
-	# Create symbolic link
-	show_info 'Creating symbolic link...'
+    # Download Debian file that matches system architecture
+	case `uname -i` in
+	    x86_64)
+	           dpkg --add-architecture i386
+	        ;;
+	    *)
+	        show_error "No packages available to download that matches your system." && thirdparty
+	        ;; 
+	esac
+	# Install dependencies
+	show_info 'Installing TeamViewer dependencies...'
 	show_warning 'Requires root privileges'
-	sudo ln -sf /opt/sublime_text/sublime_text /usr/bin/sublime
+	sudo apt-get install -y libjpeg62
 	# Cleanup and finish
-	rm sublime-text_build-3083*.deb
+	rm teamviewer*.deb
 	show_success 'Done.'
     whiptail --title "Finished" --msgbox "Installation complete." 8 78
 	thirdparty
