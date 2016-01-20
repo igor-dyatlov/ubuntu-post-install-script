@@ -1,7 +1,7 @@
 # Ubuntu Post Install Script
 This project provides a set of shell scripts to be run after a fresh install of an Ubuntu(-based) OS. It will install your favourite applications, set your preferred settings, etc.
 
-![Screenshots]
+![Screenshots] (https://raw.githubusercontent.com/igor-dyatlov/ubuntu-post-install-script/master/Screenshots/Screenshot_1.png) ![Screenshots] (https://raw.githubusercontent.com/igor-dyatlov/ubuntu-post-install-script/master/Screenshots/Screenshot_2.png) ![Screenshots] (https://raw.githubusercontent.com/igor-dyatlov/ubuntu-post-install-script/master/Screenshots/Screenshot_3.png) ![Screenshots] (https://raw.githubusercontent.com/igor-dyatlov/ubuntu-post-install-script/master/Screenshots/Screenshot_4.png) 
 
 ## Thanks
 Thanks to [Sam Hewitt] (https://github.com/snwh)  
@@ -24,7 +24,7 @@ Note: The included [preferences](English/functions/configure) and [lists of pack
  - Configure system [configure](English/functions/configure)
  - Upgrading the kernel [kernel](English/functions/kernel)
  - Install the program in two steps [lists of packages](English/data)
- - Support for Russian localization 
+ - Support for [Russian](Russian) localization
 
 ### Donate
 https://www.paypal.me/IgorDyatlov 
