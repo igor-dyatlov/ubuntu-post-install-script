@@ -4,8 +4,7 @@ This project provides a set of shell scripts to be run after a fresh install of 
 ![Screenshots]
 
 ## Thanks
-Thanks to 
-[Sam Hewitt] (https://github.com/snwh)  
+Thanks to [Sam Hewitt] (https://github.com/snwh)  
 
 ## Usage
 
@@ -18,3 +17,17 @@ Run from source folder($lang):
     ./start.sh
 
 Note: The included [preferences](English/functions/configure) and [lists of packages](English/data) are those of the original author, you will have to change them to suit yourself.
+
+### Features
+ - Update system [update](English/functions/update)
+ - Cleaning system [cleanup](English/functions/cleanup)
+ - Configure system [configure](English/functions/configure)
+ - Upgrading the kernel [kernel](English/functions/kernel)
+ - Install the program in two steps [lists of packages](English/data)
+ - Support for Russian localization 
+
+### Donate
+https://www.paypal.me/IgorDyatlov 
+
+### License
+All files in this project are under the [LICENSE.md](LICENSE.md) license unless otherwise stated in the file or by a dependency's license file.

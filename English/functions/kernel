@@ -85,6 +85,7 @@ function kernel {
         --notags \
         --title "Update system kernel" \
         --menu "\nWhat would you like to do?" \
+        --ok-button "Update" \
         --cancel-button "Go Back" \
         $LINES $COLUMNS $(( $LINES - 12 )) \
         stable        '(Update stable kernel (need reboot)' \
