@@ -7,14 +7,16 @@ This project provides a set of shell scripts to be run after a fresh install of 
 Thanks to [Sam Hewitt] (https://github.com/snwh)  
 
 ## Usage
-sudo apt-get update
-sudo apt-get install git
-apt-get install libcurl4-gnutls-dev libexpat1-dev gettext \
-  libz-dev libssl-dev
+Run in the console for install tool Git:
+
+    sudo apt-get update
+    sudo apt-get install git
 
 Run in the console:
 
     git clone https://github.com/igor-dyatlov/ubuntu-post-install-script.git
+    
+Alternatively you can [download](https://github.com/igor-dyatlov/ubuntu-post-install-script/archive/master.zip) this repository.
 
 Run from source folder($lang):
 
