@@ -7,6 +7,10 @@ This project provides a set of shell scripts to be run after a fresh install of 
 Thanks to [Sam Hewitt] (https://github.com/snwh)  
 
 ## Usage
+sudo apt-get update
+sudo apt-get install git
+apt-get install libcurl4-gnutls-dev libexpat1-dev gettext \
+  libz-dev libssl-dev
 
 Run in the console:
 
