@@ -7,7 +7,7 @@ Thanks to [Sam Hewitt] (https://github.com/snwh)
 ## Usage
 Run in the console for install tool Git:
     
-Optionally, you can add a third-party repository 'sudo add-apt-repository ppa:git-core/ppa' to install a newer version
+Optionally, you can add a third-party repository `sudo add-apt-repository ppa:git-core/ppa` to install a newer version
 
     sudo apt-get update
     sudo apt-get install git
