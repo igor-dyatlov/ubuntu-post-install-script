@@ -5,6 +5,7 @@ autotools-dev
 bluefish
 bzr
 cmake
+emacs
 gconf-editor
 geany
 giggle

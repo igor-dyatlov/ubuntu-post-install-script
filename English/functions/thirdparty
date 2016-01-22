@@ -2,17 +2,78 @@
 
 dir="$(dirname "$0")"
 
+source $dir/functions/third-party/bleachbit
+source $dir/functions/third-party/blender
+source $dir/functions/third-party/brackets
+source $dir/functions/third-party/cinelerra
+source $dir/functions/third-party/cutegram
+source $dir/functions/third-party/darktable
+source $dir/functions/third-party/docky
 source $dir/functions/third-party/dropbox
+source $dir/functions/third-party/enpass
+source $dir/functions/third-party/filezilla
+source $dir/functions/third-party/firefox
+source $dir/functions/third-party/fontforge
+source $dir/functions/third-party/formatjunkie
+source $dir/functions/third-party/gimp
+source $dir/functions/third-party/git
 source $dir/functions/third-party/gnome
 source $dir/functions/third-party/google-chrome
+source $dir/functions/third-party/gparted
+source $dir/functions/third-party/grub-customizer
+source $dir/functions/third-party/hplip
+source $dir/functions/third-party/hudson
+source $dir/functions/third-party/hydrogen
+source $dir/functions/third-party/inkscape
+source $dir/functions/third-party/intel
+source $dir/functions/third-party/ipscan
+source $dir/functions/third-party/jenkins
+source $dir/functions/third-party/keepassx
+source $dir/functions/third-party/krita
+source $dir/functions/third-party/lamp
+source $dir/functions/third-party/lightworks
+source $dir/functions/third-party/linaro
+source $dir/functions/third-party/lollypop
 source $dir/functions/third-party/minecraft
+source $dir/functions/third-party/mixxx
+source $dir/functions/third-party/musicmanager
+source $dir/functions/third-party/mypaint
+source $dir/functions/third-party/notepadqq
+source $dir/functions/third-party/nuvolaplayer
+source $dir/functions/third-party/nvidia
+source $dir/functions/third-party/obs-studio
+source $dir/functions/third-party/openshot
+source $dir/functions/third-party/opera
 source $dir/functions/third-party/oracle-java
 source $dir/functions/third-party/owncloud
+source $dir/functions/third-party/peazip
+source $dir/functions/third-party/plank
+source $dir/functions/third-party/qbittorrent
 source $dir/functions/third-party/rvm
+source $dir/functions/third-party/shotcut
+source $dir/functions/third-party/shutter
+source $dir/functions/third-party/sigil
 source $dir/functions/third-party/slack
+source $dir/functions/third-party/smartgit
 source $dir/functions/third-party/spotify
+source $dir/functions/third-party/ssr
+source $dir/functions/third-party/steadyflow
 source $dir/functions/third-party/steam
+source $dir/functions/third-party/stoq
 source $dir/functions/third-party/sublime-text
+source $dir/functions/third-party/sunflower
+source $dir/functions/third-party/teamviewer
+source $dir/functions/third-party/telegram
+source $dir/functions/third-party/textadept
+source $dir/functions/third-party/ubuntu-tweak
+source $dir/functions/third-party/uget
+source $dir/functions/third-party/umake
+source $dir/functions/third-party/variety
+source $dir/functions/third-party/virtualbox
+source $dir/functions/third-party/vocal
+source $dir/functions/third-party/wine
+source $dir/functions/third-party/wireshark
+source $dir/functions/third-party/wps
 
 # Install Third-Party Applications
 function thirdparty {
@@ -24,18 +85,78 @@ function thirdparty {
         --ok-button "Install" \
         --cancel-button "Go Back" \
         $LINES $COLUMNS $(( $LINES - 12 )) \
+        'bleachbit'         'BleachBit' \
+        'blender'           'Blender' \
+        'brackets'          'Brackets' \
+        'cinelerra'         'Cinelerra' \
+        'cutegram'          'Cutegram' \
+        'darktable'         'Darktable' \
+        'docky'             'Docky' \
         'dropbox'           'Dropbox' \
+        'enpass'            'Enpass' \
+        'filezilla'         'Filezilla' \
+        'firefox'           'Firefox' \
+        'fontforge'         'Fontforge' \
+        'formatjunkie'      'Formatjunkie' \
+        'gimp'              'Gimp' \
+        'git'               'Git' \
         'gnome'             'Latest GNOME desktop' \
         'google-chrome'     'Google Chrome' \
+        'gparted'           'Gparted' \
+        'grub-customizer'   'Grub customizer' \
+        'hplip'             'HP drivers' \
+        'hudson'            'Hudson' \
+        'hydrogen'          'Hydrogen' \
+        'inkscape'          'Inkscape' \
+        'intel'             'Intel' \
+        'ipscan'            'ipscan' \
+        'jenkins'           'Jenkins' \
+        'keepassx'          'KeePassX' \
+        'krita'             'Krita' \
+        'lamp'              'LAMP' \
+        'lightworks'        'Lightworks' \
+        'linaro'            'Linaro' \
+        'lollypop'          'Lollypop' \
         'minecraft'         'Minecraft' \
+        'mixxx'             'Mixxx' \
+        'musicmanager'      'Google Music manager' \
+        'mypaint'           'My Paint' \
+        'notepadqq'         'Notepadqq' \
+        'nuvolaplayer'      'Nuvola player' \
+        'nvidia'            'Nvidia drivers' \
+        'obs-studio'        'OBS studio' \
+        'openshot'          'Openshot' \
+        'opera'             'Opera' \
         'oracle-java'       'Oracle Java 8' \
         'owncloud'          'ownCloud client' \
+        'peazip'            'PeaZip' \
+        'plank'             'Plank' \
+        'qbittorrent'       'qbittorrent' \
         'rvm'               'Ruby Version Manager (RVM)' \
+        'shotcut'           'Shotcut' \
+        'shutter'           'Shutter' \
+        'sigil'             'Sigil' \
         'slack'             'Slack' \
+        'smartgit'          'Smartgit' \
         'spotify'           'Spotify' \
+        'ssr'               'Simple Screen Recorder' \
+        'steadyflow'        'Steadyflow' \
         'steam'             'Steam' \
+        'stoq'              'Stoq' \
         'sublime-text'      'Sublime Text 3' \
+        'sunflower'         'Sunflower' \
+        'teamviewer'        'Teamviewer' \
+        'telegram'          'Telegram' \
+        'textadept'         'Textadept' \
+        'ubuntu-tweak'      'Ubuntu tweak' \
+        'uget'              'Uget' \
+        'umake'             'Umake Android Studio' \
+        'variety'           'Variety' \
+        'virtualbox'        'Virtual Box' \
         'vocal'             'Vocal podcast app' \
+        'wine'              'Wine' \
+        'wireshark'         'Wireshark' \
+        'wps'               'WPS Office' \
         3>&1 1>&2 2>&3)
      
     exitstatus=$?

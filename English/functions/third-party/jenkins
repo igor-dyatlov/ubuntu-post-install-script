@@ -1,0 +1,25 @@
+#!/bin/bash
+
+# Jenkins
+function jenkins {
+	# Add repository
+	show_info 'Adding Jenkins repository to software sources...'
+	show_warning 'Requires root privileges'
+	sudo sh -c "echo 'deb http://pkg.jenkins-ci.org/debian binary/' >> /etc/apt/sources.list.d/jenkins.list"
+	show_success 'Done.'
+	show_question 'Adding repository key...'
+	curl -O http://pkg.jenkins-ci.org/debian/jenkins-ci.org.key
+	sudo apt-key add - < Release.key 
+	show_success 'Done.'	
+	# Update repository information
+	show_info 'Updating repository information...'
+	sudo apt-get update
+	# Install
+    echo 'Installing Jenkins...'
+    show_warning 'Requires root privileges'
+    sudo apt-get install -y jenkins
+    # Done
+    show_success 'Done.'
+    whiptail --title "Finished" --msgbox "Installation complete." 8 78
+	thirdparty
+}
