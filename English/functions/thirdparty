@@ -2,12 +2,14 @@
 
 dir="$(dirname "$0")"
 
+source $dir/functions/third-party/audacity
 source $dir/functions/third-party/bleachbit
 source $dir/functions/third-party/blender
 source $dir/functions/third-party/brackets
 source $dir/functions/third-party/cinelerra
 source $dir/functions/third-party/cutegram
 source $dir/functions/third-party/darktable
+source $dir/functions/third-party/digikam
 source $dir/functions/third-party/docky
 source $dir/functions/third-party/dropbox
 source $dir/functions/third-party/enpass
@@ -20,6 +22,7 @@ source $dir/functions/third-party/git
 source $dir/functions/third-party/gnome
 source $dir/functions/third-party/google-chrome
 source $dir/functions/third-party/gparted
+source $dir/functions/third-party/gravit
 source $dir/functions/third-party/grub-customizer
 source $dir/functions/third-party/hplip
 source $dir/functions/third-party/hudson
@@ -28,16 +31,19 @@ source $dir/functions/third-party/inkscape
 source $dir/functions/third-party/intel
 source $dir/functions/third-party/ipscan
 source $dir/functions/third-party/jenkins
+source $dir/functions/third-party/kde
 source $dir/functions/third-party/keepassx
 source $dir/functions/third-party/krita
 source $dir/functions/third-party/lamp
 source $dir/functions/third-party/lightworks
+source $dir/functions/third-party/lightzone
 source $dir/functions/third-party/linaro
 source $dir/functions/third-party/lollypop
 source $dir/functions/third-party/minecraft
 source $dir/functions/third-party/mixxx
 source $dir/functions/third-party/musicmanager
 source $dir/functions/third-party/mypaint
+source $dir/functions/third-party/natron
 source $dir/functions/third-party/notepadqq
 source $dir/functions/third-party/nuvolaplayer
 source $dir/functions/third-party/nvidia
@@ -47,9 +53,15 @@ source $dir/functions/third-party/opera
 source $dir/functions/third-party/oracle-java
 source $dir/functions/third-party/owncloud
 source $dir/functions/third-party/peazip
+source $dir/functions/third-party/photivo
+source $dir/functions/third-party/pinta
+source $dir/functions/third-party/pixeluvo
 source $dir/functions/third-party/plank
 source $dir/functions/third-party/qbittorrent
+source $dir/functions/third-party/quodlibet
+source $dir/functions/third-party/rawtherapee
 source $dir/functions/third-party/rvm
+source $dir/functions/third-party/scribus
 source $dir/functions/third-party/shotcut
 source $dir/functions/third-party/shutter
 source $dir/functions/third-party/sigil
@@ -85,12 +97,14 @@ function thirdparty {
         --ok-button "Install" \
         --cancel-button "Go Back" \
         $LINES $COLUMNS $(( $LINES - 12 )) \
+        'audacity'          'Audacity' \
         'bleachbit'         'BleachBit' \
         'blender'           'Blender' \
         'brackets'          'Brackets' \
         'cinelerra'         'Cinelerra' \
         'cutegram'          'Cutegram' \
         'darktable'         'Darktable' \
+        'digikam'           'digiKam' \
         'docky'             'Docky' \
         'dropbox'           'Dropbox' \
         'enpass'            'Enpass' \
@@ -103,6 +117,7 @@ function thirdparty {
         'gnome'             'Latest GNOME desktop' \
         'google-chrome'     'Google Chrome' \
         'gparted'           'Gparted' \
+        'gravit'            'Gravit' \
         'grub-customizer'   'Grub customizer' \
         'hplip'             'HP drivers' \
         'hudson'            'Hudson' \
@@ -111,16 +126,19 @@ function thirdparty {
         'intel'             'Intel' \
         'ipscan'            'ipscan' \
         'jenkins'           'Jenkins' \
+        'kde'               'Latest KDE desktop' \
         'keepassx'          'KeePassX' \
         'krita'             'Krita' \
         'lamp'              'LAMP' \
         'lightworks'        'Lightworks' \
+        'lightzone'         'LightZone' \
         'linaro'            'Linaro' \
         'lollypop'          'Lollypop' \
         'minecraft'         'Minecraft' \
         'mixxx'             'Mixxx' \
         'musicmanager'      'Google Music manager' \
         'mypaint'           'My Paint' \
+        'natron'            'Natron' \
         'notepadqq'         'Notepadqq' \
         'nuvolaplayer'      'Nuvola player' \
         'nvidia'            'Nvidia drivers' \
@@ -130,9 +148,15 @@ function thirdparty {
         'oracle-java'       'Oracle Java 8' \
         'owncloud'          'ownCloud client' \
         'peazip'            'PeaZip' \
+        'photivo'           'Photivo' \
+        'pinta'             'Pinta' \
+        'pixeluvo'          'Pixeluvo' \
         'plank'             'Plank' \
-        'qbittorrent'       'qbittorrent' \
+        'qbittorrent'       'qBittorrent' \
+        'quodlibet'         'Quodlibet' \
+        'rawtherapee'       'RawTherapee' \
         'rvm'               'Ruby Version Manager (RVM)' \
+        'scribus'           'Scribus' \
         'shotcut'           'Shotcut' \
         'shutter'           'Shutter' \
         'sigil'             'Sigil' \
