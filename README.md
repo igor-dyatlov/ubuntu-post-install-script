@@ -39,7 +39,7 @@ The included [preferences](English/functions/configure) and [lists of packages](
 
 ## Screenshots
 
-![Image]()
+![Image](https://github.com/igor-dyatlov/ubuntu-post-install-script/blob/master/Screenshot/Screenshot_1.png)
 
 ### Donate
 https://www.paypal.me/IgorDyatlov 
