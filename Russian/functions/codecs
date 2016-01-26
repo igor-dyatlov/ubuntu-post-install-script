@@ -2,10 +2,10 @@
 
 # Install Ubuntu Restricted Extras
 function codecs {
-if (whiptail --title "Multimedia Codecs" --yesno "Install Ubuntu Restricted Extras for multimedia playback?" 10 60) then
+if (whiptail --title "Multimedia Codecs" --yesno "Установить Ubuntu Restricted Extras для воспроизведения мультимедиа?" 10 60) then
     # Install Ubuntu Restricted Extras
     show_info 'Установка...'
-    show_warning 'Требует привилегий суперпользователя'
+    show_warning 'Требуется привилегии суперпользователя'
     sudo apt-get install -y ubuntu-restricted-extras libavcodec-extra
     # Done
     show_success 'Готово.'

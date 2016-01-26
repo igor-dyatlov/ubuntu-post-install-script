@@ -28,7 +28,7 @@ function preferences {
     gsettings set org.gnome.rhythmbox.sources browser-views 'artists-albums'
     # Done
     show_success 'Готово.'
-    whiptail --title "Завершено" --msgbox "Settings changed successfully." 8 78
+    whiptail --title "Завершено" --msgbox "Настройки успешно изменены." 8 78
     configure
 }
 
@@ -39,25 +39,31 @@ function startup {
     sudo sed -i "s/NoDisplay=true/NoDisplay=false/g" /etc/xdg/autostart/*.desktop
     # Done
     show_success 'Готово.'
-    whiptail --title "Завершено" --msgbox "Settings changed successfully." 8 78
+    whiptail --title "Завершено" --msgbox "Настройки успешно изменены." 8 78
     configure
 }
 
 # Disable Apport
 function apport {
-    show_info 'Disabling apport crash dialogs...'
-    show_warning 'Требует привилегий суперпользователя'
+    show_info 'Отключение диалога сообщения об ошибках...'
+    show_warning 'Требуется привилегии суперпользователя'
     sudo sed -i "s/enabled=1/enabled=0/g" /etc/default/apport
     # Done
     show_success 'Готово.'
-    whiptail --title "Завершено" --msgbox "Settings changed successfully." 8 78
+    whiptail --title "Завершено" --msgbox "Настройки успешно изменены." 8 78
     configure
 }
 
 # HotFix Keyboard
 function keyboard {
+	show_info '...'
+    show_warning 'Требуется привилегии суперпользователя'
     XKBOPTIONS="grp:alt_shift_toggle,grp_led:scroll"
     setxkbmap -layout 'us,ru' -option 'grp:alt_shift_toggle,grp_led:scroll'
+    # Done
+    show_success 'Готово.'
+    whiptail --title "Завершено" --msgbox "Настройки успешно изменены." 8 78
+    configure
 }
 
 # Configure System
@@ -67,12 +73,12 @@ function configure {
         --notags \
         --title "Configure System" \
         --menu "\nWhat would you like to do?" \
-        --cancel-button "Go Back" \
+        --cancel-button "Назад" \
         $LINES $COLUMNS $(( $LINES - 12 )) \
         preferences 'Set preferred application-specific settings' \
         startup     'Show all startup applications' \
         apport      'Disable system crash dialogs' \
-        keyboard     'HotFix keyboard' \
+        keyboard    'HotFix keyboard' \
         3>&1 1>&2 2>&3)
      
     exitstatus=$?

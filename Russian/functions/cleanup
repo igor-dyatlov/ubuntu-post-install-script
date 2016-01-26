@@ -7,16 +7,16 @@ PURGED="$dir/data/purge.list"
 function unused {
     if (eval `resize` && whiptail \
         --title "Удалить предустановленные приложения" \
-        --yesno "Current list of pre-installed applications to remove: \n\n$(cat $PURGED) \n\nAre you sure you want proceed?" \
+        --yesno "Текущий список предустановленных приложений для удаления: \n\n$(cat $PURGED) \n\nВы уверены, что хотите продолжить?" \
         $LINES $COLUMNS $(( $LINES - 12 )) \
         --scrolltext ) then
         show_info 'Удаление предустановленных приложений...'
-        show_warning 'Требует привилегий суперпользователя'
+        show_warning 'Требуется привилегии суперпользователя'
         # Feel free to change the contents of 'utilities.list' in the data folder to whatever suits your preference.
         sudo apt-get remove -y $(cat $PURGED)
         # Done
         show_success 'Готово.'
-        whiptail --title "Завершено" --msgbox "Установка завершена." 8 78
+        whiptail --title "Завершено" --msgbox "Удаление завершено." 8 78
         main
     else
         clear && main
@@ -25,12 +25,12 @@ function unused {
 
 # Remove old kernels
 function kernels {
-    if (whiptail --title "Remove Outdated Kernels" --yesno "If you're not currently using the newest kernel installed on your system, the following may break it. \n\nAre you sure you want proceed?" 10 60) then
+    if (whiptail --title "Удаление устаревших ядер" --yesno "If you're not currently using the newest kernel installed on your system, the following may break it. \n\nВы уверены, что хотите продолжить?" 10 60) then
         show_info 'Removing outdated kernel(s)...'
-        show_warning 'Requires root privileges'
+        show_warning 'Требуется привилегии суперпользователя'
         sudo dpkg -l 'linux-*' | sed '/^ii/!d;/'"$(uname -r | sed "s/\(.*\)-\([^0-9]\+\)/\1/")"'/d;s/^[^ ]* [^ ]* \([^ ]*\).*/\1/;/[0-9]/!d' | grep -v linux-libc-dev | xargs sudo apt-get -y purge
-        show_success 'Done.'
-        whiptail --title "Finished" --msgbox "Outdated kernels have been successfully removed." 8 78
+        show_success 'Готово.'
+        whiptail --title "Завершено" --msgbox "Устаревшие ядра были успешно удалены." 8 78
         cleanup
     else
         clear && cleanup
@@ -39,39 +39,39 @@ function kernels {
 
 # Remove Orphaned Packages
 function orphaned {
-    show_info 'Removing orphaned packages...'
-    show_warning 'Requires root privileges'
+    show_info 'Удаление ненужных пакетов...'
+    show_warning 'Требуется привилегии суперпользователя'
     sudo apt-get autoremove -y
     show_success 'Готово.'
-    whiptail --title "Завершено" --msgbox "Orphaned packages have been successfully removed." 8 78
+    whiptail --title "Завершено" --msgbox "Ненужные пакеты были успешно удалены." 8 78
     cleanup
 }
 
 function leftovers {
-    show_info 'Removing leftover configuration files...'
-    show_warning 'Requires root privileges'
+    show_info 'Удаление оставшихся файлов конфигурации...'
+    show_warning 'Требуется привилегии суперпользователя'
     sudo dpkg --purge $(COLUMNS=200 dpkg -l | grep '^rc' | tr -s ' ' | cut -d ' ' -f 2)
     show_success 'Готово.'
-    whiptail --title "Завершено" --msgbox "Leftover configuration files have been removed." 8 78
+    whiptail --title "Завершено" --msgbox "Оставшиеся файлы конфигурации были удалены." 8 78
     cleanup
 }
 
 function clean-cache {
-    show_info 'Cleaning package cache...'
-    show_warning 'Requires root privileges'
+    show_info 'Очистка кэша пакетов...'
+    show_warning 'Требуется привилегии суперпользователя'
     sudo apt-get clean
     show_success 'Готово.'
-    whiptail --title "Завершено" --msgbox "Package cache has been cleaned." 8 78
+    whiptail --title "Завершено" --msgbox "Кэш пакетов был очищен." 8 78
     cleanup
 }
 
 # Remove old log crash
 function crash {
-	show_info 'Cleaning old log crash...'
-    show_warning 'Requires root privileges'
+	show_info 'Очистка старых отчетов об ошибках...'
+    show_warning 'Требуется привилегии суперпользователя'
 	sudo rm /var/crash/*
 	show_success 'Готово.'
-    whiptail --title "Завершено" --msgbox "Package cache has been cleaned." 8 78
+    whiptail --title "Завершено" --msgbox "Отчеты об ошибках были очищены." 8 78
     cleanup	
 }
 
