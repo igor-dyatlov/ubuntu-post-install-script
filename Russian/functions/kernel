@@ -16,7 +16,7 @@ if (whiptail --title "Обновление ядра системы" --yesno "П�
 	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4-wily/linux-image-4.4.0-040400-generic_4.4.0-040400.201601101930_amd64.deb
 	        ;;
 	    *)
-	        show_error "No packages available to download that matches your system." && thirdparty
+	        show_error "Не доступны пакеты для скачивания, которые соответствуют вашей системе." && thirdparty
 	        ;; 
 	esac
     # Update repository information
@@ -41,7 +41,7 @@ fi
 
 # Kernel unstable
 function unstable {
-if (whiptail --title "Обновить ядро системы" --yesno "Proceed with kernel update?" 10 60) then
+if (whiptail --title "Обновить ядро системы" --yesno "Продолжить обновление ядра?" 10 60) then
 	# Download Debian file that matches system architecture
 	case `uname -i` in
 	    i386|i486|i586|i686)
@@ -55,7 +55,7 @@ if (whiptail --title "Обновить ядро системы" --yesno "Proceed
 	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc1-wily/linux-image-4.5.0-040500rc1-generic_4.5.0-040500rc1.201601241731_amd64.deb
 	        ;;
 	    *)
-	        show_error "No packages available to download that matches your system." && thirdparty
+	        show_error "Не доступны пакеты для скачивания, которые соответствуют вашей системе." && thirdparty
 	        ;; 
 	esac
     # Update repository information

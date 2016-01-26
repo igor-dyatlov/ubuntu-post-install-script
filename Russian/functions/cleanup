@@ -6,7 +6,7 @@ PURGED="$dir/data/purge.list"
 
 function unused {
     if (eval `resize` && whiptail \
-        --title "Удалить предустановленные приложения" \
+        --title "Удаление предустановленных приложений" \
         --yesno "Текущий список предустановленных приложений для удаления: \n\n$(cat $PURGED) \n\nВы уверены, что хотите продолжить?" \
         $LINES $COLUMNS $(( $LINES - 12 )) \
         --scrolltext ) then
@@ -25,8 +25,8 @@ function unused {
 
 # Remove old kernels
 function kernels {
-    if (whiptail --title "Удаление устаревших ядер" --yesno "If you're not currently using the newest kernel installed on your system, the following may break it. \n\nВы уверены, что хотите продолжить?" 10 60) then
-        show_info 'Removing outdated kernel(s)...'
+    if (whiptail --title "Удаление устаревших ядер" --yesno "Если вы не используете новейшие ядра, установленные в системе, следующие действие может удалить его.. \n\nВы уверены, что хотите продолжить?" 10 60) then
+        show_info 'Удаление устаревших ядер...'
         show_warning 'Требуется привилегии суперпользователя'
         sudo dpkg -l 'linux-*' | sed '/^ii/!d;/'"$(uname -r | sed "s/\(.*\)-\([^0-9]\+\)/\1/")"'/d;s/^[^ ]* [^ ]* \([^ ]*\).*/\1/;/[0-9]/!d' | grep -v linux-libc-dev | xargs sudo apt-get -y purge
         show_success 'Готово.'
@@ -80,16 +80,16 @@ function cleanup {
     eval `resize` 
     CLEANUP=$(whiptail \
         --notags \
-        --title "System Cleanup" \
-        --menu "\nWhat would you like to do?" \
-        --cancel-button "Go Back" \
+        --title "Очистка системы" \
+        --menu "\nЧем бы Вы хотели заняться?" \
+        --cancel-button "Назад" \
         $LINES $COLUMNS $(( $LINES - 12 )) \
-        clean-cache 'Clean package cache' \
-        leftovers   'Remove leftover configuration files' \
-        orphaned    'Remove orphaned packages' \
-        unused      'Remove unused pre-installed packages' \
-        crash       'Remove old log crash' \
-        kernels     'Remove old kernel(s)' \
+        clean-cache 'Очистить кеш пакетов' \
+        leftovers   'Удалить оставшиеся файлы конфигураций' \
+        orphaned    'Удалить ненужные пакеты' \
+        unused      'Удалить предустановленные приложения' \
+        crash       'Удалить старые отчеты об ошибках' \
+        kernels     'Удалить старые ядра' \
         3>&1 1>&2 2>&3)
      
     exitstatus=$?

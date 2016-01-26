@@ -3,7 +3,7 @@
 # Preferred settings
 function preferences {
     # Font Sizes
-    show_info 'Setting font preferences...'
+    show_info 'Установка предпочтений шрифтов...'
     gsettings set org.gnome.desktop.interface document-font-name 'Source Sans Pro 10' # This is a third-party font
     gsettings set org.gnome.desktop.interface font-name 'Source Sans Pro 10'
     gsettings set org.gnome.desktop.interface monospace-font-name 'Inconsolata 11' # This is also a third-party font
@@ -13,16 +13,17 @@ function preferences {
     gsettings set org.gnome.settings-daemon.plugins.xsettings antialiasing 'rgba'
     gsettings set org.gnome.settings-daemon.plugins.xsettings hinting 'slight'
     # Pantheon Settings
-    show_info 'Setting Pantheon app preferences...'
+    show_info 'Установка предпочтений Pantheon приложений...'
     gsettings set org.pantheon.noise.settings update-folder-heirarchy false
     gsettings set org.pantheon.terminal.settings font "Inconsolata 11"
     gsettings set org.pantheon.desktop.wingpanel auto-adjust-alpha false
     gsettings set org.pantheon.desktop.wingpanel background-alpha 0.6
     # GNOME Preferences
-    show_info 'Setting GNOME app preferences...'
-    gsettings set org.gnome.desktop.interface clock-format 12h
+    show_info 'Установка предпочтений GNOME приложений...'
+    gsettings set org.gnome.desktop.interface automatic-mnemonics true
+    gsettings set org.gnome.desktop.interface clock-format 24h
     gsettings set org.gnome.desktop.interface clock-show-date true
-    gsettings set org.gnome.gedit.preferences.encodings auto-detected "['UTF-8', 'WINDOWS-1251', 'CURRENT', 'ISO-8859-15', 'UTF-16']"
+    gsettings set org.gnome.gedit.preferences.encodings candidate-encodings "['UTF-8', 'WINDOWS-1251', 'CURRENT', 'ISO-8859-15', 'UTF-16']"
     gsettings set org.gnome.nautilus.preferences sort-directories-first true
     gsettings set org.gnome.rhythmbox.rhythmdb monitor-library true
     gsettings set org.gnome.rhythmbox.sources browser-views 'artists-albums'
@@ -34,7 +35,7 @@ function preferences {
 
 # Show start-up applications
 function startup {
-    show_info 'Changing display of startup applications...'
+    show_info 'Изменение отображения запуска приложений...'
     show_warning 'Требует привилегий суперпользователя'
     sudo sed -i "s/NoDisplay=true/NoDisplay=false/g" /etc/xdg/autostart/*.desktop
     # Done
@@ -56,10 +57,9 @@ function apport {
 
 # HotFix Keyboard
 function keyboard {
-	show_info '...'
-    show_warning 'Требуется привилегии суперпользователя'
-    XKBOPTIONS="grp:alt_shift_toggle,grp_led:scroll"
-    setxkbmap -layout 'us,ru' -option 'grp:alt_shift_toggle,grp_led:scroll'
+	show_info 'Исправление индикатора раскладки клавиатуры...'
+	gsettings set org.gnome.desktop.input-sources sources "[('xkb', 'us'), ('xkb', 'ru')]"
+	gsettings set org.gnome.desktop.input-sources xkb-options "['grp_led:scroll', 'grp:alt_shift_toggle']"
     # Done
     show_success 'Готово.'
     whiptail --title "Завершено" --msgbox "Настройки успешно изменены." 8 78
@@ -71,14 +71,14 @@ function configure {
     eval `resize`
     CONF=$(whiptail \
         --notags \
-        --title "Configure System" \
-        --menu "\nWhat would you like to do?" \
+        --title "Настройка системы" \
+        --menu "\nЧем бы Вы хотели заняться?" \
         --cancel-button "Назад" \
         $LINES $COLUMNS $(( $LINES - 12 )) \
-        preferences 'Set preferred application-specific settings' \
-        startup     'Show all startup applications' \
-        apport      'Disable system crash dialogs' \
-        keyboard    'HotFix keyboard' \
+        preferences 'Установить предпочтительные настройки для конкретных приложений' \
+        startup     'Изменить отображения запуска приложений' \
+        apport      'Отключить диалог сообщения об ошибках' \
+        keyboard    'Исправить индикатор раскладки клавиатуры' \
         3>&1 1>&2 2>&3)
      
     exitstatus=$?

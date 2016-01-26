@@ -5,15 +5,15 @@ function check {
     show_info "Проверка зависимостей..."
     PKGCHECK=$(dpkg-query -W --showformat='${Status}\n' whiptail|grep "install ok installed")
     if [ "" == "$PKGCHECK" ]; then
-        show_info "This script makes use of 'whiptail' and it is not present on your system."
-        show_question 'Would you like to install it to continue? (Y)es, (N)o : ' && read REPLY
+        show_info "Этот сценарий использует 'whiptail', но он отсуствует нет в вашей системе.."
+        show_question 'Хотите установить, что бы продолжить? (Y)es, (N)o : ' && read REPLY
         echo ''
         case $REPLY in
         # Positive action
         [Yy]* ) 
-            show_warning 'Требует привилегий суперпользователя'
+            show_warning 'Требуется привилегии суперпользователя'
             sudo apt-get --force-yes --yes install whiptail
-            show_success 'Готово. Proceeding.'
+            show_success 'Готово.'
             main
             ;;
         # Negative action
