@@ -92,8 +92,8 @@ function thirdparty {
     eval `resize`
     THIRDPARTY=$(whiptail \
         --notags \
-        --title "Third-Party Installation" \
-        --menu "\nWhat third-party software would you like to install?" \
+        --title "Установка сторонних приложений" \
+        --menu "\nКакое сторонние программное обеспечение вы хотели бы установить?" \
         --ok-button "Установить" \
         --cancel-button "Назад" \
         $LINES $COLUMNS $(( $LINES - 12 )) \

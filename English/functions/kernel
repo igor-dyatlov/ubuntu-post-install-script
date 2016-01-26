@@ -45,14 +45,14 @@ if (whiptail --title "Update system kernel" --yesno "Proceed with kernel update?
 	# Download Debian file that matches system architecture
 	case `uname -i` in
 	    i386|i486|i586|i686)
-	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4-rc8-wily/linux-headers-4.4.0-040400rc8-generic_4.4.0-040400rc8.201601051225_i386.deb
-	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4-rc8-wily/linux-headers-4.4.0-040400rc8_4.4.0-040400rc8.201601051225_all.deb
-	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4-rc8-wily/linux-image-4.4.0-040400rc8-generic_4.4.0-040400rc8.201601051225_i386.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc1-wily/linux-headers-4.5.0-040500rc1-generic_4.5.0-040500rc1.201601241731_i386.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc1-wily/linux-headers-4.5.0-040500rc1_4.5.0-040500rc1.201601241731_all.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc1-wily/linux-image-4.5.0-040500rc1-generic_4.5.0-040500rc1.201601241731_i386.deb
 	        ;;
 	    x86_64)
-	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4-rc8-wily/linux-headers-4.4.0-040400rc8-generic_4.4.0-040400rc8.201601051225_amd64.deb
-	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4-rc8-wily/linux-headers-4.4.0-040400rc8_4.4.0-040400rc8.201601051225_all.deb
-	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4-rc8-wily/linux-image-4.4.0-040400rc8-generic_4.4.0-040400rc8.201601051225_amd64.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc1-wily/linux-headers-4.5.0-040500rc1-generic_4.5.0-040500rc1.201601241731_amd64.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc1-wily/linux-headers-4.5.0-040500rc1_4.5.0-040500rc1.201601241731_all.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc1-wily/linux-image-4.5.0-040500rc1-generic_4.5.0-040500rc1.201601241731_amd64.deb
 	        ;;
 	    *)
 	        show_error "No packages available to download that matches your system." && thirdparty
