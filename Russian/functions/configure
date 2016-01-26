@@ -55,7 +55,7 @@ function apport {
     configure
 }
 
-# HotFix Keyboard
+# Fix indicator keyboard
 function keyboard {
 	show_info 'Исправление индикатора раскладки клавиатуры...'
 	gsettings set org.gnome.desktop.input-sources sources "[('xkb', 'us'), ('xkb', 'ru')]"

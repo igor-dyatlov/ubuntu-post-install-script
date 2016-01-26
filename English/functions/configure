@@ -20,9 +20,10 @@ function preferences {
     gsettings set org.pantheon.desktop.wingpanel background-alpha 0.6
     # GNOME Preferences
     show_info 'Setting GNOME app preferences...'
-    gsettings set org.gnome.desktop.interface clock-format 12h
+    gsettings set org.gnome.desktop.interface automatic-mnemonics true
+    gsettings set org.gnome.desktop.interface clock-format 24h
     gsettings set org.gnome.desktop.interface clock-show-date true
-    gsettings set org.gnome.gedit.preferences.encodings auto-detected "['UTF-8', 'WINDOWS-1251', 'CURRENT', 'ISO-8859-15', 'UTF-16']"
+    gsettings set org.gnome.gedit.preferences.encodings candidate-encodings "['UTF-8', 'WINDOWS-1251', 'CURRENT', 'ISO-8859-15', 'UTF-16']"
     gsettings set org.gnome.nautilus.preferences sort-directories-first true
     gsettings set org.gnome.rhythmbox.rhythmdb monitor-library true
     gsettings set org.gnome.rhythmbox.sources browser-views 'artists-albums'
@@ -54,10 +55,15 @@ function apport {
     configure
 }
 
-# HotFix Keyboard
+# Fix indicator keyboard
 function keyboard {
-    XKBOPTIONS="grp:alt_shift_toggle,grp_led:scroll"
-    setxkbmap -layout 'us,ru' -option 'grp:alt_shift_toggle,grp_led:scroll'
+	show_info 'Fix indicator keyboard...'
+	gsettings set org.gnome.desktop.input-sources sources "[('xkb', 'us'), ('xkb', 'ru')]"
+	gsettings set org.gnome.desktop.input-sources xkb-options "['grp_led:scroll', 'grp:alt_shift_toggle']"
+	# Done
+    show_success 'Done.'
+    whiptail --title "Finished" --msgbox "Settings changed successfully." 8 78
+    configure
 }
 
 # Configure System
@@ -72,7 +78,7 @@ function configure {
         preferences 'Set preferred application-specific settings' \
         startup     'Show all startup applications' \
         apport      'Disable system crash dialogs' \
-        keyboard     'HotFix keyboard' \
+        keyboard    'Fix indicator keyboard' \
         3>&1 1>&2 2>&3)
      
     exitstatus=$?
