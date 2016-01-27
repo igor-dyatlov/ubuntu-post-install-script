@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# Logkeys
+function logkeys {
+	# Update repository information
+	show_info 'Updating repository information...'
+	sudo apt-get update
+	# Install
+    echo 'Installing Logkeys...'
+    show_warning 'Requires root privileges'
+    sudo apt-get install -y logkeys
+    # Done
+    show_success 'Done.'
+    whiptail --title "Finished" --msgbox "Installation complete." 8 78
+	thirdparty
+}

@@ -6,22 +6,27 @@ source $dir/functions/third-party/audacity
 source $dir/functions/third-party/bleachbit
 source $dir/functions/third-party/blender
 source $dir/functions/third-party/brackets
+source $dir/functions/third-party/chromium
 source $dir/functions/third-party/cinelerra
+source $dir/functions/third-party/compiz
 source $dir/functions/third-party/cutegram
 source $dir/functions/third-party/darktable
 source $dir/functions/third-party/digikam
 source $dir/functions/third-party/docky
 source $dir/functions/third-party/dropbox
 source $dir/functions/third-party/enpass
+source $dir/functions/third-party/file_system
 source $dir/functions/third-party/filezilla
 source $dir/functions/third-party/firefox
 source $dir/functions/third-party/fontforge
 source $dir/functions/third-party/formatjunkie
+source $dir/functions/third-party/fotoxx
 source $dir/functions/third-party/gimp
 source $dir/functions/third-party/git
 source $dir/functions/third-party/gnome
 source $dir/functions/third-party/google-chrome
 source $dir/functions/third-party/gparted
+source $dir/functions/third-party/gpick
 source $dir/functions/third-party/gravit
 source $dir/functions/third-party/grub-customizer
 source $dir/functions/third-party/hplip
@@ -30,14 +35,17 @@ source $dir/functions/third-party/hydrogen
 source $dir/functions/third-party/inkscape
 source $dir/functions/third-party/intel
 source $dir/functions/third-party/ipscan
+source $dir/functions/third-party/java-jdk
 source $dir/functions/third-party/jenkins
 source $dir/functions/third-party/kde
 source $dir/functions/third-party/keepassx
 source $dir/functions/third-party/krita
 source $dir/functions/third-party/lamp
+source $dir/functions/third-party/libreoffice
 source $dir/functions/third-party/lightworks
 source $dir/functions/third-party/lightzone
 source $dir/functions/third-party/linaro
+source $dir/functions/third-party/logkeys
 source $dir/functions/third-party/lollypop
 source $dir/functions/third-party/minecraft
 source $dir/functions/third-party/mixxx
@@ -57,6 +65,7 @@ source $dir/functions/third-party/photivo
 source $dir/functions/third-party/pinta
 source $dir/functions/third-party/pixeluvo
 source $dir/functions/third-party/plank
+source $dir/functions/third-party/popcorntime
 source $dir/functions/third-party/qbittorrent
 source $dir/functions/third-party/quodlibet
 source $dir/functions/third-party/rawtherapee
@@ -82,10 +91,13 @@ source $dir/functions/third-party/uget
 source $dir/functions/third-party/umake
 source $dir/functions/third-party/variety
 source $dir/functions/third-party/virtualbox
+source $dir/functions/third-party/vivaldi
 source $dir/functions/third-party/vocal
+source $dir/functions/third-party/wallpapers
 source $dir/functions/third-party/wine
 source $dir/functions/third-party/wireshark
 source $dir/functions/third-party/wps
+source $dir/functions/third-party/xampp
 
 # Install Third-Party Applications
 function thirdparty {
@@ -101,38 +113,46 @@ function thirdparty {
         'bleachbit'         'BleachBit' \
         'blender'           'Blender' \
         'brackets'          'Brackets' \
+        'chromium'          'Chromium' \
         'cinelerra'         'Cinelerra' \
+        'compiz'            'Compiz' \
         'cutegram'          'Cutegram' \
         'darktable'         'Darktable' \
         'digikam'           'digiKam' \
         'docky'             'Docky' \
         'dropbox'           'Dropbox' \
         'enpass'            'Enpass' \
+        'file_system'       'File system for Gparted' \
         'filezilla'         'Filezilla' \
         'firefox'           'Firefox' \
         'fontforge'         'Fontforge' \
         'formatjunkie'      'Formatjunkie' \
+        'fotoxx'            'Fotoxx' \
         'gimp'              'Gimp' \
         'git'               'Git' \
         'gnome'             'Latest GNOME desktop' \
         'google-chrome'     'Google Chrome' \
         'gparted'           'Gparted' \
+        'gpick'             'Gpick' \
         'gravit'            'Gravit' \
         'grub-customizer'   'Grub customizer' \
-        'hplip'             'HP drivers' \
+        'hplip'             'HP Linux Imaging and Printing' \
         'hudson'            'Hudson' \
         'hydrogen'          'Hydrogen' \
         'inkscape'          'Inkscape' \
-        'intel'             'Intel' \
-        'ipscan'            'ipscan' \
+        'intel'             'Intel Graphics Installer' \
+        'ipscan'            'Angry IP Scanner' \
+        'java-jdk'          'Java JDK' \
         'jenkins'           'Jenkins' \
         'kde'               'Latest KDE desktop' \
         'keepassx'          'KeePassX' \
         'krita'             'Krita' \
-        'lamp'              'LAMP' \
+        'lamp'              'LAMP server' \
+        'libreoffice'       'LibreOffice' \
         'lightworks'        'Lightworks' \
         'lightzone'         'LightZone' \
         'linaro'            'Linaro' \
+        'logkeys'           'Logkeys' \
         'lollypop'          'Lollypop' \
         'minecraft'         'Minecraft' \
         'mixxx'             'Mixxx' \
@@ -141,7 +161,7 @@ function thirdparty {
         'natron'            'Natron' \
         'notepadqq'         'Notepadqq' \
         'nuvolaplayer'      'Nuvola player' \
-        'nvidia'            'Nvidia drivers' \
+        'nvidia'            'Nvidia Linux Display Driver' \
         'obs-studio'        'OBS studio' \
         'openshot'          'Openshot' \
         'opera'             'Opera' \
@@ -152,6 +172,7 @@ function thirdparty {
         'pinta'             'Pinta' \
         'pixeluvo'          'Pixeluvo' \
         'plank'             'Plank' \
+        'popcorntime'       'Popcorn Time' \
         'qbittorrent'       'qBittorrent' \
         'quodlibet'         'Quodlibet' \
         'rawtherapee'       'RawTherapee' \
@@ -177,10 +198,13 @@ function thirdparty {
         'umake'             'Umake Android Studio' \
         'variety'           'Variety' \
         'virtualbox'        'Virtual Box' \
+        'vivaldi'           'Vivaldi' \
         'vocal'             'Vocal podcast app' \
+        'wallpapers'        'Ubuntu wallpapers' \
         'wine'              'Wine' \
         'wireshark'         'Wireshark' \
         'wps'               'WPS Office' \
+        'xampp'             'XAMPP Server' \
         3>&1 1>&2 2>&3)
      
     exitstatus=$?

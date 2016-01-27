@@ -1,0 +1,34 @@
+#!/bin/bash
+
+# Popcorn Time
+function popcornime {
+	show_info 'Downloading Popcorn Time...'
+	# Download Debian file that matches system architecture
+	case `uname -i` in
+	    i386|i486|i586|i686)
+	        curl -O http://popcorn-time.se/Popcorn-Time-linux32.tar.gz
+	        ;;
+	    x86_64)
+	        curl -O http://popcorn-time.se/Popcorn-Time-linux64.tar.gz
+	        ;;
+	    *)
+	        show_error "No packages available to download that matches your system." && thirdparty
+	        ;; 
+	esac
+	show_info 'Extraction Telegram...'
+	tar xzvf ./PopcornTime
+	# Install package(s)
+	show_info 'Installing Telegram...'
+	show_warning 'Requires root privileges'
+	sudo mv PopcornTime /opt/PopcornTime
+	# Create symbolic link
+	show_info 'Creating symbolic link...'
+	show_warning 'Requires root privileges'
+	sudo ln -sf /opt/PopcornTime /usr/bin/PopcornTime
+	# Cleanup and finish
+    rm Popcorn*.tar.xz
+	# Done
+    show_success 'Done.'
+    whiptail --title "Finished" --msgbox "Installation complete." 8 78
+	thirdparty
+}
