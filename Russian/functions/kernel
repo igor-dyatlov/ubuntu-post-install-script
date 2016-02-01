@@ -6,14 +6,14 @@ if (whiptail --title "Обновление ядра системы" --yesno "П�
 	# Download Debian file that matches system architecture
 	case `uname -i` in
 	    i386|i486|i586|i686)
-	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4-wily/linux-headers-4.4.0-040400-generic_4.4.0-040400.201601101930_i386.deb 
-	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4-wily/linux-headers-4.4.0-040400_4.4.0-040400.201601101930_all.deb 
-	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4-wily/linux-image-4.4.0-040400-generic_4.4.0-040400.201601101930_i386.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4.1-wily/linux-headers-4.4.1-040401-generic_4.4.1-040401.201601311534_i386.deb 
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4.1-wily/linux-headers-4.4.1-040401_4.4.1-040401.201601311534_all.deb 
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4.1-wily/linux-image-4.4.1-040401-generic_4.4.1-040401.201601311534_i386.deb
 	        ;;
 	    x86_64)
-	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4-wily/linux-headers-4.4.0-040400-generic_4.4.0-040400.201601101930_amd64.deb 
-	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4-wily/linux-headers-4.4.0-040400_4.4.0-040400.201601101930_all.deb 
-	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4-wily/linux-image-4.4.0-040400-generic_4.4.0-040400.201601101930_amd64.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4.1-wily/linux-headers-4.4.1-040401-generic_4.4.1-040401.201601311534_amd64.deb 
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4.1-wily/linux-headers-4.4.1-040401_4.4.1-040401.201601311534_all.deb 
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4.1-wily/linux-image-4.4.1-040401-generic_4.4.1-040401.201601311534_amd64.deb
 	        ;;
 	    *)
 	        show_error "Не доступны пакеты для скачивания, которые соответствуют вашей системе." && thirdparty
@@ -28,8 +28,8 @@ if (whiptail --title "Обновление ядра системы" --yesno "П�
     show_info 'Обновление конфигурации Grub...'
     sudo update-grub
     # Reboot
-    show_info 'Перезагрузка...'
-    sudo reboot
+    show_info 'Перезагрузка, через 5 секунд...'
+    sudo shutdown -r +5
     # Done
     show_success 'Готово.'
     whiptail --title "Завершено" --msgbox "Kernel update complete." 8 78
@@ -45,14 +45,14 @@ if (whiptail --title "Обновить ядро системы" --yesno "Про�
 	# Download Debian file that matches system architecture
 	case `uname -i` in
 	    i386|i486|i586|i686)
-	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc1-wily/linux-headers-4.5.0-040500rc1-generic_4.5.0-040500rc1.201601241731_i386.deb
-	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc1-wily/linux-headers-4.5.0-040500rc1_4.5.0-040500rc1.201601241731_all.deb
-	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc1-wily/linux-image-4.5.0-040500rc1-generic_4.5.0-040500rc1.201601241731_i386.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc2-wily/linux-headers-4.5.0-040500rc2-generic_4.5.0-040500rc2.201601312230_i386.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc2-wily/linux-headers-4.5.0-040500rc2_4.5.0-040500rc2.201601312230_all.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc2-wily/linux-image-4.5.0-040500rc2-generic_4.5.0-040500rc2.201601312230_i386.deb
 	        ;;
 	    x86_64)
-	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc1-wily/linux-headers-4.5.0-040500rc1-generic_4.5.0-040500rc1.201601241731_amd64.deb
-	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc1-wily/linux-headers-4.5.0-040500rc1_4.5.0-040500rc1.201601241731_all.deb
-	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc1-wily/linux-image-4.5.0-040500rc1-generic_4.5.0-040500rc1.201601241731_amd64.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc2-wily/linux-headers-4.5.0-040500rc2-generic_4.5.0-040500rc2.201601312230_amd64.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc2-wily/linux-headers-4.5.0-040500rc2_4.5.0-040500rc2.201601312230_all.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc2-wily/linux-image-4.5.0-040500rc2-generic_4.5.0-040500rc2.201601312230_amd64.deb
 	        ;;
 	    *)
 	        show_error "Не доступны пакеты для скачивания, которые соответствуют вашей системе." && thirdparty
@@ -88,8 +88,8 @@ function kernel {
         --ok-button "Обновить" \
         --cancel-button "Назад" \
         $LINES $COLUMNS $(( $LINES - 12 )) \
-        stable        '(Обновить стабильную (v4.4-wily) версию (нужна перезагрузка)' \
-        unstable      '(Обновить не стабильную (v4.5-rc1-wily) версию (нужна перезагрузка)' \
+        stable        '(Обновить стабильную (v4.4.1-wily) версию (нужна перезагрузка)' \
+        unstable      '(Обновить не стабильную (v4.5-rc2-wily) версию (нужна перезагрузка)' \
         3>&1 1>&2 2>&3)
      
     exitstatus=$?

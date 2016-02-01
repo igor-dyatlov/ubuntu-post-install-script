@@ -70,6 +70,7 @@ function main {
         --notags \
         --title "Ubuntu Post-Install Script" \
         --menu "\nWhat would you like to do?" \
+        --ok-button "Run" \
         --cancel-button "Quit" \
         $LINES $COLUMNS $(( $LINES - 12 )) \
         update      'Perform system update' \

@@ -58,7 +58,7 @@ function apport {
 # Fix indicator keyboard
 function keyboard {
 	show_info 'Исправление индикатора раскладки клавиатуры...'
-	gsettings set org.gnome.desktop.input-sources sources "[('xkb', 'us'), ('xkb', 'ru')]"
+    gsettings set org.gnome.desktop.input-sources sources "[('xkb', 'us'), ('xkb', 'ru')]"
 	gsettings set org.gnome.desktop.input-sources xkb-options "['grp_led:scroll', 'grp:alt_shift_toggle']"
     # Done
     show_success 'Готово.'

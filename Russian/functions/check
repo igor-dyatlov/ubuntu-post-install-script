@@ -1,18 +1,24 @@
 #!/bin/bash
 
+dir="$(dirname "$0")"
+
+DEPS="$dir/data/dependencies.list"
+
 # Dependency Check
 function check {
     show_info "Проверка зависимостей..."
-    PKGCHECK=$(dpkg-query -W --showformat='${Status}\n' whiptail|grep "install ok installed")
+    for package in $(cat $DEPS)
+    do 
+    PKGCHECK=$(dpkg-query -W --showformat='${Status}\n' $package|grep "install ok installed")
     if [ "" == "$PKGCHECK" ]; then
-        show_info "Этот сценарий использует 'whiptail', но он отсуствует нет в вашей системе.."
+        show_info "Этот сценарий использует '$package' , но он отсуствует нет в вашей системе."
         show_question 'Хотите установить, что бы продолжить? (Y)es, (N)o : ' && read REPLY
         echo ''
         case $REPLY in
         # Positive action
         [Yy]* ) 
             show_warning 'Требуется привилегии суперпользователя'
-            sudo apt-get --force-yes --yes install whiptail
+            sudo apt-get --force-yes --yes install $package
             show_success 'Готово.'
             main
             ;;
@@ -23,10 +29,12 @@ function check {
             ;;
         # Error
         * )
-            clear && show_error '\aИзвините, попробуйте еще раз.' && dependencies
+            clear && show_error '\aИзвините, попробуйте еще раз.' && check
             ;;
         esac
     else
         show_info "Все чисто."
     fi
+    done
+    
 }
