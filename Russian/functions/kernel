@@ -32,7 +32,7 @@ if (whiptail --title "Обновление ядра системы" --yesno "П�
     sudo shutdown -r +5
     # Done
     show_success 'Готово.'
-    whiptail --title "Завершено" --msgbox "Kernel update complete." 8 78
+    whiptail --title "Завершено" --msgbox "Обновление ядра выполненно." 8 78
     main
 else
     clear && main
