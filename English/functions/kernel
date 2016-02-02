@@ -30,8 +30,9 @@ if (whiptail --title "Update system kernel" --yesno "Proceed with kernel update?
     # Cleanup and finish
 	rm linux-*.deb
     # Reboot
-    show_info 'Rebooting in 5 seconds...'
-    sudo shutdown -r +5
+    show_info 'Rebooting in 1 minute...'
+    show_warning 'Save all files and exit the program!'
+    sudo shutdown -r +1
     # Done
     show_success 'Done.'
     whiptail --title "Finished" --msgbox "Kernel update complete." 8 78
@@ -71,8 +72,9 @@ if (whiptail --title "Update system kernel" --yesno "Proceed with kernel update?
     # Cleanup and finish
 	rm linux-*.deb
     # Reboot
-    show_info 'Rebooting in 5 seconds...'
-    sudo shutdown -r +5
+    show_info 'Rebooting in 1 minute...'
+    show_warning 'Save all files and exit the program!'
+    sudo shutdown -r +1
     # Done
     show_success 'Done.'
     whiptail --title "Finished" --msgbox "Kernel update complete." 8 78
