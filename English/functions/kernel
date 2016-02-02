@@ -27,6 +27,8 @@ if (whiptail --title "Update system kernel" --yesno "Proceed with kernel update?
     # Grub-Update
     show_info 'Grub configuration update...'
     sudo update-grub
+    # Cleanup and finish
+	rm linux-*.deb
     # Reboot
     show_info 'Rebooting in 5 seconds...'
     sudo shutdown -r +5
@@ -66,9 +68,11 @@ if (whiptail --title "Update system kernel" --yesno "Proceed with kernel update?
     # Grub-Update
     show_info 'Grub configuration update...'
     sudo update-grub
+    # Cleanup and finish
+	rm linux-*.deb
     # Reboot
-    show_info 'Rebooting...'
-    sudo reboot
+    show_info 'Rebooting in 5 seconds...'
+    sudo shutdown -r +5
     # Done
     show_success 'Done.'
     whiptail --title "Finished" --msgbox "Kernel update complete." 8 78

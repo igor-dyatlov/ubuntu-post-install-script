@@ -27,6 +27,8 @@ if (whiptail --title "Обновление ядра системы" --yesno "П�
     # Grub-Update
     show_info 'Обновление конфигурации Grub...'
     sudo update-grub
+    # Cleanup and finish
+	rm linux-*.deb
     # Reboot
     show_info 'Перезагрузка, через 5 секунд...'
     sudo shutdown -r +5
@@ -66,9 +68,11 @@ if (whiptail --title "Обновить ядро системы" --yesno "Про�
     # Grub-Update
     show_info 'Обновление конфигурации Grub...'
     sudo update-grub
+    # Cleanup and finish
+	rm linux-*.deb
     # Reboot
-    show_info 'Перезагрузка...'
-    sudo reboot
+    show_info 'Перезагрузка, через 5 секунд...'
+    sudo shutdown -r +5
     # Done
     show_success 'Готово.'
     whiptail --title "Завершено" --msgbox "Обновление ядра выполненно." 8 78
