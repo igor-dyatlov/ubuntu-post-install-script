@@ -25,3 +25,21 @@ webbrowser-app
 zeitgeist
 zeitgeist-core
 zeitgeist-datahub
+
+deja-dup deja-dup-backend-cloudfiles deja-dup-backend-gvfs
+  deja-dup-backend-s3 empathy empathy-common evolution evolution-common
+  evolution-data-server evolution-data-server-common
+  evolution-data-server-online-accounts evolution-plugins firefox
+  firefox-locale-en firefox-locale-ru flashplugin-installer gdm
+  gir1.2-telepathyglib-0.12 gir1.2-telepathylogger-0.2 gnome-contacts
+  gnome-control-center gnome-online-accounts gnome-orca gnome-shell
+  gnome-shell-extensions libebackend-1.2-10 libebook-1.2-16
+  libebook-contacts-1.2-1 libecal-1.2-18 libedata-book-1.2-25
+  libedata-cal-1.2-27 libedataserver-1.2-20 libedataserverui-1.2-1
+  libevolution libfolks-eds25 libfolks-telepathy25 libgoa-backend-1.0-1
+  libmission-control-plugins0 libtelepathy-farstream3 libtelepathy-glib0
+  libtelepathy-logger3 mcp-account-manager-goa rhythmbox-plugin-zeitgeist
+  telepathy-gabble telepathy-haze telepathy-idle telepathy-logger
+  telepathy-mission-control-5 telepathy-salut ubuntu-gnome-desktop
+  ubuntu-release-upgrader-gtk update-manager update-notifier vino
+  zeitgeist-core
