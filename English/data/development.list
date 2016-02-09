@@ -1,9 +1,9 @@
 android-tools-adb
 android-tools-fastboot
 android-tools-fsutils
-autotools-dev
+
 bluefish
-bzr
+
 cmake
 emacs
 
@@ -13,12 +13,12 @@ git
 glade
 
 gtk-3-examples
-gtk-doc-tools
-libgtk-3-dev
+
+
 nano
 nodejs
-npm
-php5-cli
+
+
 ruby
 scite
 squid
