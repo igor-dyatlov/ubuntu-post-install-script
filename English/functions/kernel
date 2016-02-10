@@ -48,14 +48,14 @@ if (whiptail --title "Update system kernel" --yesno "Proceed with kernel update?
 	# Download Debian file that matches system architecture
 	case `uname -i` in
 	    i386|i486|i586|i686)
-	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc2-wily/linux-headers-4.5.0-040500rc2-generic_4.5.0-040500rc2.201601312230_i386.deb
-	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc2-wily/linux-headers-4.5.0-040500rc2_4.5.0-040500rc2.201601312230_all.deb
-	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc2-wily/linux-image-4.5.0-040500rc2-generic_4.5.0-040500rc2.201601312230_i386.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc3-wily/linux-headers-4.5.0-040500rc3-generic_4.5.0-040500rc3.201602071930_i386.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc3-wily/linux-headers-4.5.0-040500rc3_4.5.0-040500rc3.201602071930_all.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc3-wily/linux-image-4.5.0-040500rc3-generic_4.5.0-040500rc3.201602071930_i386.deb
 	        ;;
 	    x86_64)
-	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc2-wily/linux-headers-4.5.0-040500rc2-generic_4.5.0-040500rc2.201601312230_amd64.deb
-	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc2-wily/linux-headers-4.5.0-040500rc2_4.5.0-040500rc2.201601312230_all.deb
-	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc2-wily/linux-image-4.5.0-040500rc2-generic_4.5.0-040500rc2.201601312230_amd64.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc3-wily/linux-headers-4.5.0-040500rc3-generic_4.5.0-040500rc3.201602071930_amd64.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc3-wily/linux-headers-4.5.0-040500rc3_4.5.0-040500rc3.201602071930_all.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc3-wily/linux-image-4.5.0-040500rc3-generic_4.5.0-040500rc3.201602071930_amd64.deb
 	        ;;
 	    *)
 	        show_error "No packages available to download that matches your system." && thirdparty
@@ -95,7 +95,7 @@ function kernel {
         --cancel-button "Go Back" \
         $LINES $COLUMNS $(( $LINES - 12 )) \
         stable        '(Update stable (v4.4.1-wily) kernel (need reboot)' \
-        unstable      '(Update unstable (v4.5-rc2-wily) kernel (need reboot)' \
+        unstable      '(Update unstable (v4.5-rc3-wily) kernel (need reboot)' \
         3>&1 1>&2 2>&3)
      
     exitstatus=$?
