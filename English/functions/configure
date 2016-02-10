@@ -66,6 +66,11 @@ function keyboard {
     configure
 }
 
+#Button-layout
+function button-layout {
+	show_info '...'
+}
+
 # Configure System
 function configure {
     eval `resize`
