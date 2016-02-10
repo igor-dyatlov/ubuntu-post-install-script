@@ -1,0 +1,49 @@
+#!/bin/bash
+
+#Button-layout from left
+function left {
+    show_info '...'
+    gsettings set org.gnome.desktop.wm.preferences button-layout "close,minimize,maximize:"
+    # Done
+    show_success 'Done.'
+    whiptail --title "Finished" --msgbox " update complete." 8 78
+    main
+else
+    clear && main
+fi
+}
+
+#Button-layout from right
+function right {
+    show_info '...'
+gsettings set org.gnome.desktop.wm.preferences button-layout ":maximize,minimize,close"
+    # Done
+    show_success 'Done.'
+    whiptail --title "Finished" --msgbox " update complete." 8 78
+    main
+else
+    clear && main
+fi
+}
+
+# Button-layout
+function button-layout {
+    eval `resize`
+    CONF=$(whiptail \
+        --notags \
+        --title "Button-layout" \
+        --menu "\nWhat would you like to do?" \
+        --ok-button "Run" \
+        --cancel-button "Go Back" \
+        $LINES $COLUMNS $(( $LINES - 12 )) \
+        left        '' \
+        right       '' \
+        3>&1 1>&2 2>&3)
+     
+    exitstatus=$?
+    if [ $exitstatus = 0 ]; then
+        clear && $CONF
+    else
+        clear && main
+    fi
+}
