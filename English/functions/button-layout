@@ -36,8 +36,8 @@ function button-layout {
         --ok-button "Run" \
         --cancel-button "Go Back" \
         $LINES $COLUMNS $(( $LINES - 12 )) \
-        left        '' \
-        right       '' \
+        left        'l' \
+        right       'r' \
         3>&1 1>&2 2>&3)
      
     exitstatus=$?

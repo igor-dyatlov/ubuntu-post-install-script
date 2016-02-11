@@ -3,6 +3,8 @@ android-tools-fastboot
 android-tools-fsutils
 
 bluefish
+bluefish-data
+bluefish-plugins
 
 cmake
 emacs
@@ -12,7 +14,7 @@ giggle
 git
 glade
 
-gtk-3-examples
+
 
 
 nano

@@ -69,10 +69,6 @@ function keyboard {
 #Button-layout
 function button-layout {
 	show_info '...'
-	# Done
-    show_success 'Done.'
-    whiptail --title "Finished" --msgbox "Settings changed successfully." 8 78
-    configure
 }
 
 # Configure System
