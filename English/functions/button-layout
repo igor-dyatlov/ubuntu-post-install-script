@@ -3,46 +3,40 @@
 #Button-layout from left
 function left {
     show_info '...'
-    gsettings set org.gnome.desktop.wm.preferences button-layout "close,minimize,maximize:"
+    gsettings set org.gnome.desktop.wm.preferences button-layout "close,maximize,minimize:"
     # Done
     show_success 'Done.'
-    whiptail --title "Finished" --msgbox " update complete." 8 78
-    main
-else
-    clear && main
-fi
+    whiptail --title "Finished" --msgbox "Settings changed successfully." 8 78
+    configure
 }
 
 #Button-layout from right
 function right {
     show_info '...'
-gsettings set org.gnome.desktop.wm.preferences button-layout ":maximize,minimize,close"
+    gsettings set org.gnome.desktop.wm.preferences button-layout ":minimize,maximize,close"
     # Done
     show_success 'Done.'
-    whiptail --title "Finished" --msgbox " update complete." 8 78
-    main
-else
-    clear && main
-fi
+    whiptail --title "Finished" --msgbox "Settings changed successfully." 8 78
+    configure
 }
 
 # Button-layout
 function button-layout {
     eval `resize`
-    CONF=$(whiptail \
+    BUTTON=$(whiptail \
         --notags \
-        --title "Button-layout" \
+        --title "Button layout" \
         --menu "\nWhat would you like to do?" \
-        --ok-button "Run" \
+        --ok-button "Apply" \
         --cancel-button "Go Back" \
         $LINES $COLUMNS $(( $LINES - 12 )) \
-        left        'l' \
-        right       'r' \
+        left        'Location on the left edge' \
+        right       'Location on the right edge' \
         3>&1 1>&2 2>&3)
      
     exitstatus=$?
     if [ $exitstatus = 0 ]; then
-        clear && $CONF
+        clear && $BUTTON
     else
         clear && main
     fi
