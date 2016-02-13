@@ -10,7 +10,6 @@ empathy-skype
 evolution
 evolution-common
 evolution-data-server
-evolution-data-server-common
 evolution-data-server-dbg
 evolution-data-server-dev
 evolution-data-server-online-accounts
@@ -55,7 +54,6 @@ telepathy-haze
 telepathy-idle
 telepathy-indicator
 telepathy-logger
-telepathy-mission-control-5
 telepathy-salut
 unity-webapps-common
 webbrowser-app
