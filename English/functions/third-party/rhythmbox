@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# Rhythmbox
+function rhythmbox {
+
+	# Update repository information
+	show_info 'Updating repository information...'
+	sudo apt-get update
+	# Install
+	show_info 'Installing Rhythmbox...'
+    sudo apt-get install -y rhythmbox
+    # Done
+    show_success 'Done.'
+    whiptail --title "Finished" --msgbox "Installation complete." 8 78
+	thirdparty
+}

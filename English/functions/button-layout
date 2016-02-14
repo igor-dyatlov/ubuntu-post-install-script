@@ -2,7 +2,7 @@
 
 #Button-layout from left
 function left {
-    show_info '...'
+    show_info 'Installation on the left edge...'
     gsettings set org.gnome.desktop.wm.preferences button-layout "close,maximize,minimize:"
     # Done
     show_success 'Done.'
@@ -12,7 +12,7 @@ function left {
 
 #Button-layout from right
 function right {
-    show_info '...'
+    show_info 'Installation on the right edge...'
     gsettings set org.gnome.desktop.wm.preferences button-layout ":minimize,maximize,close"
     # Done
     show_success 'Done.'

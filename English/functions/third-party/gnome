@@ -13,7 +13,7 @@ function gnome {
 	# Install
     echo 'Installing GNOME Desktop...'
     show_warning 'Requires root privileges'
-    sudo apt-get install -y fonts-cantarell gconf-editor gnome-builder gnome-calendar gnome-clocks gnome-disk-utility gnome-logs gnome-session gnome-shell gnome-shell-extensions gnome-terminal gnome-todo nautilus software-properties-common tomboy
+    sudo apt-get install -y fonts-cantarell gconf-editor gnome-builder gnome-calendar gnome-clocks gnome-disk-utility gnome-logs gnome-session gnome-shell gnome-shell-extensions gnome-terminal gnome-todo nautilus tomboy
     # Done
     show_success 'Done.'
     whiptail --title "Finished" --msgbox "Installation complete." 8 78

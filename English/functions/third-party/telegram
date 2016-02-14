@@ -16,9 +16,9 @@ function telegram {
 	        ;; 
 	esac
 	show_info 'Extraction Telegram...'
-	tar xzvf ./Telegram
+	tar -xJvf tsetup*.tar.xz
 	# Install lang(s)
-	case `locale` in
+	case `echo $LANG` in
 	    ru_RU.UTF-8)
 	        curl -O https://tlgrm.ru/files/locales/tdesktop/Russian.strings
 	        ;;
@@ -33,13 +33,13 @@ function telegram {
 	# Install package(s)
 	show_info 'Installing Telegram...'
 	show_warning 'Requires root privileges'
-	sudo mv Telegram /opt/telegram
+	sudo mv ./Telegram /opt/telegram
 	# Create symbolic link
 	show_info 'Creating symbolic link...'
 	show_warning 'Requires root privileges'
 	sudo ln -sf /opt/telegram /usr/bin/telegram
 	# Cleanup and finish
-    rm tsetup*.tar.xz *.strings
+        rm tsetup*.tar.xz *.strings
 	# Done
     show_success 'Done.'
     whiptail --title "Finished" --msgbox "Installation complete." 8 78

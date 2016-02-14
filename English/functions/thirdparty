@@ -69,6 +69,7 @@ source $dir/functions/third-party/popcorntime
 source $dir/functions/third-party/qbittorrent
 source $dir/functions/third-party/quodlibet
 source $dir/functions/third-party/rawtherapee
+source $dir/functions/third-party/rhythmbox
 source $dir/functions/third-party/rvm
 source $dir/functions/third-party/scribus
 source $dir/functions/third-party/shotcut
@@ -176,6 +177,7 @@ function thirdparty {
         'qbittorrent'       'qBittorrent' \
         'quodlibet'         'Quodlibet' \
         'rawtherapee'       'RawTherapee' \
+        'rhythmbox'         'Rhythmbox' \
         'rvm'               'Ruby Version Manager (RVM)' \
         'scribus'           'Scribus' \
         'shotcut'           'Shotcut' \

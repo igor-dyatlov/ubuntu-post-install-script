@@ -9,7 +9,6 @@ empathy-dbg
 empathy-skype
 evolution
 evolution-common
-evolution-data-server
 evolution-data-server-dbg
 evolution-data-server-dev
 evolution-data-server-online-accounts
@@ -26,7 +25,6 @@ flashplugin-installer
 gir1.2-rb-3.0
 gnome-mahjongg
 gnome-orca
-gnome-user-guide
 landscape-client
 landscape-client-ui
 landscape-client-ui-install
