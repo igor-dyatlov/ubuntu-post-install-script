@@ -1,0 +1,25 @@
+#!/bin/bash
+
+# Xorg
+function xorg {
+    sudo renice -n -5 $(pidof X)
+	# Done
+    show_success 'Done.'
+    whiptail --title "Finished" --msgbox "Settings changed successfully." 8 78
+    speedup
+}
+
+# tmp on tmpfs
+function tmpfs {
+	show_info 'Disabling apport crash dialogs...'
+    show_warning 'Requires root privileges'
+	echo "tmpfs /tmp tmpfs rw,nosuid,nodev 0 0" | sudo tee -a /etc/fstab
+    # Reboot
+    show_info 'Rebooting in 1 minute...'
+    show_warning 'Save all files and exit the program!'
+    sudo shutdown -r +1
+	# Done
+    show_success 'Done.'
+    whiptail --title "Finished" --msgbox "Settings changed successfully." 8 78
+    speedup
+}
