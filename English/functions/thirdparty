@@ -15,7 +15,7 @@ source $dir/functions/third-party/digikam
 source $dir/functions/third-party/docky
 source $dir/functions/third-party/dropbox
 source $dir/functions/third-party/enpass
-source $dir/functions/third-party/file_system
+source $dir/functions/third-party/file-system
 source $dir/functions/third-party/filezilla
 source $dir/functions/third-party/firefox
 source $dir/functions/third-party/fontforge
@@ -123,7 +123,7 @@ function thirdparty {
         'docky'             'Docky' \
         'dropbox'           'Dropbox' \
         'enpass'            'Enpass' \
-        'file_system'       'File system for Gparted' \
+        'file-system'       'File system for Gparted' \
         'filezilla'         'Filezilla' \
         'firefox'           'Firefox' \
         'fontforge'         'Fontforge' \

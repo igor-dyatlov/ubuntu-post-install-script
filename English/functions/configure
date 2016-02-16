@@ -28,6 +28,12 @@ function preferences {
     gsettings set org.gnome.desktop.interface clock-show-date true
     gsettings set org.gnome.gedit.preferences.encodings candidate-encodings "['UTF-8', 'WINDOWS-1251', 'CURRENT', 'ISO-8859-15', 'UTF-16']"
     gsettings set org.gnome.nautilus.preferences sort-directories-first true
+    gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-timeout 3600
+    gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-type nothing
+    gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-battery-timeout 1800
+    gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-battery-type nothing
+    gsettings set org.gnome.terminal.legacy.settings new-terminal-mode tab
+    gsettings set org.gnome.desktop.interface enable-animations false
     # Done
     show_success 'Done.'
     whiptail --title "Finished" --msgbox "Settings changed successfully." 8 78

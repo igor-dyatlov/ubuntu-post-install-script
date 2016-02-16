@@ -36,6 +36,7 @@ dir="$(dirname "$0")"
 . $dir/functions/development
 . $dir/functions/favourites
 . $dir/functions/kernel
+. $dir/functions/speedup
 . $dir/functions/thirdparty
 . $dir/functions/thirdparty-theme
 . $dir/functions/update
@@ -83,6 +84,7 @@ function main {
         thirdparty-theme  'Install third-party theme' \
         configure   'Configure system' \
         kernel      'Update system kernel' \
+        speedup     'Speed up system' \ 
         cleanup     'Cleanup the system' \
         3>&1 1>&2 2>&3)
      
