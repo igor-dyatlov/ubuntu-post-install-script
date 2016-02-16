@@ -5,7 +5,7 @@ function libreoffice {
     # Add repository
     show_info 'Adding LibreOffice to software sources...'
     show_warning 'Requires root privileges'
-    sudo add-apt-repository -y ppa:libreoffice/libreoffice-prereleases
+    sudo add-apt-repository -y ppa:libreoffice/libreoffice-5-1
 	# Update repository information
 	show_info 'Updating repository information...'
 	sudo apt-get update

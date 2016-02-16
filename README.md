@@ -35,13 +35,14 @@ The included [preferences](English/functions/configure) and [lists of packages](
  - Configure system [configure](English/functions/configure)
  - Upgrading the kernel [kernel](English/functions/kernel)
  - Install the program in two steps [lists of packages](English/data)
+ - Speed Up system [speedup](English/functions/speedup)
  - Support for [Russian](Russian) localization
 
 ## Screenshots
 
 ![Image](https://github.com/igor-dyatlov/ubuntu-post-install-script/blob/master/Screenshot/Screenshot_1.png)
 
-### Donate
+### Donation
 https://www.paypal.me/IgorDyatlov 
 
 ### License

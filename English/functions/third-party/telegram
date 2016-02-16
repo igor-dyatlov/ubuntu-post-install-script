@@ -30,22 +30,6 @@ function telegram {
 	        ;; 
 	esac	
 	mv *.strings ./Telegram
-	# Create icon desktop
-	echo "[Desktop Entry]" >> telegramdesktop.desktop
-    echo "Encoding=UTF-8" >> telegramdesktop.desktop
-    echo "Version=1.0" >> telegramdesktop.desktop
-    echo "Name=Telegram Desktop" >> telegramdesktop.desktop
-    echo "Comment=Official desktop version of Telegram messaging app" >> telegramdesktop.desktop
-    echo "Exec=/opt/telegram/telegram/telegram/Telegram -- %u" >> telegramdesktop.desktop
-    echo "Icon=/home/user/.TelegramDesktop/tdata/icon.png" >> Ttelegramdesktop.desktop
-    echo "Terminal=false" >> telegramdesktop.desktop
-    echo "StartupWMClass=Telegram" >> telegramdesktop.desktop
-    echo "Type=Application" >> telegramdesktop.desktop
-    echo "Categories=Network;" >> telegramdesktop.desktop
-    echo "MimeType=application/x-xdg-protocol-tg;x-scheme-handler/tg;" >> telegramdesktop.desktop
-    echo "X-Desktop-File-Install-Version=0.22" >> telegramdesktop.desktop
-    show_warning 'Requires root privileges'
-    sudo mv telegramdesktop.desktop /usr/share/applications
 	# Install package(s)
 	show_info 'Installing Telegram...'
 	show_warning 'Requires root privileges'
@@ -56,6 +40,8 @@ function telegram {
 	sudo ln -sf /opt/telegram/Telegram /usr/bin
 	# Cleanup and finish
     rm tsetup*.tar.xz *.strings *.desktop
+    # Create icon desktop and starting
+    Telegram
 	# Done
     show_success 'Done.'
     whiptail --title "Finished" --msgbox "Installation complete." 8 78
