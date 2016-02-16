@@ -1,6 +1,7 @@
 #!/bin/bash
 dir="$(dirname "$0")"
 
+source $dir/functions/animations
 source $dir/functions/button-layout
 
 # Preferred settings
@@ -33,7 +34,6 @@ function preferences {
     gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-battery-timeout 1800
     gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-battery-type nothing
     gsettings set org.gnome.terminal.legacy.settings new-terminal-mode tab
-    gsettings set org.gnome.desktop.interface enable-animations false
     # Done
     show_success 'Done.'
     whiptail --title "Finished" --msgbox "Settings changed successfully." 8 78
@@ -88,6 +88,7 @@ function configure {
         apport      'Disable system crash dialogs' \
         keyboard    'Fix indicator keyboard' \
         button-layout 'Selection button layout' \
+        animations  'Enable/disable animations' \
         3>&1 1>&2 2>&3)
      
     exitstatus=$?

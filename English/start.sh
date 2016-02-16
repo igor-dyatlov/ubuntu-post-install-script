@@ -84,8 +84,8 @@ function main {
         thirdparty-theme  'Install third-party theme' \
         configure   'Configure system' \
         kernel      'Update system kernel' \
-        speedup     'Speed up system' \ 
         cleanup     'Cleanup the system' \
+        speedup     'Speed up system' \
         3>&1 1>&2 2>&3)
      
     exitstatus=$?
