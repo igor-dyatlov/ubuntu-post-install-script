@@ -40,6 +40,11 @@ The included [preferences](English/functions/configure) and [lists of packages](
 
 ## Screenshots
 
+<a href="https://play.google.com/store/apps/details?id=ru.igor.dyatlov.appbox.free" target="_blank">
+  <img
+       src="" height="60" src="" height="60" src="" height="60" src="" height="60" src="" height="60"/>
+</a>
+
 ![Image](https://github.com/igor-dyatlov/ubuntu-post-install-script/blob/master/Screenshot/Screenshot_1.png)
 
 ### Donation
