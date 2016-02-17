@@ -23,80 +23,77 @@ if [ $exitstatus = 0 ]; then
         # Change to lower case and remove spaces.
         case "${VERSION}" in
             stable) 
-                show_info 'Downloading Google Chrome...'
-                # Download Debian file that matches system architecture
-                case `uname -i` in
-                    i386|i486|i586|i686)
-                        curl -O https://dl.google.com/linux/direct/google-chrome-stable_current_i386.deb
-                        ;;
-                    x86_64)
-                        curl -O https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-                        ;;
-                    *)
-                        show_error "No packages available to download that matches your system." && thirdparty
-                        ;;
-                esac
-                # Install package(s)
-                echo 'Installing Google Chrome...'
+                # Add repository
+	            show_info 'Adding Google Chrome repository to software sources...'
+	            show_warning 'Requires root privileges'
+	            sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
+	            show_success 'Done.'
+	            show_question 'Adding repository key...'
+                wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+	            show_success 'Done.'
+                # Update repository information
+	            show_info 'Updating repository information...'
+	            sudo apt-get update
+                # Install
+                show_info 'Installing Google Chrome...'      
                 show_warning 'Requires root privileges'
-                sudo dpkg -i google-chrome*.deb
-                sudo apt-get install -fy
-                # Cleanup and finish
-                rm google-chrome*.deb
+                sudo apt-get install -y google-chrome-stable
+                # Install dependencies
+	            show_info 'Installing Google Chrome dependencies...'
+	            show_warning 'Requires root privileges'
+	            sudo apt-get install -y libappindicator1 libindicator7
                 # Done
                 show_success 'Done.'
                 whiptail --title "Finished" --msgbox "Installation complete." 8 78
                 status=1
                 thirdparty
             ;;
-            beta) 
-                show_info 'Downloading Google Chrome (beta)...'
-                # Download Debian file that matches system architecture
-                case `uname -i` in
-                    i386|i486|i586|i686)
-                        curl -O https://dl.google.com/linux/direct/google-chrome-beta_current_i386.deb
-                        ;;
-                    x86_64)
-                        curl -O https://dl.google.com/linux/direct/google-chrome-beta_current_amd64.deb
-                        ;;
-                    *)
-                        show_error "No packages available to download that matches your system." && thirdparty
-                        ;;
-                esac
-                # Install package(s)
-                echo 'Installing Google Chrome...'
+            beta)                
+                # Add repository
+	            show_info 'Adding Google Chrome repository to software sources...'
+	            show_warning 'Requires root privileges'
+	            sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
+	            show_success 'Done.'
+	            show_question 'Adding repository key...'
+                wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+	            show_success 'Done.'
+                # Update repository information
+	            show_info 'Updating repository information...'
+	            sudo apt-get update
+                # Install
+                show_info 'Installing Google Chrome...'      
                 show_warning 'Requires root privileges'
-                sudo dpkg -i google-chrome*.deb
-                sudo apt-get install -fy
-                # Cleanup and finish
-                rm google-chrome*.deb
+                sudo apt-get install -y google-chrome-beta
+                # Install dependencies
+	            show_info 'Installing Google Chrome dependencies...'
+	            show_warning 'Requires root privileges'
+	            sudo apt-get install -y libappindicator1 libindicator7
                 # Done
                 show_success 'Done.'
                 whiptail --title "Finished" --msgbox "Installation complete." 8 78
                 status=1
                 thirdparty
             ;;
-            unstable) 
-                show_info 'Downloading Google Chrome (unstable)...'
-                # Download Debian file that matches system architecture
-                case `uname -i` in
-                    i386|i486|i586|i686)
-                        curl -O https://dl.google.com/linux/direct/google-chrome-unstable_current_i386.deb
-                        ;;
-                    x86_64)
-                        curl -O https://dl.google.com/linux/direct/google-chrome-unstable_current_amd64.deb
-                        ;;
-                    *)
-                        show_error "No packages available to download that matches your system." && thirdparty
-                        ;;
-                esac
-                # Install package(s)
-                echo 'Installing Google Chrome...'
+            unstable)                 
+                # Add repository
+	            show_info 'Adding Google Chrome repository to software sources...'
+	            show_warning 'Requires root privileges'
+	            sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
+	            show_success 'Done.'
+	            show_question 'Adding repository key...'
+                wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+	            show_success 'Done.'
+                # Update repository information
+	            show_info 'Updating repository information...'
+	            sudo apt-get update
+                # Install
+                show_info 'Installing Google Chrome...'      
                 show_warning 'Requires root privileges'
-                sudo dpkg -i google-chrome*.deb
-                sudo apt-get install -fy
-                # Cleanup and finish
-                rm google-chrome*.deb
+                sudo apt-get install -y google-chrome-unstable
+                # Install dependencies
+	            show_info 'Installing Google Chrome dependencies...'
+	            show_warning 'Requires root privileges'
+	            sudo apt-get install -y libappindicator1 libindicator7
                 # Done
                 show_success 'Done.'
                 whiptail --title "Finished" --msgbox "Installation complete." 8 78

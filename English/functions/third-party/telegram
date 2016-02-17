@@ -6,10 +6,10 @@ function telegram {
 	# Download Debian file that matches system architecture
 	case `uname -i` in
 	    i386|i486|i586|i686)
-	        curl -O https://updates.tdesktop.com/tlinux32/tsetup32.0.9.18.tar.xz
+	        curl -O https://updates.tdesktop.com/tlinux32/tsetup32.0.9.24.tar.xz
 	        ;;
 	    x86_64)
-	        curl -O https://updates.tdesktop.com/tlinux/tsetup.0.9.18.tar.xz
+	        curl -O https://updates.tdesktop.com/tlinux/tsetup.0.9.24.tar.xz
 	        ;;
 	    *)
 	        show_error "No packages available to download that matches your system." && thirdparty
