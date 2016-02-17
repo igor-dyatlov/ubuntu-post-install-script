@@ -39,13 +39,13 @@ The included [preferences](English/functions/configure) and [lists of packages](
  - Support for [Russian](Russian) localization
 
 ## Screenshots
-
-<a href="https://play.google.com/store/apps/details?id=ru.igor.dyatlov.appbox.free" target="_blank">
-  <img
-       src="" height="60" src="" height="60" src="" height="60" src="" height="60" src="" height="60"/>
-</a>
-
-![Image](https://github.com/igor-dyatlov/ubuntu-post-install-script/blob/master/Screenshot/Screenshot_1.png)
+<img src="Screenshot/Screenshot-1.png" width="35%" />
+<img src="Screenshot/Screenshot-2.png" width="35%" />
+<img src="Screenshot/Screenshot-3.png" width="35%" />
+<img src="Screenshot/Screenshot-4.png" width="35%" />
+<img src="Screenshot/Screenshot-5.png" width="35%" />
+<img src="Screenshot/Screenshot-6.png" width="35%" />
+<img src="Screenshot/Screenshot-7.png" width="35%" />
 
 ### Donation
 https://www.paypal.me/IgorDyatlov 
