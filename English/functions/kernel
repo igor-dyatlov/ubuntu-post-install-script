@@ -94,8 +94,8 @@ function kernel {
         --ok-button "Update" \
         --cancel-button "Go Back" \
         $LINES $COLUMNS $(( $LINES - 12 )) \
-        stable        '(Update stable (v4.4.1-wily) kernel (need reboot)' \
-        unstable      '(Update unstable (v4.5-rc3-wily) kernel (need reboot)' \
+        stable        'Update stable (v4.4.1-wily) kernel (need reboot)' \
+        unstable      'Update unstable (v4.5-rc3-wily) kernel (need reboot)' \
         3>&1 1>&2 2>&3)
      
     exitstatus=$?
