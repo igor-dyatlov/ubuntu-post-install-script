@@ -13,7 +13,7 @@ function nvidia {
 	# Install
     echo 'Installing Nvidia Linux Display Driver...'
     show_warning 'Requires root privileges'
-    sudo apt-get install -y nvidia-349 nvidia-358 nvidia-prime nvidia-settings 
+    sudo apt-get install -y nvidia-361 nvidia-prime nvidia-settings 
     # Done
     show_success 'Done.'
     whiptail --title "Finished" --msgbox "Installation complete." 8 78

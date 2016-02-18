@@ -3,6 +3,7 @@
 dir="$(dirname "$0")"
 
 source $dir/functions/third-party/audacity
+source $dir/functions/third-party/birdie
 source $dir/functions/third-party/bleachbit
 source $dir/functions/third-party/blender
 source $dir/functions/third-party/brackets
@@ -111,6 +112,7 @@ function thirdparty {
         --cancel-button "Go Back" \
         $LINES $COLUMNS $(( $LINES - 12 )) \
         'audacity'          'Audacity' \
+        'birdie'            'Birdie Twitter client' \
         'bleachbit'         'BleachBit' \
         'blender'           'Blender' \
         'brackets'          'Brackets' \

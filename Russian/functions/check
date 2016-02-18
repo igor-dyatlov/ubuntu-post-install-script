@@ -33,8 +33,7 @@ function check {
             ;;
         esac
     else
-        show_info "Все чисто."
+        show_info "'$package' установлены. Продолжение"
     fi
     done
-    
 }

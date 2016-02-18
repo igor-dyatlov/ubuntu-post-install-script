@@ -2,21 +2,17 @@
 
 # Gparted
 function gparted {
-	# Add repository
-	show_info 'Adding Gparted repository to software sources...'
-	show_warning 'Requires root privileges'
-	sudo sh -c "echo 'deb http://archive.getdeb.net/ubuntu wily-getdeb apps /' >> /etc/apt/sources.list.d/getdeb.list"
-	show_success 'Done.'
-	show_question 'Adding repository key...'
-	curl -O http://archive.getdeb.net/getdeb-archive.key
-	sudo apt-key add - < Release.key 
-	show_success 'Done.'
+
 	# Update repository information
 	show_info 'Updating repository information...'
 	sudo apt-get update
 	# Install
 	show_info 'Installing Gparted...'
     sudo apt-get install -y gparted
+    # Install dependencies
+	show_info 'Installing Gparted dependencies...'
+	show_warning 'Requires root privileges'
+	sudo apt-get install -y btrfs-progs btrfs-tools e2fsprogs dosfstools hfsutils f2fs-tools hfsprogs jfsutils util-linux lvm2 nilfs-utils ntfs-3g ntfsprogs reiser4progs reiserfsprogs reiserfs-utils xfsprogs xfsdump reiser4progs
     # Done
     show_success 'Done.'
     whiptail --title "Finished" --msgbox "Installation complete." 8 78
