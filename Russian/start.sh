@@ -36,7 +36,9 @@ dir="$(dirname "$0")"
 . $dir/functions/development
 . $dir/functions/favourites
 . $dir/functions/kernel
+. $dir/functions/speedup
 . $dir/functions/thirdparty
+. $dir/functions/thirdparty-theme
 . $dir/functions/update
 . $dir/functions/utilities
 
@@ -79,9 +81,11 @@ function main {
         development 'Установить любимые инструменты разработки' \
         codecs      'Установить мультимедийные кодеки' \
         thirdparty  'Установить сторонние приложения' \
+        thirdparty-theme  'Установить сторонние темы оформления' \
         configure   'Настройка системы' \
         kernel      'Обновить ядро системы' \
         cleanup     'Очистка системы' \
+        speedup     'Ускорение/оптимизация системы' \
         3>&1 1>&2 2>&3)
      
     exitstatus=$?

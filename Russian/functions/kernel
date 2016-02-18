@@ -6,14 +6,14 @@ if (whiptail --title "Обновление ядра системы" --yesno "П�
 	# Download Debian file that matches system architecture
 	case `uname -i` in
 	    i386|i486|i586|i686)
-	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4.1-wily/linux-headers-4.4.1-040401-generic_4.4.1-040401.201601311534_i386.deb 
-	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4.1-wily/linux-headers-4.4.1-040401_4.4.1-040401.201601311534_all.deb 
-	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4.1-wily/linux-image-4.4.1-040401-generic_4.4.1-040401.201601311534_i386.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4.2-wily/linux-headers-4.4.2-040402-generic_4.4.2-040402.201602171633_i386.deb 
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4.2-wily/linux-headers-4.4.2-040402_4.4.2-040402.201602171633_all.deb 
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4.2-wily/linux-image-4.4.2-040402-generic_4.4.2-040402.201602171633_i386.deb
 	        ;;
 	    x86_64)
-	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4.1-wily/linux-headers-4.4.1-040401-generic_4.4.1-040401.201601311534_amd64.deb 
-	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4.1-wily/linux-headers-4.4.1-040401_4.4.1-040401.201601311534_all.deb 
-	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4.1-wily/linux-image-4.4.1-040401-generic_4.4.1-040401.201601311534_amd64.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4.2-wily/linux-headers-4.4.2-040402-generic_4.4.2-040402.201602171633_amd64.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4.2-wily/linux-headers-4.4.2-040402_4.4.2-040402.201602171633_all.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4.2-wily/linux-image-4.4.2-040402-generic_4.4.2-040402.201602171633_amd64.deb
 	        ;;
 	    *)
 	        show_error "Не доступны пакеты для скачивания, которые соответствуют вашей системе." && thirdparty
@@ -94,7 +94,7 @@ function kernel {
         --ok-button "Обновить" \
         --cancel-button "Назад" \
         $LINES $COLUMNS $(( $LINES - 12 )) \
-        stable        'Обновить стабильную (v4.4.1-wily) версию (нужна перезагрузка)' \
+        stable        'Обновить стабильную (v4.4.2-wily) версию (нужна перезагрузка)' \
         unstable      'Обновить не стабильную (v4.5-rc4-wily) версию (нужна перезагрузка)' \
         3>&1 1>&2 2>&3)
      

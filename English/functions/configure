@@ -34,6 +34,8 @@ function preferences {
     gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-battery-timeout 1800
     gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-battery-type nothing
     gsettings set org.gnome.terminal.legacy.settings new-terminal-mode tab
+    gsettings set org.gnome.rhythmbox.rhythmdb monitor-library true
+    gsettings set org.gnome.rhythmbox.sources browser-views 'artists-albums'
     # Done
     show_success 'Done.'
     whiptail --title "Finished" --msgbox "Settings changed successfully." 8 78

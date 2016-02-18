@@ -1,4 +1,8 @@
 #!/bin/bash
+dir="$(dirname "$0")"
+
+source $dir/functions/animations
+source $dir/functions/button-layout
 
 # Preferred settings
 function preferences {
@@ -25,6 +29,11 @@ function preferences {
     gsettings set org.gnome.desktop.interface clock-show-date true
     gsettings set org.gnome.gedit.preferences.encodings candidate-encodings "['UTF-8', 'WINDOWS-1251', 'CURRENT', 'ISO-8859-15', 'UTF-16']"
     gsettings set org.gnome.nautilus.preferences sort-directories-first true
+    gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-timeout 3600
+    gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-type nothing
+    gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-battery-timeout 1800
+    gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-battery-type nothing
+    gsettings set org.gnome.terminal.legacy.settings new-terminal-mode tab
     gsettings set org.gnome.rhythmbox.rhythmdb monitor-library true
     gsettings set org.gnome.rhythmbox.sources browser-views 'artists-albums'
     # Done
@@ -79,6 +88,8 @@ function configure {
         startup     'Изменить отображения запуска приложений' \
         apport      'Отключить диалог сообщения об ошибках' \
         keyboard    'Исправить индикатор раскладки клавиатуры' \
+        button-layout 'Выбрать расположение кнопок' \
+        animations  'Включить/выключить анимаций' \
         3>&1 1>&2 2>&3)
      
     exitstatus=$?

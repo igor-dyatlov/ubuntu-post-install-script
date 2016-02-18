@@ -6,14 +6,14 @@ if (whiptail --title "Update system kernel" --yesno "Proceed with kernel update?
 	# Download Debian file that matches system architecture
 	case `uname -i` in
 	    i386|i486|i586|i686)
-	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4.1-wily/linux-headers-4.4.1-040401-generic_4.4.1-040401.201601311534_i386.deb 
-	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4.1-wily/linux-headers-4.4.1-040401_4.4.1-040401.201601311534_all.deb 
-	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4.1-wily/linux-image-4.4.1-040401-generic_4.4.1-040401.201601311534_i386.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4.2-wily/linux-headers-4.4.2-040402-generic_4.4.2-040402.201602171633_i386.deb 
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4.2-wily/linux-headers-4.4.2-040402_4.4.2-040402.201602171633_all.deb 
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4.2-wily/linux-image-4.4.2-040402-generic_4.4.2-040402.201602171633_i386.deb
 	        ;;
 	    x86_64)
-	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4.1-wily/linux-headers-4.4.1-040401-generic_4.4.1-040401.201601311534_amd64.deb 
-	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4.1-wily/linux-headers-4.4.1-040401_4.4.1-040401.201601311534_all.deb 
-	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4.1-wily/linux-image-4.4.1-040401-generic_4.4.1-040401.201601311534_amd64.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4.2-wily/linux-headers-4.4.2-040402-generic_4.4.2-040402.201602171633_amd64.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4.2-wily/linux-headers-4.4.2-040402_4.4.2-040402.201602171633_all.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4.2-wily/linux-image-4.4.2-040402-generic_4.4.2-040402.201602171633_amd64.deb
 	        ;;
 	    *)
 	        show_error "No packages available to download that matches your system." && thirdparty
@@ -94,7 +94,7 @@ function kernel {
         --ok-button "Update" \
         --cancel-button "Go Back" \
         $LINES $COLUMNS $(( $LINES - 12 )) \
-        stable        'Update stable (v4.4.1-wily) kernel (need reboot)' \
+        stable        'Update stable (v4.4.2-wily) kernel (need reboot)' \
         unstable      'Update unstable (v4.5-rc4-wily) kernel (need reboot)' \
         3>&1 1>&2 2>&3)
      

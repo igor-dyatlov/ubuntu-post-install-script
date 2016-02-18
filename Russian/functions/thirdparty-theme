@@ -11,8 +11,8 @@ function thirdparty-theme {
         --notags \
         --title "Third-Party Installation" \
         --menu "\nWhat third-party theme would you like to install?" \
-        --ok-button "Install" \
-        --cancel-button "Go Back" \
+        --ok-button "Установить" \
+        --cancel-button "Назад" \
         $LINES $COLUMNS $(( $LINES - 12 )) \
         placmank        'Placmank тема для Plank' \
         3>&1 1>&2 2>&3)
