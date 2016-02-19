@@ -2,7 +2,9 @@
 
 dir="$(dirname "$0")"
 
+source $dir/functions/third-party/atom
 source $dir/functions/third-party/audacity
+source $dir/functions/third-party/birdie
 source $dir/functions/third-party/bleachbit
 source $dir/functions/third-party/blender
 source $dir/functions/third-party/brackets
@@ -14,21 +16,30 @@ source $dir/functions/third-party/darktable
 source $dir/functions/third-party/digikam
 source $dir/functions/third-party/docky
 source $dir/functions/third-party/dropbox
+source $dir/functions/third-party/drweb
 source $dir/functions/third-party/enpass
-source $dir/functions/third-party/file_system
+source $dir/functions/third-party/file-system
 source $dir/functions/third-party/filezilla
 source $dir/functions/third-party/firefox
 source $dir/functions/third-party/fontforge
+source $dir/functions/third-party/font-manager
 source $dir/functions/third-party/formatjunkie
 source $dir/functions/third-party/fotoxx
+source $dir/functions/third-party/giggle
 source $dir/functions/third-party/gimp
 source $dir/functions/third-party/git
+source $dir/functions/third-party/gitbook
+source $dir/functions/third-party/gitg
+source $dir/functions/third-party/gitkraken
 source $dir/functions/third-party/gnome
+source $dir/functions/third-party/gnome-builder
 source $dir/functions/third-party/google-chrome
 source $dir/functions/third-party/gparted
 source $dir/functions/third-party/gpick
 source $dir/functions/third-party/gravit
 source $dir/functions/third-party/grub-customizer
+source $dir/functions/third-party/gufw
+source $dir/functions/third-party/haroopress
 source $dir/functions/third-party/hplip
 source $dir/functions/third-party/hudson
 source $dir/functions/third-party/hydrogen
@@ -37,6 +48,7 @@ source $dir/functions/third-party/intel
 source $dir/functions/third-party/ipscan
 source $dir/functions/third-party/java-jdk
 source $dir/functions/third-party/jenkins
+source $dir/functions/third-party/kazam
 source $dir/functions/third-party/kde
 source $dir/functions/third-party/keepassx
 source $dir/functions/third-party/krita
@@ -63,13 +75,16 @@ source $dir/functions/third-party/owncloud
 source $dir/functions/third-party/peazip
 source $dir/functions/third-party/photivo
 source $dir/functions/third-party/pinta
+source $dir/functions/third-party/pitivi
 source $dir/functions/third-party/pixeluvo
 source $dir/functions/third-party/plank
 source $dir/functions/third-party/popcorntime
 source $dir/functions/third-party/qbittorrent
 source $dir/functions/third-party/quodlibet
 source $dir/functions/third-party/rawtherapee
+source $dir/functions/third-party/rhythmbox
 source $dir/functions/third-party/rvm
+source $dir/functions/third-party/samba
 source $dir/functions/third-party/scribus
 source $dir/functions/third-party/shotcut
 source $dir/functions/third-party/shutter
@@ -85,7 +100,9 @@ source $dir/functions/third-party/sublime-text
 source $dir/functions/third-party/sunflower
 source $dir/functions/third-party/teamviewer
 source $dir/functions/third-party/telegram
+source $dir/functions/third-party/testdisk
 source $dir/functions/third-party/textadept
+source $dir/functions/third-party/uberwriter
 source $dir/functions/third-party/ubuntu-tweak
 source $dir/functions/third-party/uget
 source $dir/functions/third-party/umake
@@ -109,7 +126,9 @@ function thirdparty {
         --ok-button "Установить" \
         --cancel-button "Назад" \
         $LINES $COLUMNS $(( $LINES - 12 )) \
+        'atom'              'Atom' \
         'audacity'          'Audacity' \
+        'birdie'            'Birdie Twitter client' \
         'bleachbit'         'BleachBit' \
         'blender'           'Blender' \
         'brackets'          'Brackets' \
@@ -121,21 +140,30 @@ function thirdparty {
         'digikam'           'digiKam' \
         'docky'             'Docky' \
         'dropbox'           'Dropbox' \
+        'drweb'             'Dr.Web CureIt!' \
         'enpass'            'Enpass' \
-        'file_system'       'File system for Gparted' \
+        'file-system'       'File system for Gparted' \
         'filezilla'         'Filezilla' \
         'firefox'           'Firefox' \
         'fontforge'         'Fontforge' \
+        'font-manager'      'Font manager' \
         'formatjunkie'      'Formatjunkie' \
         'fotoxx'            'Fotoxx' \
+        'giggle'            'Giggle' \
         'gimp'              'Gimp' \
         'git'               'Git' \
+        'gitbook'           'GitBook' \
+        'gitg'              'Gitg' \
+        'gitkraken'         'GitKraken' \
         'gnome'             'Latest GNOME desktop' \
+        'gnome-builder'     'GNOME Builder' \
         'google-chrome'     'Google Chrome' \
         'gparted'           'Gparted' \
         'gpick'             'Gpick' \
         'gravit'            'Gravit' \
         'grub-customizer'   'Grub customizer' \
+        'gufw'              'Gufw' \
+        'haroopress'        'Haroopress' \
         'hplip'             'HP Linux Imaging and Printing' \
         'hudson'            'Hudson' \
         'hydrogen'          'Hydrogen' \
@@ -144,6 +172,7 @@ function thirdparty {
         'ipscan'            'Angry IP Scanner' \
         'java-jdk'          'Java JDK' \
         'jenkins'           'Jenkins' \
+        'kazam'             'Kazam' \
         'kde'               'Latest KDE desktop' \
         'keepassx'          'KeePassX' \
         'krita'             'Krita' \
@@ -170,13 +199,16 @@ function thirdparty {
         'peazip'            'PeaZip' \
         'photivo'           'Photivo' \
         'pinta'             'Pinta' \
+        'pitivi'            'Pitivi' \
         'pixeluvo'          'Pixeluvo' \
         'plank'             'Plank' \
         'popcorntime'       'Popcorn Time' \
         'qbittorrent'       'qBittorrent' \
         'quodlibet'         'Quodlibet' \
         'rawtherapee'       'RawTherapee' \
+        'rhythmbox'         'Rhythmbox' \
         'rvm'               'Ruby Version Manager (RVM)' \
+        'samba'             'Samba' \
         'scribus'           'Scribus' \
         'shotcut'           'Shotcut' \
         'shutter'           'Shutter' \
@@ -192,7 +224,9 @@ function thirdparty {
         'sunflower'         'Sunflower' \
         'teamviewer'        'Teamviewer' \
         'telegram'          'Telegram' \
+        'testdisk'          'TestDisk' \
         'textadept'         'Textadept' \
+        'uberwriter'        'UberWriter' \
         'ubuntu-tweak'      'Ubuntu tweak' \
         'uget'              'Uget' \
         'umake'             'Umake Android Studio' \
