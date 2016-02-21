@@ -1,5 +1,8 @@
 #!/bin/bash
-
+wget http://repo.steampowered.com/steam/signature.gpg && sudo apt-key add signature.gpg
+sudo sh -c 'echo "deb http://repo.steampowered.com/steam/ precise steam" >> /etc/apt/sources.list.d/steam.list'
+sudo apt-get update
+sudo apt-get install steam
 # Steam
 function steam {
 	show_info 'Downloading Steam...'

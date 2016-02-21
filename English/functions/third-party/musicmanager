@@ -3,15 +3,17 @@
 # Google Musicmanager
 function google-musicmanager {
 	# Add repository
-	show_info 'Adding Google Musicmanager repository to software sources...'
+	show_info 'Adding Google Musicmanager PPA repository to software sources...'
 	show_warning 'Requires root privileges'
 	sudo sh -c 'echo "deb http://dl.google.com/linux/musicmanager/deb/ stable main" >> /etc/apt/sources.list.d/google-musicmanager.list'
 	show_success 'Done.'
 	show_question 'Adding repository key...'
-    wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+	show_warning 'Requires root privileges'
+  wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
 	show_success 'Done.'
 	# Update repository information
 	show_info 'Updating repository information...'
+	show_warning 'Requires root privileges'
 	sudo apt-get update
 	# Install
 	show_info 'Installing Google Musicmanager...'
@@ -20,8 +22,8 @@ function google-musicmanager {
 	show_info 'Installing Google Musicmanager dependencies...'
 	show_warning 'Requires root privileges'
 	sudo apt-get install -y libqt4-opengl libqtwebkit4
-    # Done
-    show_success 'Done.'
-    whiptail --title "Finished" --msgbox "Installation complete." 8 78
+  # Done
+  show_success 'Done.'
+  whiptail --title "Finished" --msgbox "Installation complete." 8 78
 	thirdparty
 }

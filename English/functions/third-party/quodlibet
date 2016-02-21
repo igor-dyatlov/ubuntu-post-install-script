@@ -10,7 +10,7 @@ function quodlibet {
 	show_info 'Updating repository information...'
 	sudo apt-get update
 	# Install
-    echo 'Installing Quod Libet...'
+    show_info 'Installing Quod Libet...'
     show_warning 'Requires root privileges'
     sudo apt-get install -y quodlibet
     # Done

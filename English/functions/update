@@ -9,6 +9,7 @@ if (whiptail --title "System Update" --yesno "Proceed with system update?" 10 60
     sudo apt-get update && sudo apt-get upgrade -y
     # Dist-Upgrade
     show_info 'Performing system update...'
+    show_warning 'Requires root privileges'
     sudo apt-get dist-upgrade -y
     # Done
     show_success 'Done.'

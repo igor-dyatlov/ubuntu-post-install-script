@@ -3,7 +3,7 @@
 # Birdie
 function birdie {
 	# Add repository
-	show_info 'Adding Birdie (Daily) PPA to software sources...'
+	show_info 'Adding Birdie PPA to software sources...'
 	show_warning 'Requires root privileges'
 	sudo add-apt-repository -y ppa:birdie-team/daily
 	# Update repository information
@@ -11,8 +11,9 @@ function birdie {
 	sudo apt-get update
 	# Install
 	show_info 'Installing Birdie...'
+	show_warning 'Requires root privileges'
 	sudo apt-get install -y birdie
 	show_success 'Done.'
-    whiptail --title "Finished" --msgbox "Installation complete." 8 78
+  whiptail --title "Finished" --msgbox "Installation complete." 8 78
 	thirdparty
 }

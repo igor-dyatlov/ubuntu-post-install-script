@@ -2,12 +2,12 @@
 
 # samba
 function samba {
-    
+
 	# Update repository information
 	show_info 'Updating repository information...'
 	sudo apt-get update
 	# Install
-    echo 'Installing samba...'
+    show_info 'Installing samba...'
     show_warning 'Requires root privileges'
     sudo apt-get install -y samba system-config-samba gadmin-samba samba-common samba-common-bin samba-libs
     # Done

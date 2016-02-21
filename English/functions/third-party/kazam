@@ -10,7 +10,7 @@ function kazam {
 	show_info 'Updating repository information...'
 	sudo apt-get update
 	# Install
-    echo 'Installing Kazam...'
+    show_info 'Installing Kazam...'
     show_warning 'Requires root privileges'
     sudo apt-get install -y kazam
     # Done

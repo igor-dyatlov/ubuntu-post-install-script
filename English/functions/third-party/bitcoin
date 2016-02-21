@@ -1,18 +1,19 @@
 #!/bin/bash
 
-# GRUB customizer
-function grub-customizer {
+# Bitcoin
+function bitcoin {
   # Add repository
-  show_info 'Adding GRUB customizer to software sources...'
+  show_info 'Adding Bitcoin PPA to software sources...'
   show_warning 'Requires root privileges'
-  sudo add-apt-repository -y ppa:danielrichter2007/grub-customizer
+  sudo add-apt-repository -y ppa:bitcoin/bitcoin
 	# Update repository information
 	show_info 'Updating repository information...'
+  show_warning 'Requires root privileges'
 	sudo apt-get update
 	# Install
-  echo 'Installing GRUB customizer Desktop...'
+  show_info 'Installing Bitcoin...'
   show_warning 'Requires root privileges'
-  sudo apt-get install -y grub-customizer
+  sudo apt-get install -y bitcoin
   # Done
   show_success 'Done.'
   whiptail --title "Finished" --msgbox "Installation complete." 8 78

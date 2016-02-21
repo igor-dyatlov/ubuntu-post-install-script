@@ -10,7 +10,7 @@ function rawtherapee {
 	show_info 'Updating repository information...'
 	sudo apt-get update
 	# Install
-    echo 'Installing RawTherapee...'
+    show_info 'Installing RawTherapee...'
     show_warning 'Requires root privileges'
     sudo apt-get install -y rawtherapee
     # Done
