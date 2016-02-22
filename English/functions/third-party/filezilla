@@ -3,7 +3,7 @@
 # Filezilla
 function filezilla {
   # Add repository
-  show_info 'Adding Filezilla to software sources...'
+  show_info 'Adding Filezilla PPA to software sources...'
   show_warning 'Requires root privileges'
   sudo add-apt-repository -y ppa:otto-kesselgulasch/misc
 	# Update repository information

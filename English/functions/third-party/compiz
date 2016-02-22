@@ -7,7 +7,7 @@ function compiz {
 	show_warning 'Requires root privileges'
 	sudo apt-get update
 	# Install
-  echo 'Installing Compiz...'
+  show_info 'Installing Compiz...'
   show_warning 'Requires root privileges'
   sudo apt-get install -y compizconfig-settings-manager
   # Done

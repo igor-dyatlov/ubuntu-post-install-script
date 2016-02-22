@@ -4,9 +4,10 @@
 function gnome-builder {
 	# Update repository information
 	show_info 'Updating repository information...'
+  show_warning 'Requires root privileges'
 	sudo apt-get update
 	# Install
-  echo 'Installing Builder...'
+  show_info 'Installing Builder...'
   show_warning 'Requires root privileges'
   sudo apt-get install -y gnome-builder
   # Done

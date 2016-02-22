@@ -11,7 +11,7 @@ function cutegram {
   show_warning 'Requires root privileges'
 	sudo apt-get update
 	# Install
-  echo 'Installing Cutegram...'
+  show_info 'Installing Cutegram...'
   show_warning 'Requires root privileges'
   sudo apt-get install -y cutegram
   # Done

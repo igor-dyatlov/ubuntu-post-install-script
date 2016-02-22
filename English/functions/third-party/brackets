@@ -6,14 +6,14 @@ function brackets {
 	# Download Debian file that matches system architecture
 	case `uname -i` in
 	    i386|i486|i586|i686)
-	        curl -O https://github.com/adobe/brackets/releases/download/release-1.5/Brackets.Release.1.5.32-bit.deb
+	        curl -O https://github.com/adobe/brackets/releases/download/release-1.6/Brackets.Release.1.6.32-bit.deb
 	        ;;
 	    x86_64)
-	        curl -O https://github.com/adobe/brackets/releases/download/release-1.5/Brackets.Release.1.5.64-bit.deb
+	        curl -O https://github.com/adobe/brackets/releases/download/release-1.6/Brackets.Release.1.6.64-bit.deb
 	        ;;
 	    *)
 	        show_error "No packages available to download that matches your system." && thirdparty
-	        ;; 
+	        ;;
 	esac
 	# Install package(s)
 	show_info 'Installing Brackets...'
@@ -22,8 +22,8 @@ function brackets {
 	sudo apt-get install -fy
 	# Cleanup and finish
 	rm Brackets*.deb
-    # Done
-    show_success 'Done.'
-    whiptail --title "Finished" --msgbox "Installation complete." 8 78
+  # Done
+  show_success 'Done.'
+  whiptail --title "Finished" --msgbox "Installation complete." 8 78
 	thirdparty
 }

@@ -2,12 +2,13 @@
 
 # Placmank
 function placmank {
-    # Add repository
+  # Add repository
   show_info 'Adding Placmank PPA to software sources...'
   show_warning 'Requires root privileges'
   sudo add-apt-repository -y ppa:dyatlov-igor/placmank
 	# Update repository information
 	show_info 'Updating repository information...'
+  show_warning 'Requires root privileges'
 	sudo apt-get update
 	# Install
   show_info 'Installing Placmank...'

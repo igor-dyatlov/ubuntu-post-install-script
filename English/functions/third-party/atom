@@ -21,7 +21,7 @@ function atom {
 	sudo dpkg -i atom*.deb
 	sudo apt-get install -fy
 	# Install dependencies
-	show_info 'Installing TeamViewer dependencies...'
+	show_info 'Installing Atom dependencies...'
 	show_warning 'Requires root privileges'
 	sudo apt-get install -y gconf2 gconf-service libgtk2.0-0 libudev1 libgcrypt20 libnotify4 libxtst6 libnss3 python gvfs-bin xdg-utils libcap2
 	# Cleanup and finish

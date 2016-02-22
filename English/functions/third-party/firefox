@@ -14,7 +14,8 @@ function firefox {
 	show_info 'Installing Firefox...'
 	show_warning 'Requires root privileges'
 	sudo apt-get install -y firefox
-	show_success 'Done.'
+	# Done
+  show_success 'Done.'
   whiptail --title "Finished" --msgbox "Installation complete." 8 78
 	thirdparty
 }

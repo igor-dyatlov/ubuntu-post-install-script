@@ -16,7 +16,7 @@ function unused {
         sudo apt-get purge -y $(cat $PURGED)
         # Done
         show_success 'Done.'
-        whiptail --title "Finished" --msgbox "Installation complete." 8 78
+        whiptail --title "Finished" --msgbox "Removal complete." 8 78
         cleanup
     else
         clear && cleanup
@@ -72,12 +72,12 @@ function crash {
     sudo rm /var/crash/*
     show_success 'Done.'
     whiptail --title "Finished" --msgbox "Package cache has been cleaned." 8 78
-    cleanup	
+    cleanup
 }
 
 # Cleanup System
 function cleanup {
-    eval `resize` 
+    eval `resize`
     CLEANUP=$(whiptail \
         --notags \
         --title "System Cleanup" \
@@ -91,7 +91,7 @@ function cleanup {
         crash       'Remove old log crash' \
         kernels     'Remove old kernel(s)' \
         3>&1 1>&2 2>&3)
-     
+
     exitstatus=$?
     if [ $exitstatus = 0 ]; then
         clear && $CLEANUP

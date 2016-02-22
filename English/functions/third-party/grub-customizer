@@ -3,14 +3,14 @@
 # GRUB customizer
 function grub-customizer {
   # Add repository
-  show_info 'Adding GRUB customizer to software sources...'
+  show_info 'Adding GRUB customizer PPA to software sources...'
   show_warning 'Requires root privileges'
   sudo add-apt-repository -y ppa:danielrichter2007/grub-customizer
 	# Update repository information
 	show_info 'Updating repository information...'
 	sudo apt-get update
 	# Install
-  echo 'Installing GRUB customizer Desktop...'
+  show_info 'Installing GRUB customizer Desktop...'
   show_warning 'Requires root privileges'
   sudo apt-get install -y grub-customizer
   # Done
