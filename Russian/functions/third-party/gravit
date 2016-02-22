@@ -16,9 +16,9 @@ function gravit {
 	show_warning 'Requires root privileges'
 	sudo ln -sf /opt/telegram /usr/bin/telegram
 	# Cleanup and finish
-    rm tsetup*.tar.xz *.strings
+  rm tsetup*.tar.xz *.strings
 	# Done
-    show_success 'Done.'
-    whiptail --title "Finished" --msgbox "Installation complete." 8 78
+  show_success 'Done.'
+  whiptail --title "Finished" --msgbox "Installation complete." 8 78
 	thirdparty
 }

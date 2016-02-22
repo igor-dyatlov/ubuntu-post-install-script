@@ -4,13 +4,14 @@
 function gitg {
 	# Update repository information
 	show_info 'Updating repository information...'
+	show_warning 'Requires root privileges'
 	sudo apt-get update
 	# Install
-    echo 'Installing Gitg...'
-    show_warning 'Requires root privileges'
-    sudo apt-get install -y gitg
-    # Done
-    show_success 'Done.'
-    whiptail --title "Finished" --msgbox "Installation complete." 8 78
+  show_info 'Installing Gitg...'
+  show_warning 'Requires root privileges'
+  sudo apt-get install -y gitg
+  # Done
+  show_success 'Done.'
+  whiptail --title "Finished" --msgbox "Installation complete." 8 78
 	thirdparty
 }

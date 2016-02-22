@@ -3,7 +3,7 @@
 # HP Linux Imaging and Printing
 function hplip {
   # Add repository
-  show_info 'Download HPLIP 3.15.11 Linux Imaging and Printing...'
+  show_info 'Download HPLIP Linux Imaging and Printing...'
   show_warning 'Requires root privileges'
   curl -O http://sourceforge.net/projects/hplip/files/hplip/3.15.11/hplip-3.15.11.run/download
 	# Set Permission File

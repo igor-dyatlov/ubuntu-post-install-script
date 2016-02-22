@@ -1,8 +1,8 @@
 #!/bin/bash
 
-# Java
-function java {	
-	show_info 'Downloading TeamViewer...'
+# Java JDK
+function java-jdk {
+	show_info 'Downloading Java JDK...'
 	# Download Debian file that matches system architecture
 	case `uname -i` in
 	    i386|i486|i586|i686)
@@ -15,29 +15,29 @@ function java {
 	        show_error "No packages available to download that matches your system." && thirdparty
 	        ;;
 	esac
-	show_info 'Extraction Telegram...'
+	show_info 'Extraction Java JDK...'
 	tar xzvf ./jdk1.8.0_71
 	# Install package(s)
-	show_info 'Installing Telegram...'
+	show_info 'Installing Java JDK...'
 	show_warning 'Requires root privileges'
 	sudo mv jdk1.8.0_71/ /usr/lib/jvm/
 	# Create symbolic link
 	show_info 'Creating symbolic link...'
 	show_warning 'Requires root privileges'
 	sudo update-alternatives --install /usr/bin/java java /usr/lib/jvm/jdk1.8.0_65/bin/java 1
-    sudo update-alternatives --install /usr/bin/javac javac /usr/lib/jvm/jdk1.8.0_65/bin/javac 1
-    sudo update-alternatives --install /usr/bin/javaws javaws /usr/lib/jvm/jdk1.8.0_65/bin/javaws 1
-    sudo update-alternatives --config java
-    sudo update-alternatives --config javac
-    sudo update-alternatives --config javaws
+  sudo update-alternatives --install /usr/bin/javac javac /usr/lib/jvm/jdk1.8.0_65/bin/javac 1
+  sudo update-alternatives --install /usr/bin/javaws javaws /usr/lib/jvm/jdk1.8.0_65/bin/javaws 1
+  sudo update-alternatives --config java
+  sudo update-alternatives --config javac
+  sudo update-alternatives --config javaws
 	# Install dependencies
-	show_info 'Installing Steam dependencies...'
+	show_info 'Installing Java JDK dependencies...'
 	show_warning 'Requires root privileges'
-    sudo apt-get install -y ia32-lib ia32-libs lib32ncurses5 lib32ncurses5-dev lib32stdc++6
+  sudo apt-get install -y ia32-lib ia32-libs lib32ncurses5 lib32ncurses5-dev lib32stdc++6
 	# Cleanup and finish
-    rm jdk-8u71*.tar.gz
-    # Done
-    show_success 'Done.'
-    whiptail --title "Finished" --msgbox "Installation complete." 8 78
+  rm jdk-8u71*.tar.gz
+  # Done
+  show_success 'Done.'
+  whiptail --title "Finished" --msgbox "Installation complete." 8 78
 	thirdparty
 }

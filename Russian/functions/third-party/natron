@@ -13,7 +13,7 @@ function natron {
 	        ;;
 	    *)
 	        show_error "No packages available to download that matches your system." && thirdparty
-	        ;; 
+	        ;;
 	esac
 	# Install package(s)
 	show_info 'Installing Natron...'
@@ -22,8 +22,8 @@ function natron {
 	sudo apt-get install -fy
 	# Cleanup and finish
 	rm natron*.deb
-    # Done
-    show_success 'Done.'
-    whiptail --title "Finished" --msgbox "Installation complete." 8 78
+  # Done
+  show_success 'Done.'
+  whiptail --title "Finished" --msgbox "Installation complete." 8 78
 	thirdparty
 }

@@ -2,32 +2,29 @@
 
 # Steam
 function steam {
-	show_info 'Downloading Steam...'
-	# Download Debian file that matches system architecture
-	case `uname -i` in
-	    i386|i486|i586|i686)
-	        curl -O http://repo.steampowered.com/steam/archive/precise/steam_latest.deb
-	        ;;
-	    x86_64)
-	        curl -O http://repo.steampowered.com/steam/archive/precise/steam_latest.deb
-	        ;;
-	    *)
-	        show_error "No packages available to download that matches your system." && thirdparty
-	        ;; 
-	esac
-	# Install package(s)
+	# Add repository
+	show_info 'Adding Steam PPA repository to software sources...'
+	show_warning 'Requires root privileges'
+	sudo sh -c 'echo "deb http://repo.steampowered.com/steam/ precise steam" >> /etc/apt/sources.list.d/steam.list'
+	show_success 'Done.'
+	show_question 'Adding repository key...'
+	show_warning 'Requires root privileges'
+  wget -q -O - http://repo.steampowered.com/steam/signature.gpg | sudo apt-key add -
+	show_success 'Done.'
+	# Update repository information
+	show_info 'Updating repository information...'
+	show_warning 'Requires root privileges'
+	sudo apt-get update
+	# Install
 	show_info 'Installing Steam...'
 	show_warning 'Requires root privileges'
-	sudo dpkg -i steam*.deb
-	sudo apt-get install -fy
+	sudo apt-get install -y steam
 	# Install dependencies
 	show_info 'Installing Steam dependencies...'
 	show_warning 'Requires root privileges'
 	sudo apt-get install -y libgl1-mesa-glx libgl1-mesa-dev libgl1-mesa-dri:i386 libgl1-mesa-glx:i386 libc6:i386
-	# Cleanup and finish
-	rm steam*.deb
-    # Done
-    show_success 'Done.'
-    whiptail --title "Finished" --msgbox "Installation complete." 8 78
+  # Done
+  show_success 'Done.'
+  whiptail --title "Finished" --msgbox "Installation complete." 8 78
 	thirdparty
 }

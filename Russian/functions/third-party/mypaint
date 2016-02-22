@@ -2,19 +2,20 @@
 
 # Mypaint
 function mypaint {
-    # Add repository
-    show_info 'Adding Mypaint to software sources...'
-    show_warning 'Requires root privileges'
-    sudo add-apt-repository -y ppa:achadwick/mypaint-testing
+  # Add repository
+  show_info 'Adding Mypaint PPA to software sources...'
+  show_warning 'Requires root privileges'
+  sudo add-apt-repository -y ppa:achadwick/mypaint-testing
 	# Update repository information
 	show_info 'Updating repository information...'
+  show_warning 'Requires root privileges'
 	sudo apt-get update
 	# Install
-    echo 'Installing Mypaint...'
-    show_warning 'Requires root privileges'
-    sudo apt-get install -y mypaint mypaint-data-extras
-    # Done
-    show_success 'Done.'
-    whiptail --title "Finished" --msgbox "Installation complete." 8 78
+  show_info 'Installing Mypaint...'
+  show_warning 'Requires root privileges'
+  sudo apt-get install -y mypaint mypaint-data-extras
+  # Done
+  show_success 'Done.'
+  whiptail --title "Finished" --msgbox "Installation complete." 8 78
 	thirdparty
 }
