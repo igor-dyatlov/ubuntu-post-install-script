@@ -11,7 +11,7 @@ function obs-studio {
   show_warning 'Requires root privileges'
 	sudo apt-get update
 	# Install
-  echo 'Installing OBS studio...'
+  show_info 'Installing OBS studio...'
   show_warning 'Requires root privileges'
   sudo apt-get install -y obs-studio
   # Done

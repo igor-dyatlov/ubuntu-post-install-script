@@ -18,10 +18,10 @@ function teamviewer {
 	# Install package(s)
 	show_info 'Installing TeamViewer...'
 	show_warning 'Requires root privileges'
-	sudo dpkg -i teamviewer*.deb	
+	sudo dpkg -i teamviewer*.deb
 	sudo apt-get install -fy
-    # Install dependencies
-    show_info 'Downloading dependent 32-bit libraries...'
+  # Install dependencies
+  show_info 'Downloading dependent 32-bit libraries...'
 	show_warning 'Requires root privileges'
     # Download Debian file that matches system architecture
 	case `uname -i` in
@@ -30,7 +30,7 @@ function teamviewer {
 	        ;;
 	    *)
 	        show_error "No packages available to download that matches your system." && thirdparty
-	        ;; 
+	        ;;
 	esac
 	# Install dependencies
 	show_info 'Installing TeamViewer dependencies...'
@@ -49,6 +49,6 @@ function teamviewer {
 	# Cleanup and finish
 	rm teamviewer*.deb
 	show_success 'Done.'
-    whiptail --title "Finished" --msgbox "Installation complete." 8 78
+  whiptail --title "Finished" --msgbox "Installation complete." 8 78
 	thirdparty
 }

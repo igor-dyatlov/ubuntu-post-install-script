@@ -9,7 +9,7 @@ function owncloud {
 	show_success 'Done.'
 	show_question 'Adding repository key...'
 	curl -O http://download.opensuse.org/repositories/isv:ownCloud:desktop/Ubuntu_14.04/Release.key
-	sudo apt-key add - < Release.key 
+	sudo apt-key add - < Release.key
 	show_success 'Done.'
 	# Update repository information
 	show_info 'Updating repository information...'
@@ -17,8 +17,8 @@ function owncloud {
 	# Install
 	show_info 'Installing ownCloud client...'
 	sudo apt-get install -y owncloud-client
-    # Done
-    show_success 'Done.'
-    whiptail --title "Finished" --msgbox "Installation complete." 8 78
+  # Done
+  show_success 'Done.'
+  whiptail --title "Finished" --msgbox "Installation complete." 8 78
 	thirdparty
 }
