@@ -3,11 +3,12 @@
 # Linaro
 function linaro {
   # Add repository
-  show_info 'Adding Linaro to software sources...'
+  show_info 'Adding Linaro PPA to software sources...'
   show_warning 'Requires root privileges'
   sudo add-apt-repository -y ppa:linaro-maintainers/tools
 	# Update repository information
 	show_info 'Updating repository information...'
+  show_warning 'Requires root privileges'
 	sudo apt-get update
 	# Install
   echo 'Installing Linaro...'

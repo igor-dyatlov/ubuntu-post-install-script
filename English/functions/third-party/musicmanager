@@ -17,6 +17,7 @@ function google-musicmanager {
 	sudo apt-get update
 	# Install
 	show_info 'Installing Google Musicmanager...'
+	show_warning 'Requires root privileges'
 	sudo apt-get install -y google-musicmanager-beta
 	# Install dependencies
 	show_info 'Installing Google Musicmanager dependencies...'

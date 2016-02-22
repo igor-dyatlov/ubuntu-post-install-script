@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Spotify
+# Scribus
 function scribus {
 	# Add the Spotify repository signing key to be able to verify downloaded packages
 	show_info 'Adding Spotify signing key to keyring...'
@@ -30,7 +30,7 @@ function scribus {
 	        ;;
 	    *)
 	        show_error "No packages available to download that matches your system." && thirdparty
-	        ;; 
+	        ;;
 	esac
 	show_info "Installing 'libgcrypt11'..."
 	show_warning 'Requires root privileges'
