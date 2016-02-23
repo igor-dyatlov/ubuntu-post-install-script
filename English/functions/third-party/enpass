@@ -5,11 +5,11 @@ function enpass {
 	# Add repository
 	show_info 'Adding Enpass PPA repository to software sources...'
 	show_warning 'Requires root privileges'
-	sudo sh -c "echo 'deb http://repo.sinew.in/ stable main /' >> /etc/apt/sources.list.d/enpass.list"
+	sudo sh -c 'echo "deb http://repo.sinew.in/ stable main" >> /etc/apt/sources.list.d/enpass.list'
 	show_success 'Done.'
 	show_question 'Adding repository key...'
-	curl -O http://repo.sinew.in/keys/enpass-linux.key
-	sudo apt-key add - < Release.key
+	show_warning 'Requires root privileges'
+	wget -q -O http://repo.sinew.in/keys/enpass-linux.key | sudo apt-key add -
 	show_success 'Done.'
 	# Update repository information
 	show_info 'Updating repository information...'

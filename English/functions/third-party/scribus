@@ -6,7 +6,7 @@ function scribus {
 	show_info 'Adding Spotify signing key to keyring...'
 	show_warning 'Requires root privileges'
 	gpg --keyserver wwwkeys.pgp.net --recv-keys EEF818CF
- gpg --armor --export EEF818CF | sudo apt-key add -
+  gpg --armor --export EEF818CF | sudo apt-key add -
 	show_success 'Done.'
 	# Add the Spotify repository
 	show_info 'Adding Spotify repository to software sources...'
@@ -39,6 +39,6 @@ function scribus {
 	# Cleanup and finish
 	rm libgcrypt11*.deb
 	show_success 'Done.'
-    whiptail --title "Finished" --msgbox "Installation complete." 8 78
+  whiptail --title "Finished" --msgbox "Installation complete." 8 78
 	thirdparty
 }

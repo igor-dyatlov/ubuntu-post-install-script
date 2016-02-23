@@ -23,7 +23,7 @@ function teamviewer {
   # Install dependencies
   show_info 'Downloading dependent 32-bit libraries...'
 	show_warning 'Requires root privileges'
-    # Download Debian file that matches system architecture
+  # Download Debian file that matches system architecture
 	case `uname -i` in
 	    x86_64)
 	           dpkg --add-architecture i386

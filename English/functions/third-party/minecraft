@@ -12,6 +12,7 @@ function minecraft {
 	sudo apt-get update
 	# Install
 	show_info 'Installing Minecraft Installer...'
+	show_warning 'Requires root privileges'
 	sudo apt-get install -y minecraft-installer
   # Done
   show_success 'Done.'

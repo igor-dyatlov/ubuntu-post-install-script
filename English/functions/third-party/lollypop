@@ -11,7 +11,7 @@ function lollypop {
   show_warning 'Requires root privileges'
 	sudo apt-get update
 	# Install
-  echo 'Installing Lollypop...'
+  show_info 'Installing Lollypop...'
   show_warning 'Requires root privileges'
   sudo apt-get install -y lollypop
   # Done

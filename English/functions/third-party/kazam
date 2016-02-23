@@ -3,7 +3,7 @@
 # Kazam
 function kazam {
   # Add repository
-  show_info 'Adding Kazam to software sources...'
+  show_info 'Adding Kazam PPA to software sources...'
   show_warning 'Requires root privileges'
   sudo add-apt-repository -y ppa:kazam-team/stable-series
 	# Update repository information

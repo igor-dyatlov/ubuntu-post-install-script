@@ -3,7 +3,7 @@
 # Krita
 function krita {
   # Add repository
-  show_info 'Adding Krita to software sources...'
+  show_info 'Adding Krita PPA to software sources...'
   show_warning 'Requires root privileges'
   sudo add-apt-repository -y ppa:dimula73/krita
 	# Update repository information

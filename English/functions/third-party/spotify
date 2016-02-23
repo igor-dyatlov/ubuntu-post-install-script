@@ -29,7 +29,7 @@ function spotify {
 	        ;;
 	    *)
 	        show_error "No packages available to download that matches your system." && thirdparty
-	        ;; 
+	        ;;
 	esac
 	show_info "Installing 'libgcrypt11'..."
 	show_warning 'Requires root privileges'
@@ -38,6 +38,6 @@ function spotify {
 	# Cleanup and finish
 	rm libgcrypt11*.deb
 	show_success 'Done.'
-    whiptail --title "Finished" --msgbox "Installation complete." 8 78
+  whiptail --title "Finished" --msgbox "Installation complete." 8 78
 	thirdparty
 }

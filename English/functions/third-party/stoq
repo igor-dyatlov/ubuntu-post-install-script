@@ -3,7 +3,7 @@
 # Stoq
 function stoq {
   # Add repository
-  show_info 'Adding Stoq to software sources...'
+  show_info 'Adding Stoq PPA to software sources...'
   show_warning 'Requires root privileges'
   sudo add-apt-repository -y ppa:stoq-dev/lancamentos
 	# Update repository information
