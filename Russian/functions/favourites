@@ -11,6 +11,9 @@ function favourites {
         --yesno "Текущий список любимых приложений для установки: \n\n$(cat $FAVS) \n\nПродолжить установку?" \
         $LINES $COLUMNS $(( $LINES - 12 )) \
         --scrolltext ) then
+        show_info 'Добавление репозитория партнеров Canonical в центр обновлений...'
+        show_warning 'Требуется привилегии суперпользователя'
+        sudo apt-add-repository "deb http://archive.canonical.com/ubuntu/ precise partner"
         show_info 'Установка...'
         show_warning 'Требуется привилегии суперпользователя'
         # Feel free to change the contents of 'favourites.list' in the data folder to whatever suits your preference.

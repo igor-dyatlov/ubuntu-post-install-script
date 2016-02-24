@@ -11,6 +11,9 @@ function favourites {
         --yesno "Current list of favourite applications to install: \n\n$(cat $FAVS) \n\nProceed with installation?" \
         $LINES $COLUMNS $(( $LINES - 12 )) \
         --scrolltext ) then
+        show_info 'Adding Canonical Partner repository to software sources...'
+        show_warning 'Requires root privileges'
+        sudo apt-add-repository "deb http://archive.canonical.com/ubuntu/ precise partner"
         show_info 'Installing...'
         show_warning 'Requires root privileges'
         # Feel free to change the contents of 'favourites.list' in the data folder to whatever suits your preference.
