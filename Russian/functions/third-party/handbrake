@@ -12,6 +12,7 @@ function handbrake {
 	sudo apt-get update
 	# Install
 	show_info 'Installing HandBrake...'
+  show_warning 'Requires root privileges'
   sudo apt-get install -y handbrake-gtk
   # Done
   show_success 'Done.'

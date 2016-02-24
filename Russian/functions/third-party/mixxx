@@ -11,7 +11,7 @@ function mixxx {
   show_warning 'Requires root privileges'
 	sudo apt-get update
 	# Install
-  echo 'Installing Mixxx...'
+  show_info 'Installing Mixxx...'
   show_warning 'Requires root privileges'
   sudo apt-get install -y mixxx
   # Done

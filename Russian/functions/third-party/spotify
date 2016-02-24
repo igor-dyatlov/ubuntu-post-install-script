@@ -10,12 +10,14 @@ function spotify {
 	# Add the Spotify repository
 	show_info 'Adding Spotify repository to software sources...'
 	show_warning 'Requires root privileges'
-	echo 'deb http://repository.spotify.com stable non-free' | sudo tee /etc/apt/sources.list.d/spotify.list
+	sudo sh -c 'echo "deb http://repository.spotify.com stable main non-free" >> /etc/apt/sources.list.d/spotify.list'
 	# Update repository information
 	show_info 'Updating repository information...'
+	show_warning 'Requires root privileges'
 	sudo apt-get update
 	# Install
 	show_info 'Installing Spotify Client...'
+	show_warning 'Requires root privileges'
 	sudo apt-get install -y spotify-client
 	show_success 'Done.'
 	# Fix shared libraries error for 'libgcrypt.so.11'
@@ -29,7 +31,7 @@ function spotify {
 	        ;;
 	    *)
 	        show_error "No packages available to download that matches your system." && thirdparty
-	        ;; 
+	        ;;
 	esac
 	show_info "Installing 'libgcrypt11'..."
 	show_warning 'Requires root privileges'
@@ -37,7 +39,8 @@ function spotify {
 	sudo apt-get install -fy
 	# Cleanup and finish
 	rm libgcrypt11*.deb
+	# Done
 	show_success 'Done.'
-    whiptail --title "Finished" --msgbox "Installation complete." 8 78
+  whiptail --title "Finished" --msgbox "Installation complete." 8 78
 	thirdparty
 }

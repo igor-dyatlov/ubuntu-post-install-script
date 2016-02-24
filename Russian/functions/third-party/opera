@@ -6,10 +6,10 @@ function opera {
 	# Download Debian file that matches system architecture
 	case `uname -i` in
 	    i386|i486|i586|i686)
-	        curl -O http://operasoftware.pc.cdn.bitgravity.com/pub/opera/desktop/34.0.2036.47/linux/opera-stable_34.0.2036.47_i386.deb
+	        curl -O http://operasoftware.pc.cdn.bitgravity.com/pub/opera/desktop/35.0.2066.82/linux/opera-stable_35.0.2066.82_i386.deb
 	        ;;
 	    x86_64)
-	        curl -O http://operasoftware.pc.cdn.bitgravity.com/pub/opera/desktop/34.0.2036.47/linux/opera-stable_34.0.2036.47_amd64.deb
+	        curl -O http://operasoftware.pc.cdn.bitgravity.com/pub/opera/desktop/35.0.2066.82/linux/opera-stable_35.0.2066.82_amd64.deb
 	        ;;
 	    *)
 	        show_error "No packages available to download that matches your system." && thirdparty

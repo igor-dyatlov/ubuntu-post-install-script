@@ -12,6 +12,7 @@ function rhythmbox {
 	sudo apt-get update
 	# Install
 	show_info 'Installing Rhythmbox...'
+  show_warning 'Requires root privileges'
   sudo apt-get install -y rhythmbox rhythmbox-plugin-complete rhythmbox-plugin-equalizer rhythmbox-plugin-coverart-browser
   # Done
   show_success 'Done.'
