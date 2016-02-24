@@ -48,7 +48,8 @@ function teamviewer {
 	esac
 	# Cleanup and finish
 	rm teamviewer*.deb
-	show_success 'Done.'
+	# Done
+  show_success 'Done.'
   whiptail --title "Finished" --msgbox "Installation complete." 8 78
 	thirdparty
 }

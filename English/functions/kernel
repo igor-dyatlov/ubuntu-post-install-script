@@ -6,8 +6,8 @@ if (whiptail --title "Update system kernel" --yesno "Proceed with kernel update?
 	# Download Debian file that matches system architecture
 	case `uname -i` in
 	    i386|i486|i586|i686)
-	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4.2-wily/linux-headers-4.4.2-040402-generic_4.4.2-040402.201602171633_i386.deb 
-	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4.2-wily/linux-headers-4.4.2-040402_4.4.2-040402.201602171633_all.deb 
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4.2-wily/linux-headers-4.4.2-040402-generic_4.4.2-040402.201602171633_i386.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4.2-wily/linux-headers-4.4.2-040402_4.4.2-040402.201602171633_all.deb
 	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4.2-wily/linux-image-4.4.2-040402-generic_4.4.2-040402.201602171633_i386.deb
 	        ;;
 	    x86_64)
@@ -17,7 +17,7 @@ if (whiptail --title "Update system kernel" --yesno "Proceed with kernel update?
 	        ;;
 	    *)
 	        show_error "No packages available to download that matches your system." && thirdparty
-	        ;; 
+	        ;;
 	esac
     # Update repository information
     show_info 'Download and install...'
@@ -26,9 +26,10 @@ if (whiptail --title "Update system kernel" --yesno "Proceed with kernel update?
     sudo apt-get install -fy
     # Grub-Update
     show_info 'Grub configuration update...'
+		show_warning 'Requires root privileges'
     sudo update-grub
     # Cleanup and finish
-	rm linux-*.deb
+	  rm linux-*.deb
     # Reboot
     show_info 'Rebooting in 1 minute...'
     show_warning 'Save all files and exit the program!'
@@ -48,18 +49,18 @@ if (whiptail --title "Update system kernel" --yesno "Proceed with kernel update?
 	# Download Debian file that matches system architecture
 	case `uname -i` in
 	    i386|i486|i586|i686)
-	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc4-wily/linux-headers-4.5.0-040500rc4-generic_4.5.0-040500rc4.201602141731_i386.deb
-	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc4-wily/linux-headers-4.5.0-040500rc4_4.5.0-040500rc4.201602141731_all.deb
-	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc4-wily/linux-image-4.5.0-040500rc4-generic_4.5.0-040500rc4.201602141731_i386.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc5-wily/linux-headers-4.5.0-040500rc5-generic_4.5.0-040500rc5.201602201730_i386.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc5-wily/linux-headers-4.5.0-040500rc5_4.5.0-040500rc5.201602201730_all.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc5-wily/linux-image-4.5.0-040500rc5-generic_4.5.0-040500rc5.201602201730_i386.deb
 	        ;;
 	    x86_64)
-	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc4-wily/linux-headers-4.5.0-040500rc4-generic_4.5.0-040500rc4.201602141731_amd64.deb
-	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc4-wily/linux-headers-4.5.0-040500rc4_4.5.0-040500rc4.201602141731_all.deb
-	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc4-wily/linux-image-4.5.0-040500rc4-generic_4.5.0-040500rc4.201602141731_amd64.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc5-wily/linux-headers-4.5.0-040500rc5-generic_4.5.0-040500rc5.201602201730_amd64.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc5-wily/linux-headers-4.5.0-040500rc5_4.5.0-040500rc5.201602201730_all.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc5-wily/linux-image-4.5.0-040500rc5-generic_4.5.0-040500rc5.201602201730_amd64.deb
 	        ;;
 	    *)
 	        show_error "No packages available to download that matches your system." && thirdparty
-	        ;; 
+	        ;;
 	esac
     # Update repository information
     show_info 'Download and install...'
@@ -68,9 +69,10 @@ if (whiptail --title "Update system kernel" --yesno "Proceed with kernel update?
     sudo apt-get install -fy
     # Grub-Update
     show_info 'Grub configuration update...'
+		show_warning 'Requires root privileges'
     sudo update-grub
     # Cleanup and finish
-	rm linux-*.deb
+	  rm linux-*.deb
     # Reboot
     show_info 'Rebooting in 1 minute...'
     show_warning 'Save all files and exit the program!'
@@ -95,9 +97,9 @@ function kernel {
         --cancel-button "Go Back" \
         $LINES $COLUMNS $(( $LINES - 12 )) \
         stable        'Update stable (v4.4.2-wily) kernel (need reboot)' \
-        unstable      'Update unstable (v4.5-rc4-wily) kernel (need reboot)' \
+        unstable      'Update unstable (v4.5-rc5-wily) kernel (need reboot)' \
         3>&1 1>&2 2>&3)
-     
+
     exitstatus=$?
     if [ $exitstatus = 0 ]; then
         clear && $CONF

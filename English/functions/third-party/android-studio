@@ -10,15 +10,12 @@ function android-studio {
 	show_info 'Installing Android Studio 2.0 Preview...'
 	show_warning 'Requires root privileges'
 	sudo mv ./android-studio /opt/android-studio
-
   # Set Permission File
 	show_info 'Set Permission File...'
-	sudo chmod +x
-
-android-studio/bin/studio.sh
-
-     ./studio.sh
-
+	cd /opt/android-studio/bin
+	sudo chmod +x studio.sh
+  # Create icon desktop and starting
+  sudo sh studio.sh
 	# Cleanup and finish
 	rm android-studio*.zip
   # Done

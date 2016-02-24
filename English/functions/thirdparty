@@ -2,9 +2,11 @@
 
 dir="$(dirname "$0")"
 
+source $dir/functions/third-party/android-studio
 source $dir/functions/third-party/atom
 source $dir/functions/third-party/audacity
 source $dir/functions/third-party/birdie
+source $dir/functions/third-party/bitcoin
 source $dir/functions/third-party/bleachbit
 source $dir/functions/third-party/blender
 source $dir/functions/third-party/brackets
@@ -39,6 +41,7 @@ source $dir/functions/third-party/gpick
 source $dir/functions/third-party/gravit
 source $dir/functions/third-party/grub-customizer
 source $dir/functions/third-party/gufw
+source $dir/functions/third-party/handbrake
 source $dir/functions/third-party/haroopress
 source $dir/functions/third-party/hplip
 source $dir/functions/third-party/hudson
@@ -70,7 +73,6 @@ source $dir/functions/third-party/nvidia
 source $dir/functions/third-party/obs-studio
 source $dir/functions/third-party/openshot
 source $dir/functions/third-party/opera
-source $dir/functions/third-party/oracle-java
 source $dir/functions/third-party/owncloud
 source $dir/functions/third-party/peazip
 source $dir/functions/third-party/photivo
@@ -78,7 +80,8 @@ source $dir/functions/third-party/pinta
 source $dir/functions/third-party/pitivi
 source $dir/functions/third-party/pixeluvo
 source $dir/functions/third-party/plank
-source $dir/functions/third-party/popcorntime
+source $dir/functions/third-party/plex
+source $dir/functions/third-party/popcorn-time
 source $dir/functions/third-party/qbittorrent
 source $dir/functions/third-party/quodlibet
 source $dir/functions/third-party/rawtherapee
@@ -126,9 +129,11 @@ function thirdparty {
         --ok-button "Install" \
         --cancel-button "Go Back" \
         $LINES $COLUMNS $(( $LINES - 12 )) \
+        'android-studio'    'Android Studio 2.0 Preview' \
         'atom'              'Atom' \
         'audacity'          'Audacity' \
         'birdie'            'Birdie Twitter client' \
+        'bitcoin'           'Bitcoin' \
         'bleachbit'         'BleachBit' \
         'blender'           'Blender' \
         'brackets'          'Brackets' \
@@ -163,6 +168,7 @@ function thirdparty {
         'gravit'            'Gravit' \
         'grub-customizer'   'Grub customizer' \
         'gufw'              'Gufw' \
+        'handbrake'         'Handbrake' \
         'haroopress'        'Haroopress' \
         'hplip'             'HP Linux Imaging and Printing' \
         'hudson'            'Hudson' \
@@ -194,7 +200,6 @@ function thirdparty {
         'obs-studio'        'OBS studio' \
         'openshot'          'Openshot' \
         'opera'             'Opera' \
-        'oracle-java'       'Oracle Java 8' \
         'owncloud'          'ownCloud client' \
         'peazip'            'PeaZip' \
         'photivo'           'Photivo' \
@@ -202,6 +207,7 @@ function thirdparty {
         'pitivi'            'Pitivi' \
         'pixeluvo'          'Pixeluvo' \
         'plank'             'Plank' \
+        'plex'              'Plex' \
         'popcorntime'       'Popcorn Time' \
         'qbittorrent'       'qBittorrent' \
         'quodlibet'         'Quodlibet' \
@@ -240,7 +246,7 @@ function thirdparty {
         'wps'               'WPS Office' \
         'xampp'             'XAMPP Server' \
         3>&1 1>&2 2>&3)
-     
+
     exitstatus=$?
     if [ $exitstatus = 0 ]; then
         clear && $THIRDPARTY
@@ -248,4 +254,3 @@ function thirdparty {
         clear && main
     fi
 }
-

@@ -6,10 +6,10 @@ function natron {
 	# Download Debian file that matches system architecture
 	case `uname -i` in
 	    i386|i486|i586|i686)
-	        curl -O http://downloads.natron.fr/Linux/releases/32bit/files/natron_2.0.0.RC5-1_i386.deb
+	        curl -O http://downloads.natron.fr/Linux/releases/32bit/files/natron_2.0.0.RC6-2_i386.deb
 	        ;;
 	    x86_64)
-	        curl -O http://downloads.natron.fr/Linux/releases/64bit/files/natron_2.0.0.RC5-1_amd64.deb
+	        curl -O http://downloads.natron.fr/Linux/releases/64bit/files/natron_2.0.0.RC6-2_amd64.deb
 	        ;;
 	    *)
 	        show_error "No packages available to download that matches your system." && thirdparty
