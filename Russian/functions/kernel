@@ -6,17 +6,17 @@ if (whiptail --title "Обновление ядра системы" --yesno "П�
 	# Download Debian file that matches system architecture
 	case `uname -i` in
 	    i386|i486|i586|i686)
-	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4.2-wily/linux-headers-4.4.2-040402-generic_4.4.2-040402.201602171633_i386.deb
-	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4.2-wily/linux-headers-4.4.2-040402_4.4.2-040402.201602171633_all.deb
-	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4.2-wily/linux-image-4.4.2-040402-generic_4.4.2-040402.201602171633_i386.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4.3-wily/linux-headers-4.4.3-040403-generic_4.4.3-040403.201602251634_i386.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4.3-wily/linux-headers-4.4.3-040403_4.4.3-040403.201602251634_all.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4.3-wily/linux-image-4.4.3-040403-generic_4.4.3-040403.201602251634_i386.deb
 	        ;;
 	    x86_64)
-	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4.2-wily/linux-headers-4.4.2-040402-generic_4.4.2-040402.201602171633_amd64.deb
-	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4.2-wily/linux-headers-4.4.2-040402_4.4.2-040402.201602171633_all.deb
-	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4.2-wily/linux-image-4.4.2-040402-generic_4.4.2-040402.201602171633_amd64.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4.3-wily/linux-headers-4.4.3-040403-generic_4.4.3-040403.201602251634_amd64.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4.3-wily/linux-headers-4.4.3-040403_4.4.3-040403.201602251634_all.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4.3-wily/linux-image-4.4.3-040403-generic_4.4.3-040403.201602251634_amd64.deb
 	        ;;
 	    *)
-	        show_error "Не доступны пакеты для скачивания, которые соответствуют вашей системе." && thirdparty
+	        show_error "No packages available to download that matches your system." && thirdparty
 	        ;;
 	esac
     # Update repository information
