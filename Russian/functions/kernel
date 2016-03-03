@@ -49,14 +49,14 @@ if (whiptail --title "Обновить ядро системы" --yesno "Про�
 	# Download Debian file that matches system architecture
 	case `uname -i` in
 	    i386|i486|i586|i686)
-		 	    curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc5-wily/linux-headers-4.5.0-040500rc5-generic_4.5.0-040500rc5.201602201730_i386.deb
-			    curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc5-wily/linux-headers-4.5.0-040500rc5_4.5.0-040500rc5.201602201730_all.deb
-			    curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc5-wily/linux-image-4.5.0-040500rc5-generic_4.5.0-040500rc5.201602201730_i386.deb
-			;;
-	x86_64)
-			    curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc5-wily/linux-headers-4.5.0-040500rc5-generic_4.5.0-040500rc5.201602201730_amd64.deb
-			    curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc5-wily/linux-headers-4.5.0-040500rc5_4.5.0-040500rc5.201602201730_all.deb
-			    curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc5-wily/linux-image-4.5.0-040500rc5-generic_4.5.0-040500rc5.201602201730_amd64.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc6-wily/linux-headers-4.5.0-040500rc6-generic_4.5.0-040500rc6.201602281230_i386.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc6-wily/linux-headers-4.5.0-040500rc6_4.5.0-040500rc6.201602281230_all.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc6-wily/linux-image-4.5.0-040500rc6-generic_4.5.0-040500rc6.201602281230_i386.deb
+	        ;;
+	    x86_64)
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc6-wily/linux-headers-4.5.0-040500rc6-generic_4.5.0-040500rc6.201602281230_amd64.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc6-wily/linux-headers-4.5.0-040500rc6_4.5.0-040500rc6.201602281230_all.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc6-wily/linux-image-4.5.0-040500rc6-generic_4.5.0-040500rc6.201602281230_amd64.deb
 	        ;;
 	    *)
 	        show_error "Не доступны пакеты для скачивания, которые соответствуют вашей системе." && thirdparty
@@ -89,7 +89,7 @@ fi
 # Kernel system upgrade
 function kernel {
     eval `resize`
-    CONF=$(whiptail \
+    KERNEL=$(whiptail \
         --notags \
         --title "Обновление ядра системы" \
         --menu "\nЧем бы Вы хотели заняться?" \
@@ -97,12 +97,12 @@ function kernel {
         --cancel-button "Назад" \
         $LINES $COLUMNS $(( $LINES - 12 )) \
         stable        'Обновить стабильную (v4.4.3-wily) версию (нужна перезагрузка)' \
-        unstable      'Обновить не стабильную (v4.5-rc5-wily) версию (нужна перезагрузка)' \
+        unstable      'Обновить не стабильную (v4.5-rc6-wily) версию (нужна перезагрузка)' \
         3>&1 1>&2 2>&3)
 
     exitstatus=$?
     if [ $exitstatus = 0 ]; then
-        clear && $CONF
+        clear && $KERNEL
     else
         clear && main
     fi

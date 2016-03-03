@@ -3,7 +3,7 @@
 # Android Studio 2.0 Preview
 function android-studio {
 	show_info 'Downloading Android Studio 2.0 Preview...'
-  curl -O https://dl.google.com/dl/android/studio/ide-zips/2.0.0.14/android-studio-ide-143.2609919-linux.zip
+  curl -O https://dl.google.com/dl/android/studio/ide-zips/2.0.0.15/android-studio-ide-143.2637817-linux.zip
   show_info 'Extraction Android Studio 2.0 Preview...'
 	unzip android-studio*.zip
   # Install package(s)

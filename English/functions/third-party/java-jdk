@@ -18,7 +18,8 @@ function java-jdk {
 	# Install package(s)
 	show_info 'Installing Java JDK...'
 	show_warning 'Requires root privileges'
-	sudo mv ./jdk1.8.0_74 /usr/lib/jvm
+	sudo mkdir /usr/lib/jvm
+	sudo mv ./jdk1.8.0_74 /usr/lib/jvm/jdk1.8.0_74
 	# Create symbolic link
 	show_info 'Creating symbolic link...'
 	show_warning 'Requires root privileges'

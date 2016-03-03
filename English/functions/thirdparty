@@ -150,7 +150,7 @@ function thirdparty {
         'file-system'       'File system for Gparted' \
         'filezilla'         'Filezilla' \
         'firefox'           'Firefox' \
-        'fontforge'         'Fontforge' \
+        'fontforge'         'FontForge' \
         'font-manager'      'Font manager' \
         'formatjunkie'      'Formatjunkie' \
         'fotoxx'            'Fotoxx' \

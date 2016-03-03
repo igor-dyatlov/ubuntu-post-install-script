@@ -9,6 +9,7 @@ gdebi-core
 gparted
 nano
 openvpn
+mtpfs
 p7zip
 p7zip-rar
 p7zip-full
@@ -22,3 +23,5 @@ unace
 unrar
 unzip
 zip
+gphoto2
+jmtpfs

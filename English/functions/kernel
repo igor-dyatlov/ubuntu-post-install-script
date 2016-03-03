@@ -49,14 +49,14 @@ if (whiptail --title "Update system kernel" --yesno "Proceed with kernel update?
 	# Download Debian file that matches system architecture
 	case `uname -i` in
 	    i386|i486|i586|i686)
-	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc5-wily/linux-headers-4.5.0-040500rc5-generic_4.5.0-040500rc5.201602201730_i386.deb
-	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc5-wily/linux-headers-4.5.0-040500rc5_4.5.0-040500rc5.201602201730_all.deb
-	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc5-wily/linux-image-4.5.0-040500rc5-generic_4.5.0-040500rc5.201602201730_i386.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc6-wily/linux-headers-4.5.0-040500rc6-generic_4.5.0-040500rc6.201602281230_i386.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc6-wily/linux-headers-4.5.0-040500rc6_4.5.0-040500rc6.201602281230_all.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc6-wily/linux-image-4.5.0-040500rc6-generic_4.5.0-040500rc6.201602281230_i386.deb
 	        ;;
 	    x86_64)
-	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc5-wily/linux-headers-4.5.0-040500rc5-generic_4.5.0-040500rc5.201602201730_amd64.deb
-	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc5-wily/linux-headers-4.5.0-040500rc5_4.5.0-040500rc5.201602201730_all.deb
-	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc5-wily/linux-image-4.5.0-040500rc5-generic_4.5.0-040500rc5.201602201730_amd64.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc6-wily/linux-headers-4.5.0-040500rc6-generic_4.5.0-040500rc6.201602281230_amd64.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc6-wily/linux-headers-4.5.0-040500rc6_4.5.0-040500rc6.201602281230_all.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc6-wily/linux-image-4.5.0-040500rc6-generic_4.5.0-040500rc6.201602281230_amd64.deb
 	        ;;
 	    *)
 	        show_error "No packages available to download that matches your system." && thirdparty
@@ -89,7 +89,7 @@ fi
 # Kernel system upgrade
 function kernel {
     eval `resize`
-    CONF=$(whiptail \
+    KERNEL=$(whiptail \
         --notags \
         --title "Update system kernel" \
         --menu "\nWhat would you like to do?" \
@@ -97,12 +97,12 @@ function kernel {
         --cancel-button "Go Back" \
         $LINES $COLUMNS $(( $LINES - 12 )) \
         stable        'Update stable (v4.4.3-wily) kernel (need reboot)' \
-        unstable      'Update unstable (v4.5-rc5-wily) kernel (need reboot)' \
+        unstable      'Update unstable (v4.5-rc6-wily) kernel (need reboot)' \
         3>&1 1>&2 2>&3)
 
     exitstatus=$?
     if [ $exitstatus = 0 ]; then
-        clear && $CONF
+        clear && $KERNEL
     else
         clear && main
     fi
