@@ -26,7 +26,51 @@ if [ $exitstatus = 0 ]; then
               # Add repository
 	            show_info 'Adding Google Chrome PPA repository to software sources...'
 	            show_warning 'Requires root privileges'
-	            sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
+              # Download Debian file that matches system architecture
+            	case `uname -i` in
+            	    i386|i486|i586|i686)
+                      show_info 'Remove Google Chrome...'
+                      show_warning 'Requires root privileges'
+                      sudo rm /etc/apt/sources.list.d/google-chrome.list
+                      sudo apt-get purge google-chrome-stable
+                      show_info 'Installing Chromium...'
+                      show_warning 'Requires root privileges'
+                      sudo apt-get install -y chromium-browser chromium-browser-l10n
+            	        ;;
+            	    x86_64)
+                      sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
+                      show_success 'Done.'
+                      show_question 'Adding repository key...'
+                      show_warning 'Requires root privileges'
+                      wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+                      show_success 'Done.'
+                      # Update repository information
+                      show_info 'Updating repository information...'
+                      show_warning 'Requires root privileges'
+                      sudo apt-get update
+                      # Install
+                      show_info 'Installing Google Chrome...'
+                      show_warning 'Requires root privileges'
+                      sudo apt-get install -y google-chrome-stable
+                      # Install dependencies
+                      show_info 'Installing Google Chrome dependencies...'
+                      show_warning 'Requires root privileges'
+                      sudo apt-get install -y libappindicator1 libindicator7
+                      show_info 'Fixed Google Chrome...'
+                      show_warning 'Requires root privileges'
+            	        sudo sed -i -e 's/deb http/deb [arch=amd64] http/' "/opt/google/chrome/cron/google-chrome"
+                      # Done
+                      show_success 'Done.'
+                      whiptail --title "Finished" --msgbox "Installation complete." 8 78
+                      status=1
+                      thirdparty
+            	        ;;
+            	    *)
+            	        show_error "No packages available to download that matches your system." && thirdparty
+            	        ;;
+            	esac
+
+	            sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
 	            show_success 'Done.'
 	            show_question 'Adding repository key...'
               show_warning 'Requires root privileges'

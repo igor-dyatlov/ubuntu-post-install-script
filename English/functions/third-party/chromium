@@ -9,7 +9,7 @@ function chromium {
 	# Install
   show_info 'Installing Chromium...'
   show_warning 'Requires root privileges'
-  sudo apt-get install -y chromium-browser
+  sudo apt-get install -y chromium-browser chromium-browser-l10n
   # Done
   show_success 'Done.'
   whiptail --title "Finished" --msgbox "Installation complete." 8 78
