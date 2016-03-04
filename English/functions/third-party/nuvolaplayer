@@ -3,11 +3,11 @@
 # Nuvola player
 function nuvolaplayer {
     # Add repository
-    case `lsb_release -c` in
+    case `lsb_release -cs` in
 	    wily)
 	         show_info 'Adding Nuvola player PPA repository to software sources...'
 	         show_warning 'Requires root privileges'
-	         sudo sh -c "echo 'deb https://tiliado.eu/nuvolaplayer/repository/deb/ wily stable /' >> /etc/apt/sources.list.d/tiliado-nuvolaplayer.list"
+	         sudo sh -c 'echo "deb https://tiliado.eu/nuvolaplayer/repository/deb/ wily stable" >> /etc/apt/sources.list.d/tiliado-nuvolaplayer.list'
 	         show_success 'Done.'
 	         show_question 'Adding repository key...'
            show_warning 'Requires root privileges'
@@ -17,7 +17,7 @@ function nuvolaplayer {
 	    vivid)
 	         show_info 'Adding Nuvola player PPA repository to software sources...'
 	         show_warning 'Requires root privileges'
-	         sudo sh -c "echo 'deb https://tiliado.eu/nuvolaplayer/repository/deb/ vivid stable /' >> /etc/apt/sources.list.d/tiliado-nuvolaplayer.list"
+	         sudo sh -c 'echo "deb https://tiliado.eu/nuvolaplayer/repository/deb/ vivid stable" >> /etc/apt/sources.list.d/tiliado-nuvolaplayer.list'
 	         show_success 'Done.'
 	         show_question 'Adding repository key...'
            show_warning 'Requires root privileges'
@@ -27,7 +27,7 @@ function nuvolaplayer {
 	    trusty)
         	show_info 'Adding Nuvola player PPA repository to software sources...'
 	        show_warning 'Requires root privileges'
-	        sudo sh -c "echo 'deb https://tiliado.eu/nuvolaplayer/repository/deb/ trusty stable /' >> /etc/apt/sources.list.d/tiliado-nuvolaplayer.list"
+	        sudo sh -c 'echo "deb https://tiliado.eu/nuvolaplayer/repository/deb/ trusty stable" >> /etc/apt/sources.list.d/tiliado-nuvolaplayer.list'
 	        show_success 'Done.'
 	        show_question 'Adding repository key...'
           show_warning 'Requires root privileges'

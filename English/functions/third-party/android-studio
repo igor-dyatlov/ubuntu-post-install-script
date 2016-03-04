@@ -32,6 +32,7 @@ function android-studio {
 	echo "Categories=GNOME;GTK;Development;IDE;" >> android-studio.desktop
 	# Set Permission File
 	show_info 'Set Permission File...'
+	show_warning 'Requires root privileges'
 	sudo chmod +x android-studio.desktop
 	# Cleanup and finish
 	rm android-studio*.zip

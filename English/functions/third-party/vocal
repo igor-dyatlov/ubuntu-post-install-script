@@ -9,7 +9,7 @@ function vocal {
 	# Update repository information
 	show_info 'Updating repository information...'
 	show_warning 'Requires root privileges'
-	sudo apt-get update
+	sudo apt-get update -qq
 	# Install
 	show_info 'Installing Vocal...'
 	show_warning 'Requires root privileges'

@@ -3,13 +3,13 @@
 # Wine
 function wine {
   # Add repository
-  show_info 'Adding Wine to software sources...'
+  show_info 'Adding Wine PPA to software sources...'
   show_warning 'Requires root privileges'
   sudo add-apt-repository -y ppa:ubuntu-wine/ppa
 	# Update repository information
 	show_info 'Updating repository information...'
   show_warning 'Requires root privileges'
-	sudo apt-get update
+	sudo apt-get update -qq
 	# Install
   show_info 'Installing Wine...'
   show_warning 'Requires root privileges'

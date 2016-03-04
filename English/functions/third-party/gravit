@@ -10,13 +10,13 @@ function gravit {
 	# Install package(s)
 	show_info 'Installing Gravit...'
 	show_warning 'Requires root privileges'
-	sudo mv Telegram /opt/gravit
+	sudo mv Gravit /opt/gravit
 	# Create symbolic link
 	show_info 'Creating symbolic link...'
 	show_warning 'Requires root privileges'
-	sudo ln -sf /opt/telegram /usr/bin/telegram
+	sudo ln -sf /opt/gravit /usr/bin
 	# Cleanup and finish
-  rm tsetup*.tar.xz *.strings
+  rm Gravit*.zip
 	# Done
   show_success 'Done.'
   whiptail --title "Finished" --msgbox "Installation complete." 8 78
