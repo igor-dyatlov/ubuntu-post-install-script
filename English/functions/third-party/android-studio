@@ -14,8 +14,25 @@ function android-studio {
 	show_info 'Set Permission File...'
 	cd /opt/android-studio/bin
 	sudo chmod +x studio.sh
-  # Create icon desktop and starting
+	# Starting
   sudo sh studio.sh
+	# Create icon desktop
+	show_info 'Create icon...'
+	cd /usr/share/applications
+	sudo touch android-studio.desktop
+	echo "[Desktop Entry]" >> android-studio.desktop
+	echo "Encoding=UTF-8" >> android-studio.desktop
+	echo "Version=1.0" >> android-studio.desktop
+	echo "Type=Application" >> android-studio.desktop
+	echo "Terminal=false" >> android-studio.desktop
+	echo "Name=Android Studio" >> android-studio.desktop
+	echo "Exec=/opt/android-studio/bin/studio.sh" >> android-studio.desktop
+	echo "Comment=Integrated Android developer tools for development and debugging." >> android-studio.desktop
+	echo "Icon=/opt/android-studio/bin/studio.png" >> android-studio.desktop
+	echo "Categories=GNOME;GTK;Development;IDE;" >> android-studio.desktop
+	# Set Permission File
+	show_info 'Set Permission File...'
+	sudo chmod +x android-studio.desktop
 	# Cleanup and finish
 	rm android-studio*.zip
   # Done
