@@ -7,12 +7,14 @@ file-roller
 gdebi
 gdebi-core
 gparted
+gphoto2
+jmtpfs
+mtpfs
 nano
 openvpn
-mtpfs
 p7zip
-p7zip-rar
 p7zip-full
+p7zip-rar
 ppa-purge
 pulseaudio
 pulseaudio-utils
@@ -23,5 +25,3 @@ unace
 unrar
 unzip
 zip
-gphoto2
-jmtpfs
