@@ -15,6 +15,7 @@ source $dir/functions/third-party/cinelerra
 source $dir/functions/third-party/compiz
 source $dir/functions/third-party/cutegram
 source $dir/functions/third-party/darktable
+source $dir/functions/third-party/deluge
 source $dir/functions/third-party/digikam
 source $dir/functions/third-party/docky
 source $dir/functions/third-party/dropbox
@@ -105,6 +106,7 @@ source $dir/functions/third-party/teamviewer
 source $dir/functions/third-party/telegram
 source $dir/functions/third-party/testdisk
 source $dir/functions/third-party/textadept
+source $dir/functions/third-party/transmission
 source $dir/functions/third-party/uberwriter
 source $dir/functions/third-party/ubuntu-tweak
 source $dir/functions/third-party/uget
@@ -142,6 +144,7 @@ function thirdparty {
         'compiz'            'Compiz' \
         'cutegram'          'Cutegram' \
         'darktable'         'Darktable' \
+        'deluge'            'Deluge' \
         'digikam'           'digiKam' \
         'docky'             'Docky' \
         'dropbox'           'Dropbox' \
@@ -150,7 +153,7 @@ function thirdparty {
         'file-system'       'File system for Gparted' \
         'filezilla'         'Filezilla' \
         'firefox'           'Firefox' \
-        'fontforge'         'Fontforge' \
+        'fontforge'         'FontForge' \
         'font-manager'      'Font manager' \
         'formatjunkie'      'Formatjunkie' \
         'fotoxx'            'Fotoxx' \
@@ -232,6 +235,7 @@ function thirdparty {
         'telegram'          'Telegram' \
         'testdisk'          'TestDisk' \
         'textadept'         'Textadept' \
+        'transmission'      'Transmission' \
         'uberwriter'        'UberWriter' \
         'ubuntu-tweak'      'Ubuntu tweak' \
         'uget'              'Uget' \
