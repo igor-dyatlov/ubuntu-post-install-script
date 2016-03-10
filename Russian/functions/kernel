@@ -6,14 +6,14 @@ if (whiptail --title "Обновление ядра системы" --yesno "П�
 	# Download Debian file that matches system architecture
 	case `uname -i` in
 	    i386|i486|i586|i686)
-	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4.4-wily/linux-headers-4.4.4-040404-generic_4.4.4-040404.201603031931_i386.deb
-	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4.4-wily/linux-headers-4.4.4-040404_4.4.4-040404.201603031931_all.deb
-	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4.4-wily/linux-image-4.4.4-040404-generic_4.4.4-040404.201603031931_i386.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4.5-wily/linux-headers-4.4.5-040405-generic_4.4.5-040405.201603091931_i386.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4.5-wily/linux-headers-4.4.5-040405_4.4.5-040405.201603091931_all.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4.5-wily/linux-image-4.4.5-040405-generic_4.4.5-040405.201603091931_i386.deb
 	        ;;
 	    x86_64)
-	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4.4-wily/linux-headers-4.4.4-040404-generic_4.4.4-040404.201603031931_amd64.deb
-	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4.4-wily/linux-headers-4.4.4-040404_4.4.4-040404.201603031931_all.deb
-	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4.4-wily/linux-image-4.4.4-040404-generic_4.4.4-040404.201603031931_amd64.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4.5-wily/linux-headers-4.4.5-040405-generic_4.4.5-040405.201603091931_amd64.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4.5-wily/linux-headers-4.4.5-040405_4.4.5-040405.201603091931_all.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4.5-wily/linux-image-4.4.5-040405-generic_4.4.5-040405.201603091931_amd64.deb
 	        ;;
 	    *)
 	        show_error "No packages available to download that matches your system." && thirdparty
@@ -49,17 +49,17 @@ if (whiptail --title "Обновить ядро системы" --yesno "Про�
 	# Download Debian file that matches system architecture
 	case `uname -i` in
 	    i386|i486|i586|i686)
-	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc6-wily/linux-headers-4.5.0-040500rc6-generic_4.5.0-040500rc6.201602281230_i386.deb
-	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc6-wily/linux-headers-4.5.0-040500rc6_4.5.0-040500rc6.201602281230_all.deb
-	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc6-wily/linux-image-4.5.0-040500rc6-generic_4.5.0-040500rc6.201602281230_i386.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc7-wily/linux-headers-4.5.0-040500rc7-generic_4.5.0-040500rc7.201603061830_i386.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc7-wily/linux-headers-4.5.0-040500rc7_4.5.0-040500rc7.201603061830_all.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc7-wily/linux-image-4.5.0-040500rc7-generic_4.5.0-040500rc7.201603061830_i386.deb
 	        ;;
 	    x86_64)
-	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc6-wily/linux-headers-4.5.0-040500rc6-generic_4.5.0-040500rc6.201602281230_amd64.deb
-	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc6-wily/linux-headers-4.5.0-040500rc6_4.5.0-040500rc6.201602281230_all.deb
-	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc6-wily/linux-image-4.5.0-040500rc6-generic_4.5.0-040500rc6.201602281230_amd64.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc7-wily/linux-headers-4.5.0-040500rc7-generic_4.5.0-040500rc7.201603061830_amd64.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc7-wily/linux-headers-4.5.0-040500rc7_4.5.0-040500rc7.201603061830_all.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc7-wily/linux-image-4.5.0-040500rc7-generic_4.5.0-040500rc7.201603061830_amd64.deb
 	        ;;
 	    *)
-	        show_error "Не доступны пакеты для скачивания, которые соответствуют вашей системе." && thirdparty
+	        show_error "No packages available to download that matches your system." && thirdparty
 	        ;;
 	esac
     # Update repository information
@@ -96,8 +96,8 @@ function kernel {
         --ok-button "Обновить" \
         --cancel-button "Назад" \
         $LINES $COLUMNS $(( $LINES - 12 )) \
-        stable        'Обновить стабильную (v4.4.4-wily) версию (нужна перезагрузка)' \
-        unstable      'Обновить не стабильную (v4.5-rc6-wily) версию (нужна перезагрузка)' \
+        stable        'Обновить стабильную (v4.4.5-wily) версию (нужна перезагрузка)' \
+        unstable      'Обновить не стабильную (v4.5-rc7-wily) версию (нужна перезагрузка)' \
         3>&1 1>&2 2>&3)
 
     exitstatus=$?
