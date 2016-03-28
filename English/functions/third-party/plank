@@ -5,17 +5,17 @@ function plank {
   # Add repository
   show_info 'Adding Plank PPA to software sources...'
   show_warning 'Requires root privileges'
-  sudo apt-add-repository -y ppa:ricotz/docky
-	# Update repository information
-	show_info 'Updating repository information...'
+  sudo apt-add-repository -y ppa:docky-core/stable
+  # Update repository information
+  show_info 'Updating repository information...'
   show_warning 'Requires root privileges'
-	sudo apt-get update
-	# Install
+  sudo apt-get update -qq
+  # Install
   show_info 'Installing Plank...'
   show_warning 'Requires root privileges'
   sudo apt-get install -y plank
   # Done
   show_success 'Done.'
   whiptail --title "Finished" --msgbox "Installation complete." 8 78
-	thirdparty
+  thirdparty
 }

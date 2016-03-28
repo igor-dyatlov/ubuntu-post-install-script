@@ -2,11 +2,10 @@
 
 dir="$(dirname "$0")"
 
-source $dir/functions/kernel-data/kernel-4.4
-source $dir/functions/kernel-data/kernel-4.5
+source $dir/functions/third-party/theme/placmank
 
 # Kernel system upgrade
-function kernel {
+function kernel-4.5 {
     eval `resize`
     KERNEL=$(whiptail \
         --notags \
@@ -15,8 +14,8 @@ function kernel {
         --ok-button "Update" \
         --cancel-button "Go Back" \
         $LINES $COLUMNS $(( $LINES - 12 )) \
-        kernel-4.4        'Update 4.4-wily kernel' \
-        kernel-4.5        'Update 4.5-wily kernel' \
+        stable        'Update stable (v4.5-wily) kernel (need reboot)' \
+        unstable      'Update unstable (v4.5-rc7-wily) kernel (need reboot)' \
         3>&1 1>&2 2>&3)
 
     exitstatus=$?

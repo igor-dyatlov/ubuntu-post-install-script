@@ -91,6 +91,7 @@ source $dir/functions/third-party/rvm
 source $dir/functions/third-party/samba
 source $dir/functions/third-party/scribus
 source $dir/functions/third-party/shotcut
+source $dir/functions/third-party/shredder
 source $dir/functions/third-party/shutter
 source $dir/functions/third-party/sigil
 source $dir/functions/third-party/slack
@@ -220,6 +221,7 @@ function thirdparty {
         'samba'             'Samba' \
         'scribus'           'Scribus' \
         'shotcut'           'Shotcut' \
+        'shredder'          'Shredder [rm]lint' \
         'shutter'           'Shutter' \
         'sigil'             'Sigil' \
         'slack'             'Slack' \

@@ -1,0 +1,329 @@
+#!/bin/bash
+
+# Kernel stable
+function v4.3 {
+if (whiptail --title "Update system kernel" --yesno "Proceed with kernel update?" 10 60) then
+	# Download Debian file that matches system architecture
+	case `uname -i` in
+	    i386|i486|i586|i686)
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.3-wily/linux-headers-4.3.0-040300-generic_4.3.0-040300.201511020949_i386.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.3-wily/linux-headers-4.3.0-040300_4.3.0-040300.201511020949_all.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.3-wily/linux-image-4.3.0-040300-generic_4.3.0-040300.201511020949_i386.deb
+	        ;;
+	    x86_64)
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.3-wily/linux-headers-4.3.0-040300-generic_4.3.0-040300.201511020949_amd64.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.3-wily/linux-headers-4.3.0-040300_4.3.0-040300.201511020949_all.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.3-wily/linux-image-4.3.0-040300-generic_4.3.0-040300.201511020949_amd64.deb
+	        ;;
+	    *)
+	        show_error "No packages available to download that matches your system." && kernel
+	        ;;
+	esac
+    # Update repository information
+    show_info 'Download and install...'
+    show_warning 'Requires root privileges'
+    sudo dpkg -i linux-*.deb
+    sudo apt-get install -fy
+    # Grub-Update
+    show_info 'Grub configuration update...'
+	show_warning 'Requires root privileges'
+    sudo update-grub
+    # Cleanup and finish
+	rm linux-*.deb
+    # Reboot
+    show_info 'Rebooting in 1 minute...'
+    show_warning 'Save all files and exit the program!'
+    sudo shutdown -r +1
+    # Done
+    show_success 'Done.'
+    whiptail --title "Finished" --msgbox "Kernel update complete." 8 78
+    main
+else
+    clear && main
+fi
+}
+
+# Kernel stable
+function v4.3.1 {
+if (whiptail --title "Update system kernel" --yesno "Proceed with kernel update?" 10 60) then
+	# Download Debian file that matches system architecture
+	case `uname -i` in
+	    i386|i486|i586|i686)
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.3.1-wily/linux-headers-4.3.1-040301-generic_4.3.1-040301.201512092023_i386.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.3.1-wily/linux-headers-4.3.1-040301_4.3.1-040301.201512092023_all.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.3.1-wily/linux-image-4.3.1-040301-generic_4.3.1-040301.201512092023_i386.deb
+	        ;;
+	    x86_64)
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.3.1-wily/linux-headers-4.3.1-040301-generic_4.3.1-040301.201512092023_amd64.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.3.1-wily/linux-headers-4.3.1-040301_4.3.1-040301.201512092023_all.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.3.1-wily/linux-image-4.3.1-040301-generic_4.3.1-040301.201512092023_amd64.deb
+	        ;;
+	    *)
+	        show_error "No packages available to download that matches your system." && kernel
+	        ;;
+	esac
+    # Update repository information
+    show_info 'Download and install...'
+    show_warning 'Requires root privileges'
+    sudo dpkg -i linux-*.deb
+    sudo apt-get install -fy
+    # Grub-Update
+    show_info 'Grub configuration update...'
+	show_warning 'Requires root privileges'
+    sudo update-grub
+    # Cleanup and finish
+	rm linux-*.deb
+    # Reboot
+    show_info 'Rebooting in 1 minute...'
+    show_warning 'Save all files and exit the program!'
+    sudo shutdown -r +1
+    # Done
+    show_success 'Done.'
+    whiptail --title "Finished" --msgbox "Kernel update complete." 8 78
+    main
+else
+    clear && main
+fi
+}
+
+# Kernel stable
+function v4.3.2 {
+if (whiptail --title "Update system kernel" --yesno "Proceed with kernel update?" 10 60) then
+	# Download Debian file that matches system architecture
+	case `uname -i` in
+	    i386|i486|i586|i686)
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.3.2-wily/linux-headers-4.3.2-040302-generic_4.3.2-040302.201512101931_i386.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.3.2-wily/linux-headers-4.3.2-040302_4.3.2-040302.201512101931_all.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.3.2-wily/linux-image-4.3.2-040302-generic_4.3.2-040302.201512101931_i386.deb
+	        ;;
+	    x86_64)
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.3.2-wily/linux-headers-4.3.2-040302-generic_4.3.2-040302.201512101931_amd64.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.3.2-wily/linux-headers-4.3.2-040302_4.3.2-040302.201512101931_all.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.3.2-wily/linux-image-4.3.2-040302-generic_4.3.2-040302.201512101931_amd64.deb
+	        ;;
+	    *)
+	        show_error "No packages available to download that matches your system." && kernel
+	        ;;
+	esac
+    # Update repository information
+    show_info 'Download and install...'
+    show_warning 'Requires root privileges'
+    sudo dpkg -i linux-*.deb
+    sudo apt-get install -fy
+    # Grub-Update
+    show_info 'Grub configuration update...'
+	show_warning 'Requires root privileges'
+    sudo update-grub
+    # Cleanup and finish
+	rm linux-*.deb
+    # Reboot
+    show_info 'Rebooting in 1 minute...'
+    show_warning 'Save all files and exit the program!'
+    sudo shutdown -r +1
+    # Done
+    show_success 'Done.'
+    whiptail --title "Finished" --msgbox "Kernel update complete." 8 78
+    main
+else
+    clear && main
+fi
+}
+
+# Kernel stable
+function v4.3.3 {
+if (whiptail --title "Update system kernel" --yesno "Proceed with kernel update?" 10 60) then
+	# Download Debian file that matches system architecture
+	case `uname -i` in
+	    i386|i486|i586|i686)
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.3.3-wily/linux-headers-4.3.3-040303-generic_4.3.3-040303.201512150130_i386.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.3.3-wily/linux-headers-4.3.3-040303_4.3.3-040303.201512150130_all.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.3.3-wily/linux-image-4.3.3-040303-generic_4.3.3-040303.201512150130_i386.deb
+	        ;;
+	    x86_64)
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.3.3-wily/linux-headers-4.3.3-040303-generic_4.3.3-040303.201512150130_amd64.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.3.3-wily/linux-headers-4.3.3-040303_4.3.3-040303.201512150130_all.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.3.3-wily/linux-image-4.3.3-040303-generic_4.3.3-040303.201512150130_amd64.deb
+	        ;;
+	    *)
+	        show_error "No packages available to download that matches your system." && kernel
+	        ;;
+	esac
+    # Update repository information
+    show_info 'Download and install...'
+    show_warning 'Requires root privileges'
+    sudo dpkg -i linux-*.deb
+    sudo apt-get install -fy
+    # Grub-Update
+    show_info 'Grub configuration update...'
+	show_warning 'Requires root privileges'
+    sudo update-grub
+    # Cleanup and finish
+	rm linux-*.deb
+    # Reboot
+    show_info 'Rebooting in 1 minute...'
+    show_warning 'Save all files and exit the program!'
+    sudo shutdown -r +1
+    # Done
+    show_success 'Done.'
+    whiptail --title "Finished" --msgbox "Kernel update complete." 8 78
+    main
+else
+    clear && main
+fi
+}
+
+# Kernel stable
+function v4.3.4 {
+if (whiptail --title "Update system kernel" --yesno "Proceed with kernel update?" 10 60) then
+	# Download Debian file that matches system architecture
+	case `uname -i` in
+	    i386|i486|i586|i686)
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.3.4-wily/linux-headers-4.3.4-040304-generic_4.3.4-040304.201601230132_i386.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.3.4-wily/linux-headers-4.3.4-040304_4.3.4-040304.201601230132_all.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.3.4-wily/linux-image-4.3.4-040304-generic_4.3.4-040304.201601230132_i386.deb
+	        ;;
+	    x86_64)
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.3.4-wily/linux-headers-4.3.4-040304-generic_4.3.4-040304.201601230132_amd64.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.3.4-wily/linux-headers-4.3.4-040304_4.3.4-040304.201601230132_all.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.3.4-wily/linux-image-4.3.4-040304-generic_4.3.4-040304.201601230132_amd64.deb
+	        ;;
+	    *)
+	        show_error "No packages available to download that matches your system." && kernel
+	        ;;
+	esac
+    # Update repository information
+    show_info 'Download and install...'
+    show_warning 'Requires root privileges'
+    sudo dpkg -i linux-*.deb
+    sudo apt-get install -fy
+    # Grub-Update
+    show_info 'Grub configuration update...'
+	show_warning 'Requires root privileges'
+    sudo update-grub
+    # Cleanup and finish
+	rm linux-*.deb
+    # Reboot
+    show_info 'Rebooting in 1 minute...'
+    show_warning 'Save all files and exit the program!'
+    sudo shutdown -r +1
+    # Done
+    show_success 'Done.'
+    whiptail --title "Finished" --msgbox "Kernel update complete." 8 78
+    main
+else
+    clear && main
+fi
+}
+
+# Kernel stable
+function v4.4.5 {
+if (whiptail --title "Update system kernel" --yesno "Proceed with kernel update?" 10 60) then
+	# Download Debian file that matches system architecture
+	case `uname -i` in
+	    i386|i486|i586|i686)
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4.5-wily/linux-headers-4.4.5-040405-generic_4.4.5-040405.201603091931_i386.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4.5-wily/linux-headers-4.4.5-040405_4.4.5-040405.201603091931_all.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4.5-wily/linux-image-4.4.5-040405-generic_4.4.5-040405.201603091931_i386.deb
+	        ;;
+	    x86_64)
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4.5-wily/linux-headers-4.4.5-040405-generic_4.4.5-040405.201603091931_amd64.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4.5-wily/linux-headers-4.4.5-040405_4.4.5-040405.201603091931_all.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4.5-wily/linux-image-4.4.5-040405-generic_4.4.5-040405.201603091931_amd64.deb
+	        ;;
+	    *)
+	        show_error "No packages available to download that matches your system." && kernel
+	        ;;
+	esac
+    # Update repository information
+    show_info 'Download and install...'
+    show_warning 'Requires root privileges'
+    sudo dpkg -i linux-*.deb
+    sudo apt-get install -fy
+    # Grub-Update
+    show_info 'Grub configuration update...'
+	show_warning 'Requires root privileges'
+    sudo update-grub
+    # Cleanup and finish
+	rm linux-*.deb
+    # Reboot
+    show_info 'Rebooting in 1 minute...'
+    show_warning 'Save all files and exit the program!'
+    sudo shutdown -r +1
+    # Done
+    show_success 'Done.'
+    whiptail --title "Finished" --msgbox "Kernel update complete." 8 78
+    main
+else
+    clear && main
+fi
+}
+
+# Kernel stable
+function v4.4.6 {
+if (whiptail --title "Update system kernel" --yesno "Proceed with kernel update?" 10 60) then
+	# Download Debian file that matches system architecture
+	case `uname -i` in
+	    i386|i486|i586|i686)
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4.6-wily/linux-headers-4.4.6-040406-generic_4.4.6-040406.201603161231_i386.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4.6-wily/linux-headers-4.4.6-040406_4.4.6-040406.201603161231_all.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4.6-wily/linux-image-4.4.6-040406-generic_4.4.6-040406.201603161231_i386.deb
+	        ;;
+	    x86_64)
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4.6-wily/linux-headers-4.4.6-040406-generic_4.4.6-040406.201603161231_amd64.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4.6-wily/linux-headers-4.4.6-040406_4.4.6-040406.201603161231_all.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4.6-wily/linux-image-4.4.6-040406-generic_4.4.6-040406.201603161231_amd64.deb
+	        ;;
+	    *)
+	        show_error "No packages available to download that matches your system." && kernel
+	        ;;
+	esac
+    # Update repository information
+    show_info 'Download and install...'
+    show_warning 'Requires root privileges'
+    sudo dpkg -i linux-*.deb
+    sudo apt-get install -fy
+    # Grub-Update
+    show_info 'Grub configuration update...'
+	show_warning 'Requires root privileges'
+    sudo update-grub
+    # Cleanup and finish
+	rm linux-*.deb
+    # Reboot
+    show_info 'Rebooting in 1 minute...'
+    show_warning 'Save all files and exit the program!'
+    sudo shutdown -r +1
+    # Done
+    show_success 'Done.'
+    whiptail --title "Finished" --msgbox "Kernel update complete." 8 78
+    main
+else
+    clear && main
+fi
+}
+
+# Kernel system upgrade
+function v4.4-wily {
+    eval `resize`
+    KERNEL44=$(whiptail \
+        --notags \
+        --title "Update system kernel" \
+        --menu "\nWhat would you like to do?" \
+        --ok-button "Update" \
+        --cancel-button "Go Back" \
+        $LINES $COLUMNS $(( $LINES - 12 )) \
+        v4.3          'Update stable (v4.3-wily) kernel (need reboot)' \
+        v4.3.1        'Update stable (v4.3.1-wily) kernel (need reboot)' \
+        v4.3.2        'Update stable (v4.3.2-wily) kernel (need reboot)' \
+        v4.3.3        'Update stable (v4.3.3-wily) kernel (need reboot)' \
+        v4.3.4        'Update stable (v4.3.4-wily) kernel (need reboot)' \
+        v4.3.5        'Update stable (v4.3.5-wily) kernel (need reboot)' \
+        v4.3.6        'Update stable (v4.3.6-wily) kernel (need reboot)' \
+        3>&1 1>&2 2>&3)
+
+    exitstatus=$?
+    if [ $exitstatus = 0 ]; then
+        clear && $KERNEL44
+    else
+        clear && main
+    fi
+}
