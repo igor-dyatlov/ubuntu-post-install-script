@@ -15,18 +15,18 @@ function drweb {
 	        show_error "No packages available to download that matches your system." && thirdparty
 	        ;;
 	esac
-	# Set Permission File
-	show_info 'Set Permission File...'
+  # Set Permission File
+  show_info 'Set Permission File...'
   show_warning 'Requires root privileges'
-	sudo chmod +x drweb*.run
-	# Install
+  sudo chmod +x drweb*.run
+  # Install
   show_info 'Installing Dr.Web CureIt!...'
   show_warning 'Requires root privileges'
   ./drweb*.run
   # Cleanup and finish
-	rm drweb*.run
+  rm drweb*.run
   # Done
   show_success 'Done.'
   whiptail --title "Finished" --msgbox "Installation complete." 8 78
-	thirdparty
+  thirdparty
 }

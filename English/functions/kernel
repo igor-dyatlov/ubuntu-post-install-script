@@ -16,6 +16,8 @@ function kernel {
         --ok-button "Update" \
         --cancel-button "Go Back" \
         $LINES $COLUMNS $(( $LINES - 12 )) \
+        kernel-4.2        'Update 4.2-wily kernel' \
+        kernel-4.3        'Update 4.3-wily kernel' \
         kernel-4.4        'Update 4.4-wily kernel' \
         kernel-4.5        'Update 4.5-wily kernel' \
         kernel-4.6        'Update 4.6-wily kernel' \

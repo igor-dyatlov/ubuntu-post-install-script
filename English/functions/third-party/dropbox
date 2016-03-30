@@ -15,15 +15,15 @@ function dropbox {
 	        show_error "No packages available to download that matches your system." && thirdparty
 	        ;;
 	esac
-	# Install package(s)
-	show_info 'Installing Dropbox...'
-	show_warning 'Requires root privileges'
-	sudo dpkg -i dropbox*.deb
-	sudo apt-get install -fy
-	# Cleanup and finish
-	rm dropbox*.deb
+  # Install package(s)
+  show_info 'Installing Dropbox...'
+  show_warning 'Requires root privileges'
+  sudo dpkg -i dropbox*.deb
+  sudo apt-get install -fy
+  # Cleanup and finish
+  rm dropbox*.deb
   # Done
   show_success 'Done.'
   whiptail --title "Finished" --msgbox "Installation complete." 8 78
-	thirdparty
+  thirdparty
 }
