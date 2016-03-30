@@ -302,7 +302,7 @@ fi
 }
 
 # Kernel system upgrade
-function v4.4-wily {
+function v4.3-wily {
     eval `resize`
     KERNEL44=$(whiptail \
         --notags \

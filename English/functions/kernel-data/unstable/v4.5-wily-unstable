@@ -1,19 +1,19 @@
 #!/bin/bash
 
 # Kernel unstable
-function v4.4-rc1 {
+function v4.5-rc1 {
 if (whiptail --title "Update system kernel" --yesno "Proceed with kernel update?" 10 60) then
 	# Download Debian file that matches system architecture
 	case `uname -i` in
 	    i386|i486|i586|i686)
-	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4-rc1+cod1-wily/linux-headers-4.4.0-040400rc1-generic_4.4.0-040400rc1.201511230614_i386.deb
-	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4-rc1-wily/linux-headers-4.4.0-040400rc1_4.4.0-040400rc1.201511152030_all.deb
-	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4-rc1+cod1-wily/linux-image-4.4.0-040400rc1-generic_4.4.0-040400rc1.201511230614_i386.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc1-wily/linux-headers-4.5.0-040500rc1-generic_4.5.0-040500rc1.201601241731_i386.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc1-wily/linux-headers-4.5.0-040500rc1_4.5.0-040500rc1.201601241731_all.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc1-wily/linux-image-4.5.0-040500rc1-generic_4.5.0-040500rc1.201601241731_i386.deb
 	        ;;
 	    x86_64)
-	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4-rc1+cod1-wily/linux-headers-4.4.0-040400rc1-generic_4.4.0-040400rc1.201511230614_amd64.deb
-	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4-rc1-wily/linux-headers-4.4.0-040400rc1_4.4.0-040400rc1.201511152030_all.deb
-	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4-rc1+cod1-wily/linux-image-4.4.0-040400rc1-generic_4.4.0-040400rc1.201511230614_amd64.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc1-wily/linux-headers-4.5.0-040500rc1-generic_4.5.0-040500rc1.201601241731_amd64.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc1-wily/linux-headers-4.5.0-040500rc1_4.5.0-040500rc1.201601241731_all.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc1-wily/linux-image-4.5.0-040500rc1-generic_4.5.0-040500rc1.201601241731_amd64.deb
 	        ;;
 	    *)
 	        show_error "No packages available to download that matches your system." && kernel
@@ -44,19 +44,19 @@ fi
 }
 
 # Kernel unstable
-function v4.4-rc2 {
+function v4.5-rc2 {
 if (whiptail --title "Update system kernel" --yesno "Proceed with kernel update?" 10 60) then
 	# Download Debian file that matches system architecture
 	case `uname -i` in
 	    i386|i486|i586|i686)
-	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4-rc2+cod1-wily/linux-headers-4.4.0-040400rc2-generic_4.4.0-040400rc2.201511231054_i386.deb
-	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4-rc2-wily/linux-headers-4.4.0-040400rc2_4.4.0-040400rc2.201511251301_all.deb
-	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4-rc2+cod1-wily/linux-image-4.4.0-040400rc2-generic_4.4.0-040400rc2.201511231054_i386.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc2-wily/linux-headers-4.5.0-040500rc2-generic_4.5.0-040500rc2.201601312230_i386.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc2-wily/linux-headers-4.5.0-040500rc2_4.5.0-040500rc2.201601312230_all.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc2-wily/linux-image-4.5.0-040500rc2-generic_4.5.0-040500rc2.201601312230_i386.deb
 	        ;;
 	    x86_64)
-	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4-rc2+cod1-wily/linux-headers-4.4.0-040400rc2-generic_4.4.0-040400rc2.201511231054_amd64.deb
-	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4-rc2-wily/linux-headers-4.4.0-040400rc2_4.4.0-040400rc2.201511251301_all.deb
-	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4-rc2+cod1-wily/linux-image-4.4.0-040400rc2-generic_4.4.0-040400rc2.201511231054_amd64.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc2-wily/linux-headers-4.5.0-040500rc2-generic_4.5.0-040500rc2.201601312230_amd64.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc2-wily/linux-headers-4.5.0-040500rc2_4.5.0-040500rc2.201601312230_all.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc2-wily/linux-image-4.5.0-040500rc2-generic_4.5.0-040500rc2.201601312230_amd64.deb
 	        ;;
 	    *)
 	        show_error "No packages available to download that matches your system." && kernel
@@ -87,19 +87,19 @@ fi
 }
 
 # Kernel unstable
-function v4.4-rc3 {
+function v4.5-rc3 {
 if (whiptail --title "Update system kernel" --yesno "Proceed with kernel update?" 10 60) then
 	# Download Debian file that matches system architecture
 	case `uname -i` in
 	    i386|i486|i586|i686)
-	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4-rc3-wily/linux-headers-4.4.0-040400rc3-generic_4.4.0-040400rc3.201511300321_i386.deb
-	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4-rc3-wily/linux-headers-4.4.0-040400rc3_4.4.0-040400rc3.201511300321_all.deb
-	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4-rc3-wily/linux-image-4.4.0-040400rc3-generic_4.4.0-040400rc3.201511300321_i386.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc3-wily/linux-headers-4.5.0-040500rc3-generic_4.5.0-040500rc3.201602071930_i386.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc3-wily/linux-headers-4.5.0-040500rc3_4.5.0-040500rc3.201602071930_all.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc3-wily/linux-image-4.5.0-040500rc3-generic_4.5.0-040500rc3.201602071930_i386.deb
 	        ;;
 	    x86_64)
-	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4-rc3-wily/linux-headers-4.4.0-040400rc3-generic_4.4.0-040400rc3.201511300321_amd64.deb
-	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4-rc3-wily/linux-headers-4.4.0-040400rc3_4.4.0-040400rc3.201511300321_all.deb
-	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4-rc3-wily/linux-image-4.4.0-040400rc3-generic_4.4.0-040400rc3.201511300321_amd64.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc3-wily/linux-headers-4.5.0-040500rc3-generic_4.5.0-040500rc3.201602071930_amd64.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc3-wily/linux-headers-4.5.0-040500rc3_4.5.0-040500rc3.201602071930_all.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc3-wily/linux-image-4.5.0-040500rc3-generic_4.5.0-040500rc3.201602071930_amd64.deb
 	        ;;
 	    *)
 	        show_error "No packages available to download that matches your system." && kernel
@@ -130,19 +130,19 @@ fi
 }
 
 # Kernel unstable
-function v4.4-rc4 {
+function v4.5-rc4 {
 if (whiptail --title "Update system kernel" --yesno "Proceed with kernel update?" 10 60) then
 	# Download Debian file that matches system architecture
 	case `uname -i` in
 	    i386|i486|i586|i686)
-	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4-rc4-wily/linux-headers-4.4.0-040400rc4-generic_4.4.0-040400rc4.201512061930_i386.deb
-	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4-rc4-wily/linux-headers-4.4.0-040400rc4_4.4.0-040400rc4.201512061930_all.deb
-	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4-rc4-wily/linux-image-4.4.0-040400rc4-generic_4.4.0-040400rc4.201512061930_i386.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc4-wily/linux-headers-4.5.0-040500rc4-generic_4.5.0-040500rc4.201602141731_i386.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc4-wily/linux-headers-4.5.0-040500rc4_4.5.0-040500rc4.201602141731_all.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc4-wily/linux-image-4.5.0-040500rc4-generic_4.5.0-040500rc4.201602141731_i386.deb
 	        ;;
 	    x86_64)
-	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4-rc4-wily/linux-headers-4.4.0-040400rc4-generic_4.4.0-040400rc4.201512061930_amd64.deb
-	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4-rc4-wily/linux-headers-4.4.0-040400rc4_4.4.0-040400rc4.201512061930_all.deb
-	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4-rc4-wily/linux-image-4.4.0-040400rc4-generic_4.4.0-040400rc4.201512061930_amd64.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc4-wily/linux-headers-4.5.0-040500rc4-generic_4.5.0-040500rc4.201602141731_amd64.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc4-wily/linux-headers-4.5.0-040500rc4_4.5.0-040500rc4.201602141731_all.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc4-wily/linux-image-4.5.0-040500rc4-generic_4.5.0-040500rc4.201602141731_amd64.deb
 	        ;;
 	    *)
 	        show_error "No packages available to download that matches your system." && kernel
@@ -173,19 +173,19 @@ fi
 }
 
 # Kernel unstable
-function v4.4-rc5 {
+function v4.5-rc5 {
 if (whiptail --title "Update system kernel" --yesno "Proceed with kernel update?" 10 60) then
 	# Download Debian file that matches system architecture
 	case `uname -i` in
 	    i386|i486|i586|i686)
-	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4-rc5-wily/linux-headers-4.4.0-040400rc5-generic_4.4.0-040400rc5.201512140221_i386.deb
-	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4-rc5-wily/linux-headers-4.4.0-040400rc5_4.4.0-040400rc5.201512140221_all.deb
-	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4-rc5-wily/linux-image-4.4.0-040400rc5-generic_4.4.0-040400rc5.201512140221_i386.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc5-wily/linux-headers-4.5.0-040500rc5-generic_4.5.0-040500rc5.201602201730_i386.deb
+ -	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc5-wily/linux-headers-4.5.0-040500rc5_4.5.0-040500rc5.201602201730_all.deb
+ -	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc5-wily/linux-image-4.5.0-040500rc5-generic_4.5.0-040500rc5.201602201730_i386.deb
 	        ;;
 	    x86_64)
-	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4-rc5-wily/linux-headers-4.4.0-040400rc5-generic_4.4.0-040400rc5.201512140221_amd64.deb
-	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4-rc5-wily/linux-headers-4.4.0-040400rc5_4.4.0-040400rc5.201512140221_all.deb
-	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4-rc5-wily/linux-image-4.4.0-040400rc5-generic_4.4.0-040400rc5.201512140221_amd64.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc5-wily/linux-headers-4.5.0-040500rc5-generic_4.5.0-040500rc5.201602201730_amd64.deb
+ -	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc5-wily/linux-headers-4.5.0-040500rc5_4.5.0-040500rc5.201602201730_all.deb
+ -	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc5-wily/linux-image-4.5.0-040500rc5-generic_4.5.0-040500rc5.201602201730_amd64.deb
 	        ;;
 	    *)
 	        show_error "No packages available to download that matches your system." && kernel
@@ -216,19 +216,19 @@ fi
 }
 
 # Kernel unstable
-function v4.4-rc6 {
+function v4.5-rc6 {
 if (whiptail --title "Update system kernel" --yesno "Proceed with kernel update?" 10 60) then
 	# Download Debian file that matches system architecture
 	case `uname -i` in
 	    i386|i486|i586|i686)
-	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4-rc6-wily/linux-headers-4.4.0-040400rc6-generic_4.4.0-040400rc6.201512202030_i386.deb
-	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4-rc6-wily/linux-headers-4.4.0-040400rc6_4.4.0-040400rc6.201512202030_all.deb
-	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4-rc6-wily/linux-image-4.4.0-040400rc6-generic_4.4.0-040400rc6.201512202030_i386.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc6-wily/linux-headers-4.5.0-040500rc6-generic_4.5.0-040500rc6.201602281230_i386.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc6-wily/linux-headers-4.5.0-040500rc6_4.5.0-040500rc6.201602281230_all.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc6-wily/linux-image-4.5.0-040500rc6-generic_4.5.0-040500rc6.201602281230_i386.deb
 	        ;;
 	    x86_64)
-	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4-rc6-wily/linux-headers-4.4.0-040400rc6-generic_4.4.0-040400rc6.201512202030_amd64.deb
-	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4-rc6-wily/linux-headers-4.4.0-040400rc6_4.4.0-040400rc6.201512202030_all.deb
-	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4-rc6-wily/linux-image-4.4.0-040400rc6-generic_4.4.0-040400rc6.201512202030_amd64.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc6-wily/linux-headers-4.5.0-040500rc6-generic_4.5.0-040500rc6.201602281230_amd64.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc6-wily/linux-headers-4.5.0-040500rc6_4.5.0-040500rc6.201602281230_all.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.5-rc6-wily/linux-image-4.5.0-040500rc6-generic_4.5.0-040500rc6.201602281230_amd64.deb
 	        ;;
 	    *)
 	        show_error "No packages available to download that matches your system." && kernel
@@ -259,7 +259,7 @@ fi
 }
 
 # Kernel unstable
-function v4.4-rc7 {
+function v4.5-rc7 {
 if (whiptail --title "Update system kernel" --yesno "Proceed with kernel update?" 10 60) then
 	# Download Debian file that matches system architecture
 	case `uname -i` in
@@ -301,51 +301,8 @@ else
 fi
 }
 
-# Kernel unstable
-function v4.4-rc8 {
-if (whiptail --title "Update system kernel" --yesno "Proceed with kernel update?" 10 60) then
-	# Download Debian file that matches system architecture
-	case `uname -i` in
-	    i386|i486|i586|i686)
-	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4-rc8-wily/linux-headers-4.4.0-040400rc8-generic_4.4.0-040400rc8.201601130531_i386.deb
-	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4-rc8-wily/linux-headers-4.4.0-040400rc8_4.4.0-040400rc8.201601130531_all.deb
-	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4-rc8-wily/linux-image-4.4.0-040400rc8-generic_4.4.0-040400rc8.201601130531_i386.deb
-	        ;;
-	    x86_64)
-	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4-rc8-wily/linux-headers-4.4.0-040400rc8-generic_4.4.0-040400rc8.201601130531_amd64.deb
-	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4-rc8-wily/linux-headers-4.4.0-040400rc8_4.4.0-040400rc8.201601130531_all.deb
-	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4-rc8-wily/linux-image-4.4.0-040400rc8-generic_4.4.0-040400rc8.201601130531_amd64.deb
-	        ;;
-	    *)
-	        show_error "No packages available to download that matches your system." && kernel
-	        ;;
-	esac
-    # Update repository information
-    show_info 'Download and install...'
-    show_warning 'Requires root privileges'
-    sudo dpkg -i linux-*.deb
-    sudo apt-get install -fy
-    # Grub-Update
-    show_info 'Grub configuration update...'
-	show_warning 'Requires root privileges'
-    sudo update-grub
-    # Cleanup and finish
-	rm linux-*.deb
-    # Reboot
-    show_info 'Rebooting in 1 minute...'
-    show_warning 'Save all files and exit the program!'
-    sudo shutdown -r +1
-    # Done
-    show_success 'Done.'
-    whiptail --title "Finished" --msgbox "Kernel update complete." 8 78
-    main
-else
-    clear && main
-fi
-}
-
 # Kernel system upgrade
-function v4.4-wily-unstable {
+function v4.5-wily-unstable {
     eval `resize`
     KERNEL44=$(whiptail \
         --notags \
@@ -354,14 +311,13 @@ function v4.4-wily-unstable {
         --ok-button "Update" \
         --cancel-button "Go Back" \
         $LINES $COLUMNS $(( $LINES - 12 )) \
-        v4.4-rc1        'Update unstable (v4.4-rc1-wily) kernel (need reboot)' \
-        v4.4-rc2        'Update unstable (v4.4-rc2-wily) kernel (need reboot)' \
-        v4.4-rc3        'Update unstable (v4.4-rc3-wily) kernel (need reboot)' \
-        v4.4-rc4        'Update unstable (v4.4-rc4-wily) kernel (need reboot)' \
-        v4.4-rc5        'Update unstable (v4.4-rc5-wily) kernel (need reboot)' \
-        v4.4-rc6        'Update unstable (v4.4-rc6-wily) kernel (need reboot)' \
-        v4.4-rc7        'Update unstable (v4.4-rc7-wily) kernel (need reboot)' \
-        v4.4-rc8        'Update unstable (v4.4-rc8-wily) kernel (need reboot)' \
+        v4.5-rc1        'Update unstable (v4.5-rc1-wily) kernel (need reboot)' \
+        v4.5-rc2        'Update unstable (v4.5-rc2-wily) kernel (need reboot)' \
+        v4.5-rc3        'Update unstable (v4.5-rc3-wily) kernel (need reboot)' \
+        v4.5-rc4        'Update unstable (v4.5-rc4-wily) kernel (need reboot)' \
+        v4.5-rc5        'Update unstable (v4.5-rc5-wily) kernel (need reboot)' \
+        v4.5-rc6        'Update unstable (v4.5-rc6-wily) kernel (need reboot)' \
+        v4.5-rc7        'Update unstable (v4.5-rc7-wily) kernel (need reboot)' \
         3>&1 1>&2 2>&3)
 
     exitstatus=$?
