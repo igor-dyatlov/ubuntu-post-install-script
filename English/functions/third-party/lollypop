@@ -6,16 +6,16 @@ function lollypop {
   show_info 'Adding Lollypop PPA to software sources...'
   show_warning 'Requires root privileges'
   sudo add-apt-repository -y ppa:gnumdk/lollypop
-	# Update repository information
-	show_info 'Updating repository information...'
+  # Update repository information
+  show_info 'Updating repository information...'
   show_warning 'Requires root privileges'
-	sudo apt-get update
-	# Install
+  sudo apt-get -qq update
+  # Install
   show_info 'Installing Lollypop...'
   show_warning 'Requires root privileges'
   sudo apt-get install -y lollypop
   # Done
   show_success 'Done.'
   whiptail --title "Finished" --msgbox "Installation complete." 8 78
-	thirdparty
+  thirdparty
 }

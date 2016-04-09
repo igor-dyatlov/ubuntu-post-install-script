@@ -6,17 +6,17 @@ function wine {
   show_info 'Adding Wine PPA to software sources...'
   show_warning 'Requires root privileges'
   sudo add-apt-repository -y ppa:ubuntu-wine/ppa
-	# Update repository information
-	show_info 'Updating repository information...'
+  # Update repository information
+  show_info 'Updating repository information...'
   show_warning 'Requires root privileges'
-	sudo apt-get update -qq
-	# Install
+  sudo apt-get update -qq
+  # Install
   show_info 'Installing Wine...'
   show_warning 'Requires root privileges'
   sudo apt-get install -y wine1.8 winetricks
   # Install dependencies
   show_info 'Downloading dependent 32-bit libraries...'
-	show_warning 'Requires root privileges'
+  show_warning 'Requires root privileges'
   # Download Debian file that matches system architecture
 	case `uname -i` in
 	    x86_64)
@@ -29,5 +29,5 @@ function wine {
   # Done
   show_success 'Done.'
   whiptail --title "Finished" --msgbox "Installation complete." 8 78
-	thirdparty
+  thirdparty
 }

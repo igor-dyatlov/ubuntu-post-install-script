@@ -2,6 +2,8 @@
 
 dir="$(dirname "$0")"
 
+source $dir/functions/kernel-data/kernel-4.2
+source $dir/functions/kernel-data/kernel-4.3
 source $dir/functions/kernel-data/kernel-4.4
 source $dir/functions/kernel-data/kernel-4.5
 source $dir/functions/kernel-data/kernel-4.6
