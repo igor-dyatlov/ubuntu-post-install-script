@@ -12,6 +12,7 @@ source $dir/functions/third-party/blender
 source $dir/functions/third-party/brackets
 source $dir/functions/third-party/chromium
 source $dir/functions/third-party/cinelerra
+source $dir/functions/third-party/clementine
 source $dir/functions/third-party/compiz
 source $dir/functions/third-party/cutegram
 source $dir/functions/third-party/darktable
@@ -55,6 +56,7 @@ source $dir/functions/third-party/jenkins
 source $dir/functions/third-party/kazam
 source $dir/functions/third-party/kde
 source $dir/functions/third-party/keepassx
+source $dir/functions/third-party/kodi
 source $dir/functions/third-party/krita
 source $dir/functions/third-party/lamp
 source $dir/functions/third-party/libreoffice
@@ -101,10 +103,12 @@ source $dir/functions/third-party/ssr
 source $dir/functions/third-party/steadyflow
 source $dir/functions/third-party/steam
 source $dir/functions/third-party/stoq
+source $dir/functions/third-party/stremio
 source $dir/functions/third-party/sublime-text
 source $dir/functions/third-party/sunflower
 source $dir/functions/third-party/teamviewer
 source $dir/functions/third-party/telegram
+source $dir/functions/third-party/terminix
 source $dir/functions/third-party/testdisk
 source $dir/functions/third-party/textadept
 source $dir/functions/third-party/transmission
@@ -142,6 +146,7 @@ function thirdparty {
         'brackets'          'Brackets' \
         'chromium'          'Chromium' \
         'cinelerra'         'Cinelerra' \
+        'clementine'        'Clementine' \
         'compiz'            'Compiz' \
         'cutegram'          'Cutegram' \
         'darktable'         'Darktable' \
@@ -185,6 +190,7 @@ function thirdparty {
         'kazam'             'Kazam' \
         'kde'               'Latest KDE desktop' \
         'keepassx'          'KeePassX' \
+        'kodi'              'Kodi' \
         'krita'             'Krita' \
         'lamp'              'LAMP server' \
         'libreoffice'       'LibreOffice' \
@@ -231,10 +237,12 @@ function thirdparty {
         'steadyflow'        'Steadyflow' \
         'steam'             'Steam' \
         'stoq'              'Stoq' \
+        'stremio'           'Stremio' \
         'sublime-text'      'Sublime Text 3' \
         'sunflower'         'Sunflower' \
         'teamviewer'        'Teamviewer' \
         'telegram'          'Telegram' \
+        'terminix'          'Terminix terminal' \
         'testdisk'          'TestDisk' \
         'textadept'         'Textadept' \
         'transmission'      'Transmission' \

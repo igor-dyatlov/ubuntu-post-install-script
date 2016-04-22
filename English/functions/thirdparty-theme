@@ -2,6 +2,7 @@
 
 dir="$(dirname "$0")"
 
+source $dir/functions/third-party/theme/adapta
 source $dir/functions/third-party/theme/placmank
 
 # Install Third-Party Theme
@@ -14,6 +15,7 @@ function thirdparty-theme {
         --ok-button "Install" \
         --cancel-button "Go Back" \
         $LINES $COLUMNS $(( $LINES - 12 )) \
+        adapta          'Adapta theme on Material Design' \
         placmank        'Placmank theme for Plank' \
         3>&1 1>&2 2>&3)
      
