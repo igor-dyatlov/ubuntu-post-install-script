@@ -6,9 +6,9 @@ source $dir/functions/kernel-data/stable/v4.3-wily-stable
 source $dir/functions/kernel-data/unstable/v4.3-wily-unstable
 
 # Kernel system upgrade
-function kernel-4.4 {
+function kernel-4.3 {
     eval `resize`
-    KERNELALL44=$(whiptail \
+    KERNELALL43=$(whiptail \
         --notags \
         --title "Update system kernel" \
         --menu "\nWhat would you like to do?" \
@@ -21,7 +21,7 @@ function kernel-4.4 {
 
     exitstatus=$?
     if [ $exitstatus = 0 ]; then
-        clear && $KERNELALL44
+        clear && $KERNELALL43
     else
         clear && main
     fi

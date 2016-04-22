@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# Terminix
+function terminix {
+  # Install dependencies
+  show_info 'Installing Terminix dependencies...'
+  show_warning 'Requires root privileges'
+  sudo apt-get install wget unzip libglib2.0-bin
+  show_info 'Downloading Terminix...'
+  wget https://github.com/gnunn1/terminix/releases/download/0.58.1/terminix.zip
+  # Install package(s)
+  show_info 'Installing Terminix...'
+  sudo unzip terminix.zip -d /
+  sudo glib-compile-schemas /usr/share/glib-2.0/schemas/
+  # Cleanup and finish
+  rm terminix.zip
+  # Done
+  show_success 'Done.'
+  whiptail --title "Finished" --msgbox "Installation complete." 8 78
+  thirdparty
+}

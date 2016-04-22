@@ -2,8 +2,8 @@
 
 # Popcorn Time
 function popcorn-time {
-	show_info 'Downloading Popcorn Time...'
-	# Download Debian file that matches system architecture
+  show_info 'Downloading Popcorn Time...'
+  # Download Debian file that matches system architecture
 	case `uname -i` in
 	    i386|i486|i586|i686)
 	        curl -O http://popcorn-time.to/Popcorn-Time-linux32.tar.gz
@@ -15,22 +15,22 @@ function popcorn-time {
 	        show_error "No packages available to download that matches your system." && thirdparty
 	        ;;
 	esac
-	show_info 'Extraction Popcorn Time...'
-	tar xzvf ./popcorn-time
-	# Install package(s)
-	show_info 'Installing Telegram...'
-	show_warning 'Requires root privileges'
-	sudo mv ./popcorn-time /opt/popcorn-time
-	# Create symbolic link
-	show_info 'Creating symbolic link...'
-	show_warning 'Requires root privileges'
-	sudo ln -sf /opt/popcorn-time/Popcorn-Time /usr/bin
-	# Cleanup and finish
+  show_info 'Extraction Popcorn Time...'
+  tar xzvf ./popcorn-time
+  # Install package(s)
+  show_info 'Installing Telegram...'
+  show_warning 'Requires root privileges'
+  sudo mv ./popcorn-time /opt/popcorn-time
+  # Create symbolic link
+  show_info 'Creating symbolic link...'
+  show_warning 'Requires root privileges'
+  sudo ln -sf /opt/popcorn-time/Popcorn-Time /usr/bin
+  # Cleanup and finish
   rm Popcorn*.tar.xz
-	# Create icon desktop and starting
-	Popcorn-Time
-	# Done
+  # Create icon desktop and starting
+  Popcorn-Time
+  # Done
   show_success 'Done.'
   whiptail --title "Finished" --msgbox "Installation complete." 8 78
-	thirdparty
+  thirdparty
 }

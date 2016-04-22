@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# Stremio
+function stremio {
+  show_info 'Downloading Stremio...'
+  curl -O http://dl.strem.io/Stremio3.5.7.linux.tar.gz
+  show_info 'Extraction Stremio...'
+  # Install package(s)
+  show_warning 'Requires root privileges'
+  sudo mkdir /opt/stremio
+  sudo mv Stremio*.tar.gz /opt/stremio
+  cd /opt/stremio
+  sudo tar -zxvf Stremio*.tar.gz
+  # Starting
+  ./Stremio.sh
+  # Cleanup and finish
+  sudo rm Stremio3.5.7.linux.tar.gz
+  # Done
+  show_success 'Done.'
+  whiptail --title "Finished" --msgbox "Installation complete." 8 78
+  thirdparty
+}

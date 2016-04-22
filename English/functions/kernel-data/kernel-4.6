@@ -6,22 +6,22 @@ source $dir/functions/kernel-data/stable/v4.6-wily-stable
 source $dir/functions/kernel-data/unstable/v4.6-wily-unstable
 
 # Kernel system upgrade
-function kernel-4.5 {
+function kernel-4.6 {
     eval `resize`
-    KERNEL=$(whiptail \
+    KERNELALL46=$(whiptail \
         --notags \
         --title "Update system kernel" \
         --menu "\nWhat would you like to do?" \
         --ok-button "Update" \
         --cancel-button "Go Back" \
         $LINES $COLUMNS $(( $LINES - 12 )) \
-        stable        'Update stable (v4.6-wily) kernel (need reboot)' \
-        unstable      'Update unstable (v4.6-wily) kernel (need reboot)' \
+        v4.6-wily-stable        'Update stable (v4.6-wily) kernel (need reboot)' \
+        v4.6-wily-unstable      'Update unstable (v4.6-wily) kernel (need reboot)' \
         3>&1 1>&2 2>&3)
 
     exitstatus=$?
     if [ $exitstatus = 0 ]; then
-        clear && $KERNEL
+        clear && $KERNELALL46
     else
         clear && main
     fi
