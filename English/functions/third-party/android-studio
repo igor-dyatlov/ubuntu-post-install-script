@@ -1,13 +1,13 @@
 #!/bin/bash
 
-# Android Studio 2.0
+# Android Studio 2.1
 function android-studio {
-  show_info 'Downloading Android Studio 2.0...'
-  curl -O https://dl.google.com/dl/android/studio/ide-zips/2.0.0.20/android-studio-ide-143.2739321-linux.zip
+  show_info 'Downloading Android Studio 2.1...'
+  curl -O https://dl.google.com/dl/android/studio/ide-zips/2.1.0.9/android-studio-ide-143.2790544-linux.zip
   show_info 'Extraction Android Studio 2.0...'
   unzip android-studio*.zip
   # Install package(s)
-  show_info 'Installing Android Studio 2.0...'
+  show_info 'Installing Android Studio 2.1...'
   show_warning 'Requires root privileges'
   sudo mv ./android-studio /opt/android-studio
   # Set Permission File

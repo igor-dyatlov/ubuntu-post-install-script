@@ -1,0 +1,11 @@
+#!/bin/bash
+
+function landscape {
+ show_info 'Removing unused pre-installed applications...'
+ show_warning 'Requires root privileges'
+ sudo apt-get purge -y landscape-client landscape-client-ui landscape-client-ui-install landscape-common
+ # Done
+ show_success 'Done.'
+ whiptail --title "Finished" --msgbox "Removal complete." 8 78
+ cleanup
+}

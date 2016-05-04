@@ -1,0 +1,11 @@
+#!/bin/bash
+
+function deja-dup {
+ show_info 'Removing unused pre-installed applications...'
+ show_warning 'Requires root privileges'
+ sudo apt-get purge -y deja-dup deja-dup-backend-cloudfiles deja-dup-backend-gvfs deja-dup-backend-s3 deja-dup-caja
+ # Done
+ show_success 'Done.'
+ whiptail --title "Finished" --msgbox "Removal complete." 8 78
+ cleanup
+}

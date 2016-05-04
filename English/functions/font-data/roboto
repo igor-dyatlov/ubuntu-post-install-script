@@ -1,0 +1,41 @@
+#!/bin/bash
+
+# Roboto Fonts
+function roboto {
+ show_info 'Downloading font...'
+ wget -O Roboto.zip https://www.google.com/fonts/download?kit=hY6_qqcqX_JNp8IlbByiXfesZW2xOQ-xsNqO47m55DA
+ wget -O Roboto_Condensed.zip https://www.google.com/fonts/download?kit=FaUEKJ5JLqAPj8QFvDB8Ld-ZezQ4spFTdVX5n4WoKD8
+ wget -O Roboto_Mono.zip https://www.google.com/fonts/download?kit=rqQ1zSE-ZGCKVZgew-A9dofD-WQWLbF4rYwcBGowFYY
+ wget -O Roboto_Slab.zip https://www.google.com/fonts/download?kit=XjkaEzzmSNN61VxmbyFKHIfD-WQWLbF4rYwcBGowFYY
+ show_info 'Extraction font...'
+ unzip Roboto.zip -d ./roboto
+ unzip Roboto_Condensed.zip -d ./roboto-condensed
+ unzip Roboto_Mono.zip -d ./roboto-mono
+ unzip Roboto_Slab.zip -d ./roboto-slab
+ # Install package(s)
+ show_info 'Installing font...'
+ show_warning 'Requires root privileges'
+ sudo mv ./roboto /usr/share/fonts/truetype/roboto
+ sudo mv ./roboto-condensed /usr/share/fonts/truetype/roboto-condensed
+ sudo mv ./roboto-mono /usr/share/fonts/truetype/roboto-mono
+ sudo mv ./roboto-slab /usr/share/fonts/truetype/roboto-slab
+ show_info 'Updating fc-cache...'
+ show_warning 'Requires root privileges'
+ sudo fc-cache -f -v
+ # Cleanup and finish
+ rm Roboto.zip Roboto_Condensed.zip Roboto_Mono.zip Roboto_Slab.zip
+ # Font Sizes
+ show_info 'Setting font preferences...'
+ gsettings set org.gnome.desktop.interface document-font-name 'Roboto Slab 11'
+ gsettings set org.gnome.desktop.interface font-name 'Roboto Condensed, 11'
+ gsettings set org.gnome.desktop.interface monospace-font-name 'Roboto Mono 13'
+ gsettings set org.gnome.desktop.interface text-scaling-factor '1.0'
+ gsettings set org.gnome.desktop.wm.preferences titlebar-font 'Roboto Condensed, Bold 11'
+ gsettings set org.gnome.nautilus.desktop font 'Roboto Slab 11'
+ gsettings set org.gnome.settings-daemon.plugins.xsettings antialiasing 'rgba'
+ gsettings set org.gnome.settings-daemon.plugins.xsettings hinting 'slight'
+ # Done
+ show_success 'Done.'
+ whiptail --title "Finished" --msgbox "Installation complete." 8 78
+ thirdparty
+}

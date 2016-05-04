@@ -87,7 +87,7 @@ function main {
         cleanup     'Cleanup the system' \
         speedup     'Speed up system' \
         3>&1 1>&2 2>&3)
-     
+
     exitstatus=$?
     if [ $exitstatus = 0 ]; then
         clear && $MAIN

@@ -6,16 +6,6 @@ source $dir/functions/button-layout
 
 # Preferred settings
 function preferences {
-    # Font Sizes
-    show_info 'Setting font preferences...'
-    gsettings set org.gnome.desktop.interface document-font-name 'Source Sans Pro 10' # This is a third-party font
-    gsettings set org.gnome.desktop.interface font-name 'Source Sans Pro 10'
-    gsettings set org.gnome.desktop.interface monospace-font-name 'Inconsolata 11' # This is also a third-party font
-    gsettings set org.gnome.desktop.interface text-scaling-factor '1.0'
-    gsettings set org.gnome.desktop.wm.preferences titlebar-font 'Source Sans Pro Bold 9'
-    gsettings set org.gnome.nautilus.desktop font 'Source Sans Pro 10'
-    gsettings set org.gnome.settings-daemon.plugins.xsettings antialiasing 'rgba'
-    gsettings set org.gnome.settings-daemon.plugins.xsettings hinting 'slight'
     # Pantheon Settings
     show_info 'Setting Pantheon app preferences...'
     gsettings set org.pantheon.noise.settings update-folder-heirarchy false
@@ -66,13 +56,27 @@ function apport {
 
 # Fix indicator keyboard
 function keyboard {
-	show_info 'Fix indicator keyboard...'
-	gsettings set org.gnome.desktop.input-sources sources "[('xkb', 'us'), ('xkb', 'ru')]"
-	gsettings set org.gnome.desktop.input-sources xkb-options "['grp_led:scroll', 'grp:alt_shift_toggle']"
-	# Done
-    show_success 'Done.'
-    whiptail --title "Finished" --msgbox "Settings changed successfully." 8 78
-    configure
+ show_info 'Fix indicator keyboard...'
+ gsettings set org.gnome.desktop.input-sources sources "[('xkb', 'us'), ('xkb', 'ru')]"
+
+ gsettings set org.gnome.desktop.input-sources xkb-options "['grp_led:scroll', 'grp:alt_shift_toggle']"
+ gsettings set org.gnome.desktop.input-sources xkb-options ['grp:alt_shift_toggle', 'grp_led:scroll']
+ # Done
+ show_success 'Done.'
+ whiptail --title "Finished" --msgbox "Settings changed successfully." 8 78
+ configure
+}
+
+# Nautilus extensions
+function nautilus {
+ show_info 'Nautilus setting extensions...'
+ show_warning 'Requires root privileges'
+ sudo apt install nautilus-admin nautilus-image-converter nautilus-image-manipulator
+ nautilus -q
+ # Done
+ show_success 'Done.'
+ whiptail --title "Finished" --msgbox "Settings changed successfully." 8 78
+ configure
 }
 
 # Configure System
@@ -85,12 +89,13 @@ function configure {
         --ok-button "Apply" \
         --cancel-button "Go Back" \
         $LINES $COLUMNS $(( $LINES - 12 )) \
-        preferences 'Set preferred application-specific settings' \
-        startup     'Show all startup applications' \
-        apport      'Disable system crash dialogs' \
-        keyboard    'Fix indicator keyboard' \
-        button-layout 'Selection button layout' \
-        animations  'Enable/disable animations' \
+        preferences     'Set preferred application-specific settings' \
+        startup         'Show all startup applications' \
+        apport          'Disable system crash dialogs' \
+        keyboard        'Fix indicator keyboard' \
+        button-layout   'Selection button layout' \
+        animations      'Enable/disable animations' \
+        nautilus        'Nautilus extensions' \
         3>&1 1>&2 2>&3)
 
     exitstatus=$?
