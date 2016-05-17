@@ -1,0 +1,25 @@
+#!/bin/bash
+
+# Paper Icon Theme
+function paper-icon {
+  show_info 'Downloading Paper Icon...'
+  wget https://github.com/snwh/paper-icon-theme/archive/master.zip
+  # Install package(s)
+  show_info 'Installing Icon Theme...'
+  unzip master.zip
+  cd paper-icon-theme-master
+  sudo ./install-icon-theme.sh
+  # Timeout
+  sleep 5
+  # Back
+  cd -
+  # Cleanup and finish
+  rm -rf paper-icon-theme-master master.zip
+  # Apply
+  show_info 'Apply Icon Theme...'
+  gsettings set org.gnome.desktop.interface icon-theme 'Paper'
+  # Done
+  show_success 'Done.'
+  whiptail --title "Finished" --msgbox "Installation complete." 8 78
+  thirdparty-theme
+}

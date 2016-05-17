@@ -1,0 +1,28 @@
+#!/bin/bash
+
+dir="$(dirname "$0")"
+
+source $dir/functions/third-party-data/games-data/minecraft
+source $dir/functions/third-party-data/games-data/steam
+
+# Install third-party-data Applications
+function games {
+    eval `resize`
+    GAMES=$(whiptail \
+        --notags \
+        --title "third-party-data Installation" \
+        --menu "\nWhat third-party software would you like to install?" \
+        --ok-button "Install" \
+        --cancel-button "Go Back" \
+        $LINES $COLUMNS $(( $LINES - 12 )) \
+        'minecraft'         'Minecraft' \
+        'steam'             'Steam' \
+        3>&1 1>&2 2>&3)
+
+    exitstatus=$?
+    if [ $exitstatus = 0 ]; then
+        clear && $GAMES
+    else
+        clear && main
+    fi
+}

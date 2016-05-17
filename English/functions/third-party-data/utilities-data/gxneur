@@ -1,0 +1,4 @@
+XNeur Switcher
+sudo add-apt-repository ppa:andrew-crew-kuznetsov/xneur-unstable
+sudo apt-get update
+sudo apt-get install gxneur

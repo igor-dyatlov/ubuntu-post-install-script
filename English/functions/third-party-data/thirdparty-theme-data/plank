@@ -1,0 +1,26 @@
+#!/bin/bash
+
+dir="$(dirname "$0")"
+
+source $dir/functions/third-party-data/theme/plank-data/placmank-plank
+
+# Install Third-Party Theme
+function plank {
+    eval `resize`
+    PLANK=$(whiptail \
+        --notags \
+        --title "Third-Party Installation" \
+        --menu "\nWhat third-party theme would you like to install?" \
+        --ok-button "Install" \
+        --cancel-button "Go Back" \
+        $LINES $COLUMNS $(( $LINES - 12 )) \
+        placmank-plank        'Placmank theme for Plank' \
+        3>&1 1>&2 2>&3)
+
+    exitstatus=$?
+    if [ $exitstatus = 0 ]; then
+        clear && $PLANK
+    else
+        clear && main
+    fi
+}

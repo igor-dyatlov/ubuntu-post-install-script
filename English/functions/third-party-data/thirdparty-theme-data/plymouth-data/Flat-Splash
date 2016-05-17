@@ -1,0 +1,4 @@
+wget https://dl.dropboxusercontent.com/content_link/ChLyRmHxv08DMxUrwPIbWmjwomQftIzTnZYzXq1GbZugQ3hCt0iGodtJ1X5075B2/file?dl=1
+sudo update-alternatives --install /lib/plymouth/themes/default.plymouth default.plymouth /lib/plymouth/themes/themename/themename.plymouth 100
+sudo update-alternatives --config default.plymouth
+sudo update-initramfs -u

@@ -1,8 +1,11 @@
 #!/bin/bash
 # -*- Mode: sh; coding: utf-8; indent-tabs-mode: nil; tab-width: 4 -*-
 #
-# Authors:
+# Authors base:
 #   Sam Hewitt <hewittsamuel@gmail.com>
+#
+# Authors:
+#   Igor Dyatlov <dyatlov.igor@gmail.com>
 #
 # Description:
 #   A post-installation bash script for Ubuntu
@@ -75,17 +78,17 @@ function main {
         --ok-button "Run" \
         --cancel-button "Quit" \
         $LINES $COLUMNS $(( $LINES - 12 )) \
-        update      'Perform system update' \
-        favourites  'Install favourite applications' \
-        utilities   'Install favourite system utilities' \
-        development 'Install favourite development tools' \
-        codecs      'Install Ubuntu Restricted Extras' \
-        thirdparty  'Install third-party applications' \
+        update            'Perform system update' \
+        favourites        'Install favourite applications' \
+        utilities         'Install favourite system utilities' \
+        development       'Install favourite development tools' \
+        codecs            'Install Ubuntu Restricted Extras' \
+        thirdparty        'Install third-party applications' \
         thirdparty-theme  'Install third-party theme' \
-        configure   'Configure system' \
-        kernel      'Update system kernel' \
-        cleanup     'Cleanup the system' \
-        speedup     'Speed up system' \
+        configure         'Configure system' \
+        kernel            'Update system kernel' \
+        cleanup           'Cleanup the system' \
+        speedup           'Speed up system' \
         3>&1 1>&2 2>&3)
 
     exitstatus=$?

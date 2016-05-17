@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# Poppy OS X Cursors X11 Mouse Theme
+function poppy-mac-cursor {
+  show_info 'Downloading Poppy OS X Cursors X11 Mouse Theme...'
+  wget http://orig01.deviantart.net/66bb/f/2016/134/0/f/poppy_os_x_cursors_1_3_0_by_kayover-da2eu1h.zip
+  # Install package(s)
+  show_info 'Installing Poppy OS X Cursors X11 Mouse Theme...'
+  tar -xvf 175749-OSX-ElCap.tar.bz2
+  cd OSX-ElCap
+  sudo ./install.sh
+  # Cleanup and finish
+  rm 175749-OSX-ElCap.tar.bz2
+  # Apply
+  show_info 'Apply Theme...'
+  gsettings set org.gnome.desktop.interface cursor-theme 'OSX-ElCap'
+  # Done
+  show_success 'Done.'
+  whiptail --title "Finished" --msgbox "Installation complete." 8 78
+  thirdparty-theme
+  }

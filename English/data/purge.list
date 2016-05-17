@@ -8,17 +8,8 @@ gir1.2-rb-3.0
 
 
 librhythmbox-core9
-nautilus-sendto-empathy
-overlay-scrollbar
-overlay-scrollbar-gtk2
-overlay-scrollbar-gtk3
 
-telepathy-gabble
-telepathy-haze
-telepathy-idle
-telepathy-indicator
-telepathy-logger
-telepathy-salut
+
+
 unity-webapps-common
 webbrowser-app
-sudo apt-get purge imagemagick

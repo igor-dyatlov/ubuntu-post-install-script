@@ -39,40 +39,49 @@ function kernels {
 
 # Remove Orphaned Packages
 function orphaned {
-    show_info 'Removing orphaned packages...'
-    show_warning 'Requires root privileges'
-    sudo apt-get autoremove -y
-    show_success 'Done.'
-    whiptail --title "Finished" --msgbox "Orphaned packages have been successfully removed." 8 78
-    cleanup
+ show_info 'Removing orphaned packages...'
+ show_warning 'Requires root privileges'
+ sudo apt-get autoremove -y
+ show_success 'Done.'
+ whiptail --title "Finished" --msgbox "Orphaned packages have been successfully removed." 8 78
+ cleanup
 }
 
 function leftovers {
-    show_info 'Removing leftover configuration files...'
-    show_warning 'Requires root privileges'
-    sudo dpkg --purge $(COLUMNS=200 dpkg -l | grep '^rc' | tr -s ' ' | cut -d ' ' -f 2)
-    show_success 'Done.'
-    whiptail --title "Finished" --msgbox "Leftover configuration files have been removed." 8 78
-    cleanup
+ show_info 'Removing leftover configuration files...'
+ show_warning 'Requires root privileges'
+ sudo dpkg --purge $(COLUMNS=200 dpkg -l | grep '^rc' | tr -s ' ' | cut -d ' ' -f 2)
+ show_success 'Done.'
+ whiptail --title "Finished" --msgbox "Leftover configuration files have been removed." 8 78
+ cleanup
 }
 
 function clean-cache {
-    show_info 'Cleaning package cache...'
-    show_warning 'Requires root privileges'
-    sudo apt-get clean -y
-    show_success 'Done.'
-    whiptail --title "Finished" --msgbox "Package cache has been cleaned." 8 78
-    cleanup
+ show_info 'Cleaning package cache...'
+ show_warning 'Requires root privileges'
+ sudo apt-get clean -y
+ show_success 'Done.'
+ whiptail --title "Finished" --msgbox "Package cache has been cleaned." 8 78
+ cleanup
 }
 
 # Remove old log crash
 function crash {
-    show_info 'Cleaning old log crash...'
-    show_warning 'Requires root privileges'
-    sudo rm /var/crash/*
-    show_success 'Done.'
-    whiptail --title "Finished" --msgbox "Package cache has been cleaned." 8 78
-    cleanup
+ show_info 'Cleaning old log crash...'
+ show_warning 'Requires root privileges'
+ sudo rm /var/crash/*
+ show_success 'Done.'
+ whiptail --title "Finished" --msgbox "Old log crash has been cleaned." 8 78
+ cleanup
+}
+
+# Terminal old command
+function terminal-history {
+ show_info 'Cleaning old log crash...'
+ mv $HOME/.bash_history $HOME/.bash_history
+ show_success 'Done.'
+ whiptail --title "Finished" --msgbox "Old log crash has been cleaned." 8 78
+ cleanup
 }
 
 # Cleanup System

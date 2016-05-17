@@ -1,1 +1,17 @@
-sudo apt-get install gnome-shell-pomodoro
+#!/bin/bash
+
+# Pomodoro
+function pomodoro {
+  # Update repository information
+  show_info 'Updating repository information...'
+  show_warning 'Requires root privileges'
+  sudo apt-get update
+  # Install
+  show_info 'Installing Pomodoro...'
+  show_warning 'Requires root privileges'
+  sudo apt-get install -y gnome-shell-pomodoro
+  # Done
+  show_success 'Done.'
+  whiptail --title "Finished" --msgbox "Installation complete." 8 78
+  thirdparty
+}

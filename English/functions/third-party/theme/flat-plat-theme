@@ -1,3 +1,0 @@
-cp -R ./Paper/ /usr/share/themes/
-	chmod -R 755 /usr/share/themes/Paper
-gsettings set org.gnome.desktop.interface gtk-theme 'Flat-Plat'

@@ -1,0 +1,4 @@
+gsettings set org.gnome.desktop.app-folders folder-children "['Audio']"
+gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/Audio/ name 'Audio'
+gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/Audio/ translate true
+gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/Audio/ apps "['audacious.desktop', 'brasero.desktop']"

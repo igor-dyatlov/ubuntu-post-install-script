@@ -1,0 +1,49 @@
+#!/bin/bash
+
+dir="$(dirname "$0")"
+
+source $dir/functions/third-party-data/audio-data/audacity
+source $dir/functions/third-party-data/audio-data/cinelerra
+source $dir/functions/third-party-data/audio-data/clementine
+source $dir/functions/third-party-data/audio-data/hydrogen
+source $dir/functions/third-party-data/audio-data/lollypop
+source $dir/functions/third-party-data/audio-data/mixxx
+source $dir/functions/third-party-data/audio-data/musicmanager
+source $dir/functions/third-party-data/audio-data/nuvolaplayer3
+source $dir/functions/third-party-data/audio-data/quodlibet
+source $dir/functions/third-party-data/audio-data/rhythmbox
+source $dir/functions/third-party-data/audio-data/spotify
+source $dir/functions/third-party-data/audio-data/vocal
+
+# Install third-party-data Applications
+function audio {
+    eval `resize`
+    AUDIO=$(whiptail \
+        --notags \
+        --title "third-party-data Installation" \
+        --menu "\nWhat third-party software would you like to install?" \
+        --ok-button "Install" \
+        --cancel-button "Go Back" \
+        $LINES $COLUMNS $(( $LINES - 12 )) \
+        'audacity'          'Audacity' \
+        'cinelerra'         'Cinelerra' \
+        'clementine'        'Clementine' \
+        'hydrogen'          'Hydrogen' \
+        'lollypop'          'Lollypop' \
+        'mixxx'             'Mixxx' \
+        'musicmanager'      'Google Music manager' \
+        'nuvolaplayer'      'Nuvola player 3' \
+        'nvidia'            'Nvidia Linux Display Driver' \
+        'quodlibet'         'Quodlibet' \
+        'rhythmbox'         'Rhythmbox' \
+        'spotify'           'Spotify' \
+        'vocal'             'Vocal podcast app' \
+        3>&1 1>&2 2>&3)
+
+    exitstatus=$?
+    if [ $exitstatus = 0 ]; then
+        clear && $AUDIO
+    else
+        clear && main
+    fi
+}

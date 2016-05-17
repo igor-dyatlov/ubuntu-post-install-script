@@ -3,6 +3,7 @@
 dir="$(dirname "$0")"
 
 source $dir/functions/kernel-data/stable/v4.4-wily-stable
+source $dir/functions/kernel-data/stable/v4.4-xenial-stable
 source $dir/functions/kernel-data/unstable/v4.4-wily-unstable
 
 # Kernel system upgrade
@@ -16,6 +17,7 @@ function kernel-4.4 {
         --cancel-button "Go Back" \
         $LINES $COLUMNS $(( $LINES - 12 )) \
         v4.4-wily-stable        'Update stable (v4.4-wily) kernel (need reboot)' \
+        v4.4-xenial-stable      'Update stable (v4.4-xenial) kernel (need reboot)' \
         v4.4-wily-unstable      'Update unstable (v4.4-wily) kernel (need reboot)' \
         3>&1 1>&2 2>&3)
 

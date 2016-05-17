@@ -1,0 +1,36 @@
+#!/bin/bash
+
+dir="$(dirname "$0")"
+
+source $dir/functions/third-party-data/ide-data/android-studio
+source $dir/functions/third-party-data/ide-data/atom
+source $dir/functions/third-party-data/ide-data/brackets
+source $dir/functions/third-party-data/ide-data/notepadqq
+source $dir/functions/third-party-data/ide-data/sublime-text
+source $dir/functions/third-party-data/ide-data/textadept
+
+# Install third-party-data Applications
+function ide {
+    eval `resize`
+    IDE=$(whiptail \
+        --notags \
+        --title "third-party-data Installation" \
+        --menu "\nWhat third-party software would you like to install?" \
+        --ok-button "Install" \
+        --cancel-button "Go Back" \
+        $LINES $COLUMNS $(( $LINES - 12 )) \
+        'android-studio'    'Android Studio 2.0 Preview' \
+        'atom'              'Atom' \
+        'brackets'          'Brackets' \
+        'notepadqq'         'Notepadqq' \
+        'sublime-text'      'Sublime Text 3' \
+        'textadept'         'Textadept' \
+        3>&1 1>&2 2>&3)
+
+    exitstatus=$?
+    if [ $exitstatus = 0 ]; then
+        clear && $IDE
+    else
+        clear && main
+    fi
+}

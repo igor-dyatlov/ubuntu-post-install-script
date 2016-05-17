@@ -10,13 +10,10 @@ function skype {
 	show_info 'Installing Skype...'
   show_warning 'Requires root privileges'
   sudo apt-get install -y skype
-
+	sudo apt-get install gtk2-engines-murrine:i386 gtk2-engines-pixbuf:i386
+	sudo apt-get install sni-qt:i386
   # Done
   show_success 'Done.'
   whiptail --title "Finished" --msgbox "Installation complete." 8 78
 	thirdparty
 }
-
-
-sudo apt install gtk2-engines-murrine:i386 gtk2-engines-pixbuf:i386
-sudo apt-get install sni-qt:i386

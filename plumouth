@@ -1,0 +1,24 @@
+
+ plymouth --get-splash-plugin-path
+
+
+
+
+sudo update-alternatives --config default.plymouth
+
+
+sudo mv ./tux-logo /usr/share/plymouth/themes/tux-logo
+
+sudo update-alternatives --install /usr/share/plymouth/themes/default.plymouth default.plymouth /usr/share/plymouth/themes/tux-logo/tux-logo.plymouth 100
+
+sudo update-initramfs -u
+
+
+sudo update-alternatives --auto default.plymouth
+sudo update-initramfs - u
+
+sudo update-grub-gfxpayload
+sudo update-grub
+
+#v10ded.*sv.*sd.*bc03sc.*
+#/usr/share/nvidia-current-updates/nvidia

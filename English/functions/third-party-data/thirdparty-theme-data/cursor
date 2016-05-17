@@ -1,0 +1,26 @@
+#!/bin/bash
+
+dir="$(dirname "$0")"
+
+source $dir/functions/third-party-data/theme/cursor-data/mac-cursor
+
+# Install Third-Party Theme
+function cursor {
+    eval `resize`
+    CURSOR=$(whiptail \
+        --notags \
+        --title "Third-Party Installation" \
+        --menu "\nWhat third-party theme would you like to install?" \
+        --ok-button "Install" \
+        --cancel-button "Go Back" \
+        $LINES $COLUMNS $(( $LINES - 12 )) \
+        mac-cursor      'Mac OS X flat cursor' \
+        3>&1 1>&2 2>&3)
+
+    exitstatus=$?
+    if [ $exitstatus = 0 ]; then
+        clear && $CURSOR
+    else
+        clear && main
+    fi
+}

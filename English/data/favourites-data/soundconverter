@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# Soundconverter
+function soundconverter {
+	# Update repository information
+	show_info 'Updating repository information...'
+	show_warning 'Requires root privileges'
+	sudo apt-get update
+	# Install
+  show_info 'Installing Soundconverter...'
+  show_warning 'Requires root privileges'
+  sudo apt-get install -y soundconverter
+  # Done
+  show_success 'Done.'
+  whiptail --title "Finished" --msgbox "Installation complete." 8 78
+	thirdparty
+}

@@ -1,0 +1,7 @@
+gsettings set org.gnome.desktop.app-folders folder-children ['Utilities', 'Sundry', 'Office']
+
+/org/gnome/desktop/app-folders/folders/Sundry/
+
+org.gnome.desktop.app-folders folder-children []
+
+gsettings reset-recursively org.gnome.desktop.app-folders folder-children ['Utilities', 'Sundry']

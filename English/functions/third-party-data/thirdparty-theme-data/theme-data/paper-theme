@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# Paper Theme
+function paper-theme {
+  show_info 'Downloading Paper Theme...'
+  wget https://github.com/snwh/paper-gtk-theme/archive/master.zip
+  # Install package(s)
+  show_info 'Installing Paper Theme...'
+  unzip master.zip
+  cd paper-gtk-theme-master
+  sudo ./install-gtk-theme.sh
+  # Timeout
+  sleep 5
+  # Back
+  cd -
+  # Cleanup and finish
+  rm -rf paper-gtk-theme-master master.zip
+  # Apply
+  show_info 'Apply Theme...'
+  gsettings set org.gnome.desktop.interface gtk-theme 'Paper'
+  gsettings set org.gnome.shell enabled-extensions ['user-theme@gnome-shell-extensions.gcampax.github.com']
+  gsettings set org.gnome.shell.extensions.user-theme name 'Paper'
+  # Done
+  show_success 'Done.'
+  whiptail --title "Finished" --msgbox "Installation complete." 8 78
+  thirdparty-theme
+}

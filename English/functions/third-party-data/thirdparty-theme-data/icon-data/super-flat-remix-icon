@@ -1,0 +1,25 @@
+#!/bin/bash
+
+# Super Flat Remix Icon Theme
+function super-flat-remix-icon {
+  show_info 'Downloading Super Flat Remix Icon...'
+  wget https://github.com/daniruiz/Super-Flat-Remix/archive/master.zip
+  # Install package(s)
+  show_info 'Installing Icon Theme...'
+  unzip master.zip
+  cd Super-Flat-Remix-master
+  sudo ./install-icon-theme.sh
+  # Timeout
+  sleep 5
+  # Back
+  cd -
+  # Cleanup and finish
+  rm -rf Super-Flat-Remix-master master.zip
+  # Apply
+  show_info 'Apply Icon Theme...'
+  gsettings set org.gnome.desktop.interface icon-theme ''
+  # Done
+  show_success 'Done.'
+  whiptail --title "Finished" --msgbox "Installation complete." 8 78
+  thirdparty-theme
+}
