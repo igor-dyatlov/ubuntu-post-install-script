@@ -14,9 +14,6 @@ function placmank-plank {
   show_info 'Installing Placmank...'
   show_warning 'Requires root privileges'
   sudo apt-get install -y placmank
-  # Apply
-  show_info 'Apply Theme...'
-  gsettings set /net/launchpad/plank/docks/dock1/theme 'Placmank'
   # Done
   show_success 'Done.'
   whiptail --title "Finished" --msgbox "Installation complete." 8 78

@@ -5,7 +5,7 @@ function wallpapers {
 	# Update repository information
 	show_info 'Updating repository information...'
 	show_warning 'Requires root privileges'
-	sudo apt-get update -qq
+	sudo apt-get update
 	# Install
   show_info 'Installing Wallpapers...'
   show_warning 'Requires root privileges'

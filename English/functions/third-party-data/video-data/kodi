@@ -13,7 +13,7 @@ function kodi {
   # Install
   show_info 'Installing Kodi...'
   show_warning 'Requires root privileges'
-  sudo apt-get install -y kodi
+  sudo apt-get install -y kodi kodi-pvr-mythtv
   # Done
   show_success 'Done.'
   whiptail --title "Finished" --msgbox "Installation complete." 8 78

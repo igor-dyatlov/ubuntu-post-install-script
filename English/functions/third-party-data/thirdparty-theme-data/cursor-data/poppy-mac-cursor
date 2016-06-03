@@ -6,11 +6,15 @@ function poppy-mac-cursor {
   wget http://orig01.deviantart.net/66bb/f/2016/134/0/f/poppy_os_x_cursors_1_3_0_by_kayover-da2eu1h.zip
   # Install package(s)
   show_info 'Installing Poppy OS X Cursors X11 Mouse Theme...'
-  tar -xvf 175749-OSX-ElCap.tar.bz2
-  cd OSX-ElCap
-  sudo ./install.sh
+  unzip poppy*.zip
+  cd Poppy-OS-X-Cursors
+  sudo mkdir /usr/share/icons/Poppy-OS-X-Cursors
+  sudo cp -rf cursors index.theme /usr/share/icons/Poppy-OS-X-Cursors
+  sudo update-alternatives --install /usr/share/icons/default/index.theme x-cursor-theme /usr/share/icons/Poppy-OS-X-Cursors/index.theme 90
+  # Back
+  cd -
   # Cleanup and finish
-  rm 175749-OSX-ElCap.tar.bz2
+  rm poppy*.zip
   # Apply
   show_info 'Apply Theme...'
   gsettings set org.gnome.desktop.interface cursor-theme 'OSX-ElCap'

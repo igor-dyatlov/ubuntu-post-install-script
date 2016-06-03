@@ -3,8 +3,9 @@
 dir="$(dirname "$0")"
 
 source $dir/functions/third-party-data/thirdparty-theme-data/cursor
+source $dir/functions/third-party-data/thirdparty-theme-data/font
 source $dir/functions/third-party-data/thirdparty-theme-data/icon
-source $dir/functions/third-party-data/thirdparty-theme-data/plank
+source $dir/functions/third-party-data/thirdparty-theme-data/plank-theme
 source $dir/functions/third-party-data/thirdparty-theme-data/theme
 
 # Install Third-Party Theme
@@ -18,8 +19,9 @@ function thirdparty-theme {
         --cancel-button "Go Back" \
         $LINES $COLUMNS $(( $LINES - 12 )) \
         cursor          'Third-Party cursor theme' \
+        font            'Third-Party font theme' \
         icon            'Third-Party icon theme' \
-        plank           'Third-Party theme for Plank' \
+        plank-theme     'Third-Party theme for Plank' \
         theme           'Third-Party theme' \
         3>&1 1>&2 2>&3)
 

@@ -13,7 +13,7 @@ function krita {
 	# Install
   show_info 'Installing Krita...'
   show_warning 'Requires root privileges'
-  sudo sudo apt-get install -y krita-2.9 krita-2.9-dbg
+  sudo apt-get install -y krita-2.9
   # Done
   show_success 'Done.'
   whiptail --title "Finished" --msgbox "Installation complete." 8 78

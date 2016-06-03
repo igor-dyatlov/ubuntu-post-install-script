@@ -2,129 +2,20 @@
 
 dir="$(dirname "$0")"
 
-source $dir/functions/third-party-data/android-studio
-source $dir/functions/third-party-data/atom
-source $dir/functions/third-party-data/audacity
-source $dir/functions/third-party-data/birdie
-source $dir/functions/third-party-data/bitcoin
-source $dir/functions/third-party-data/bleachbit
-source $dir/functions/third-party-data/blender
-source $dir/functions/third-party-data/brackets
-source $dir/functions/third-party-data/chromium
-source $dir/functions/third-party-data/cinelerra
-source $dir/functions/third-party-data/clementine
-source $dir/functions/third-party-data/compiz
-source $dir/functions/third-party-data/cutegram
-source $dir/functions/third-party-data/darktable
-source $dir/functions/third-party-data/deluge
-source $dir/functions/third-party-data/digikam
-source $dir/functions/third-party-data/docky
-source $dir/functions/third-party-data/dropbox
-source $dir/functions/third-party-data/drweb
-source $dir/functions/third-party-data/enpass
-source $dir/functions/third-party-data/file-system
-source $dir/functions/third-party-data/filezilla
-source $dir/functions/third-party-data/firefox
-source $dir/functions/third-party-data/fontforge
-source $dir/functions/third-party-data/font-manager
-source $dir/functions/third-party-data/formatjunkie
-source $dir/functions/third-party-data/fotoxx
-source $dir/functions/third-party-data/giggle
-source $dir/functions/third-party-data/gimp
-source $dir/functions/third-party-data/git
-source $dir/functions/third-party-data/gitbook
-source $dir/functions/third-party-data/gitg
-source $dir/functions/third-party-data/gitkraken
-source $dir/functions/third-party-data/gnome
-source $dir/functions/third-party-data/gnome-builder
-source $dir/functions/third-party-data/google-chrome
-source $dir/functions/third-party-data/gparted
-source $dir/functions/third-party-data/gpick
-source $dir/functions/third-party-data/gravit
-source $dir/functions/third-party-data/grub-customizer
-source $dir/functions/third-party-data/gufw
-source $dir/functions/third-party-data/handbrake
-source $dir/functions/third-party-data/haroopress
-source $dir/functions/third-party-data/hplip
-source $dir/functions/third-party-data/hudson
-source $dir/functions/third-party-data/hydrogen
-source $dir/functions/third-party-data/inkscape
-source $dir/functions/third-party-data/intel
-source $dir/functions/third-party-data/ipscan
-source $dir/functions/third-party-data/java-jdk
-source $dir/functions/third-party-data/jenkins
-source $dir/functions/third-party-data/kazam
-source $dir/functions/third-party-data/kde
-source $dir/functions/third-party-data/keepassx
-source $dir/functions/third-party-data/kodi
-source $dir/functions/third-party-data/krita
-source $dir/functions/third-party-data/lamp
-source $dir/functions/third-party-data/libreoffice
-source $dir/functions/third-party-data/lightworks
-source $dir/functions/third-party-data/lightzone
-source $dir/functions/third-party-data/linaro
-source $dir/functions/third-party-data/logkeys
-source $dir/functions/third-party-data/lollypop
-source $dir/functions/third-party-data/minecraft
-source $dir/functions/third-party-data/mixxx
-source $dir/functions/third-party-data/musicmanager
-source $dir/functions/third-party-data/mypaint
-source $dir/functions/third-party-data/natron
-source $dir/functions/third-party-data/notepadqq
-source $dir/functions/third-party-data/nuvolaplayer
-source $dir/functions/third-party-data/nvidia
-source $dir/functions/third-party-data/obs-studio
-source $dir/functions/third-party-data/openshot
-source $dir/functions/third-party-data/opera
-source $dir/functions/third-party-data/owncloud
-source $dir/functions/third-party-data/peazip
-source $dir/functions/third-party-data/photivo
-source $dir/functions/third-party-data/pinta
-source $dir/functions/third-party-data/pitivi
-source $dir/functions/third-party-data/pixeluvo
-source $dir/functions/third-party-data/plank
-source $dir/functions/third-party-data/plex
-source $dir/functions/third-party-data/popcorn-time
-source $dir/functions/third-party-data/qbittorrent
-source $dir/functions/third-party-data/quodlibet
-source $dir/functions/third-party-data/rawtherapee
-source $dir/functions/third-party-data/rhythmbox
-source $dir/functions/third-party-data/rvm
-source $dir/functions/third-party-data/samba
-source $dir/functions/third-party-data/scribus
-source $dir/functions/third-party-data/shotcut
-source $dir/functions/third-party-data/shredder
-source $dir/functions/third-party-data/shutter
-source $dir/functions/third-party-data/sigil
-source $dir/functions/third-party-data/slack
-source $dir/functions/third-party-data/smartgit
-source $dir/functions/third-party-data/spotify
-source $dir/functions/third-party-data/ssr
-source $dir/functions/third-party-data/steadyflow
-source $dir/functions/third-party-data/steam
-source $dir/functions/third-party-data/stoq
-source $dir/functions/third-party-data/stremio
-source $dir/functions/third-party-data/sublime-text
-source $dir/functions/third-party-data/sunflower
-source $dir/functions/third-party-data/teamviewer
-source $dir/functions/third-party-data/telegram
-source $dir/functions/third-party-data/terminix
-source $dir/functions/third-party-data/testdisk
-source $dir/functions/third-party-data/textadept
-source $dir/functions/third-party-data/transmission
-source $dir/functions/third-party-data/uberwriter
-source $dir/functions/third-party-data/ubuntu-tweak
-source $dir/functions/third-party-data/uget
-source $dir/functions/third-party-data/umake
-source $dir/functions/third-party-data/variety
-source $dir/functions/third-party-data/virtualbox
-source $dir/functions/third-party-data/vivaldi
-source $dir/functions/third-party-data/vocal
-source $dir/functions/third-party-data/wallpapers
-source $dir/functions/third-party-data/wine
-source $dir/functions/third-party-data/wireshark
-source $dir/functions/third-party-data/wps
-source $dir/functions/third-party-data/xampp
+source $dir/functions/third-party-data/audio
+source $dir/functions/third-party-data/de
+source $dir/functions/third-party-data/development
+source $dir/functions/third-party-data/driver
+source $dir/functions/third-party-data/games
+source $dir/functions/third-party-data/graphic
+source $dir/functions/third-party-data/ide
+source $dir/functions/third-party-data/internet
+source $dir/functions/third-party-data/office
+source $dir/functions/third-party-data/security
+source $dir/functions/third-party-data/server
+source $dir/functions/third-party-data/system
+source $dir/functions/third-party-data/utilities
+source $dir/functions/third-party-data/video
 
 # Install third-party-data Applications
 function thirdparty {
@@ -136,129 +27,20 @@ function thirdparty {
         --ok-button "Install" \
         --cancel-button "Go Back" \
         $LINES $COLUMNS $(( $LINES - 12 )) \
-        'android-studio'    'Android Studio 2.0 Preview' \
-        'atom'              'Atom' \
-        'audacity'          'Audacity' \
-        'birdie'            'Birdie Twitter client' \
-        'bitcoin'           'Bitcoin' \
-        'bleachbit'         'BleachBit' \
-        'blender'           'Blender' \
-        'brackets'          'Brackets' \
-        'chromium'          'Chromium' \
-        'cinelerra'         'Cinelerra' \
-        'clementine'        'Clementine' \
-        'compiz'            'Compiz' \
-        'cutegram'          'Cutegram' \
-        'darktable'         'Darktable' \
-        'deluge'            'Deluge' \
-        'digikam'           'digiKam' \
-        'docky'             'Docky' \
-        'dropbox'           'Dropbox' \
-        'drweb'             'Dr.Web CureIt!' \
-        'enpass'            'Enpass' \
-        'file-system'       'File system for Gparted' \
-        'filezilla'         'Filezilla' \
-        'firefox'           'Firefox' \
-        'fontforge'         'FontForge' \
-        'font-manager'      'Font manager' \
-        'formatjunkie'      'Formatjunkie' \
-        'fotoxx'            'Fotoxx' \
-        'giggle'            'Giggle' \
-        'gimp'              'Gimp' \
-        'git'               'Git' \
-        'gitbook'           'GitBook' \
-        'gitg'              'Gitg' \
-        'gitkraken'         'GitKraken' \
-        'gnome'             'Latest GNOME desktop' \
-        'gnome-builder'     'GNOME Builder' \
-        'google-chrome'     'Google Chrome' \
-        'gparted'           'Gparted' \
-        'gpick'             'Gpick' \
-        'gravit'            'Gravit' \
-        'grub-customizer'   'Grub customizer' \
-        'gufw'              'Gufw' \
-        'handbrake'         'Handbrake' \
-        'haroopress'        'Haroopress' \
-        'hplip'             'HP Linux Imaging and Printing' \
-        'hudson'            'Hudson' \
-        'hydrogen'          'Hydrogen' \
-        'inkscape'          'Inkscape' \
-        'intel'             'Intel Graphics Installer' \
-        'ipscan'            'Angry IP Scanner' \
-        'java-jdk'          'Java JDK' \
-        'jenkins'           'Jenkins' \
-        'kazam'             'Kazam' \
-        'kde'               'Latest KDE desktop' \
-        'keepassx'          'KeePassX' \
-        'kodi'              'Kodi' \
-        'krita'             'Krita' \
-        'lamp'              'LAMP server' \
-        'libreoffice'       'LibreOffice' \
-        'lightworks'        'Lightworks' \
-        'lightzone'         'LightZone' \
-        'linaro'            'Linaro' \
-        'logkeys'           'Logkeys' \
-        'lollypop'          'Lollypop' \
-        'minecraft'         'Minecraft' \
-        'mixxx'             'Mixxx' \
-        'musicmanager'      'Google Music manager' \
-        'mypaint'           'My Paint' \
-        'natron'            'Natron' \
-        'notepadqq'         'Notepadqq' \
-        'nuvolaplayer'      'Nuvola player' \
-        'nvidia'            'Nvidia Linux Display Driver' \
-        'obs-studio'        'OBS studio' \
-        'openshot'          'Openshot' \
-        'opera'             'Opera' \
-        'owncloud'          'ownCloud client' \
-        'peazip'            'PeaZip' \
-        'photivo'           'Photivo' \
-        'pinta'             'Pinta' \
-        'pitivi'            'Pitivi' \
-        'pixeluvo'          'Pixeluvo' \
-        'plank'             'Plank' \
-        'plex'              'Plex' \
-        'popcorntime'       'Popcorn Time' \
-        'qbittorrent'       'qBittorrent' \
-        'quodlibet'         'Quodlibet' \
-        'rawtherapee'       'RawTherapee' \
-        'rhythmbox'         'Rhythmbox' \
-        'rvm'               'Ruby Version Manager (RVM)' \
-        'samba'             'Samba' \
-        'scribus'           'Scribus' \
-        'shotcut'           'Shotcut' \
-        'shredder'          'Shredder [rm]lint' \
-        'shutter'           'Shutter' \
-        'sigil'             'Sigil' \
-        'slack'             'Slack' \
-        'smartgit'          'Smartgit' \
-        'spotify'           'Spotify' \
-        'ssr'               'Simple Screen Recorder' \
-        'steadyflow'        'Steadyflow' \
-        'steam'             'Steam' \
-        'stoq'              'Stoq' \
-        'stremio'           'Stremio' \
-        'sublime-text'      'Sublime Text 3' \
-        'sunflower'         'Sunflower' \
-        'teamviewer'        'Teamviewer' \
-        'telegram'          'Telegram' \
-        'terminix'          'Terminix terminal' \
-        'testdisk'          'TestDisk' \
-        'textadept'         'Textadept' \
-        'transmission'      'Transmission' \
-        'uberwriter'        'UberWriter' \
-        'ubuntu-tweak'      'Ubuntu tweak' \
-        'uget'              'Uget' \
-        'umake'             'Umake Android Studio' \
-        'variety'           'Variety' \
-        'virtualbox'        'Virtual Box' \
-        'vivaldi'           'Vivaldi' \
-        'vocal'             'Vocal podcast app' \
-        'wallpapers'        'Ubuntu wallpapers' \
-        'wine'              'Wine' \
-        'wireshark'         'Wireshark' \
-        'wps'               'WPS Office' \
-        'xampp'             'XAMPP Server' \
+        'audio'               'Audio software' \
+        'de'                  'DE' \
+        'development'         'development software' \
+        'driver'              'driver software' \
+        'games'               'games software' \
+        'graphic'             'graphic software' \
+        'ide'                 'IDE software' \
+        'internet'            'internet software' \
+        'office'              'office software' \
+        'security'            'security software' \
+        'server'              'server software' \
+        'system'              'system software' \
+        'utilities'           'utilities software' \
+        'video'               'Video software' \
         3>&1 1>&2 2>&3)
 
     exitstatus=$?

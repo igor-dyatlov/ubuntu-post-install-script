@@ -1,0 +1,32 @@
+#!/bin/bash
+
+dir="$(dirname "$0")"
+
+source $dir/functions/purge-data/audio-r
+source $dir/functions/purge-data/games-r
+source $dir/functions/purge-data/internet-r
+source $dir/functions/purge-data/system-r
+
+# Install third-party-data Applications
+function purge {
+    eval `resize`
+    PURGE=$(whiptail \
+        --notags \
+        --title "Remove Un-used Pre-installed Applications" \
+        --menu "\nWhat third-party software would you like to install?" \
+        --ok-button "Install" \
+        --cancel-button "Go Back" \
+        $LINES $COLUMNS $(( $LINES - 12 )) \
+        'audio-r'         'Remove Un-used audio software' \
+        'games-r'         'Remove Un-used games software' \
+        'internet-r'      'Remove Un-used internet software' \
+        'system-r'        'Remove Un-used system software' \
+        3>&1 1>&2 2>&3)
+
+    exitstatus=$?
+    if [ $exitstatus = 0 ]; then
+        clear && $PURGE
+    else
+        clear && main
+    fi
+}

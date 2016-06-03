@@ -2,10 +2,10 @@
 
 dir="$(dirname "$0")"
 
-source $dir/functions/third-party-data/theme/plank-data/placmank-plank
+source $dir/functions/third-party-data/thirdparty-theme-data/plank-data/placmank-plank
 
 # Install Third-Party Theme
-function plank {
+function plank-theme {
     eval `resize`
     PLANK=$(whiptail \
         --notags \

@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# Papirus Suite
+function papirus-icon {
+  # Add repository
+  show_info 'Adding Papirus Suite PPA to software sources...'
+  show_warning 'Requires root privileges'
+  sudo add-apt-repository -y ppa:varlesh-l/papirus-pack
+  # Update repository information
+  show_info 'Updating repository information...'
+  show_warning 'Requires root privileges'
+  sudo apt-get update
+  # Install
+  show_info 'Installing Papirus Suite...'
+  show_warning 'Requires root privileges'
+  sudo apt-get install -y papirus-gtk-icon-theme libreoffice-style-papirus vlc-skin-papirus
+  # Apply
+  show_info 'Apply Theme...'
+  gsettings set org.gnome.desktop.interface icon-theme 'Papirus-GTK'
+  # Done
+  show_success 'Done.'
+  whiptail --title "Finished" --msgbox "Installation complete." 8 78
+  thirdparty-theme
+}

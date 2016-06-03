@@ -1,9 +1,9 @@
 #!/bin/bash
 
-function imagemagick {
+function empathy {
  show_info 'Removing unused pre-installed applications...'
  show_warning 'Requires root privileges'
- sudo apt-get purge -y imagemagick imagemagick-6.q16 imagemagick-dbg imagemagick-doc libmagick++-6.q16-5v5
+ sudo apt-get purge -y empathy empathy-common empathy-dbg empathy-skype nautilus-sendto-empathy
  # Done
  show_success 'Done.'
  whiptail --title "Finished" --msgbox "Removal complete." 8 78

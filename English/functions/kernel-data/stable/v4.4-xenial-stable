@@ -86,6 +86,92 @@ else
 fi
 }
 
+# Kernel stable
+function v4.4.11 {
+if (whiptail --title "Update system kernel" --yesno "Proceed with kernel update?" 10 60) then
+	# Download Debian file that matches system architecture
+	case `uname -i` in
+	    i386|i486|i586|i686)
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4.11-xenial/linux-headers-4.4.11-040411-generic_4.4.11-040411.201605182255_i386.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4.11-xenial/linux-headers-4.4.11-040411_4.4.11-040411.201605182255_all.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4.11-xenial/linux-image-4.4.11-040411-generic_4.4.11-040411.201605182255_i386.deb
+	        ;;
+	    x86_64)
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4.11-xenial/linux-headers-4.4.11-040411-generic_4.4.11-040411.201605182255_amd64.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4.11-xenial/linux-headers-4.4.11-040411_4.4.11-040411.201605182255_all.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4.11-xenial/linux-image-4.4.11-040411-generic_4.4.11-040411.201605182255_amd64.deb
+	        ;;
+	    *)
+	        show_error "No packages available to download that matches your system." && kernel
+	        ;;
+	esac
+  # Update repository information
+  show_info 'Download and install...'
+  show_warning 'Requires root privileges'
+  sudo dpkg -i linux-*.deb
+  sudo apt-get install -fy
+  # Grub-Update
+  show_info 'Grub configuration update...'
+	show_warning 'Requires root privileges'
+  sudo update-grub
+  # Cleanup and finish
+	rm linux-*.deb
+  # Reboot
+  show_info 'Rebooting in 1 minute...'
+  show_warning 'Save all files and exit the program!'
+  sudo shutdown -r +1
+  # Done
+  show_success 'Done.'
+  whiptail --title "Finished" --msgbox "Kernel update complete." 8 78
+  main
+else
+  clear && main
+fi
+}
+
+# Kernel stable
+function v4.4.12 {
+if (whiptail --title "Update system kernel" --yesno "Proceed with kernel update?" 10 60) then
+	# Download Debian file that matches system architecture
+	case `uname -i` in
+	    i386|i486|i586|i686)
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4.12-xenial/linux-headers-4.4.12-040412-generic_4.4.12-040412.201606011712_i386.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4.12-xenial/linux-headers-4.4.12-040412_4.4.12-040412.201606011712_all.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4.12-xenial/linux-image-4.4.12-040412-generic_4.4.12-040412.201606011712_i386.deb
+	        ;;
+	    x86_64)
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4.12-xenial/linux-headers-4.4.12-040412-generic_4.4.12-040412.201606011712_amd64.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4.12-xenial/linux-headers-4.4.12-040412_4.4.12-040412.201606011712_all.deb
+	        curl -O http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.4.12-xenial/linux-image-4.4.12-040412-generic_4.4.12-040412.201606011712_amd64.deb
+	        ;;
+	    *)
+	        show_error "No packages available to download that matches your system." && kernel
+	        ;;
+	esac
+  # Update repository information
+  show_info 'Download and install...'
+  show_warning 'Requires root privileges'
+  sudo dpkg -i linux-*.deb
+  sudo apt-get install -fy
+  # Grub-Update
+  show_info 'Grub configuration update...'
+	show_warning 'Requires root privileges'
+  sudo update-grub
+  # Cleanup and finish
+	rm linux-*.deb
+  # Reboot
+  show_info 'Rebooting in 1 minute...'
+  show_warning 'Save all files and exit the program!'
+  sudo shutdown -r +1
+  # Done
+  show_success 'Done.'
+  whiptail --title "Finished" --msgbox "Kernel update complete." 8 78
+  main
+else
+  clear && main
+fi
+}
+
 # Kernel system upgrade
 function v4.4-xenial-stable {
     eval `resize`
@@ -98,6 +184,8 @@ function v4.4-xenial-stable {
         $LINES $COLUMNS $(( $LINES - 12 )) \
         v4.4.9         'Update stable (v4.4.9-xenial) kernel (need reboot)' \
         v4.4.10        'Update stable (v4.4.10-xenial) kernel (need reboot)' \
+				v4.4.11        'Update stable (v4.4.11-xenial) kernel (need reboot)' \
+				v4.4.12        'Update stable (v4.4.12-xenial) kernel (need reboot)' \
         3>&1 1>&2 2>&3)
 
     exitstatus=$?

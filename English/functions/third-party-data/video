@@ -1,0 +1,46 @@
+#!/bin/bash
+
+dir="$(dirname "$0")"
+
+source $dir/functions/third-party-data/video-data/blender
+source $dir/functions/third-party-data/video-data/formatjunkie
+source $dir/functions/third-party-data/video-data/handbrake
+source $dir/functions/third-party-data/video-data/kodi
+source $dir/functions/third-party-data/video-data/natron
+source $dir/functions/third-party-data/video-data/openshot
+source $dir/functions/third-party-data/video-data/pitivi
+source $dir/functions/third-party-data/video-data/plex
+source $dir/functions/third-party-data/video-data/popcorn-time
+source $dir/functions/third-party-data/video-data/shotcut
+source $dir/functions/third-party-data/video-data/stremio
+
+# Install third-party-data Applications
+function video {
+    eval `resize`
+    VIDEO=$(whiptail \
+        --notags \
+        --title "third-party-data Installation" \
+        --menu "\nWhat third-party software would you like to install?" \
+        --ok-button "Install" \
+        --cancel-button "Go Back" \
+        $LINES $COLUMNS $(( $LINES - 12 )) \
+        'blender'           'Blender' \
+        'formatjunkie'      'Formatjunkie' \
+        'handbrake'         'Handbrake' \
+        'kodi'              'Kodi' \
+        'natron'            'Natron' \
+        'openshot'          'Openshot' \
+        'pitivi'            'Pitivi' \
+        'plex'              'Plex' \
+        'popcorntime'       'Popcorn Time' \
+        'shotcut'           'Shotcut' \
+        'stremio'           'Stremio' \
+        3>&1 1>&2 2>&3)
+
+    exitstatus=$?
+    if [ $exitstatus = 0 ]; then
+        clear && $VIDEO
+    else
+        clear && main
+    fi
+}

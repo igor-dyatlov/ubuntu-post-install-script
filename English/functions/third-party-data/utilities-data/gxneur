@@ -1,4 +1,21 @@
-XNeur Switcher
-sudo add-apt-repository ppa:andrew-crew-kuznetsov/xneur-unstable
-sudo apt-get update
-sudo apt-get install gxneur
+#!/bin/bash
+
+# XNeur Switcher
+function gxneur {
+  # Add repository
+  show_info 'Adding XNeur Switcher PPA to software sources...'
+  show_warning 'Requires root privileges'
+  sudo add-apt-repository -y ppa:andrew-crew-kuznetsov/xneur-unstable
+	# Update repository information
+	show_info 'Updating repository information...'
+  show_warning 'Requires root privileges'
+	sudo apt-get update
+	# Install
+  show_info 'Installing XNeur Switcher...'
+  show_warning 'Requires root privileges'
+  sudo apt-get install -y gxneur
+  # Done
+  show_success 'Done.'
+  whiptail --title "Finished" --msgbox "Installation complete." 8 78
+	thirdparty
+}

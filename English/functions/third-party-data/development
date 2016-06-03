@@ -1,0 +1,42 @@
+#!/bin/bash
+
+dir="$(dirname "$0")"
+
+source $dir/functions/third-party-data/development-data/git
+source $dir/functions/third-party-data/development-data/gitbook
+source $dir/functions/third-party-data/development-data/gitkraken
+source $dir/functions/third-party-data/development-data/haroopress
+source $dir/functions/third-party-data/development-data/rvm
+source $dir/functions/third-party-data/development-data/slack
+source $dir/functions/third-party-data/development-data/smartgit
+source $dir/functions/third-party-data/development-data/uberwriter
+source $dir/functions/third-party-data/development-data/umake
+
+# Install third-party-data Applications
+function development {
+    eval `resize`
+    DEVELOPMENT=$(whiptail \
+        --notags \
+        --title "third-party-data Installation" \
+        --menu "\nWhat third-party software would you like to install?" \
+        --ok-button "Install" \
+        --cancel-button "Go Back" \
+        $LINES $COLUMNS $(( $LINES - 12 )) \
+        'git'               'Git' \
+        'gitbook'           'GitBook' \
+        'gitkraken'         'GitKraken' \
+        'haroopress'        'Haroopress' \
+        'rvm'               'Ruby Version Manager (RVM)' \
+        'slack'             'Slack' \
+        'smartgit'          'Smartgit' \
+        'uberwriter'        'UberWriter' \
+        'umake'             'Ubintu Umake' \
+        3>&1 1>&2 2>&3)
+
+    exitstatus=$?
+    if [ $exitstatus = 0 ]; then
+        clear && $DEVELOPMENT
+    else
+        clear && main
+    fi
+}

@@ -1,0 +1,14 @@
+#!/bin/bash
+
+function rhythmbox-purge {
+ show_info 'Removing unused pre-installed applications...'
+ show_warning 'Requires root privileges'
+ sudo apt-get purge -y rhythmbox rhythmbox-ampache rhythmbox-data rhythmbox-dbg rhythmbox-dev rhythmbox-doc rhythmbox-mozilla rhythmbox-plugin-cdrecorder rhythmbox-plugin-magnatune rhythmbox-plugins rhythmbox-plugin-visualizer rhythmbox-plugin-zeitgeist
+ show_info 'Removing unused pre-installed dependencies...'
+ show_warning 'Requires root privileges'
+ sudo apt-get purge -y gir1.2-rb-3.0 librhythmbox-core9
+ # Done
+ show_success 'Done.'
+ whiptail --title "Finished" --msgbox "Removal complete." 8 78
+ cleanup
+}

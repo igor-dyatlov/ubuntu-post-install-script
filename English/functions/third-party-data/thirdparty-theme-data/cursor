@@ -2,7 +2,7 @@
 
 dir="$(dirname "$0")"
 
-source $dir/functions/third-party-data/theme/cursor-data/mac-cursor
+source $dir/functions/third-party-data/thirdparty-theme-data/cursor-data/mac-cursor
 
 # Install Third-Party Theme
 function cursor {

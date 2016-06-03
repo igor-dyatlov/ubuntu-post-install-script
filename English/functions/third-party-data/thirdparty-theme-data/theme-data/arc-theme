@@ -5,11 +5,11 @@ function arc-theme {
   # Add repository
 	show_info 'Adding ARC-theme repository to software sources...'
 	show_warning 'Requires root privileges'
-	sudo sh -c 'echo "deb http://download.opensuse.org/repositories/home:/Horst3180/xUbuntu_16.04/" >> /etc/apt/sources.list.d/arc-theme.list'
-	show_success 'Done.'
+	sudo sh -c "echo 'deb http://download.opensuse.org/repositories/home:/Horst3180/xUbuntu_16.04/ /' >> /etc/apt/sources.list.d/arc-theme.list"
 	show_question 'Adding repository key...'
 	show_warning 'Requires root privileges'
-	curl -O http://download.opensuse.org/repositories/home:Horst3180/xUbuntu_16.04/Release.key | sudo apt-key add -
+	wget http://download.opensuse.org/repositories/home:Horst3180/xUbuntu_16.04/Release.key
+  sudo apt-key add - < Release.key
 	show_success 'Done.'
   # Update repository information
   show_info 'Updating repository information...'
@@ -21,7 +21,7 @@ function arc-theme {
   sudo apt-get install -y arc-theme
   # Apply
   show_info 'Apply Theme...'
-  gsettings set org.gnome.desktop.interface gtk-theme 'Adapta'
+  gsettings set org.gnome.desktop.interface gtk-theme 'Arc'
   # Done
   show_success 'Done.'
   whiptail --title "Finished" --msgbox "Installation complete." 8 78

@@ -1,0 +1,46 @@
+#!/bin/bash
+
+dir="$(dirname "$0")"
+
+source $dir/functions/third-party-data/system-data/bleachbit
+source $dir/functions/third-party-data/system-data/gnome-terminator
+source $dir/functions/third-party-data/system-data/grub-customizer
+source $dir/functions/third-party-data/system-data/hudson
+source $dir/functions/third-party-data/system-data/java-jdk
+source $dir/functions/third-party-data/system-data/jenkins
+source $dir/functions/third-party-data/system-data/logkeys
+source $dir/functions/third-party-data/system-data/peazip
+source $dir/functions/third-party-data/system-data/terminix
+source $dir/functions/third-party-data/system-data/testdisk
+source $dir/functions/third-party-data/system-data/tlp
+source $dir/functions/third-party-data/system-data/ubuntu-tweak
+
+# Install third-party-data Applications
+function system {
+    eval `resize`
+    SYSTEM=$(whiptail \
+        --notags \
+        --title "third-party-data Installation" \
+        --menu "\nWhat third-party software would you like to install?" \
+        --ok-button "Install" \
+        --cancel-button "Go Back" \
+        $LINES $COLUMNS $(( $LINES - 12 )) \
+        'bleachbit'         'BleachBit' \
+        'grub-customizer'   'Grub customizer' \
+        'hudson'            'Hudson' \
+        'java-jdk'          'Java JDK' \
+        'jenkins'           'Jenkins' \
+        'logkeys'           'Logkeys' \
+        'peazip'            'PeaZip' \
+        'terminix'          'Terminix terminal' \
+        'testdisk'          'TestDisk' \
+        'ubuntu-tweak'      'Ubuntu tweak' \
+        3>&1 1>&2 2>&3)
+
+    exitstatus=$?
+    if [ $exitstatus = 0 ]; then
+        clear && $SYSTEM
+    else
+        clear && main
+    fi
+}

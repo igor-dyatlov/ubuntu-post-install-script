@@ -34,16 +34,12 @@ dir="$(dirname "$0")"
 
 . $dir/functions/check
 . $dir/functions/cleanup
-. $dir/functions/codecs
 . $dir/functions/configure
-. $dir/functions/development
-. $dir/functions/favourites
 . $dir/functions/kernel
 . $dir/functions/speedup
 . $dir/functions/thirdparty
 . $dir/functions/thirdparty-theme
 . $dir/functions/update
-. $dir/functions/utilities
 
 #----- Fancy Messages -----#
 show_error(){
@@ -79,10 +75,6 @@ function main {
         --cancel-button "Quit" \
         $LINES $COLUMNS $(( $LINES - 12 )) \
         update            'Perform system update' \
-        favourites        'Install favourite applications' \
-        utilities         'Install favourite system utilities' \
-        development       'Install favourite development tools' \
-        codecs            'Install Ubuntu Restricted Extras' \
         thirdparty        'Install third-party applications' \
         thirdparty-theme  'Install third-party theme' \
         configure         'Configure system' \

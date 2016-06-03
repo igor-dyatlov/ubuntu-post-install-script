@@ -1,25 +1,14 @@
 #!/bin/bash
 
-# Android Studio 2.1
+# Android Studio 2.1.1
 function android-studio {
-  show_info 'Downloading Android Studio 2.1...'
-  curl -O https://dl.google.com/dl/android/studio/ide-zips/2.1.0.9/android-studio-ide-143.2790544-linux.zip
-  show_info 'Extraction Android Studio 2.0...'
+  show_info 'Downloading Android Studio 2.1.1...'
+  curl -O https://dl.google.com/dl/android/studio/ide-zips/2.1.1.0/android-studio-ide-143.2821654-linux.zip
+  show_info 'Extraction Android Studio 2.1.1...'
   unzip android-studio*.zip
-  # Install package(s)
-  show_info 'Installing Android Studio 2.1...'
-  show_warning 'Requires root privileges'
-  sudo mv ./android-studio /opt/android-studio
-  # Set Permission File
-  show_info 'Set Permission File...'
-  cd /opt/android-studio/bin
-  sudo chmod +x studio.sh
-  # Starting
-  sudo sh studio.sh
   # Create icon desktop
   show_info 'Create icon...'
-  cd /usr/share/applications
-  sudo touch android-studio.desktop
+  touch android-studio.desktop
   echo "[Desktop Entry]" >> android-studio.desktop
   echo "Encoding=UTF-8" >> android-studio.desktop
   echo "Version=1.0" >> android-studio.desktop
@@ -34,8 +23,19 @@ function android-studio {
   show_info 'Set Permission File...'
   show_warning 'Requires root privileges'
   sudo chmod +x android-studio.desktop
+  sudo mv android-studio.desktop /usr/share/applications
+  # Install package(s)
+  show_info 'Installing Android Studio 2.1.1...'
+  show_warning 'Requires root privileges'
+  sudo mv ./android-studio /opt/android-studio
   # Cleanup and finish
   rm android-studio*.zip
+  # Set Permission File
+  show_info 'Set Permission File...'
+  cd /opt/android-studio/bin
+  sudo chmod +x studio.sh
+  # Starting
+  sudo ./studio.sh
   # Done
   show_success 'Done.'
   whiptail --title "Finished" --msgbox "Installation complete." 8 78

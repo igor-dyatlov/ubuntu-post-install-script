@@ -1,0 +1,56 @@
+#!/bin/bash
+
+dir="$(dirname "$0")"
+
+source $dir/functions/third-party-data/internet-data/birdie
+source $dir/functions/third-party-data/internet-data/bitcoin
+source $dir/functions/third-party-data/internet-data/cutegram
+source $dir/functions/third-party-data/internet-data/deluge
+source $dir/functions/third-party-data/internet-data/dropbox
+source $dir/functions/third-party-data/internet-data/filezilla
+source $dir/functions/third-party-data/internet-data/google-chrome
+source $dir/functions/third-party-data/internet-data/ipscan
+source $dir/functions/third-party-data/internet-data/opera
+source $dir/functions/third-party-data/internet-data/owncloud
+source $dir/functions/third-party-data/internet-data/qbittorrent
+source $dir/functions/third-party-data/internet-data/telegram
+source $dir/functions/third-party-data/internet-data/transmission
+source $dir/functions/third-party-data/internet-data/viber
+source $dir/functions/third-party-data/internet-data/vivaldi
+source $dir/functions/third-party-data/internet-data/wireshark
+
+# Install third-party-data Applications
+function internet {
+    eval `resize`
+    INTERNET=$(whiptail \
+        --notags \
+        --title "third-party-data Installation" \
+        --menu "\nWhat third-party software would you like to install?" \
+        --ok-button "Install" \
+        --cancel-button "Go Back" \
+        $LINES $COLUMNS $(( $LINES - 12 )) \
+        'birdie'            'Birdie Twitter client' \
+        'bitcoin'           'Bitcoin' \
+        'cutegram'          'Cutegram' \
+        'deluge'            'Deluge' \
+        'dropbox'           'Dropbox' \
+        'filezilla'         'Filezilla' \
+        'firefox'           'Firefox' \
+        'google-chrome'     'Google Chrome' \
+        'ipscan'            'Angry IP Scanner' \
+        'opera'             'Opera' \
+        'owncloud'          'ownCloud client' \
+        'qbittorrent'       'qBittorrent' \
+        'telegram'          'Telegram' \
+        'transmission'      'Transmission' \
+        'vivaldi'           'Vivaldi' \
+        'wireshark'         'Wireshark' \
+        3>&1 1>&2 2>&3)
+
+    exitstatus=$?
+    if [ $exitstatus = 0 ]; then
+        clear && $INTERNET
+    else
+        clear && main
+    fi
+}

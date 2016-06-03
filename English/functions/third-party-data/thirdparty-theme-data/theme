@@ -6,6 +6,7 @@ source $dir/functions/third-party-data/thirdparty-theme-data/theme-data/adapta-t
 source $dir/functions/third-party-data/thirdparty-theme-data/theme-data/arc-theme
 source $dir/functions/third-party-data/thirdparty-theme-data/theme-data/flat-plat-theme
 source $dir/functions/third-party-data/thirdparty-theme-data/theme-data/paper-theme
+source $dir/functions/third-party-data/thirdparty-theme-data/theme-data/white-theme
 
 # Install Third-Party Theme
 function theme {
@@ -21,6 +22,7 @@ function theme {
         arc-theme        'ARC-theme a flat theme with transparent elements' \
         flat-plat-theme  'Flat-Plat theme on Material Design' \
         paper-theme      'Paper theme on Material Design' \
+        white-theme      'White theme on Mac OS X Yosemite and El Capitan clean interface' \
         3>&1 1>&2 2>&3)
 
     exitstatus=$?

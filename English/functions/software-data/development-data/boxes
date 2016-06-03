@@ -1,17 +1,15 @@
 #!/bin/bash
 
-# Skype 4.3
-function skype {
+# Boxes
+function boxes {
 	# Update repository information
 	show_info 'Updating repository information...'
-  show_warning 'Requires root privileges'
+	show_warning 'Requires root privileges'
 	sudo apt-get update
 	# Install
-	show_info 'Installing Skype...'
+  show_info 'Installing Boxes...'
   show_warning 'Requires root privileges'
-  sudo apt-get install -y skype
-	sudo apt-get install gtk2-engines-murrine:i386 gtk2-engines-pixbuf:i386
-	sudo apt-get install sni-qt:i386
+  sudo apt-get install -y gnome-boxes
   # Done
   show_success 'Done.'
   whiptail --title "Finished" --msgbox "Installation complete." 8 78

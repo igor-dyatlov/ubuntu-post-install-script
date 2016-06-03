@@ -6,6 +6,7 @@ source $dir/functions/kernel-data/kernel-4.3
 source $dir/functions/kernel-data/kernel-4.4
 source $dir/functions/kernel-data/kernel-4.5
 source $dir/functions/kernel-data/kernel-4.6
+source $dir/functions/kernel-data/kernel-4.7
 
 # Kernel system upgrade
 function kernel {
@@ -17,10 +18,11 @@ function kernel {
         --ok-button "Update" \
         --cancel-button "Go Back" \
         $LINES $COLUMNS $(( $LINES - 12 )) \
-        kernel-4.3        'Update 4.3-wily kernel' \
-        kernel-4.4        'Update 4.4-wily kernel' \
-        kernel-4.5        'Update 4.5-wily kernel' \
-        kernel-4.6        'Update 4.6-wily kernel' \
+        kernel-4.3        'Update 4.3 kernel' \
+        kernel-4.4        'Update 4.4 kernel' \
+        kernel-4.5        'Update 4.5 kernel' \
+        kernel-4.6        'Update 4.6 kernel' \
+        kernel-4.7        'Update 4.7 kernel' \
         3>&1 1>&2 2>&3)
 
     exitstatus=$?

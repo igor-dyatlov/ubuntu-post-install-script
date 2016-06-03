@@ -1,0 +1,55 @@
+#!/bin/bash
+
+dir="$(dirname "$0")"
+
+source $dir/functions/third-party-data/utilities-data/chrome-gnome-shell
+source $dir/functions/third-party-data/utilities-data/docky
+source $dir/functions/third-party-data/utilities-data/gxneur
+source $dir/functions/third-party-data/utilities-data/kazam
+source $dir/functions/third-party-data/utilities-data/obs-studio
+source $dir/functions/third-party-data/utilities-data/plank
+source $dir/functions/third-party-data/utilities-data/shredder
+source $dir/functions/third-party-data/utilities-data/ssr
+source $dir/functions/third-party-data/utilities-data/steadyflow
+source $dir/functions/third-party-data/utilities-data/stoq
+source $dir/functions/third-party-data/utilities-data/sunflower
+source $dir/functions/third-party-data/utilities-data/teamviewer
+source $dir/functions/third-party-data/utilities-data/uget
+source $dir/functions/third-party-data/utilities-data/variety
+source $dir/functions/third-party-data/utilities-data/virtualbox
+source $dir/functions/third-party-data/utilities-data/wine
+
+# Install third-party-data Applications
+function utilities {
+    eval `resize`
+    UTILITIES=$(whiptail \
+        --notags \
+        --title "third-party-data Installation" \
+        --menu "\nWhat third-party software would you like to install?" \
+        --ok-button "Install" \
+        --cancel-button "Go Back" \
+        $LINES $COLUMNS $(( $LINES - 12 )) \
+        'chrome-gnome-shell' 'chrome-gnome-shell' \
+        'docky'             'Docky' \
+        'kazam'             'Kazam' \
+        'obs-studio'        'OBS studio' \
+        'plank'             'Plank' \
+        'shredder'          'Shredder [rm]lint' \
+        'ssr'               'Simple Screen Recorder' \
+        'steadyflow'        'Steadyflow' \
+        'stoq'              'Stoq' \
+        'sunflower'         'Sunflower' \
+        'teamviewer'        'Teamviewer' \
+        'uget'              'Uget' \
+        'variety'           'Variety' \
+        'virtualbox'        'Virtual Box' \
+        'wine'              'Wine' \
+        3>&1 1>&2 2>&3)
+
+    exitstatus=$?
+    if [ $exitstatus = 0 ]; then
+        clear && $UTILITIES
+    else
+        clear && main
+    fi
+}

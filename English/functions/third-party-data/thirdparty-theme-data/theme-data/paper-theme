@@ -2,23 +2,21 @@
 
 # Paper Theme
 function paper-theme {
-  show_info 'Downloading Paper Theme...'
-  wget https://github.com/snwh/paper-gtk-theme/archive/master.zip
-  # Install package(s)
-  show_info 'Installing Paper Theme...'
-  unzip master.zip
-  cd paper-gtk-theme-master
-  sudo ./install-gtk-theme.sh
-  # Timeout
-  sleep 5
-  # Back
-  cd -
-  # Cleanup and finish
-  rm -rf paper-gtk-theme-master master.zip
+  # Add repository
+  show_info 'Adding Adapta PPA to software sources...'
+  show_warning 'Requires root privileges'
+  sudo add-apt-repository -y ppa:snwh/pulp
+  # Update repository information
+  show_info 'Updating repository information...'
+  show_warning 'Requires root privileges'
+  sudo apt-get update
+  # Install
+  show_info 'Installing Adapta...'
+  show_warning 'Requires root privileges'
+  sudo apt-get install -y paper-gtk-theme
   # Apply
   show_info 'Apply Theme...'
   gsettings set org.gnome.desktop.interface gtk-theme 'Paper'
-  gsettings set org.gnome.shell enabled-extensions ['user-theme@gnome-shell-extensions.gcampax.github.com']
   gsettings set org.gnome.shell.extensions.user-theme name 'Paper'
   # Done
   show_success 'Done.'

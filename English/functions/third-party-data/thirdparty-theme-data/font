@@ -2,7 +2,7 @@
 
 dir="$(dirname "$0")"
 
-source $dir/functions/third-party-data/font-data/roboto
+source $dir/functions/third-party-data/thirdparty-theme-data/font-data/roboto
 
 #
 function font {

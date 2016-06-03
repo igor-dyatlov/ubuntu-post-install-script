@@ -1,0 +1,57 @@
+#!/bin/bash
+
+# Nautilus extensions
+function nautilus {
+ show_info 'Nautilus setting extensions...'
+ show_warning 'Requires root privileges'
+ sudo apt-get install nautilus-admin nautilus-image-converter nautilus-image-manipulator
+ nautilus -q
+ # Done
+ show_success 'Done.'
+ whiptail --title "Finished" --msgbox "Settings changed successfully." 8 78
+ configure
+}
+
+
+#
+function dvd {
+ show_info '...'
+ show_warning 'Requires root privileges'
+ sudo apt-get install libdvd-pkg
+ # Done
+ show_success 'Done.'
+ whiptail --title "Finished" --msgbox "Settings changed successfully." 8 78
+ configure
+}
+
+#
+function new-file {
+ wget -O nautilus-acme.py http://pastebin.com/raw/37CHFJGh
+ show_warning 'Requires root privileges'
+ sudo mkdir -p /usr/share/nautilus-python/extensions/
+ show_warning 'Requires root privileges'
+ sudo mv nautilus-acme.py /usr/share/nautilus-python/extensions/nautilus-acme.py
+ nautilus -q
+}
+
+# Nautilus extensions
+function nautilus-extensions {
+    eval `resize`
+    NAUTILUS=$(whiptail \
+        --notags \
+        --title "Nautilus extensions" \
+        --menu "\nWhat would you like to do?" \
+        --ok-button "Apply" \
+        --cancel-button "Go Back" \
+        $LINES $COLUMNS $(( $LINES - 12 )) \
+        button-layout-left        'Location on the left edge' \
+        button-layout-right       'Location on the right edge' \
+        3>&1 1>&2 2>&3)
+
+    exitstatus=$?
+    if [ $exitstatus = 0 ]; then
+        clear && $NAUTILUS
+    else
+        clear && main
+    fi
+}

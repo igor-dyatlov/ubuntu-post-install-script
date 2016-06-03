@@ -2,7 +2,10 @@
 
 dir="$(dirname "$0")"
 
+source $dir/functions/third-party-data/thirdparty-theme-data/icon-data/numix-circle-icon
+source $dir/functions/third-party-data/thirdparty-theme-data/icon-data/numix-icon
 source $dir/functions/third-party-data/thirdparty-theme-data/icon-data/paper-icon
+source $dir/functions/third-party-data/thirdparty-theme-data/icon-data/papirus-icon
 
 # Install Third-Party Theme
 function icon {
@@ -14,7 +17,10 @@ function icon {
         --ok-button "Install" \
         --cancel-button "Go Back" \
         $LINES $COLUMNS $(( $LINES - 12 )) \
-        paper-icon      'Paper icon theme' \
+        numix-circle-icon    'Numix circle icon theme' \
+        numix-icon           'Numix icon theme' \
+        paper-icon           'Paper icon theme' \
+        papirus-icon         'Papirus Suite icon theme' \
         3>&1 1>&2 2>&3)
 
     exitstatus=$?

@@ -1,0 +1,58 @@
+#!/bin/bash
+
+dir="$(dirname "$0")"
+
+source $dir/functions/third-party-data/graphic-data/darktable
+source $dir/functions/third-party-data/graphic-data/digikam
+source $dir/functions/third-party-data/graphic-data/fotoxx
+source $dir/functions/third-party-data/graphic-data/gimp
+source $dir/functions/third-party-data/graphic-data/gpick
+source $dir/functions/third-party-data/graphic-data/gravit
+source $dir/functions/third-party-data/graphic-data/inkscape
+source $dir/functions/third-party-data/graphic-data/krita
+source $dir/functions/third-party-data/graphic-data/lightworks
+source $dir/functions/third-party-data/graphic-data/lightzone
+source $dir/functions/third-party-data/graphic-data/linaro
+source $dir/functions/third-party-data/graphic-data/mypaint
+source $dir/functions/third-party-data/graphic-data/photivo
+source $dir/functions/third-party-data/graphic-data/pinta
+source $dir/functions/third-party-data/graphic-data/pixeluvo
+source $dir/functions/third-party-data/graphic-data/rawtherapee
+source $dir/functions/third-party-data/graphic-data/shutter
+
+# Install third-party-data Applications
+function graphic {
+    eval `resize`
+    GRAPHIC=$(whiptail \
+        --notags \
+        --title "third-party-data Installation" \
+        --menu "\nWhat third-party software would you like to install?" \
+        --ok-button "Install" \
+        --cancel-button "Go Back" \
+        $LINES $COLUMNS $(( $LINES - 12 )) \
+        'darktable'         'Darktable' \
+        'digikam'           'digiKam' \
+        'fotoxx'            'Fotoxx' \
+        'gimp'              'Gimp' \
+        'gpick'             'Gpick' \
+        'gravit'            'Gravit' \
+        'inkscape'          'Inkscape' \
+        'krita'             'Krita' \
+        'lightworks'        'Lightworks' \
+        'lightzone'         'LightZone' \
+        'linaro'            'Linaro' \
+        'mypaint'           'My Paint' \
+        'photivo'           'Photivo' \
+        'pinta'             'Pinta' \
+        'pixeluvo'          'Pixeluvo' \
+        'rawtherapee'       'RawTherapee' \
+        'shutter'           'Shutter' \
+        3>&1 1>&2 2>&3)
+
+    exitstatus=$?
+    if [ $exitstatus = 0 ]; then
+        clear && $GRAPHIC
+    else
+        clear && main
+    fi
+}

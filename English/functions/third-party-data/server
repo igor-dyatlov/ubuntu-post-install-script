@@ -1,0 +1,30 @@
+#!/bin/bash
+
+dir="$(dirname "$0")"
+
+source $dir/functions/third-party-data/server-data/lamp
+source $dir/functions/third-party-data/server-data/samba
+source $dir/functions/third-party-data/server-data/xampp
+
+# Install third-party-data Applications
+function server {
+    eval `resize`
+    SERVER=$(whiptail \
+        --notags \
+        --title "third-party-data Installation" \
+        --menu "\nWhat third-party software would you like to install?" \
+        --ok-button "Install" \
+        --cancel-button "Go Back" \
+        $LINES $COLUMNS $(( $LINES - 12 )) \
+        'lamp'              'LAMP server' \
+        'samba'             'Samba' \
+        'xampp'             'XAMPP Server' \
+        3>&1 1>&2 2>&3)
+
+    exitstatus=$?
+    if [ $exitstatus = 0 ]; then
+        clear && $SERVER
+    else
+        clear && main
+    fi
+}

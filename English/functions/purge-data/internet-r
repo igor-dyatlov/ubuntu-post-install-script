@@ -1,0 +1,30 @@
+#!/bin/bash
+
+dir="$(dirname "$0")"
+
+source $dir/functions/purge-data/internet-data/empathy
+source $dir/functions/purge-data/internet-data/evolution
+source $dir/functions/purge-data/internet-data/firefox
+
+# Install third-party-data Applications
+function internet-r {
+    eval `resize`
+    INTERNETR=$(whiptail \
+        --notags \
+        --title "third-party-data Installation" \
+        --menu "\nWhat third-party software would you like to install?" \
+        --ok-button "Install" \
+        --cancel-button "Go Back" \
+        $LINES $COLUMNS $(( $LINES - 12 )) \
+        'empathy'           'Empathy' \
+        'evolution'         'Evolution email client' \
+        'firefox'           'Firefox browser' \
+        3>&1 1>&2 2>&3)
+
+    exitstatus=$?
+    if [ $exitstatus = 0 ]; then
+        clear && $INTERNETR
+    else
+        clear && main
+    fi
+}

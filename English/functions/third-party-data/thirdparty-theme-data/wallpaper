@@ -1,0 +1,27 @@
+#!/bin/bash
+
+dir="$(dirname "$0")"
+
+source $dir/functions/third-party-data/thirdparty-theme-data/wallpaper-data/
+
+# Install Third-Party Theme
+function wallpaper {
+    eval `resize`
+    WALLPAPER=$(whiptail \
+        --notags \
+        --title "Third-Party Installation" \
+        --menu "\nWhat third-party theme would you like to install?" \
+        --ok-button "Install" \
+        --cancel-button "Go Back" \
+        $LINES $COLUMNS $(( $LINES - 12 )) \
+        paper-icon      'Paper icon theme' \
+        papirus         'Papirus Suite icon theme' \
+        3>&1 1>&2 2>&3)
+
+    exitstatus=$?
+    if [ $exitstatus = 0 ]; then
+        clear && $WALLPAPER
+    else
+        clear && main
+    fi
+}

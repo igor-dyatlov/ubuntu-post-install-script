@@ -7,11 +7,11 @@ if (whiptail --title "System Update" --yesno "Proceed with system update?" 10 60
     show_info 'Updating repository information...'
     show_warning 'Requires root privileges'
     sudo apt-get update
-    sudo apt-get upgrade
+    sudo apt-get -y upgrade
     # Dist-Upgrade
     show_info 'Performing system update...'
     show_warning 'Requires root privileges'
-    sudo apt-get dist-upgrade
+    sudo apt-get -y dist-upgrade
     # Done
     show_success 'Done.'
     whiptail --title "Finished" --msgbox "System update complete." 8 78
