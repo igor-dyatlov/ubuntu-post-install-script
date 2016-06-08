@@ -5,13 +5,22 @@ function terminix {
   # Install dependencies
   show_info 'Installing Terminix dependencies...'
   show_warning 'Requires root privileges'
-  sudo apt-get install wget unzip libglib2.0-bin
+  sudo wget http://master.dl.sourceforge.net/project/d-apt/files/d-apt.list -O /etc/apt/sources.list.d/d-apt.list
+  sudo apt-get update && sudo apt-get -y --allow-unauthenticated install --reinstall d-apt-keyring && sudo apt-get update
   show_info 'Downloading Terminix...'
-  wget https://github.com/gnunn1/terminix/releases/download/0.58.1/terminix.zip
+
+
+  sudo apt-get install dub
+
+
+
+  git clone https://github.com/gnunn1/terminix.git
+  cd terminix
+  dub build --build=release
+  chmod +x install.sh
   # Install package(s)
   show_info 'Installing Terminix...'
-  sudo unzip terminix.zip -d /
-  sudo glib-compile-schemas /usr/share/glib-2.0/schemas/
+  sudo ./install.sh
   # Cleanup and finish
   rm terminix.zip
   # Done
