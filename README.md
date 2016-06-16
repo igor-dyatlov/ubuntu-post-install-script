@@ -39,13 +39,13 @@ The included [preferences](English/functions/configure) and [lists of packages](
  - Support for [Russian](Russian) localization
 
 ## Screenshots
-<img src="Screenshots/Screenshot-1.png" width="35%" />
-<img src="Screenshots/Screenshot-2.png" width="35%" />
-<img src="Screenshots/Screenshot-3.png" width="35%" />
-<img src="Screenshots/Screenshot-4.png" width="35%" />
-<img src="Screenshots/Screenshot-5.png" width="35%" />
-<img src="Screenshots/Screenshot-6.png" width="35%" />
-<img src="Screenshots/Screenshot-7.png" width="35%" />
+<img src=".github/img/Screenshot-1.png" width="35%"/>
+<img src=".github/img/Screenshot-2.png" width="35%"/>
+<img src=".github/img/Screenshot-3.png" width="35%"/>
+<img src=".github/img/Screenshot-4.png" width="35%"/>
+<img src=".github/img/Screenshot-5.png" width="35%"/>
+<img src=".github/img/Screenshot-6.png" width="35%"/>
+<img src=".github/img/Screenshot-7.png" width="35%"/>
 
 ### Donation
 https://www.paypal.me/IgorDyatlov

@@ -5,7 +5,6 @@ dir="$(dirname "$0")"
 source $dir/functions/third-party-data/office-data/fontforge
 source $dir/functions/third-party-data/office-data/font-manager
 source $dir/functions/third-party-data/office-data/libreoffice
-source $dir/functions/third-party-data/office-data/openoffice
 source $dir/functions/third-party-data/office-data/scribus
 source $dir/functions/third-party-data/office-data/sigil
 source $dir/functions/third-party-data/office-data/typecatcher
@@ -24,7 +23,6 @@ function office {
         'fontforge'         'FontForge' \
         'font-manager'      'Font manager' \
         'libreoffice'       'LibreOffice' \
-        'openoffice'        'OpenOffice' \
         'scribus'           'Scribus' \
         'sigil'             'Sigil' \
         'typecatcher'       'Typecatcher' \

@@ -4,17 +4,17 @@
 function xampp {
   show_info 'Downloading XAMPP...'
   # Download Debian file that matches system architecture
-	case `uname -i` in
-	    i386|i486|i586|i686)
-	        curl -O https://www.apachefriends.org/xampp-files/7.0.5/xampp-linux-7.0.5-0-installer.run
-	        ;;
-	    x86_64)
-	        curl -O https://www.apachefriends.org/xampp-files/7.0.5/xampp-linux-x64-7.0.5-0-installer.run
-	        ;;
-	    *)
-	        show_error "No packages available to download that matches your system." && thirdparty
-	        ;;
-	esac
+    case `uname -i` in
+      i386|i486|i586|i686)
+        wget --referer=https://www.apachefriends.org/xampp-files/7.0.6/xampp-linux-7.0.6-0-installer.run https://www.apachefriends.org/xampp-files/7.0.6/xampp-linux-7.0.6-0-installer.run
+      ;;
+      x86_64)
+        wget --referer=https://www.apachefriends.org/xampp-files/7.0.6/xampp-linux-x64-7.0.6-0-installer.run https://www.apachefriends.org/xampp-files/7.0.6/xampp-linux-x64-7.0.6-0-installer.run
+      ;;
+      *)
+        show_error "No packages available to download that matches your system." && thirdparty
+      ;;
+    esac
   # Set Permission File
   show_info 'Set Permission File...'
   show_warning 'Requires root privileges'
@@ -22,7 +22,7 @@ function xampp {
   # Install
   show_info 'Installing XAMPP...'
   show_warning 'Requires root privileges'
-  ./xampp*.run
+  sudo ./xampp*.run
   # Cleanup and finish
   rm xampp*.run
   # Done

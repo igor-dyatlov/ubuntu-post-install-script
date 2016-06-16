@@ -19,29 +19,29 @@ source $dir/functions/third-party-data/video
 
 # Install third-party-data Applications
 function thirdparty {
-    eval `resize`
-    THIRDPARTY=$(whiptail \
-        --notags \
-        --title "third-party-data Installation" \
-        --menu "\nWhat third-party-data software would you like to install?" \
-        --ok-button "Install" \
-        --cancel-button "Go Back" \
-        $LINES $COLUMNS $(( $LINES - 12 )) \
-        'audio'               'Audio software' \
-        'de'                  'DE' \
-        'development'         'development software' \
-        'driver'              'driver software' \
-        'games'               'games software' \
-        'graphic'             'graphic software' \
-        'ide'                 'IDE software' \
-        'internet'            'internet software' \
-        'office'              'office software' \
-        'security'            'security software' \
-        'server'              'server software' \
-        'system'              'system software' \
-        'utilities'           'utilities software' \
-        'video'               'Video software' \
-        3>&1 1>&2 2>&3)
+  eval `resize`
+  THIRDPARTY=$(whiptail \
+    --notags \
+    --title 'third-party-data Installation' \
+    --menu '\nWhat third-party-data software would you like to install?' \
+    --ok-button 'Install' \
+    --cancel-button 'Go Back' \
+  $LINES $COLUMNS $(( $LINES - 12 )) \
+    audio 'Audio software' \
+    de  'DE' \
+    development 'development software' \
+    driver  'driver software' \
+    games 'games software' \
+    graphic 'graphic software' \
+    ide 'IDE software' \
+    internet  'internet software' \
+    office  'office software' \
+    security  'security software' \
+    server  'server software' \
+    system  'system software' \
+    utilities 'utilities software' \
+    video 'Video software' \
+  3>&1 1>&2 2>&3)
 
     exitstatus=$?
     if [ $exitstatus = 0 ]; then

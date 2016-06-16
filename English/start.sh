@@ -64,43 +64,38 @@ show_listitem(){
 echo -e "\033[0;37m$@\033[0m"
 }
 
-# Main
 function main {
-    eval `resize`
-    MAIN=$(whiptail \
-        --notags \
-        --title "Ubuntu Post-Install Script" \
-        --menu "\nWhat would you like to do?" \
-        --ok-button "Run" \
-        --cancel-button "Quit" \
-        $LINES $COLUMNS $(( $LINES - 12 )) \
-        update            'Perform system update' \
-        thirdparty        'Install third-party applications' \
-        thirdparty-theme  'Install third-party theme' \
-        configure         'Configure system' \
-        kernel            'Update system kernel' \
-        cleanup           'Cleanup the system' \
-        speedup           'Speed up system' \
-        3>&1 1>&2 2>&3)
+  eval `resize`
+  MAIN=$(whiptail \
+    --notags \
+    --title 'Ubuntu Post-Install Script' \
+    --menu '\nWhat would you like to do?' \
+    --ok-button 'Run' \
+    --cancel-button 'Quit' \
+  $LINES $COLUMNS $(( $LINES - 12 )) \
+    update 'Perform system update' \
+    thirdparty 'Install third-party applications' \
+    thirdparty-theme 'Install third-party theme' \
+    configure 'Configure system' \
+    kernel 'Update system kernel' \
+    cleanup 'Cleanup the system' \
+    speedup 'Speed up system' \
+  3>&1 1>&2 2>&3)
 
-    exitstatus=$?
-    if [ $exitstatus = 0 ]; then
-        clear && $MAIN
-    else
-        clear && quit
-    fi
+exitstatus=$?
+  if [ $exitstatus = 0 ]; then
+    clear && $MAIN
+  else
+    clear && quit
+  fi
 }
 
-# Quit
 function quit {
-    if (whiptail --title "Quit" --yesno "Are you sure you want quit?" 10 60) then
-        exit 99
-    else
-        clear && main
-    fi
+  if (whiptail --title "Quit" --yesno "Are you sure you want quit?" 10 60) then
+    exit 99
+  else
+    clear && main
+  fi
 }
 
-#RUN
 check && main
-
-#END OF SCRIPT

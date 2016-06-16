@@ -34,8 +34,6 @@ function android-studio {
   show_info 'Set Permission File...'
   cd /opt/android-studio/bin
   sudo chmod +x studio.sh
-  # Starting
-  sudo ./studio.sh
   # Done
   show_success 'Done.'
   whiptail --title "Finished" --msgbox "Installation complete." 8 78
