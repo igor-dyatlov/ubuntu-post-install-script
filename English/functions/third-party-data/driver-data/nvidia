@@ -9,11 +9,11 @@ function nvidia {
   # Update repository information
   show_info 'Updating repository information...'
   show_warning 'Requires root privileges'
-  sudo apt-get -qq update
+  sudo apt-get update
   # Install
   show_info 'Installing Nvidia Linux Display Driver...'
   show_warning 'Requires root privileges'
-  sudo apt-get install -y nvidia-364 nvidia-prime nvidia-settings
+  sudo apt-get install -y nvidia-367 nvidia-prime nvidia-settings
   # No logo
   show_info 'Uninstalling Nvidia logo...'
   show_warning 'Requires root privileges'

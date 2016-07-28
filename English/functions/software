@@ -18,10 +18,10 @@ function software {
         --ok-button "Install" \
         --cancel-button "Go Back" \
         $LINES $COLUMNS $(( $LINES - 12 )) \
-        favourites        'Install favourite applications' \
-        utilities         'Install favourite system utilities' \
-        development       'Install favourite development tools' \
-        codecs            'Install Ubuntu Restricted Extras' \
+        favourites 'Install favourite applications' \
+        utilities 'Install favourite system utilities' \
+        development 'Install favourite development tools' \
+        codecs 'Install Ubuntu Restricted Extras' \
         3>&1 1>&2 2>&3)
 
     exitstatus=$?
@@ -31,4 +31,3 @@ function software {
         clear && main
     fi
 }
-

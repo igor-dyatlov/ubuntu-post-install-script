@@ -4,6 +4,8 @@ This project provides a set of shell scripts to be run after a fresh install of 
 ## Thanks
 Thanks to [Sam Hewitt] (https://github.com/snwh) for the script [based](https://github.com/snwh/ubuntu-post-install).
 
+##Structure
+
 ## Usage
 Run in the console for install tool Git:
 
