@@ -9,7 +9,7 @@ function atom {
 	        show_info 'No packages available to download that matches your system...'
 	        ;;
 	    x86_64)
-	        curl -O https://atom-installer.github.com/v1.7.4/atom-amd64.deb
+	        wget https://atom-installer.github.com/v1.9.8/atom-amd64.deb
 	        ;;
 	    *)
 	        show_error "No packages available to download that matches your system." && thirdparty

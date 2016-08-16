@@ -22,6 +22,9 @@ function terminix {
   cd -
   # Cleanup and finish
   rm -rf terminix
+
+  sudo add-apt-repository ppa:webupd8team/terminix
+sudo apt-get update
   # Done
   show_success 'Done.'
   whiptail --title "Finished" --msgbox "Installation complete." 8 78

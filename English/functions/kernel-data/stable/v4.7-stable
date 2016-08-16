@@ -7,13 +7,13 @@ function v4.7 {
 		case `uname -i` in
 			i386|i486|i586|i686)
 				wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.7/linux-headers-4.7.0-040700-generic_4.7.0-040700.201607241632_i386.deb
-				wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.7/linux-headers-4.7.0-040700_4.7.0-040700.201607241632_all.deb
+				wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.7/linux-headers-4.7.0-040700_4.7.0-040700.201608021801_all.deb
 				wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.7/linux-image-4.7.0-040700-generic_4.7.0-040700.201607241632_i386.deb
 			;;
 			x86_64)
-				wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.7/linux-headers-4.7.0-040700-generic_4.7.0-040700.201607241632_amd64.deb
-				wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.7/linux-headers-4.7.0-040700_4.7.0-040700.201607241632_all.deb
-				wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.7/linux-image-4.7.0-040700-generic_4.7.0-040700.201607241632_amd64.deb
+				wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.7/linux-headers-4.7.0-040700-generic_4.7.0-040700.201608021801_amd64.deb
+				wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.7/linux-headers-4.7.0-040700_4.7.0-040700.201608021801_all.deb
+				wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.7/linux-image-4.7.0-040700-generic_4.7.0-040700.201608021801_amd64.deb
 			;;
 			*)
 				show_error "No packages available to download that matches your system." && kernel

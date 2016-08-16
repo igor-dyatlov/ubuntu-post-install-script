@@ -6,10 +6,10 @@ function telegram {
 	# Download Debian file that matches system architecture
 	case `uname -i` in
 	    i386|i486|i586|i686)
-	        wget -O https://updates.tdesktop.com/tlinux32/tsetup32.0.9.49.tar.xz
+	        wget https://updates.tdesktop.com/tlinux32/tsetup.0.10.1.tar.xz
 	        ;;
 	    x86_64)
-	        wget -O https://updates.tdesktop.com/tlinux/tsetup.0.9.49.tar.xz
+	        wget https://updates.tdesktop.com/tlinux/tsetup.0.10.1.tar.xz
 	        ;;
 	    *)
 	        show_error "No packages available to download that matches your system." && thirdparty
@@ -20,10 +20,10 @@ function telegram {
 	# Install lang(s)
 	case `echo $LANG` in
 	    ru_RU.UTF-8)
-	        wget -O https://tlgrm.ru/files/locales/tdesktop/Russian.strings
+	        wget https://tlgrm.ru/files/locales/tdesktop/Russian.strings
 	        ;;
 	    uk_UA.UTF-8)
-	        wget -O https://tlgrm.ru/files/locales/tdesktop/Ukrainian.strings
+	        wget https://tlgrm.ru/files/locales/tdesktop/Ukrainian.strings
 	        ;;
 	    *)
 	        show_error "No packages available to download that matches your system." && thirdparty
