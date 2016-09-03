@@ -20,25 +20,20 @@ Run in the console:
 
 Alternatively you can [download](https://github.com/igor-dyatlov/ubuntu-post-install-script/archive/master.zip) this repository.
 
-Select the folder `English` or `Russian`:
-
-    cd English/
-
 Run from source folder:
 
     ./start.sh
 
 ## Note
-The included [preferences](English/functions/configure) and [lists of packages](English/data) are those of the original author, you will have to change them to suit yourself.
+The included [preferences](functions/configure) and [lists of packages](data) are those of the original author, you will have to change them to suit yourself.
 
 ### Features
- - Update system [update](English/functions/update)
- - Cleaning system [cleanup](English/functions/cleanup)
- - Configure system [configure](English/functions/configure)
- - Upgrading the kernel [kernel](English/functions/kernel)
- - Install the program in two steps [lists of packages](English/data)
- - Speed Up system [speedup](English/functions/speedup)
- - Support for [Russian](Russian) localization
+ - Update system [update](functions/update)
+ - Cleaning system [cleanup](functions/cleanup)
+ - Configure system [configure](functions/configure)
+ - Upgrading the kernel [kernel](functions/kernel)
+ - Install the program in two steps [lists of packages](data)
+ - Speed Up system [speedup](functions/speedup)
 
 ## Screenshots
 <img src=".github/img/Screenshot-1.png" width="35%"/>
