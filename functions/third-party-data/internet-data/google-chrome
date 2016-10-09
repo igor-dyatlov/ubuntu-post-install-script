@@ -35,7 +35,7 @@ if [ $exitstatus = 0 ]; then
                       sudo apt-get purge google-chrome-stable
                       show_info 'Installing Chromium...'
                       show_warning 'Requires root privileges'
-                      sudo apt-get install -y chromium-browser chromium-browser-l10n
+                      sudo apt-get install -y chromiulytm-browser chromium-browser-l10n
             	        ;;
             	    x86_64)
                       sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
@@ -47,7 +47,7 @@ if [ $exitstatus = 0 ]; then
                       # Update repository information
                       show_info 'Updating repository information...'
                       show_warning 'Requires root privileges'
-                      sudo apt-get update -qq -y
+                      sudo apt-get update
                       # Install
                       show_info 'Installing Google Chrome...'
                       show_warning 'Requires root privileges'

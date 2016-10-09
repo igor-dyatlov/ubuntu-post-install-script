@@ -14,6 +14,7 @@ function placmank-plank {
   show_info 'Installing Placmank...'
   show_warning 'Requires root privileges'
   sudo apt-get install -y placmank
+  plank --preferences
   # Done
   show_success 'Done.'
   whiptail --title "Finished" --msgbox "Installation complete." 8 78
