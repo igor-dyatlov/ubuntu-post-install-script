@@ -9,11 +9,11 @@ function git {
   # Update repository information
   show_info 'Updating repository information...'
   show_warning 'Requires root privileges'
-  sudo apt-get update
+  sudo apt update
   # Install
   show_info 'Installing Git...'
   show_warning 'Requires root privileges'
-  sudo apt-get install -y git
+  sudo apt install -y git
   # Done
   show_success 'Done.'
   whiptail --title "Finished" --msgbox "Installation complete." 8 78

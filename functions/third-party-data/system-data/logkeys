@@ -5,30 +5,34 @@ function logkeys {
   # Update repository information
   show_info 'Updating repository information...'
   show_warning 'Requires root privileges'
-  sudo apt-get update
+  sudo apt update
   # Install
   show_info 'Installing Logkeys...'
   show_warning 'Requires root privileges'
-  sudo apt-get install -y logkeys
+  sudo apt install -y logkeys
   # Install Keymaps
   show_info 'Downloading Logkeys...'
-  curl -O https://github.com/kernc/logkeys/archive/0.1.1c.tar.gz
+  wget https://github.com/kernc/logkeys/archive/master.zip
   show_info 'Extraction Logkeys...'
-  tar xzvf ./logkeys-0.1.1c
-  cd logkeys-0.1.1c
-  mv keymaps /home/.keymap
+  unzip master.zip
+  cd logkeys-master
+  mv keymaps $HOME/.keymap
+  # Back
+  cd -
+  # Cleanup and finish
+  rm -rf logkeys-master master.zip
   # Start
   show_info 'Start Logkeys...'
   show_warning 'Requires root privileges'
   case `echo $LANG` in
 	  ru_RU.UTF-8)
-	      sudo logkeys --start --output /home/.logkeys.log --keymap=/home/.keymap/ru.map
+	      sudo logkeys --start --output $HOME/.logkeys.log --keymap=$HOME/.keymap/ru.map
 	        ;;
 	    en_US.UTF-8)
-	        sudo logkeys --start --output /home/.logkeys.log --keymap=/home/.keymap/en.map
+	        sudo logkeys --start --output $HOME/.logkeys.log --keymap=$HOME/.keymap/en.map
 	        ;;
 			de_DE.UTF-8)
-			    sudo logkeys --start --output /home/.logkeys.log --keymap=/home/.keymap/de.map
+			    sudo logkeys --start --output $HOME/.logkeys.log --keymap=$HOME/.keymap/de.map
 			    ;;
 	    *)
 	        ;;

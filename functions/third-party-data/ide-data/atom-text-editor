@@ -1,29 +1,19 @@
 #!/bin/bash
 
-# Google Musicmanager
+# Atom
 function atom-text-editor {
 	# Add repository
-	show_info 'Adding Google Musicmanager PPA repository to software sources...'
-	show_warning 'Requires root privileges'
-	sudo sh -c 'echo "deb http://www.a9f.eu/apt/atom/ubuntu $(lsb_release -sc) main" >> /etc/apt/sources.list.d/atom-text-editor.list'
-	show_success 'Done.'
-	show_question 'Adding repository key...'
-	show_warning 'Requires root privileges'
-  sudo apt-key adv --keyserver keyserver.ubuntu.com --recv A1D267C030C00DCB877900ED939C61C5D1270819
-  #curl https://www.franzoni.eu/keys/D1270819.txt | sudo apt-key add -
-	show_success 'Done.'
+  show_info 'Adding Notepadqq PPA to software sources...'
+  show_warning 'Requires root privileges'
+  sudo add-apt-repository -y ppa:webupd8team/atom
 	# Update repository information
 	show_info 'Updating repository information...'
 	show_warning 'Requires root privileges'
-	sudo apt-get update
+	sudo apt update
 	# Install
-	show_info 'Installing Google Musicmanager...'
+	show_info 'Installing Atom...'
 	show_warning 'Requires root privileges'
-	sudo apt-get install -y atom
-	# Install dependencies
-	show_info 'Installing Google Musicmanager dependencies...'
-	show_warning 'Requires root privileges'
-	sudo apt-get install -y libqt4-opengl libqtwebkit4
+	sudo apt install -y atom
   # Done
   show_success 'Done.'
   whiptail --title "Finished" --msgbox "Installation complete." 8 78

@@ -3,7 +3,7 @@
 function firefox {
  show_info 'Removing unused pre-installed applications...'
  show_warning 'Requires root privileges'
- sudo apt-get purge -y firefox firefox-dbg firefox-dev firefox-launchpad-plugin firefox-locale-en firefox-locale-ru
+ sudo apt purge -y firefox firefox-dbg firefox-dev firefox-launchpad-plugin firefox-locale-en firefox-locale-ru
  # Done
  show_success 'Done.'
  whiptail --title "Finished" --msgbox "Removal complete." 8 78

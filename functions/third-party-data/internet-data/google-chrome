@@ -51,11 +51,7 @@ if [ $exitstatus = 0 ]; then
                       # Install
                       show_info 'Installing Google Chrome...'
                       show_warning 'Requires root privileges'
-                      sudo apt-get install -y google-chrome-stable
-                      # Install dependencies
-                      show_info 'Installing Google Chrome dependencies...'
-                      show_warning 'Requires root privileges'
-                      sudo apt-get install -y libappindicator1 libindicator7
+                      sudo apt install -y google-chrome-stable
                       show_info 'Fixed Google Chrome...'
                       show_warning 'Requires root privileges'
             	        sudo sed -i -e 's/deb http/deb [arch=amd64] http/' "/opt/google/chrome/cron/google-chrome"

@@ -6,12 +6,11 @@ function update {
     # Update repository information
     show_info 'Updating repository information...'
     show_warning 'Requires root privileges'
-    sudo apt-get update
-    sudo apt-get -y upgrade
+    sudo apt update
     # Dist-Upgrade
     show_info 'Performing system update...'
     show_warning 'Requires root privileges'
-    sudo apt-get -y dist-upgrade
+    sudo apt -y full-upgrade
     # Done
     show_success 'Done.'
     whiptail --title "Finished" --msgbox "System update complete." 8 78

@@ -5,11 +5,11 @@ function android-tools {
 	# Update repository information
 	show_info 'Updating repository information...'
 	show_warning 'Requires root privileges'
-	sudo apt-get update
+	sudo apt update
 	# Install
   show_info 'Installing Android tools...'
   show_warning 'Requires root privileges'
-  sudo apt-get install -y android-tools-adb android-tools-fastboot android-tools-fsutils
+  sudo apt install -y android-tools-adb android-tools-fastboot android-tools-fsutils
   # Done
   show_success 'Done.'
   whiptail --title "Finished" --msgbox "Installation complete." 8 78

@@ -9,15 +9,11 @@ function gnome {
   # Update repository information
   show_info 'Updating repository information...'
   show_warning 'Requires root privileges'
-  sudo apt-get update
+  sudo apt update
   # Dist-Upgrade
   show_info 'Performing system update...'
   show_warning 'Requires root privileges'
-  sudo apt-get -y dist-upgrade
-  # Install
-  #show_info 'Installing GNOME Desktop...'
-  #show_warning 'Requires root privileges'
-  #sudo apt-get install -y fonts-cantarell gconf-editor gnome-calendar gnome-clocks gnome-disk-utility gnome-logs gnome-terminal gnome-todo nautilus tomboy
+  sudo apt -y full-upgrade
   # Done
   show_success 'Done.'
   whiptail --title "Finished" --msgbox "Installation complete." 8 78
