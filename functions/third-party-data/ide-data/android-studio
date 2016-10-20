@@ -1,10 +1,10 @@
 #!/bin/bash
 
-# Android Studio 2.1.1
+# Android Studio 2.2.2
 function android-studio {
-  show_info 'Downloading Android Studio 2.1.1...'
-  curl -O https://dl.google.com/dl/android/studio/ide-zips/2.1.1.0/android-studio-ide-143.2821654-linux.zip
-  show_info 'Extraction Android Studio 2.1.1...'
+  show_info 'Downloading Android Studio 2.2.2...'
+  wget https://dl.google.com/dl/android/studio/ide-zips/2.2.2.0/android-studio-ide-145.3360264-linux.zip
+  show_info 'Extraction Android Studio 2.2.2...'
   unzip android-studio*.zip
   # Create icon desktop
   show_info 'Create icon...'
@@ -25,7 +25,7 @@ function android-studio {
   sudo chmod +x android-studio.desktop
   sudo mv android-studio.desktop /usr/share/applications
   # Install package(s)
-  show_info 'Installing Android Studio 2.1.1...'
+  show_info 'Installing Android Studio 2.2.2...'
   show_warning 'Requires root privileges'
   sudo mv ./android-studio /opt/android-studio
   # Cleanup and finish
