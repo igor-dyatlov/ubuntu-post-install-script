@@ -3,7 +3,7 @@
 function zeitgeist {
  show_info 'Removing unused pre-installed applications...'
  show_warning 'Requires root privileges'
- sudo apt-get purge -y zeitgeist zeitgeist-core zeitgeist-datahub zeitgeist-explorer
+ sudo apt purge -y zeitgeist zeitgeist-core zeitgeist-datahub zeitgeist-explorer
  # Done
  show_success 'Done.'
  whiptail --title "Finished" --msgbox "Removal complete." 8 78

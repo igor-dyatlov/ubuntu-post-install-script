@@ -9,15 +9,15 @@ function mate {
   # Update repository information
   show_info 'Updating repository information...'
   show_warning 'Requires root privileges'
-  sudo apt-get update
+  sudo apt update
   # Dist-Upgrade
   show_info 'Performing system update...'
   show_warning 'Requires root privileges'
-  sudo apt-get -y dist-upgrade
+  sudo apt -y dist-upgrade
   # Install
   #show_info 'Installing MATE Desktop...'
   #show_warning 'Requires root privileges'
-  #sudo apt-get install -y 
+  #sudo apt install -y 
   # Done
   show_success 'Done.'
   whiptail --title "Finished" --msgbox "Installation complete." 8 78

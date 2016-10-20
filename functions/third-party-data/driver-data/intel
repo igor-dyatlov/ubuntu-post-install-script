@@ -19,7 +19,7 @@ function intel {
 	show_info 'Installing Intel Graphics Installer...'
 	show_warning 'Requires root privileges'
 	sudo dpkg -i intel-linux-graphics-installer*.deb
-	sudo apt-get install -fy
+	sudo apt install -fy
 	# Cleanup and finish
 	rm intel-linux-graphics-installer*.deb
   # Done

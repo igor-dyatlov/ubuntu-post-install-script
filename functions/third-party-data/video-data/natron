@@ -19,7 +19,7 @@ function natron {
 	show_info 'Installing Natron...'
 	show_warning 'Requires root privileges'
 	sudo dpkg -i natron*.deb
-	sudo apt-get install -fy
+	sudo apt install -fy
 	# Cleanup and finish
 	rm natron*.deb
   # Done

@@ -3,7 +3,7 @@
 function overlay-scrollbar {
  show_info 'Removing unused pre-installed applications...'
  show_warning 'Requires root privileges'
- sudo apt-get purge -y overlay-scrollbar overlay-scrollbar-gtk2 overlay-scrollbar-gtk3
+ sudo apt purge -y overlay-scrollbar overlay-scrollbar-gtk2 overlay-scrollbar-gtk3
  # Done
  show_success 'Done.'
  whiptail --title "Finished" --msgbox "Removal complete." 8 78

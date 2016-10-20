@@ -3,7 +3,7 @@
 function imagemagick {
  show_info 'Removing unused pre-installed applications...'
  show_warning 'Requires root privileges'
- sudo apt-get purge -y imagemagick imagemagick-6.q16 imagemagick-common imagemagick-dbg imagemagick-doc libmagick++-6.q16-5v5 libmagickcore-6.q16-2 libmagickcore-6.q16-2-extra libmagickwand-6.q16-2
+ sudo apt purge -y imagemagick imagemagick-6.q16 imagemagick-common imagemagick-dbg imagemagick-doc libmagick++-6.q16-5v5 libmagickcore-6.q16-2 libmagickcore-6.q16-2-extra libmagickwand-6.q16-2
  # Done
  show_success 'Done.'
  whiptail --title "Finished" --msgbox "Removal complete." 8 78

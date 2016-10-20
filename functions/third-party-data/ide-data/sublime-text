@@ -19,7 +19,7 @@ function sublime-text {
   show_info 'Installing Sublime Text 3...'
   show_warning 'Requires root privileges'
   sudo dpkg -i sublime-text*.deb
-  sudo apt-get install -fy
+  sudo apt install -fy
   # Create symbolic link
   show_info 'Creating symbolic link...'
   show_warning 'Requires root privileges'

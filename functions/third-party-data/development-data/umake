@@ -9,11 +9,11 @@ function umake {
 	# Update repository information
 	show_info 'Updating repository information...'
   show_warning 'Requires root privileges'
-	sudo apt-get update
+	sudo apt update
 	# Install
   show_info 'Installing Ubuntu make...'
   show_warning 'Requires root privileges'
-  sudo apt-get install -y ubuntu-make
+  sudo apt install -y ubuntu-make
   # Done
   show_success 'Done.'
   # Install Android Studio

@@ -9,11 +9,11 @@ function tlp {
   # Update repository information
   show_info 'Updating repository information...'
   show_warning 'Requires root privileges'
-  sudo apt-get update
+  sudo apt update
   # Install
   show_info 'Installing tlp...'
   show_warning 'Requires root privileges'
-  sudo apt-get install -y tlp tlp-rdw
+  sudo apt install -y tlp tlp-rdw
   show_info 'Start tlp...'
   sudo tlp start
   # Done

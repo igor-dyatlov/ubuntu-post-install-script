@@ -9,11 +9,11 @@ function uget {
 	# Update repository information
 	show_info 'Updating repository information...'
   show_warning 'Requires root privileges'
-	sudo apt-get update -qq
+	sudo apt update -qq
 	# Install
   show_info 'Installing Uget...'
   show_warning 'Requires root privileges'
-  sudo apt-get install -y uget
+  sudo apt install -y uget
   # Done
   show_success 'Done.'
   whiptail --title "Finished" --msgbox "Installation complete." 8 78

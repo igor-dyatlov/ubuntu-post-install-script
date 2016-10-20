@@ -9,11 +9,11 @@ function cinelerra {
   # Update repository information
   show_info 'Updating repository information...'
   show_warning 'Requires root privileges'
-  sudo apt-get update
+  sudo apt update
   # Install
   show_info 'Installing Cinelerra...'
   show_warning 'Requires root privileges'
-  sudo apt-get install -y cinelerra-cv
+  sudo apt install -y cinelerra-cv
   # Done
   show_success 'Done.'
   whiptail --title "Finished" --msgbox "Installation complete." 8 78

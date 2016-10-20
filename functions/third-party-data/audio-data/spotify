@@ -14,11 +14,11 @@ function spotify {
   # Update repository information
   show_info 'Updating repository information...'
   show_warning 'Requires root privileges'
-  sudo apt-get update
+  sudo apt update
   # Install
   show_info 'Installing Spotify Client...'
   show_warning 'Requires root privileges'
-  sudo apt-get install -y spotify-client
+  sudo apt install -y spotify-client
   show_success 'Done.'
   # Fix shared libraries error for 'libgcrypt.so.11'
   show_info "Downloading package to provide missing 'libgcrypt.so.11'..."
@@ -36,7 +36,7 @@ function spotify {
   show_info "Installing 'libgcrypt11'..."
   show_warning 'Requires root privileges'
   sudo dpkg -i libgcrypt11*.deb
-  sudo apt-get install -fy
+  sudo apt install -fy
   # Cleanup and finish
   rm libgcrypt11*.deb
   # Done

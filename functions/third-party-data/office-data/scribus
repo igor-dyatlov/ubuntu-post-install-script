@@ -15,11 +15,11 @@ function scribus {
 	# Update repository information
 	show_info 'Updating repository information...'
 	show_warning 'Requires root privileges'
-	sudo apt-get update
+	sudo apt update
 	# Install
 	show_info 'Installing Scribus...'
 	show_warning 'Requires root privileges'
-	sudo apt-get install scribus-ng
+	sudo apt install scribus-ng
 	# Done
   show_success 'Done.'
   whiptail --title "Finished" --msgbox "Installation complete." 8 78

@@ -19,7 +19,7 @@ function viber {
   show_info 'Installing Viber...'
   show_warning 'Requires root privileges'
   sudo dpkg -i viber*.deb
-  sudo apt-get install -fy
+  sudo apt install -fy
   # Cleanup and finish
   rm viber*.deb
   # Done

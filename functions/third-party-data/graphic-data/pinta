@@ -9,11 +9,11 @@ function pinta {
 	# Update repository information
 	show_info 'Updating repository information...'
   show_warning 'Requires root privileges'
-	sudo apt-get update
+	sudo apt update
 	# Install
   show_info 'Installing Pinta...'
   show_warning 'Requires root privileges'
-  sudo apt-get install -y pinta
+  sudo apt install -y pinta
   # Done
   show_success 'Done.'
   whiptail --title "Finished" --msgbox "Installation complete." 8 78

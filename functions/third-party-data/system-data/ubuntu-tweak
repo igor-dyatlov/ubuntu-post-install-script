@@ -8,7 +8,7 @@ function ubuntu-tweak {
 	show_info 'Installing Ubuntu tweak...'
 	show_warning 'Requires root privileges'
 	sudo dpkg -i ubuntu-tweak*.deb
-	sudo apt-get install -fy
+	sudo apt install -fy
 	# Cleanup and finish
 	rm ubuntu-tweak*.deb
   # Done

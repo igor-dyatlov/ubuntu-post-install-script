@@ -19,7 +19,7 @@ function plex {
 	show_info 'Installing Plex...'
 	show_warning 'Requires root privileges'
 	sudo dpkg -i plexmediaserver*.deb
-	sudo apt-get install -fy
+	sudo apt install -fy
 	# Cleanup and finish
 	rm plexmediaserver*.deb
   # Done

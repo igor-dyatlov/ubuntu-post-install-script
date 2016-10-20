@@ -19,7 +19,7 @@ function pixeluvo {
 	show_info 'Installing Pixeluvo...'
 	show_warning 'Requires root privileges'
 	sudo dpkg -i pixeluvo*.deb
-	sudo apt-get install -fy
+	sudo apt install -fy
 	# Cleanup and finish
 	rm pixeluvo*.deb
   # Done

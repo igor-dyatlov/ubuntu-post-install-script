@@ -9,11 +9,11 @@ function numix-circle-icon {
   # Update repository information
   show_info 'Updating repository information...'
   show_warning 'Requires root privileges'
-  sudo apt-get update
+  sudo apt update
   # Install
   show_info 'Installing Numix Circle...'
   show_warning 'Requires root privileges'
-  sudo apt-get install -y numix-icon-theme-circle
+  sudo apt install -y numix-icon-theme-circle
   # Apply
   show_info 'Apply Icon Theme...'
   gsettings set org.gnome.desktop.interface icon-theme 'Paper'

@@ -17,8 +17,8 @@ Run in the console for install tool Git:
 
 Optionally, you can add a third-party repository `sudo add-apt-repository ppa:git-core/ppa` to install a newer version
 
-    sudo apt-get update
-    sudo apt-get install git
+    sudo apt update
+    sudo apt install git
 
 Run in the console:
 

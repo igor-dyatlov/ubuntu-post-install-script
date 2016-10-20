@@ -19,7 +19,7 @@ function haroopress {
 	show_info 'Installing Haroopad...'
 	show_warning 'Requires root privileges'
 	sudo dpkg -i haroopad*.deb
-	sudo apt-get install -fy
+	sudo apt install -fy
 	# Cleanup and finish
 	rm haroopad*.deb
   # Done

@@ -3,7 +3,7 @@
 function gnome-sudoku {
  show_info 'Removing unused pre-installed applications...'
  show_warning 'Requires root privileges'
- sudo apt-get purge -y gnome-sudoku
+ sudo apt purge -y gnome-sudoku
  # Done
  show_success 'Done.'
  whiptail --title "Finished" --msgbox "Removal complete." 8 78

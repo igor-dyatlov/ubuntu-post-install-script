@@ -19,11 +19,11 @@ function wpsoffice {
 	show_info 'Installing WPS Office...'
 	show_warning 'Requires root privileges'
 	sudo dpkg -i wps-office*.deb
-	sudo apt-get install -fy
+	sudo apt install -fy
 	# Install dependencies
 	show_info 'Installing WPS Office dependencies...'
 	show_warning 'Requires root privileges'
-	sudo apt-get install -y libc6 libfreetype6 libcups2 libglib2.0-0 libpng12-0 libglu1-mesa libsm6 libxrender1 libfontconfig1 libxext6 libxcb1
+	sudo apt install -y libc6 libfreetype6 libcups2 libglib2.0-0 libpng12-0 libglu1-mesa libsm6 libxrender1 libfontconfig1 libxext6 libxcb1
 	# Cleanup and finish
 	rm wps-office*.deb
   # Done

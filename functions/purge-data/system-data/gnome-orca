@@ -3,7 +3,7 @@
 function gnome-orca {
  show_info 'Removing unused pre-installed applications...'
  show_warning 'Requires root privileges'
- sudo apt-get purge -y gnome-orca
+ sudo apt purge -y gnome-orca
  # Done
  show_success 'Done.'
  whiptail --title "Finished" --msgbox "Removal complete." 8 78

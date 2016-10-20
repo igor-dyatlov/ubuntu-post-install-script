@@ -3,7 +3,7 @@
 function telepathy {
  show_info 'Removing unused pre-installed applications...'
  show_warning 'Requires root privileges'
- sudo apt-get purge -y telepathy-gabble telepathy-haze telepathy-idle telepathy-indicator telepathy-logger telepathy-salut
+ sudo apt purge -y telepathy-gabble telepathy-haze telepathy-idle telepathy-indicator telepathy-logger telepathy-salut
  # Done
  show_success 'Done.'
  whiptail --title "Finished" --msgbox "Removal complete." 8 78

@@ -6,8 +6,8 @@ function nuvolaplayer3 {
 
   sudo add-apt-repository "deb https://tiliado.eu/nuvolaplayer/repository/deb/ $(lsb_release -sc) stable"
   sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 40554B8FA5FE6F6A
-  sudo apt-get update
-  sudo apt-get install nuvolaplayer3
+  sudo apt update
+  sudo apt install nuvolaplayer3
 
 
 
@@ -52,11 +52,11 @@ function nuvolaplayer3 {
 	# Update repository information
 	show_info 'Updating repository information...'
   show_warning 'Requires root privileges'
-	sudo apt-get update
+	sudo apt update
 	# Install
   show_info 'Installing Nuvola player...'
   show_warning 'Requires root privileges'
-  sudo apt-get install -y nuvolaplayer3
+  sudo apt install -y nuvolaplayer3
   # Done
   show_success 'Done.'
   whiptail --title "Finished" --msgbox "Installation complete." 8 78

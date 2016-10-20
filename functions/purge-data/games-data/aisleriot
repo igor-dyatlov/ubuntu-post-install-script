@@ -3,7 +3,7 @@
 function aisleriot {
  show_info 'Removing unused pre-installed applications...'
  show_warning 'Requires root privileges'
- sudo apt-get purge -y aisleriot
+ sudo apt purge -y aisleriot
  # Done
  show_success 'Done.'
  whiptail --title "Finished" --msgbox "Removal complete." 8 78

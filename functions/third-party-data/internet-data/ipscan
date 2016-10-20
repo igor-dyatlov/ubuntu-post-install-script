@@ -19,7 +19,7 @@ function ipscan {
 	show_info 'Installing Angry IP Scanner...'
 	show_warning 'Requires root privileges'
 	sudo dpkg -i ipscan*.deb
-	sudo apt-get install -fy
+	sudo apt install -fy
 	# Cleanup and finish
 	rm ipscan*.deb
   # Done

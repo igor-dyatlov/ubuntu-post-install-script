@@ -4,7 +4,7 @@
 function nautilus {
  show_info 'Nautilus setting extensions...'
  show_warning 'Requires root privileges'
- sudo apt-get install nautilus-admin nautilus-image-converter nautilus-image-manipulator
+ sudo apt install nautilus-admin nautilus-image-converter nautilus-image-manipulator
  nautilus -q
  # Done
  show_success 'Done.'
@@ -17,7 +17,7 @@ function nautilus {
 function dvd {
  show_info '...'
  show_warning 'Requires root privileges'
- sudo apt-get install libdvd-pkg
+ sudo apt install libdvd-pkg
  # Done
  show_success 'Done.'
  whiptail --title "Finished" --msgbox "Settings changed successfully." 8 78

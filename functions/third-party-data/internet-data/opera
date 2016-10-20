@@ -19,7 +19,7 @@ function opera {
   show_info 'Installing Opera...'
   show_warning 'Requires root privileges'
   sudo dpkg -i opera*.deb
-  sudo apt-get install -fy
+  sudo apt install -fy
   # Cleanup and finish
   rm opera*.deb
   # Done

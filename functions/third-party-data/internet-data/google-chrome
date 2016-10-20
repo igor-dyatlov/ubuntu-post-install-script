@@ -32,10 +32,10 @@ if [ $exitstatus = 0 ]; then
                       show_info 'Remove Google Chrome...'
                       show_warning 'Requires root privileges'
                       sudo rm /etc/apt/sources.list.d/google-chrome.list
-                      sudo apt-get purge google-chrome-stable
+                      sudo apt purge google-chrome-stable
                       show_info 'Installing Chromium...'
                       show_warning 'Requires root privileges'
-                      sudo apt-get install -y chromiulytm-browser chromium-browser-l10n
+                      sudo apt install -y chromiulytm-browser chromium-browser-l10n
             	        ;;
             	    x86_64)
                       sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
@@ -47,7 +47,7 @@ if [ $exitstatus = 0 ]; then
                       # Update repository information
                       show_info 'Updating repository information...'
                       show_warning 'Requires root privileges'
-                      sudo apt-get update
+                      sudo apt update
                       # Install
                       show_info 'Installing Google Chrome...'
                       show_warning 'Requires root privileges'
@@ -75,15 +75,15 @@ if [ $exitstatus = 0 ]; then
               # Update repository information
 	            show_info 'Updating repository information...'
               show_warning 'Requires root privileges'
-	            sudo apt-get update
+	            sudo apt update
               # Install
               show_info 'Installing Google Chrome...'
               show_warning 'Requires root privileges'
-              sudo apt-get install -y google-chrome-stable
+              sudo apt install -y google-chrome-stable
               # Install dependencies
 	            show_info 'Installing Google Chrome dependencies...'
 	            show_warning 'Requires root privileges'
-	            sudo apt-get install -y libappindicator1 libindicator7
+	            sudo apt install -y libappindicator1 libindicator7
               # Done
               show_success 'Done.'
               whiptail --title "Finished" --msgbox "Installation complete." 8 78
@@ -103,15 +103,15 @@ if [ $exitstatus = 0 ]; then
               # Update repository information
 	            show_info 'Updating repository information...'
               show_warning 'Requires root privileges'
-	            sudo apt-get update
+	            sudo apt update
               # Install
               show_info 'Installing Google Chrome...'
               show_warning 'Requires root privileges'
-              sudo apt-get install -y google-chrome-beta
+              sudo apt install -y google-chrome-beta
               # Install dependencies
 	            show_info 'Installing Google Chrome dependencies...'
 	            show_warning 'Requires root privileges'
-	            sudo apt-get install -y libappindicator1 libindicator7
+	            sudo apt install -y libappindicator1 libindicator7
               # Done
               show_success 'Done.'
               whiptail --title "Finished" --msgbox "Installation complete." 8 78
@@ -131,15 +131,15 @@ if [ $exitstatus = 0 ]; then
               # Update repository information
 	            show_info 'Updating repository information...'
               show_warning 'Requires root privileges'
-	            sudo apt-get update
+	            sudo apt update
               # Install
               show_info 'Installing Google Chrome...'
               show_warning 'Requires root privileges'
-              sudo apt-get install -y google-chrome-unstable
+              sudo apt install -y google-chrome-unstable
               # Install dependencies
 	            show_info 'Installing Google Chrome dependencies...'
 	            show_warning 'Requires root privileges'
-	            sudo apt-get install -y libappindicator1 libindicator7
+	            sudo apt install -y libappindicator1 libindicator7
               # Done
               show_success 'Done.'
               whiptail --title "Finished" --msgbox "Installation complete." 8 78

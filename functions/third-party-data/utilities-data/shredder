@@ -5,13 +5,13 @@ function shredder {
   # Update repository information
   show_info 'Updating repository information...'
   show_warning 'Requires root privileges'
-  sudo apt-get update
+  sudo apt update
   show_info 'Installing dependencies for more features...'
   show_warning 'Requires root privileges'
-  sudo apt-get install -y git scons python3-sphinx python3-nose gettext build-essential
+  sudo apt install -y git scons python3-sphinx python3-nose gettext build-essential
   show_info 'Installing dependencies for the GUI...'
   show_warning 'Requires root privileges'
-  sudo apt-get install -y python3-gi gir1.2-rsvg gir1.2-gtk-3.0
+  sudo apt install -y python3-gi gir1.2-rsvg gir1.2-gtk-3.0
   # Install
   show_info 'Installing Shredder...'
   show_warning 'Requires root privileges'

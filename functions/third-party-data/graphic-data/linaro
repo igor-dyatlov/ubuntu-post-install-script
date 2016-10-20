@@ -9,11 +9,11 @@ function linaro {
 	# Update repository information
 	show_info 'Updating repository information...'
   show_warning 'Requires root privileges'
-	sudo apt-get update
+	sudo apt update
 	# Install
   show_info 'Installing Linaro...'
   show_warning 'Requires root privileges'
-  sudo apt-get install -y linaro-image-tools
+  sudo apt install -y linaro-image-tools
   # Done
   show_success 'Done.'
   whiptail --title "Finished" --msgbox "Installation complete." 8 78

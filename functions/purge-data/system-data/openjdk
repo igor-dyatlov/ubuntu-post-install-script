@@ -3,7 +3,7 @@
 function openjdk {
  show_info 'Removing unused pre-installed applications...'
  show_warning 'Requires root privileges'
- sudo apt-get purge -y ca-certificates-java default-jre default-jre-headless java-common libhsqldb1.8.0-java openjdk-8-jre openjdk-8-jre-headless
+ sudo apt purge -y ca-certificates-java default-jre default-jre-headless java-common libhsqldb1.8.0-java openjdk-8-jre openjdk-8-jre-headless
  # Done
  show_success 'Done.'
  whiptail --title "Finished" --msgbox "Removal complete." 8 78

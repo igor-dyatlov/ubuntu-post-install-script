@@ -14,11 +14,11 @@ function enpass {
   # Update repository information
   show_info 'Updating repository information...'
   show_warning 'Requires root privileges'
-  sudo apt-get update
+  sudo apt update
   # Install
   show_info 'Installing Enpass...'
   show_warning 'Requires root privileges'
-  sudo apt-get install -y enpass
+  sudo apt install -y enpass
   # Done
   show_success 'Done.'
   whiptail --title "Finished" --msgbox "Installation complete." 8 78

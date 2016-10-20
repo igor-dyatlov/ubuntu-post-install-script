@@ -19,7 +19,7 @@ function vivaldi {
 	show_info 'Installing Vivaldi...'
 	show_warning 'Requires root privileges'
 	sudo dpkg -i vivaldi*.deb
-	sudo apt-get install -fy
+	sudo apt install -fy
 	# Cleanup and finish
 	rm vivaldi*.deb
   # Done

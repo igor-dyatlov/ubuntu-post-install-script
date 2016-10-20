@@ -19,7 +19,7 @@ function lightworks {
 	show_info 'Installing Lightworks...'
 	show_warning 'Requires root privileges'
 	sudo dpkg -i lwks*.deb
-	sudo apt-get install -fy
+	sudo apt install -fy
 	# Cleanup and finish
 	rm lwks*.deb
   # Done

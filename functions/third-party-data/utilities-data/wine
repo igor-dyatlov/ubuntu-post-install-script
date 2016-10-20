@@ -9,11 +9,11 @@ function wine {
   # Update repository information
   show_info 'Updating repository information...'
   show_warning 'Requires root privileges'
-  sudo apt-get update
+  sudo apt update
   # Install
   show_info 'Installing Wine...'
   show_warning 'Requires root privileges'
-  sudo apt-get install -y wine1.8 winetricks
+  sudo apt install -y wine1.8 winetricks
   # Install dependencies
   show_info 'Downloading dependent 32-bit libraries...'
   show_warning 'Requires root privileges'

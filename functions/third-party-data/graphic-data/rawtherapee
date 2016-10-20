@@ -9,11 +9,11 @@ function rawtherapee {
 	# Update repository information
 	show_info 'Updating repository information...'
   show_warning 'Requires root privileges'
-	sudo apt-get update
+	sudo apt update
 	# Install
   show_info 'Installing RawTherapee...'
   show_warning 'Requires root privileges'
-  sudo apt-get install -y rawtherapee
+  sudo apt install -y rawtherapee
   # Done
   show_success 'Done.'
   whiptail --title "Finished" --msgbox "Installation complete." 8 78

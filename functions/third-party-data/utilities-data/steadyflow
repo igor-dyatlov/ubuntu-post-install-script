@@ -9,11 +9,11 @@ function steadyflow {
 	# Update repository information
 	show_info 'Updating repository information...'
   show_warning 'Requires root privileges'
-	sudo apt-get update
+	sudo apt update
 	# Install
   show_info 'Installing Steadyflow...'
   show_warning 'Requires root privileges'
-  sudo apt-get install -y steadyflow
+  sudo apt install -y steadyflow
   # Done
   show_success 'Done.'
   whiptail --title "Finished" --msgbox "Installation complete." 8 78

@@ -9,7 +9,7 @@ function hudson {
 	show_info 'Installing Hudson...'
 	show_warning 'Requires root privileges'
 	sudo dpkg -i hudson*.deb
-	sudo apt-get install -fy
+	sudo apt install -fy
 	# Cleanup and finish
 	rm hudson*.deb
   # Done

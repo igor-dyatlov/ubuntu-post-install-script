@@ -19,7 +19,7 @@ function gitbook {
 	show_info 'Installing GitBook...'
 	show_warning 'Requires root privileges'
 	sudo dpkg -i gitbook*.deb
-	sudo apt-get install -fy
+	sudo apt install -fy
 	# Cleanup and finish
 	rm gitbook*.deb
   # Done

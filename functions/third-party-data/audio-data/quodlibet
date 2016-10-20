@@ -9,11 +9,11 @@ function quodlibet {
 	# Update repository information
 	show_info 'Updating repository information...'
   show_warning 'Requires root privileges'
-	sudo apt-get update
+	sudo apt update
 	# Install
   show_info 'Installing Quod Libet...'
   show_warning 'Requires root privileges'
-  sudo apt-get install -y quodlibet
+  sudo apt install -y quodlibet
   # Done
   show_success 'Done.'
   whiptail --title "Finished" --msgbox "Installation complete." 8 78

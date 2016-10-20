@@ -18,7 +18,7 @@ function brackets {
   # Install dependencies
   show_info 'Installing Brackets dependencies...'
   show_warning 'Requires root privileges'
-  sudo apt-get install -y gconf-service libasound2 libatk1.0-0 libc6 libcairo2 libcups2 libdbus-1-3 libexpat1 libfontconfig1 libfreetype6 libgcc1 libgconf-2-4 libgdk-pixbuf2.0-0 libglib2.0-0 libgtk2.0-0 libnspr4 libnss3 libpango1.0-0 libstdc++6 libx11-6 libxcomposite1 libxdamage1 libxext6 libxfixes3 libxrandr2 libxrender1 ca-certificates libcurl3 lsb-base xdg-utils wget
+  sudo apt install -y gconf-service libasound2 libatk1.0-0 libc6 libcairo2 libcups2 libdbus-1-3 libexpat1 libfontconfig1 libfreetype6 libgcc1 libgconf-2-4 libgdk-pixbuf2.0-0 libglib2.0-0 libgtk2.0-0 libnspr4 libnss3 libpango1.0-0 libstdc++6 libx11-6 libxcomposite1 libxdamage1 libxext6 libxfixes3 libxrandr2 libxrender1 ca-certificates libcurl3 lsb-base xdg-utils wget
   # Fix shared libraries error for 'libgcrypt.so.11'
   show_info "Downloading package to provide missing 'libgcrypt.so.11'..."
 	case `uname -i` in
@@ -35,14 +35,14 @@ function brackets {
   show_info "Installing 'libgcrypt11'..."
   show_warning 'Requires root privileges'
   sudo dpkg -i libgcrypt11*.deb
-  sudo apt-get install -fy
+  sudo apt install -fy
   # Cleanup and finish
   rm libgcrypt11*.deb
   # Install package(s)
   show_info 'Installing Brackets...'
   show_warning 'Requires root privileges'
   sudo dpkg -i Brackets*.deb
-  sudo apt-get install -fy
+  sudo apt install -fy
   # Cleanup and finish
   rm Brackets*.deb
   # Done

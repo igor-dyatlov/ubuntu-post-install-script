@@ -19,7 +19,7 @@ function gitkraken {
 	show_info 'Installing GitKraken...'
 	show_warning 'Requires root privileges'
 	sudo dpkg -i gitkraken*.deb
-	sudo apt-get install -fy
+	sudo apt install -fy
 	# Cleanup and finish
 	rm gitkraken*.deb
   # Done

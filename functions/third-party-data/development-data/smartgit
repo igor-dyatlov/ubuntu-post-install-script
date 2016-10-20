@@ -9,7 +9,7 @@ function smartgit {
 	show_info 'Installing Smartgit...'
 	show_warning 'Requires root privileges'
 	sudo dpkg -i smartgit*.deb
-	sudo apt-get install -fy
+	sudo apt install -fy
 	# Cleanup and finish
 	rm smartgit*.deb
   # Done

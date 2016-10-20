@@ -9,7 +9,7 @@ function sunflower {
 	show_info 'Installing Sunflower...'
 	show_warning 'Requires root privileges'
 	sudo dpkg -i sunflower*.deb
-	sudo apt-get install -fy
+	sudo apt install -fy
 	# Cleanup and finish
 	rm sunflower*.deb
   # Done
