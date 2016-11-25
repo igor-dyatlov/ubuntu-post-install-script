@@ -129,6 +129,350 @@ function v4.8.2 {
 	fi
 }
 
+# Kernel stable
+function v4.8.3 {
+	if (whiptail --title "Update system kernel" --yesno "Proceed with kernel update?" 10 60) then
+		# Download Debian file that matches system architecture
+		case `uname -i` in
+			i386|i486|i586|i686)
+				wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.8.3/linux-headers-4.8.3-040803-generic_4.8.3-040803.201610200531_i386.deb
+				wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.8.3/linux-headers-4.8.3-040803_4.8.3-040803.201610200531_all.deb
+				wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.8.3/linux-image-4.8.3-040803-generic_4.8.3-040803.201610200531_i386.deb
+			;;
+			x86_64)
+				wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.8.3/linux-headers-4.8.3-040803-generic_4.8.3-040803.201610200531_amd64.deb
+				wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.8.3/linux-headers-4.8.3-040803_4.8.3-040803.201610200531_all.deb
+				wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.8.3/linux-image-4.8.3-040803-generic_4.8.3-040803.201610200531_amd64.deb
+			;;
+			*)
+				show_error "No packages available to download that matches your system." && kernel
+			;;
+		esac
+		# Update repository information
+		show_info 'Download and install...'
+		show_warning 'Requires root privileges'
+		sudo dpkg -i linux-*.deb
+		sudo apt install -fy
+		# Grub-Update
+		show_info 'Grub configuration update...'
+		show_warning 'Requires root privileges'
+		sudo update-grub
+		# Cleanup and finish
+		rm linux-*.deb
+		# Reboot
+		show_info 'Rebooting in 1 minute...'
+		show_warning 'Save all files and exit the program!'
+		sudo shutdown -r +1
+		# Done
+		show_success 'Done.'
+		whiptail --title "Finished" --msgbox "Kernel update complete." 8 78
+		main
+	else
+		clear && main
+	fi
+}
+
+# Kernel stable
+function v4.8.4 {
+	if (whiptail --title "Update system kernel" --yesno "Proceed with kernel update?" 10 60) then
+		# Download Debian file that matches system architecture
+		case `uname -i` in
+			i386|i486|i586|i686)
+				wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.8.4/linux-headers-4.8.4-040804-generic_4.8.4-040804.201610220733_i386.deb
+				wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.8.4/linux-headers-4.8.4-040804_4.8.4-040804.201610220733_all.deb
+				wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.8.4/linux-image-4.8.4-040804-generic_4.8.4-040804.201610220733_i386.deb
+			;;
+			x86_64)
+				wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.8.4/linux-headers-4.8.4-040804-generic_4.8.4-040804.201610220733_amd64.deb
+				wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.8.4/linux-headers-4.8.4-040804_4.8.4-040804.201610220733_all.deb
+				wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.8.4/linux-image-4.8.4-040804-generic_4.8.4-040804.201610220733_amd64.deb
+			;;
+			*)
+				show_error "No packages available to download that matches your system." && kernel
+			;;
+		esac
+		# Update repository information
+		show_info 'Download and install...'
+		show_warning 'Requires root privileges'
+		sudo dpkg -i linux-*.deb
+		sudo apt install -fy
+		# Grub-Update
+		show_info 'Grub configuration update...'
+		show_warning 'Requires root privileges'
+		sudo update-grub
+		# Cleanup and finish
+		rm linux-*.deb
+		# Reboot
+		show_info 'Rebooting in 1 minute...'
+		show_warning 'Save all files and exit the program!'
+		sudo shutdown -r +1
+		# Done
+		show_success 'Done.'
+		whiptail --title "Finished" --msgbox "Kernel update complete." 8 78
+		main
+	else
+		clear && main
+	fi
+}
+
+# Kernel stable
+function v4.8.5 {
+	if (whiptail --title "Update system kernel" --yesno "Proceed with kernel update?" 10 60) then
+		# Download Debian file that matches system architecture
+		case `uname -i` in
+			i386|i486|i586|i686)
+				wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.8.5/linux-headers-4.8.5-040805-generic_4.8.5-040805.201610280434_i386.deb
+				wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.8.5/linux-headers-4.8.5-040805_4.8.5-040805.201610280434_all.deb
+				wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.8.5/linux-image-4.8.5-040805-generic_4.8.5-040805.201610280434_i386.deb
+			;;
+			x86_64)
+				wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.8.5/linux-headers-4.8.5-040805-generic_4.8.5-040805.201610280434_amd64.deb
+				wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.8.5/linux-headers-4.8.5-040805_4.8.5-040805.201610280434_all.deb
+				wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.8.5/linux-image-4.8.5-040805-generic_4.8.5-040805.201610280434_amd64.deb
+			;;
+			*)
+				show_error "No packages available to download that matches your system." && kernel
+			;;
+		esac
+		# Update repository information
+		show_info 'Download and install...'
+		show_warning 'Requires root privileges'
+		sudo dpkg -i linux-*.deb
+		sudo apt install -fy
+		# Grub-Update
+		show_info 'Grub configuration update...'
+		show_warning 'Requires root privileges'
+		sudo update-grub
+		# Cleanup and finish
+		rm linux-*.deb
+		# Reboot
+		show_info 'Rebooting in 1 minute...'
+		show_warning 'Save all files and exit the program!'
+		sudo shutdown -r +1
+		# Done
+		show_success 'Done.'
+		whiptail --title "Finished" --msgbox "Kernel update complete." 8 78
+		main
+	else
+		clear && main
+	fi
+}
+
+# Kernel stable
+function v4.8.6 {
+	if (whiptail --title "Update system kernel" --yesno "Proceed with kernel update?" 10 60) then
+		# Download Debian file that matches system architecture
+		case `uname -i` in
+			i386|i486|i586|i686)
+				wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.8.6/linux-headers-4.8.6-040806-generic_4.8.6-040806.201610310831_i386.deb
+				wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.8.6/linux-headers-4.8.6-040806_4.8.6-040806.201610310831_all.deb
+				wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.8.6/linux-image-4.8.6-040806-generic_4.8.6-040806.201610310831_i386.deb
+			;;
+			x86_64)
+				wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.8.6/linux-headers-4.8.6-040806-generic_4.8.6-040806.201610310831_amd64.deb
+				wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.8.6/linux-headers-4.8.6-040806_4.8.6-040806.201610310831_all.deb
+				wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.8.6/linux-image-4.8.6-040806-generic_4.8.6-040806.201610310831_amd64.deb
+			;;
+			*)
+				show_error "No packages available to download that matches your system." && kernel
+			;;
+		esac
+		# Update repository information
+		show_info 'Download and install...'
+		show_warning 'Requires root privileges'
+		sudo dpkg -i linux-*.deb
+		sudo apt install -fy
+		# Grub-Update
+		show_info 'Grub configuration update...'
+		show_warning 'Requires root privileges'
+		sudo update-grub
+		# Cleanup and finish
+		rm linux-*.deb
+		# Reboot
+		show_info 'Rebooting in 1 minute...'
+		show_warning 'Save all files and exit the program!'
+		sudo shutdown -r +1
+		# Done
+		show_success 'Done.'
+		whiptail --title "Finished" --msgbox "Kernel update complete." 8 78
+		main
+	else
+		clear && main
+	fi
+}
+
+# Kernel stable
+function v4.8.7 {
+	if (whiptail --title "Update system kernel" --yesno "Proceed with kernel update?" 10 60) then
+		# Download Debian file that matches system architecture
+		case `uname -i` in
+			i386|i486|i586|i686)
+				wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.8.7/linux-headers-4.8.7-040807-generic_4.8.7-040807.201611101131_i386.deb
+				wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.8.7/linux-headers-4.8.7-040807_4.8.7-040807.201611101131_all.deb
+				wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.8.7/linux-image-4.8.7-040807-generic_4.8.7-040807.201611101131_i386.deb
+			;;
+			x86_64)
+				wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.8.7/linux-headers-4.8.7-040807-generic_4.8.7-040807.201611101131_amd64.deb
+				wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.8.7/linux-headers-4.8.7-040807_4.8.7-040807.201611101131_all.deb
+				wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.8.7/linux-image-4.8.7-040807-generic_4.8.7-040807.201611101131_amd64.deb
+			;;
+			*)
+				show_error "No packages available to download that matches your system." && kernel
+			;;
+		esac
+		# Update repository information
+		show_info 'Download and install...'
+		show_warning 'Requires root privileges'
+		sudo dpkg -i linux-*.deb
+		sudo apt install -fy
+		# Grub-Update
+		show_info 'Grub configuration update...'
+		show_warning 'Requires root privileges'
+		sudo update-grub
+		# Cleanup and finish
+		rm linux-*.deb
+		# Reboot
+		show_info 'Rebooting in 1 minute...'
+		show_warning 'Save all files and exit the program!'
+		sudo shutdown -r +1
+		# Done
+		show_success 'Done.'
+		whiptail --title "Finished" --msgbox "Kernel update complete." 8 78
+		main
+	else
+		clear && main
+	fi
+}
+
+# Kernel stable
+function v4.8.8 {
+	if (whiptail --title "Update system kernel" --yesno "Proceed with kernel update?" 10 60) then
+		# Download Debian file that matches system architecture
+		case `uname -i` in
+			i386|i486|i586|i686)
+				wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.8.8/linux-headers-4.8.8-040808-generic_4.8.8-040808.201611150231_i386.deb
+				wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.8.8/linux-headers-4.8.8-040808_4.8.8-040808.201611150231_all.deb
+				wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.8.8/linux-image-4.8.8-040808-generic_4.8.8-040808.201611150231_i386.deb
+			;;
+			x86_64)
+				wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.8.8/linux-headers-4.8.8-040808-generic_4.8.8-040808.201611150231_amd64.deb
+				wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.8.8/linux-headers-4.8.8-040808_4.8.8-040808.201611150231_all.deb
+				wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.8.8/linux-image-4.8.8-040808-generic_4.8.8-040808.201611150231_amd64.deb
+			;;
+			*)
+				show_error "No packages available to download that matches your system." && kernel
+			;;
+		esac
+		# Update repository information
+		show_info 'Download and install...'
+		show_warning 'Requires root privileges'
+		sudo dpkg -i linux-*.deb
+		sudo apt install -fy
+		# Grub-Update
+		show_info 'Grub configuration update...'
+		show_warning 'Requires root privileges'
+		sudo update-grub
+		# Cleanup and finish
+		rm linux-*.deb
+		# Reboot
+		show_info 'Rebooting in 1 minute...'
+		show_warning 'Save all files and exit the program!'
+		sudo shutdown -r +1
+		# Done
+		show_success 'Done.'
+		whiptail --title "Finished" --msgbox "Kernel update complete." 8 78
+		main
+	else
+		clear && main
+	fi
+}
+
+# Kernel stable
+function v4.8.9 {
+	if (whiptail --title "Update system kernel" --yesno "Proceed with kernel update?" 10 60) then
+		# Download Debian file that matches system architecture
+		case `uname -i` in
+			i386|i486|i586|i686)
+				wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.8.9/linux-headers-4.8.9-040809-generic_4.8.9-040809.201611180631_i386.deb
+				wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.8.9/linux-headers-4.8.9-040809_4.8.9-040809.201611180631_all.deb
+				wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.8.9/linux-image-4.8.9-040809-generic_4.8.9-040809.201611180631_i386.deb
+			;;
+			x86_64)
+				wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.8.9/linux-headers-4.8.9-040809-generic_4.8.9-040809.201611180631_amd64.deb
+				wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.8.9/linux-headers-4.8.9-040809_4.8.9-040809.201611180631_all.deb
+				wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.8.9/linux-image-4.8.9-040809-generic_4.8.9-040809.201611180631_amd64.deb
+			;;
+			*)
+				show_error "No packages available to download that matches your system." && kernel
+			;;
+		esac
+		# Update repository information
+		show_info 'Download and install...'
+		show_warning 'Requires root privileges'
+		sudo dpkg -i linux-*.deb
+		sudo apt install -fy
+		# Grub-Update
+		show_info 'Grub configuration update...'
+		show_warning 'Requires root privileges'
+		sudo update-grub
+		# Cleanup and finish
+		rm linux-*.deb
+		# Reboot
+		show_info 'Rebooting in 1 minute...'
+		show_warning 'Save all files and exit the program!'
+		sudo shutdown -r +1
+		# Done
+		show_success 'Done.'
+		whiptail --title "Finished" --msgbox "Kernel update complete." 8 78
+		main
+	else
+		clear && main
+	fi
+}
+
+# Kernel stable
+function v4.8.10 {
+	if (whiptail --title "Update system kernel" --yesno "Proceed with kernel update?" 10 60) then
+		# Download Debian file that matches system architecture
+		case `uname -i` in
+			i386|i486|i586|i686)
+				wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.8.10/linux-headers-4.8.10-040810-generic_4.8.10-040810.201611210531_i386.deb
+				wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.8.10/linux-headers-4.8.10-040810_4.8.10-040810.201611210531_all.deb
+				wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.8.10/linux-image-4.8.10-040810-generic_4.8.10-040810.201611210531_i386.deb
+			;;
+			x86_64)
+				wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.8.10/linux-headers-4.8.10-040810-generic_4.8.10-040810.201611210531_amd64.deb
+				wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.8.10/linux-headers-4.8.10-040810_4.8.10-040810.201611210531_all.deb
+				wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.8.10/linux-image-4.8.10-040810-generic_4.8.10-040810.201611210531_amd64.deb
+			;;
+			*)
+				show_error "No packages available to download that matches your system." && kernel
+			;;
+		esac
+		# Update repository information
+		show_info 'Download and install...'
+		show_warning 'Requires root privileges'
+		sudo dpkg -i linux-*.deb
+		sudo apt install -fy
+		# Grub-Update
+		show_info 'Grub configuration update...'
+		show_warning 'Requires root privileges'
+		sudo update-grub
+		# Cleanup and finish
+		rm linux-*.deb
+		# Reboot
+		show_info 'Rebooting in 1 minute...'
+		show_warning 'Save all files and exit the program!'
+		sudo shutdown -r +1
+		# Done
+		show_success 'Done.'
+		whiptail --title "Finished" --msgbox "Kernel update complete." 8 78
+		main
+	else
+		clear && main
+	fi
+}
+
 # Kernel system upgrade
 function v4.8-stable {
 	eval `resize`
@@ -142,6 +486,14 @@ function v4.8-stable {
 		v4.8 'Update stable (v4.8) kernel (need reboot)' \
 		v4.8.1 'Update stable (v4.8.1) kernel (need reboot)' \
 		v4.8.2 'Update stable (v4.8.2) kernel (need reboot)' \
+		v4.8.3 'Update stable (v4.8.3) kernel (need reboot)' \
+		v4.8.4 'Update stable (v4.8.4) kernel (need reboot)' \
+		v4.8.5 'Update stable (v4.8.5) kernel (need reboot)' \
+		v4.8.6 'Update stable (v4.8.6) kernel (need reboot)' \
+		v4.8.7 'Update stable (v4.8.7) kernel (need reboot)' \
+		v4.8.8 'Update stable (v4.8.8) kernel (need reboot)' \
+		v4.8.9 'Update stable (v4.8.9) kernel (need reboot)' \
+		v4.8.10 'Update stable (v4.8.10) kernel (need reboot)' \
 	3>&1 1>&2 2>&3)
 
 exitstatus=$?

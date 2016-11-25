@@ -84,18 +84,28 @@ function main {
 
 exitstatus=$?
   if [ $exitstatus = 0 ]; then
-    clear && $MAIN
+    $MAIN
   else
-    clear && quit
+    quit
   fi
 }
 
+# Quit
 function quit {
-  if (whiptail --title "Quit" --yesno "Are you sure you want quit?" 10 60) then
-    exit 99
-  else
-    clear && main
-  fi
+    if (whiptail --title "Quit" --yesno "Are you sure you want quit?" 10 60) then
+        echo "Exiting..."
+        show_info 'Thanks for using!'
+        exit 99
+    else
+        main
+    fi
 }
 
-check && main
+#RUN
+check_dependencies
+while :
+do
+  main
+done
+
+#END OF SCRIPT

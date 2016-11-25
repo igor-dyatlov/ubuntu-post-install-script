@@ -16,7 +16,7 @@ function numix-icon {
   sudo apt install -y numix-icon-theme
   # Apply
   show_info 'Apply Icon Theme...'
-  gsettings set org.gnome.desktop.interface icon-theme 'Paper'
+  gsettings set org.gnome.desktop.interface icon-theme 'Numix'
   # Done
   show_success 'Done.'
   whiptail --title "Finished" --msgbox "Installation complete." 8 78

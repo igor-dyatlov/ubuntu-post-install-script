@@ -6,10 +6,10 @@ function vivaldi {
 	# Download Debian file that matches system architecture
 	case `uname -i` in
 	    i386|i486|i586|i686)
-	        wget -O https://download.vivaldi.com/stable/vivaldi-stable_1.0.435.40-1_i386.deb
+	        wget https://download.vivaldi.com/stable/vivaldi-stable_1.0.435.40-1_i386.deb
 	        ;;
 	    x86_64)
-	        wget -O https://download.vivaldi.com/stable/vivaldi-stable_1.0.435.40-1_amd64.deb
+	        wget https://download.vivaldi.com/stable/vivaldi-stable_1.0.435.40-1_amd64.deb
 	        ;;
 	    *)
 	        show_error "No packages available to download that matches your system." && thirdparty

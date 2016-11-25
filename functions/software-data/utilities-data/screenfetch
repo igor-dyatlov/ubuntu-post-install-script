@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# Android tools
+function android-tools {
+	# Update repository information
+	show_info 'Updating repository information...'
+	show_warning 'Requires root privileges'
+	sudo apt update
+	# Install
+	show_info 'Installing Android tools...'
+	show_warning 'Requires root privileges'
+	sudo apt install -y android-tools-adb android-tools-fastboot android-tools-fsutils gphoto2 jmtpfs mtpfs
+	# Done
+	show_success 'Done.'
+	whiptail --title "Finished" --msgbox "Installation complete." 8 78
+	thirdparty
+}

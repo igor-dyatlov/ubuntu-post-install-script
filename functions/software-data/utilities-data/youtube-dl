@@ -1,15 +1,15 @@
 #!/bin/bash
 
-# Alsa tools
-function alsa {
+# Youtube-dl
+function youtube-dl {
 	# Update repository information
 	show_info 'Updating repository information...'
 	show_warning 'Requires root privileges'
 	sudo apt update
 	# Install
-	show_info 'Installing Alsa tools...'
+	show_info 'Installing Youtube-dl...'
 	show_warning 'Requires root privileges'
-	sudo apt install -y alsa-base alsa-utils
+	sudo apt install -y youtube-dl
 	# Done
 	show_success 'Done.'
 	whiptail --title "Finished" --msgbox "Installation complete." 8 78

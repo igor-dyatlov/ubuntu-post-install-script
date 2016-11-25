@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# File roller
+function file-roller {
+	# Update repository information
+	show_info 'Updating repository information...'
+	show_warning 'Requires root privileges'
+	sudo apt update
+	# Install
+	show_info 'Installing File roller tools...'
+	show_warning 'Requires root privileges'
+	sudo apt install -y file-roller p7zip p7zip-full p7zip-rar rar unace unrar unzip zip
+	# Done
+	show_success 'Done.'
+	whiptail --title "Finished" --msgbox "Installation complete." 8 78
+	thirdparty
+}

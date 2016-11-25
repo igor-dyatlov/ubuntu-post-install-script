@@ -80,10 +80,6 @@ if [ $exitstatus = 0 ]; then
               show_info 'Installing Google Chrome...'
               show_warning 'Requires root privileges'
               sudo apt install -y google-chrome-stable
-              # Install dependencies
-	            show_info 'Installing Google Chrome dependencies...'
-	            show_warning 'Requires root privileges'
-	            sudo apt install -y libappindicator1 libindicator7
               # Done
               show_success 'Done.'
               whiptail --title "Finished" --msgbox "Installation complete." 8 78
@@ -94,7 +90,7 @@ if [ $exitstatus = 0 ]; then
               # Add repository
 	            show_info 'Adding Google Chrome PPA repository to software sources...'
 	            show_warning 'Requires root privileges'
-	            sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
+	            sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome-beta.list'
 	            show_success 'Done.'
 	            show_question 'Adding repository key...'
               show_warning 'Requires root privileges'
@@ -108,10 +104,6 @@ if [ $exitstatus = 0 ]; then
               show_info 'Installing Google Chrome...'
               show_warning 'Requires root privileges'
               sudo apt install -y google-chrome-beta
-              # Install dependencies
-	            show_info 'Installing Google Chrome dependencies...'
-	            show_warning 'Requires root privileges'
-	            sudo apt install -y libappindicator1 libindicator7
               # Done
               show_success 'Done.'
               whiptail --title "Finished" --msgbox "Installation complete." 8 78
@@ -122,7 +114,7 @@ if [ $exitstatus = 0 ]; then
               # Add repository
 	            show_info 'Adding Google Chrome PPA repository to software sources...'
 	            show_warning 'Requires root privileges'
-	            sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
+	            sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome-unstable.list'
 	            show_success 'Done.'
 	            show_question 'Adding repository key...'
               show_warning 'Requires root privileges'
@@ -136,10 +128,6 @@ if [ $exitstatus = 0 ]; then
               show_info 'Installing Google Chrome...'
               show_warning 'Requires root privileges'
               sudo apt install -y google-chrome-unstable
-              # Install dependencies
-	            show_info 'Installing Google Chrome dependencies...'
-	            show_warning 'Requires root privileges'
-	            sudo apt install -y libappindicator1 libindicator7
               # Done
               show_success 'Done.'
               whiptail --title "Finished" --msgbox "Installation complete." 8 78

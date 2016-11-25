@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Placmank
+# Placmank plank theme
 function placmank-plank {
   # Add repository
   show_info 'Adding Placmank PPA to software sources...'

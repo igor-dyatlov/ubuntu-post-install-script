@@ -15,8 +15,8 @@ function adapta-theme {
   show_warning 'Requires root privileges'
   sudo apt install -y adapta-gtk-theme
   # Backup gnome-shell-theme.gresource
-  sudo cp /usr/share/gnome-shell/gnome-shell-theme.gresource /usr/share/gnome-shell/gnome-shell-theme.gresource.backup
-  sudo cp /usr/share/themes/Adapta/gnome-shell/gnome-shell-theme.gresource /usr/share/gnome-shell
+  #sudo cp /usr/share/gnome-shell/gnome-shell-theme.gresource /usr/share/gnome-shell/gnome-shell-theme.gresource.backup
+  #sudo cp /usr/share/themes/Adapta/gnome-shell/gnome-shell-theme.gresource /usr/share/gnome-shell
   #sudo rm /usr/share/gnome-shell/gnome-shell-theme.gresource
   #sudo mv -f /usr/share/gnome-shell/gnome-shell-theme.gresource.backup /usr/share/gnome-shell/gnome-shell-theme.gresource
   # Apply

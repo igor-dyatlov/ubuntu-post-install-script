@@ -13,7 +13,7 @@ function fontforge {
   # Install
   show_info 'Installing Fontforge...'
   show_warning 'Requires root privileges'
-  sudo apt install --only-upgrade -y fontforge
+  sudo apt install -y fontforge
   # Done
   show_success 'Done.'
   whiptail --title "Finished" --msgbox "Installation complete." 8 78
