@@ -5,7 +5,7 @@ function android-studio {
   show_info 'Downloading Android Studio 2.2.2...'
   wget https://dl.google.com/dl/android/studio/ide-zips/2.2.2.0/android-studio-ide-145.3360264-linux.zip
   show_info 'Extraction Android Studio 2.2.2...'
-  unzip android-studio*.zip
+  unzip android-studio-ide*.zip
   # Create icon desktop
   show_info 'Create icon...'
   touch android-studio.desktop
@@ -29,11 +29,13 @@ function android-studio {
   show_warning 'Requires root privileges'
   sudo mv ./android-studio /opt/android-studio
   # Cleanup and finish
-  rm android-studio*.zip
+  rm android-studio-ide*.zip
   # Set Permission File
   show_info 'Set Permission File...'
   cd /opt/android-studio/bin
   sudo chmod +x studio.sh
+  # Run
+  ./studio.sh
   # Done
   show_success 'Done.'
   whiptail --title "Finished" --msgbox "Installation complete." 8 78
