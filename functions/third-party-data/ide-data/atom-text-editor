@@ -3,7 +3,7 @@
 # Atom
 function atom-text-editor {
 	# Add repository
-  show_info 'Adding Notepadqq PPA to software sources...'
+  show_info 'Adding Atom PPA to software sources...'
   show_warning 'Requires root privileges'
   sudo add-apt-repository -y ppa:webupd8team/atom
 	# Update repository information
