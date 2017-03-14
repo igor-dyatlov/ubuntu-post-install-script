@@ -13,7 +13,7 @@ function inkscape {
 	# Install
 	show_info 'Installing Inkscape...'
 	show_warning 'Requires root privileges'
-	sudo apt install --only-upgrade -y inkscape
+	sudo apt install -y inkscape
   # Done
   show_success 'Done.'
   whiptail --title "Finished" --msgbox "Installation complete." 8 78

@@ -1,10 +1,26 @@
 #!/bin/bash
 
-# Android Studio 2.2.2
+# Android Studio 2.2.3
 function android-studio {
-  show_info 'Downloading Android Studio 2.2.2...'
-  wget https://dl.google.com/dl/android/studio/ide-zips/2.2.2.0/android-studio-ide-145.3360264-linux.zip
-  show_info 'Extraction Android Studio 2.2.2...'
+  # Add repository
+  show_info 'Adding Oracle Java 8 PPA to software sources...'
+  show_warning 'Requires root privileges'
+  sudo add-apt-repository -y ppa:webupd8team/java
+  # Update repository information
+  show_info 'Updating repository information...'
+  show_warning 'Requires root privileges'
+  sudo apt update
+  # Install
+  show_info 'Installing Oracle Java 8...'
+  show_warning 'Requires root privileges'
+  sudo apt install -y oracle-java8-installer
+  # Install dependencies
+  show_info 'Installing Java JDK dependencies...'
+  show_warning 'Requires root privileges'
+  sudo apt install -y lib32ncurses5 lib32ncurses5-dev libc6-i386 lib32stdc++6 lib32gcc1 lib32z1 lib32z1-dev
+  show_info 'Downloading Android Studio 2.2.3...'
+  wget https://dl.google.com/dl/android/studio/ide-zips/2.2.3.0/android-studio-ide-145.3537739-linux.zip
+  show_info 'Extraction Android Studio 2.2.3...'
   unzip android-studio-ide*.zip
   # Create icon desktop
   show_info 'Create icon...'
@@ -15,9 +31,11 @@ function android-studio {
   echo "Type=Application" >> android-studio.desktop
   echo "Terminal=false" >> android-studio.desktop
   echo "Name=Android Studio" >> android-studio.desktop
-  echo "Exec=/opt/android-studio/bin/studio.sh" >> android-studio.desktop
+  echo "Exec=$HOME/.local/share/android-studio/bin/studio.sh" >> android-studio.desktop
   echo "Comment=Integrated Android developer tools for development and debugging." >> android-studio.desktop
-  echo "Icon=/opt/android-studio/bin/studio.png" >> android-studio.desktop
+  echo "Icon=studio.png" >> android-studio.desktop
+  # Or stok icon
+  ########echo "Icon=/opt/android-studio/bin/studio.png" >> android-studio.desktop########
   echo "Categories=GNOME;GTK;Development;IDE;" >> android-studio.desktop
   # Set Permission File
   show_info 'Set Permission File...'
@@ -25,15 +43,19 @@ function android-studio {
   sudo chmod +x android-studio.desktop
   sudo mv android-studio.desktop /usr/share/applications
   # Install package(s)
-  show_info 'Installing Android Studio 2.2.2...'
+  show_info 'Installing Android Studio 2.2.3...'
   show_warning 'Requires root privileges'
-  sudo mv ./android-studio /opt/android-studio
+  mv ./android-studio $HOME/.local/share/android-studio
   # Cleanup and finish
   rm android-studio-ide*.zip
+  ## Give permessions to folder to let the built-in update system work
+  show_info 'Set Permission folder...'
+  find $HOME/.local/share/android-studio/ -type d -exec chmod 777 {} \;
+  find $HOME/.local/share/android-studio/ -type f -exec chmod 777 {} \;
   # Set Permission File
   show_info 'Set Permission File...'
-  cd /opt/android-studio/bin
-  sudo chmod +x studio.sh
+  cd $HOME/.local/share/android-studio/bin
+  chmod +x studio.sh
   # Run
   ./studio.sh
   # Done

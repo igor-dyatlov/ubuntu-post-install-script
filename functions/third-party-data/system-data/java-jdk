@@ -5,15 +5,15 @@ function java-jdk {
   # Install dependencies
   show_info 'Installing curl dependencies...'
   show_warning 'Requires root privileges'
-  sudo apt install curl
+  sudo apt install -y curl
   show_info 'Downloading & extraction Java JDK...'
   # Download Debian file that matches system architecture
   case `uname -i` in
 	  i386|i486|i586|i686)
-	      (curl -L -k -b "oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u112-b15/jdk-8u112-linux-i586.tar.gz | gunzip -c | tar x)
+	      (curl -L -k -b "oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u112-b13/jdk-8u121-linux-i586.tar.gz | gunzip -c | tar x)
 	      ;;
 	  x86_64)
-	      (curl -L -k -b "oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u112-b15/jdk-8u112-linux-x64.tar.gz | gunzip -c | tar x)
+	      (curl -L -k -b "oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u121-b13/e9e7ea248e2c4826b92b3f075a80e441/jdk-8u121-linux-x64.tar.gz | gunzip -c | tar x)
 	      ;;
 	  *)
 	      show_error "No packages available to download that matches your system." && thirdparty
@@ -23,20 +23,20 @@ function java-jdk {
   show_info 'Installing Java JDK...'
   show_warning 'Requires root privileges'
   sudo mkdir /usr/lib/jvm
-  sudo mv ./jdk1.8.0_112 /usr/lib/jvm/jdk1.8.0_112
+  sudo mv ./jdk1.8.0_121 /usr/lib/jvm/jdk1.8.0_121
   # Create symbolic link
   show_info 'Creating symbolic link...'
   show_warning 'Requires root privileges'
-  sudo update-alternatives --install /usr/bin/java java /usr/lib/jvm/jdk1.8.0_112/bin/java 1
-  sudo update-alternatives --install /usr/bin/javac javac /usr/lib/jvm/jdk1.8.0_112/bin/javac 1
-  sudo update-alternatives --install /usr/bin/javaws javaws /usr/lib/jvm/jdk1.8.0_112/bin/javaws 1
+  sudo update-alternatives --install /usr/bin/java java /usr/lib/jvm/jdk1.8.0_121/bin/java 1
+  sudo update-alternatives --install /usr/bin/javac javac /usr/lib/jvm/jdk1.8.0_121/bin/javac 1
+  sudo update-alternatives --install /usr/bin/javaws javaws /usr/lib/jvm/jdk1.8.0_121/bin/javaws 1
   sudo update-alternatives --config java
   sudo update-alternatives --config javac
   sudo update-alternatives --config javaws
   # Install dependencies
   show_info 'Installing Java JDK dependencies...'
   show_warning 'Requires root privileges'
-  sudo apt install lib32ncurses5 lib32ncurses5-dev lib32stdc++6
+  #########sudo apt install lib32ncurses5 lib32ncurses5-dev lib32stdc++6#######
   # Done
   show_success 'Done.'
   whiptail --title "Finished" --msgbox "Installation complete." 8 78

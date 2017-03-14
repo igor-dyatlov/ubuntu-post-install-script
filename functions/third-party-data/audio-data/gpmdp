@@ -1,0 +1,26 @@
+#!/bin/bash
+
+# Google Play Music™ Desktop Player
+function google-musicmanager {
+	# Add repository
+	show_info 'Adding Google Play Music™ Desktop Player PPA repository to software sources...'
+	show_warning 'Requires root privileges'
+	sudo sh -c 'echo "deb https://dl.bintray.com/marshallofsound/deb debian main" >> /etc/apt/sources.list.d/gpmdp.list'
+	show_success 'Done.'
+	show_question 'Adding repository key...'
+	show_warning 'Requires root privileges'
+  wget -q -O - https://gpmdp.xyz/bintray-public.key.asc | sudo apt-key add -
+	show_success 'Done.'
+	# Update repository information
+	show_info 'Updating repository information...'
+	show_warning 'Requires root privileges'
+	sudo apt update
+	# Install
+	show_info 'Installing Google Play Music™ Desktop Player...'
+	show_warning 'Requires root privileges'
+	sudo apt install -y google-play-music-desktop-player
+  # Done
+  show_success 'Done.'
+  whiptail --title "Finished" --msgbox "Installation complete." 8 78
+	thirdparty
+}

@@ -9,6 +9,7 @@ source $dir/functions/kernel-data/kernel-4.6
 source $dir/functions/kernel-data/kernel-4.7
 source $dir/functions/kernel-data/kernel-4.8
 source $dir/functions/kernel-data/kernel-4.9
+source $dir/functions/kernel-data/kernel-4.10
 
 # Kernel system upgrade
 function kernel {
@@ -27,6 +28,7 @@ function kernel {
     kernel-4.7 'Update 4.7 kernel' \
     kernel-4.8 'Update 4.8 kernel' \
     kernel-4.9 'Update 4.9 kernel' \
+    kernel-4.10 'Update 4.10 kernel' \
   3>&1 1>&2 2>&3)
 
 exitstatus=$?

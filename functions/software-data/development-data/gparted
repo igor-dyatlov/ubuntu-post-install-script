@@ -13,7 +13,7 @@ function gparted {
   # Install dependencies
   show_info 'Installing Gparted dependencies...'
   show_warning 'Requires root privileges'
-  sudo apt install -y btrfs-tools e2fsprogs dosfstools hfsutils f2fs-tools hfsprogs jfsutils util-linux lvm2 ntfs-3g reiser4progs reiserfsprogs xfsprogs xfsdump
+  sudo apt install -y btrfs-tools e2fsprogs dosfstools hfsutils hfsutils-tcltk f2fs-tools hfsprogs jfsutils util-linux lvm2 ntfs-3g reiser4progs reiserfsprogs xfsprogs xfsdump
   # Done
   show_success 'Done.'
   whiptail --title "Finished" --msgbox "Installation complete." 8 78
