@@ -9,7 +9,7 @@ function uget {
 	# Update repository information
 	show_info 'Updating repository information...'
   show_warning 'Requires root privileges'
-	sudo apt update -qq
+	sudo apt update
 	# Install
   show_info 'Installing Uget...'
   show_warning 'Requires root privileges'

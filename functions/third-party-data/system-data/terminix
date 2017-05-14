@@ -13,7 +13,7 @@ function terminix {
   # Install
   show_info 'Installing Terminix...'
   show_warning 'Requires root privileges'
-  sudo apt install -y terminix
+  sudo apt install -y tilix
   # Done
   show_success 'Done.'
   whiptail --title "Finished" --msgbox "Installation complete." 8 78

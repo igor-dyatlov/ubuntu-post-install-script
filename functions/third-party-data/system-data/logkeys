@@ -12,15 +12,15 @@ function logkeys {
   sudo apt install -y logkeys
   # Install Keymaps
   show_info 'Downloading Logkeys...'
-  wget https://github.com/kernc/logkeys/archive/master.zip
+  wget -O logkeys-master.zip https://github.com/kernc/logkeys/archive/master.zip
   show_info 'Extraction Logkeys...'
-  unzip master.zip
+  unzip logkeys-master.zip
   cd logkeys-master
   mv keymaps $HOME/.keymap
   # Back
   cd -
   # Cleanup and finish
-  rm -rf logkeys-master master.zip
+  rm -rf logkeys-master*
   # Start
   show_info 'Start Logkeys...'
   show_warning 'Requires root privileges'

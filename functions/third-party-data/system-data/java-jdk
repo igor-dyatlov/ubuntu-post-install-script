@@ -13,7 +13,7 @@ function java-jdk {
 	      (curl -L -k -b "oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u112-b13/jdk-8u121-linux-i586.tar.gz | gunzip -c | tar x)
 	      ;;
 	  x86_64)
-	      (curl -L -k -b "oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u121-b13/e9e7ea248e2c4826b92b3f075a80e441/jdk-8u121-linux-x64.tar.gz | gunzip -c | tar x)
+	      (curl -L -k -b "oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.tar.gz | gunzip -c | tar x)
 	      ;;
 	  *)
 	      show_error "No packages available to download that matches your system." && thirdparty
@@ -23,13 +23,13 @@ function java-jdk {
   show_info 'Installing Java JDK...'
   show_warning 'Requires root privileges'
   sudo mkdir /usr/lib/jvm
-  sudo mv ./jdk1.8.0_121 /usr/lib/jvm/jdk1.8.0_121
+  sudo mv ./jdk1.8.0_131 /usr/lib/jvm/jdk1.8.0_131
   # Create symbolic link
   show_info 'Creating symbolic link...'
   show_warning 'Requires root privileges'
-  sudo update-alternatives --install /usr/bin/java java /usr/lib/jvm/jdk1.8.0_121/bin/java 1
-  sudo update-alternatives --install /usr/bin/javac javac /usr/lib/jvm/jdk1.8.0_121/bin/javac 1
-  sudo update-alternatives --install /usr/bin/javaws javaws /usr/lib/jvm/jdk1.8.0_121/bin/javaws 1
+  sudo update-alternatives --install /usr/bin/java java /usr/lib/jvm/jdk1.8.0_131/bin/java 1
+  sudo update-alternatives --install /usr/bin/javac javac /usr/lib/jvm/jdk1.8.0_131/bin/javac 1
+  sudo update-alternatives --install /usr/bin/javaws javaws /usr/lib/jvm/jdk1.8.0_131/bin/javaws 1
   sudo update-alternatives --config java
   sudo update-alternatives --config javac
   sudo update-alternatives --config javaws

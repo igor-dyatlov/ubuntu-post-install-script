@@ -4,22 +4,11 @@
 function teamviewer {
   # Downloading
   show_info 'Downloading TeamViewer...'
-  case `uname -i` in
-	    i386|i486|i586|i686)
-	        wget https://downloadap1.teamviewer.com/download/version_11x/teamviewer_11.0.67687_i386.deb
-	        ;;
-	    x86_64)
-	        wget https://downloadap1.teamviewer.com/download/version_11x/teamviewer_11.0.67687_amd64.deb
-	        ;;
-	    *)
-	        show_error "No packages available to download that matches your system." && thirdparty
-	        ;;
-	esac
+  wget https://downloadus2.teamviewer.com/download/version_12x/teamviewer_12.0.71510_i386.deb
   # Install package(s)
   show_info 'Installing TeamViewer...'
   show_warning 'Requires root privileges'
   sudo dpkg -i teamviewer*.deb
-  sudo dpkg --add-architecture i386
   sudo apt install -fy
   # Cleanup and finish
   rm teamviewer*.deb

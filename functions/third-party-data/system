@@ -32,7 +32,7 @@ function system {
         'jenkins'           'Jenkins' \
         'logkeys'           'Logkeys' \
         'peazip'            'PeaZip' \
-        'terminix'          'Terminix terminal' \
+        'terminix'          'Tilix (previously Terminix) terminal' \
         'testdisk'          'TestDisk' \
         'ubuntu-tweak'      'Ubuntu tweak' \
         3>&1 1>&2 2>&3)

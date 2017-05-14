@@ -1,26 +1,26 @@
 #!/bin/bash
 
-# Android Studio 2.2.3
+# Android Studio
 function android-studio {
   # Add repository
-  show_info 'Adding Oracle Java 8 PPA to software sources...'
-  show_warning 'Requires root privileges'
-  sudo add-apt-repository -y ppa:webupd8team/java
-  # Update repository information
-  show_info 'Updating repository information...'
-  show_warning 'Requires root privileges'
-  sudo apt update
-  # Install
-  show_info 'Installing Oracle Java 8...'
-  show_warning 'Requires root privileges'
-  sudo apt install -y oracle-java8-installer
-  # Install dependencies
-  show_info 'Installing Java JDK dependencies...'
-  show_warning 'Requires root privileges'
-  sudo apt install -y lib32ncurses5 lib32ncurses5-dev libc6-i386 lib32stdc++6 lib32gcc1 lib32z1 lib32z1-dev
-  show_info 'Downloading Android Studio 2.2.3...'
-  wget https://dl.google.com/dl/android/studio/ide-zips/2.2.3.0/android-studio-ide-145.3537739-linux.zip
-  show_info 'Extraction Android Studio 2.2.3...'
+  ##########################show_info 'Adding Oracle Java 8 PPA to software sources...'
+  ##########################show_warning 'Requires root privileges'
+  ##########################sudo add-apt-repository -y ppa:webupd8team/java
+  ########################### Update repository information
+  ##########################show_info 'Updating repository information...'
+  ##########################show_warning 'Requires root privileges'
+  ##########################sudo apt update
+  ########################### Install
+  ##########################show_info 'Installing Oracle Java 8...'
+  ##########################show_warning 'Requires root privileges'
+  ##########################sudo apt install -y oracle-java8-installer
+  ########################### Install dependencies
+  ##########################show_info 'Installing Java JDK dependencies...'
+  ##########################show_warning 'Requires root privileges'
+  ##########################sudo apt install -y lib32ncurses5 lib32ncurses5-dev libc6-i386 lib32stdc++6 lib32gcc1 lib32z1 lib32z1-dev
+  show_info 'Downloading Android Studio...'
+  wget https://dl.google.com/dl/android/studio/ide-zips/2.3.0.8/android-studio-ide-162.3764568-linux.zip
+  show_info 'Extraction Android Studio...'
   unzip android-studio-ide*.zip
   # Create icon desktop
   show_info 'Create icon...'
@@ -43,8 +43,7 @@ function android-studio {
   sudo chmod +x android-studio.desktop
   sudo mv android-studio.desktop /usr/share/applications
   # Install package(s)
-  show_info 'Installing Android Studio 2.2.3...'
-  show_warning 'Requires root privileges'
+  show_info 'Installing Android Studio...'
   mv ./android-studio $HOME/.local/share/android-studio
   # Cleanup and finish
   rm android-studio-ide*.zip
