@@ -13,7 +13,7 @@ function java-jdk {
 	      (curl -L -k -b "oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u112-b13/jdk-8u121-linux-i586.tar.gz | gunzip -c | tar x)
 	      ;;
 	  x86_64)
-	      (curl -L -k -b "oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.tar.gz | gunzip -c | tar x)
+	      (curl -L -k -b "oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/9.0.1+11/jdk-9.0.1_linux-x64_bin.tar.gz | gunzip -c | tar x)
 	      ;;
 	  *)
 	      show_error "No packages available to download that matches your system." && thirdparty
@@ -23,20 +23,20 @@ function java-jdk {
   show_info 'Installing Java JDK...'
   show_warning 'Requires root privileges'
   sudo mkdir /usr/lib/jvm
-  sudo mv ./jdk1.8.0_131 /usr/lib/jvm/jdk1.8.0_131
+  sudo mv ./jdk-9.0.1 /usr/lib/jvm/jdk-9.0.1
   # Create symbolic link
   show_info 'Creating symbolic link...'
   show_warning 'Requires root privileges'
-  sudo update-alternatives --install /usr/bin/java java /usr/lib/jvm/jdk1.8.0_131/bin/java 1
-  sudo update-alternatives --install /usr/bin/javac javac /usr/lib/jvm/jdk1.8.0_131/bin/javac 1
-  sudo update-alternatives --install /usr/bin/javaws javaws /usr/lib/jvm/jdk1.8.0_131/bin/javaws 1
+  sudo update-alternatives --install /usr/bin/java java /usr/lib/jvm/jdk-9.0.1/bin/java 1
+  sudo update-alternatives --install /usr/bin/javac javac /usr/lib/jvm/jdk-9.0.1/bin/javac 1
+  sudo update-alternatives --install /usr/bin/javaws javaws /usr/lib/jvm/jdk-9.0.1/bin/javaws 1
   sudo update-alternatives --config java
   sudo update-alternatives --config javac
   sudo update-alternatives --config javaws
   # Install dependencies
   show_info 'Installing Java JDK dependencies...'
   show_warning 'Requires root privileges'
-  #########sudo apt install lib32ncurses5 lib32ncurses5-dev lib32stdc++6#######
+  sudo apt install -y lib32ncurses5 lib32ncurses5-dev libc6-i386 lib32stdc++6 lib32gcc1 lib32z1 lib32z1-dev
   # Done
   show_success 'Done.'
   whiptail --title "Finished" --msgbox "Installation complete." 8 78

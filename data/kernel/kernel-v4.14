@@ -1,0 +1,181 @@
+#!/bin/bash
+
+# Kernel stable
+function v4.14 {
+	# Variables
+	NAME="linux"
+	NOMBER="v4.15"
+	PACKAGE="linux"
+	VERSION="4.15.0-041500-generic_4.15.0-041500.201802011154"
+	# Install
+	echo_message header 'Begin '$NAME' installation'
+	# Check if package is installed
+	check_packages $PACKAGE
+	EXITSTATUS=$?
+	# If package is not installed
+	if [ $EXITSTATUS = 1 ]; then
+		echo_message info $NAME 'is not installed.'
+		echo 'Proceeding'
+		echo_message info 'Downloading '$NAME'...'
+		# Download Debian file that matches system architecture
+		case `uname -i` in
+			i386|i486|i586|i686)
+				wget http://kernel.ubuntu.com/~kernel-ppa/mainline/${NOMBER}/${PACKAGE}-headers-${VERSION}_i386.deb
+				wget http://kernel.ubuntu.com/~kernel-ppa/mainline/${NOMBER}/${PACKAGE}-headers-${VERSION}_all.deb
+				wget http://kernel.ubuntu.com/~kernel-ppa/mainline/${NOMBER}/${PACKAGE}-image-${VERSION}_i386.deb
+				;;
+			x86_64)
+				wget http://kernel.ubuntu.com/~kernel-ppa/mainline/${NOMBER}/${PACKAGE}-headers-${VERSION}_amd64.deb
+				wget http://kernel.ubuntu.com/~kernel-ppa/mainline/${NOMBER}/${PACKAGE}-headers-${VERSION}_all.deb
+				wget http://kernel.ubuntu.com/~kernel-ppa/mainline/${NOMBER}/${PACKAGE}-image-${VERSION}_amd64.deb
+				;;
+			*)
+				whiptail --title "Error." --msgbox "No remote packages available to download." 8 64
+				;;
+		esac
+		# Install package(s)
+		echo_message info 'Installing '$NAME'...'
+		# Admin privileges
+		elevate_privilege "dpkg -i $PACKAGE*.deb"
+		elevate_privilege "apt install -fy"
+		# Cleanup and finish
+		rm $PACKAGE*.deb
+		# Done
+		echo_message success "Installation of '$PACKAGE' complete."
+		whiptail --title "Finished" --msgbox "Installation of $NAME complete." 8 64
+		thirdparty
+	else
+		# Already installed
+		echo_message info $NAME 'already installed.'
+		whiptail --title "Finished" --msgbox "$NAME is already installed." 8 64
+		thirdparty
+	fi
+}
+
+# Kernel stable
+function v4.14.1 {
+	# Variables
+	NAME="linux"
+	NOMBER="v4.15.1"
+	PACKAGE="linux"
+	VERSION="4.15.1-041501-generic_4.15.1-041501.201802031831"
+	# Install
+	echo_message header 'Begin '$NAME' installation'
+	# Check if package is installed
+	check_packages $PACKAGE
+	EXITSTATUS=$?
+	# If package is not installed
+	if [ $EXITSTATUS = 1 ]; then
+		echo_message info $NAME 'is not installed.'
+		echo 'Proceeding'
+		echo_message info 'Downloading '$NAME'...'
+		# Download Debian file that matches system architecture
+		case `uname -i` in
+			i386|i486|i586|i686)
+				wget http://kernel.ubuntu.com/~kernel-ppa/mainline/${NOMBER}/${PACKAGE}-headers-${VERSION}_i386.deb
+				wget http://kernel.ubuntu.com/~kernel-ppa/mainline/${NOMBER}/${PACKAGE}-headers-${VERSION}_all.deb
+				wget http://kernel.ubuntu.com/~kernel-ppa/mainline/${NOMBER}/${PACKAGE}-image-${VERSION}_i386.deb
+				;;
+			x86_64)
+				wget http://kernel.ubuntu.com/~kernel-ppa/mainline/${NOMBER}/${PACKAGE}-headers-${VERSION}_amd64.deb
+				wget http://kernel.ubuntu.com/~kernel-ppa/mainline/${NOMBER}/${PACKAGE}-headers-${VERSION}_all.deb
+				wget http://kernel.ubuntu.com/~kernel-ppa/mainline/${NOMBER}/${PACKAGE}-image-${VERSION}_amd64.deb
+				;;
+			*)
+				whiptail --title "Error." --msgbox "No remote packages available to download." 8 64
+				;;
+		esac
+		# Install package(s)
+		echo_message info 'Installing '$NAME'...'
+		# Admin privileges
+		elevate_privilege "dpkg -i $PACKAGE*.deb"
+		elevate_privilege "apt install -fy"
+		# Cleanup and finish
+		rm $PACKAGE*.deb
+		# Done
+		echo_message success "Installation of '$PACKAGE' complete."
+		whiptail --title "Finished" --msgbox "Installation of $NAME complete." 8 64
+		thirdparty
+	else
+		# Already installed
+		echo_message info $NAME 'already installed.'
+		whiptail --title "Finished" --msgbox "$NAME is already installed." 8 64
+		thirdparty
+	fi
+}
+
+# Kernel stable
+function v4.14.2 {
+	# Variables
+	NAME="linux"
+	NOMBER="v4.15.2"
+	PACKAGE="linux"
+	VERSION="4.15.2-041502-generic_4.15.2-041502.201802072230"
+	# Install
+	echo_message header 'Begin '$NAME' installation'
+	# Check if package is installed
+	check_packages $PACKAGE
+	EXITSTATUS=$?
+	# If package is not installed
+	if [ $EXITSTATUS = 1 ]; then
+		echo_message info $NAME 'is not installed.'
+		echo 'Proceeding'
+		echo_message info 'Downloading '$NAME'...'
+		# Download Debian file that matches system architecture
+		case `uname -i` in
+			i386|i486|i586|i686)
+				wget http://kernel.ubuntu.com/~kernel-ppa/mainline/${NOMBER}/${PACKAGE}-headers-${VERSION}_i386.deb
+				wget http://kernel.ubuntu.com/~kernel-ppa/mainline/${NOMBER}/${PACKAGE}-headers-${VERSION}_all.deb
+				wget http://kernel.ubuntu.com/~kernel-ppa/mainline/${NOMBER}/${PACKAGE}-image-${VERSION}_i386.deb
+				;;
+			x86_64)
+				wget http://kernel.ubuntu.com/~kernel-ppa/mainline/${NOMBER}/${PACKAGE}-headers-${VERSION}_amd64.deb
+				wget http://kernel.ubuntu.com/~kernel-ppa/mainline/${NOMBER}/${PACKAGE}-headers-${VERSION}_all.deb
+				wget http://kernel.ubuntu.com/~kernel-ppa/mainline/${NOMBER}/${PACKAGE}-image-${VERSION}_amd64.deb
+				;;
+			*)
+				whiptail --title "Error." --msgbox "No remote packages available to download." 8 64
+				;;
+		esac
+		# Install package(s)
+		echo_message info 'Installing '$NAME'...'
+		# Admin privileges
+		elevate_privilege "dpkg -i $PACKAGE*.deb"
+		elevate_privilege "apt install -fy"
+		# Cleanup and finish
+		rm $PACKAGE*.deb
+		# Done
+		echo_message success "Installation of '$PACKAGE' complete."
+		whiptail --title "Finished" --msgbox "Installation of $NAME complete." 8 64
+		thirdparty
+	else
+		# Already installed
+		echo_message info $NAME 'already installed.'
+		whiptail --title "Finished" --msgbox "$NAME is already installed." 8 64
+		thirdparty
+	fi
+}
+
+# Kernel system upgrade
+function kernel-v4.14 {
+	eval `resize`
+	KERNELS415=$(whiptail \
+		--notags \
+		--title 'Update system kernel' \
+		--menu '\nWhat would you like to do?' \
+		--ok-button 'Update' \
+		--cancel-button 'Go Back' \
+	$LINES $COLUMNS $(( $LINES - 12 )) \
+		v4.14 'Update stable (v4.14) kernel (need reboot)' \
+		v4.14.1 'Update stable (v4.14.1) kernel (need reboot)' \
+		v4.14.2 'Update stable (v4.14.2) kernel (need reboot)' \
+	3>&1 1>&2 2>&3)
+
+	# check exit status
+	EXITSTATUS=$?
+	if [ $EXITSTATUS = 0 ]; then
+		$MAIN
+	else
+		quit
+	fi
+}

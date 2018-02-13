@@ -1,0 +1,24 @@
+autotools-dev
+bzr
+git
+git-core
+gtk-3-examples
+gtk-doc-tools
+icontool
+libgtk-3-dev
+nodejs
+npm
+optipng
+x11-apps
+
+
+ android-tools-adb android-tools-fastboot android-tools-fsutils gphoto2 jmtpfs mtpfs
+ bluefish bluefish-data bluefish-plugins
+ gnome-boxes
+ geany
+ giggle
+ gitg
+ gnome-builder
+ gparted
+ btrfs-tools e2fsprogs dosfstools hfsutils hfsutils-tcltk f2fs-tools hfsprogs jfsutils util-linux lvm2 ntfs-3g reiser4progs reiserfsprogs xfsprogs xfsdump
+  dput devscripts dh-make debhelper

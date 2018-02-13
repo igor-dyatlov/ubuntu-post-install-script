@@ -1,30 +1,25 @@
 #!/bin/bash
 
-# Perform system upgrade via apt-get
+# Perform system upgrade via apt
 function update {
-if (whiptail --title "System Update" --yesno "Proceed with system update?" 10 60) then
-    # Update repository information
-    show_info 'Updating repository information...'
-    show_warning 'Requires root privileges'
-    sudo apt update
-    show_success 'Done.'
-    # Dist-Upgrade
-    show_info 'Performing system update...'
-    sudo apt -y full-upgrade
-    # Done
-    show_success 'Done.'
-    # Check
-    EXITSTATUS=$1
-    if [[ $EXITSTATUS != 0 ]]; then
-        # Already up-to-date
-        show_success 'Already up-to-date.'
-        whiptail --title "Finished" --msgbox "System is up-to-date." 8 78
-        main
-    else
-        whiptail --title "Finished" --msgbox "System update complete" 8 78
-        main
-    fi
-else
-    main
-fi
+	echo_message title "Starting 'update' function..."
+	# Draw window
+	if (whiptail --title "System Update" --yesno "Proceed with system update?" 8 64) then
+		# Update repository information
+		echo_message info 'Updating repository information...'
+		# Admin privileges
+		elevate_privilege 'apt update -y'
+		echo_message success 'Repository information updated.'
+		# Upgrade
+		echo_message info 'Performing system update...'
+		# Admin privileges
+		elevate_privilege 'apt full-upgrade -y'
+		# Check
+		check_fail
+		# Done
+		echo_message success 'System update complete.'
+		whiptail --title "Finished" --msgbox "System update complete." 8 64
+	else
+		main
+	fi
 }

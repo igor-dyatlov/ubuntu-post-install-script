@@ -2,15 +2,8 @@
 
 dir="$(dirname "$0")"
 
-source $dir/functions/kernel-data/kernel-4.3
-source $dir/functions/kernel-data/kernel-4.4
-source $dir/functions/kernel-data/kernel-4.5
-source $dir/functions/kernel-data/kernel-4.6
-source $dir/functions/kernel-data/kernel-4.7
-source $dir/functions/kernel-data/kernel-4.8
-source $dir/functions/kernel-data/kernel-4.9
-source $dir/functions/kernel-data/kernel-4.10
-source $dir/functions/kernel-data/kernel-4.11
+source $dir/data/kernel/kernel-v4.14
+source $dir/data/kernel/kernel-v4.15
 
 # Kernel system upgrade
 function kernel {
@@ -22,21 +15,14 @@ function kernel {
     --ok-button 'Update' \
     --cancel-button 'Go Back' \
   $LINES $COLUMNS $(( $LINES - 12 )) \
-    kernel-4.3 'Update 4.3 kernel' \
-    kernel-4.4 'Update 4.4 kernel' \
-    kernel-4.5 'Update 4.5 kernel' \
-    kernel-4.6 'Update 4.6 kernel' \
-    kernel-4.7 'Update 4.7 kernel' \
-    kernel-4.8 'Update 4.8 kernel' \
-    kernel-4.9 'Update 4.9 kernel' \
-    kernel-4.10 'Update 4.10 kernel' \
-    kernel-4.11 'Update 4.11 kernel' \
+    kernel-v4.14 'Update 4.14 kernel' \
+    kernel-v4.15 'Update 4.15 kernel' \
   3>&1 1>&2 2>&3)
 
 exitstatus=$?
   if [ $exitstatus = 0 ]; then
     clear && $KERNEL
   else
-    clear && main
+    quit
   fi
 }

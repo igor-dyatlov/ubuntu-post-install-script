@@ -1,0 +1,46 @@
+#!/bin/bash
+
+# VK Messenger
+function vk {
+  show_info 'Downloading VK Messenger...'
+	# Download Debian file that matches system architecture
+	case `uname -i` in
+	    i386|i486|i586|i686)
+	        wget https://updates.tdesktop.com/tlinux32/tsetup.1.1.23.tar.xz
+	        ;;
+	    x86_64)
+	        wget https://updates.tdesktop.com/tlinux/tsetup.1.1.23.tar.xz
+	        ;;
+	    *)
+	        show_error "No packages available to download that matches your system." && thirdparty
+	        ;;
+	esac
+  show_info 'Extraction VK Messenger...'
+  tar -xJvf tsetup*.tar.xz
+	# Install lang(s)
+	case `echo $LANG` in
+	    ru_RU.UTF-8)
+	        wget https://tlgrm.ru/files/locales/tdesktop/Russian.strings
+	        ;;
+	    uk_UA.UTF-8)
+	        wget https://tlgrm.ru/files/locales/tdesktop/Ukrainian.strings
+	        ;;
+	    *)
+	        show_error "No packages available to download that matches your system." && thirdparty
+	        ;;
+	esac
+  mv *.strings ./VKMessenger
+  # Install package(s)
+  show_info 'Installing VK Messenger...'
+  show_warning 'Requires root privileges'
+  mv ./Telegram $HOME/.local/share/TelegramDesktop
+  # Cleanup and finish
+  rm tsetup*.tar.xz
+  # Create icon desktop and starting
+  cd $HOME/.local/share/TelegramDesktop
+  ./Telegram
+  # Done
+  show_success 'Done.'
+  whiptail --title "Finished" --msgbox "Installation complete." 8 78
+  thirdparty
+}

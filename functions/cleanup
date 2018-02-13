@@ -1,91 +1,130 @@
 #!/bin/bash
+#
+# Update the list of packages in 'data/purge.list' to suit your preferences
+# Listed packages that are are not any system-crucial software to avoid breakage
 
-dir="$(dirname "$0")"
-
-source $dir/functions/purge
-
-# Remove old kernels
-function kernels {
-    if (whiptail --title "Remove Outdated Kernels" --yesno "If you're not currently using the newest kernel installed on your system, the following may break it. \n\nAre you sure you want proceed?" 10 60) then
-        show_info 'Removing outdated kernel(s)...'
-        show_warning 'Requires root privileges'
-        sudo dpkg -l 'linux-*' | sed '/^ii/!d;/'"$(uname -r | sed "s/\(.*\)-\([^0-9]\+\)/\1/")"'/d;s/^[^ ]* [^ ]* \([^ ]*\).*/\1/;/[0-9]/!d' | grep -v linux-libc-dev | xargs sudo apt -y purge
-        show_success 'Done.'
-        whiptail --title "Finished" --msgbox "Outdated kernels have been successfully removed." 8 78
-        cleanup
-    else
-        clear && cleanup
-    fi
+# Remove unused preinstalled apps
+function purge_unused {
+	echo_message title "Starting 'purge_unused' function..."
+	# Check list
+	PURGED=$(dirname "$0")'/data/purge.list'
+	# Draw window
+	if (eval `resize` && whiptail \
+		--title "Remove Un-used Pre-installed Applications" \
+		--yesno "Current list of pre-installed applications to remove: \n\n$(for LINE in $(cat $PURGED); do echo '  '$LINE; done) \n\nAre you sure you want proceed?" \
+		$LINES $COLUMNS $(( $LINES - 12 )) \
+		--scrolltext ) then
+		# Remove loop
+		echo_message info 'Removing unused pre-installed applications...'
+		for PACKAGE in $(cat $PURGED); do
+			# Check if package is installed
+			check_packages $PACKAGE
+			EXITSTATUS=$?
+			# If package is not installed
+			if [ $EXITSTATUS = 1 ]; then
+				# Show already installed message
+				echo "Package '$PACKAGE' is already removed."
+			else
+				# Remove package
+				echo_message info "'$PACKAGE' is installed. Removing..."
+				# Admin privileges
+				elevate_privilege "apt purge -y $PACKAGE"
+				# Done
+				echo_message success "'$PACKAGE' removal is complete."
+			fi
+		done
+		# Done
+		echo_message success 'Removal of unused packages complete.'
+		whiptail --title "Finished" --msgbox "Your list of unwanted pre-installed applications have been removed." 8 64
+		cleanup
+	else
+		cleanup
+	fi
 }
 
 # Remove Orphaned Packages
-function orphaned {
- show_info 'Removing orphaned packages...'
- show_warning 'Requires root privileges'
- sudo apt -y autoremove
- show_success 'Done.'
- whiptail --title "Finished" --msgbox "Orphaned packages have been successfully removed." 8 78
- cleanup
+function remove_orphans {
+	echo_message title "Starting 'remove_orphans' function..."
+	echo_message info 'Removing orphaned packages...'
+	# Admin privileges
+	elevate_privilege "apt autoremove -y $PACKAGE"
+	# Done
+	echo_message success 'Removal of orphaned packages complete.'
+	whiptail --title "Finished" --msgbox "Orphaned packages have been successfully removed." 8 64
+	cleanup
 }
 
-function leftovers {
- show_info 'Removing leftover configuration files...'
- show_warning 'Requires root privileges'
- sudo dpkg --purge $(COLUMNS=200 dpkg -l | grep '^rc' | tr -s ' ' | cut -d ' ' -f 2)
- show_success 'Done.'
- whiptail --title "Finished" --msgbox "Leftover configuration files have been removed." 8 78
- cleanup
+# Remove Leftover Config files
+function remove_leftover_config {
+	echo_message title "Starting 'remove_leftover_config' function..."
+	echo_message info 'Removing leftover configuration files...'
+	# Admin privileges
+	elevate_privilege "dpkg --purge $(COLUMNS=200 dpkg -l | grep '^rc' | tr -s ' ' | cut -d ' ' -f 2)"
+	# Done
+	echo_message success 'Removal of leftover configuration files complete.'
+	whiptail --title "Finished" --msgbox "Leftover configuration files have been removed." 8 64
+	cleanup
 }
 
-function clean-cache {
- show_info 'Cleaning package cache...'
- show_warning 'Requires root privileges'
- sudo apt -y clean
- show_success 'Done.'
- whiptail --title "Finished" --msgbox "Package cache has been cleaned." 8 78
- cleanup
+# Clean apt cache
+function clean_apt_cache {
+	echo_message title "Starting 'clean_apt_cache' function..."
+	echo_message info 'Cleaning package cache...'
+	# Admin privileges
+	elevate_privilege "apt clean"
+	# Done
+	echo_message success 'Package cache cleaned.'
+	whiptail --title "Finished" --msgbox "Package cache has been cleaned." 8 64
+	cleanup
 }
 
+# Remove old kernels
+function clean_old_kernels {
+  if (whiptail --title "Remove Outdated Kernels" --yesno "If you're not currently using the newest kernel installed on your system, the following may break it. \n\nAre you sure you want proceed?" 10 60) then
+  echo_message title "Starting 'clean_old_kernels' function..."
+  echo_message info 'Removing outdated kernel(s)...'
+  # Admin privileges
+  elevate_privilege "dpkg -l 'linux-*' | sed '/^ii/!d;/'"$(uname -r | sed "s/\(.*\)-\([^0-9]\+\)/\1/")"'/d;s/^[^ ]* [^ ]* \([^ ]*\).*/\1/;/[0-9]/!d' | grep -v linux-libc-dev | xargs apt -y purge"
+  # Done
+  echo_message success 'Kernels cleaned.'
+  whiptail --title "Finished" --msgbox "Outdated kernels have been successfully removed." 8 78
+  cleanup
+  else
+    cleanup
+  fi
+}
 # Remove old log crash
-function crash {
- show_info 'Cleaning old log crash...'
- show_warning 'Requires root privileges'
- sudo rm /var/crash/*
- show_success 'Done.'
- whiptail --title "Finished" --msgbox "Old log crash has been cleaned." 8 78
- cleanup
-}
-
-# Terminal old command
-function terminal-history {
- show_info 'Cleaning old log crash...'
- mv $HOME/.bash_history $HOME/.bash_history
- show_success 'Done.'
+function clean_old_crash {
+ echo_message title "Starting 'clean_apt_cache' function..."
+ echo_message info 'Cleaning old log crash...'
+ # Admin privileges
+ elevate_privilege "rm /var/crash/*"
+ # Done
+ echo_message success 'Old log crash cleaned.'
  whiptail --title "Finished" --msgbox "Old log crash has been cleaned." 8 78
  cleanup
 }
 
 # Cleanup System
 function cleanup {
-    eval `resize`
-    CLEANUP=$(whiptail \
-        --notags \
-        --title "System Cleanup" \
-        --menu "\nWhat would you like to do?" \
-        --cancel-button "Go Back" \
-        $LINES $COLUMNS $(( $LINES - 12 )) \
-        clean-cache 'Clean package cache' \
-        leftovers   'Remove leftover configuration files' \
-        orphaned    'Remove orphaned packages' \
-        purge       'Remove unused pre-installed packages' \
-        crash       'Remove old log crash' \
-        kernels     'Remove old kernel(s)' \
-        3>&1 1>&2 2>&3)
-
-    exitstatus=$?
-    if [ $exitstatus = 0 ]; then
-        clear && $CLEANUP
-    else
-        clear && main
-    fi
+	echo_message title "Starting 'cleanup' function..."
+	EXITSTATUS=$?
+	if [ $EXITSTATUS = 0 ]; then
+		# Draw window
+		$(eval `resize`&& whiptail \
+		--notags \
+		--title "System Cleanup" \
+		--menu "\nWhat would you like to do?" \
+		--cancel-button "Go Back" \
+		$LINES $COLUMNS $(( $LINES - 12 )) \
+		clean_apt_cache			'Clean package cache' \
+		remove_leftover_config	'Remove leftover configuration files' \
+		remove_orphans  'Remove orphaned packages' \
+		purge_unused			'Remove unused pre-installed packages' \
+    clean_old_crash 'Remove old log crash' \
+    clean_old_kernels 'Remove old kernel(s)' \
+		3>&1 1>&2 2>&3)
+	else
+		main
+	fi
 }

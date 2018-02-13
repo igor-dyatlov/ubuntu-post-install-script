@@ -1,0 +1,31 @@
+flatpak
+gifsicle
+inxi
+libav-tools
+mediainfo
+openssh-server
+openvpn
+network-manager-l2tp-gnome
+network-manager-openvpn-gnome
+p7zip-full
+pciutils
+powertop
+rsync
+samba
+ssh
+symlinks
+tlp
+unrar
+youtube-dl
+
+ca-certificates-java default-jre default-jre-headless java-common libhsqldb1.8.0-java openjdk-8-jre openjdk-8-jre-headless
+file-roller p7zip p7zip-full p7zip-rar rar unace unrar unzip zip
+gpw
+nano
+pwgen
+retext
+sc
+
+openvpn easy-rsa
+
+ubuntu-wallpapers-karmic ubuntu-wallpapers-lucid ubuntu-wallpapers-maverick ubuntu-wallpapers-natty ubuntu-wallpapers-oneiric ubuntu-wallpapers-precise ubuntu-wallpapers-quantal ubuntu-wallpapers-raring ubuntu-wallpapers-saucy ubuntu-wallpapers-trusty ubuntu-wallpapers-utopic ubuntu-wallpapers-vivid ubuntu-wallpapers-wily ubuntu-wallpapers-xenial

@@ -15,9 +15,9 @@ function pantheon {
   show_warning 'Requires root privileges'
   sudo apt -y dist-upgrade
   # Install
-  #show_info 'Installing Pantheon Desktop...'
-  #show_warning 'Requires root privileges'
-  #sudo apt install -y fonts-cantarell gconf-editor gnome-calendar gnome-clocks gnome-disk-utility gnome-logs gnome-terminal gnome-todo nautilus tomboy
+  show_info 'Installing Pantheon Desktop...'
+  show_warning 'Requires root privileges'
+  sudo apt install -y pantheon
   # Done
   show_success 'Done.'
   whiptail --title "Finished" --msgbox "Installation complete." 8 78
